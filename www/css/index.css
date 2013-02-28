@@ -37,7 +37,10 @@ body {
 }
 
 .spacer50 { height:50px; }
+.spacer100 { height:100px; }
 .spacer10 { height:10px; }
+.ma { margin:auto; }
+.cb { clear:both; }
 
 /* Portrait layout (default) */
 .logo {
@@ -48,32 +51,33 @@ body {
 	margin:auto;
 }
 
+.home-square {
+	width:50%;
+	float:left;
+}
+
 .menu0 {
 	background:url(../img/menu0.png) no-repeat 0 0;
     height:324px;
     width:324px;  
-	float:left;
 }
 
 .menu1 {
 	background:url(../img/menu1.png) no-repeat 0 0;
     height:324px;
     width:324px;  
-	float:right;
 }
 
 .menu2 {
 	background:url(../img/menu2.png) no-repeat 0 0; 
     height:324px;
     width:324px;  
-	float:left;
 }
 
 .menu3 {
 	background:url(../img/menu3.png) no-repeat 0 0;
     height:324px;
     width:324px;
-	float:right;
 }
 
 ul {list-style: none; padding: 0; margin: 0;}
