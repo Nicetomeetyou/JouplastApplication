@@ -24,9 +24,6 @@
 }
 
 body {
-    background-color:#FFFFFF;
-   
-    background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     height:100%;
@@ -36,21 +33,24 @@ body {
     width:100%;
 }
 
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
 .spacer50 { height:50px; }
 .spacer100 { height:100px; }
 .spacer10 { height:10px; }
 .ma { margin:auto; }
 .cb { clear:both; }
 
-.ui-mobile [data-role="page"], .ui-mobile [data-role="dialog"], .ui-page {
-    top: 150px !important;
-}
+.ui-mobile [data-role="page"], .ui-mobile [data-role="dialog"], .ui-page { top: 150px !important; min-height:0px !important; }
+.ui-body-c, .ui-overlay-c { background: #FFFFFF !important; }
 
-.ma video {
-	text-align:center;
-}
-
-/* Portrait layout (default) */
 .logo {
     background:url(../img/logo.png) no-repeat top center;
     height:73px;
@@ -64,6 +64,8 @@ body {
 	float:left;
 }
 
+/* MAIN MENU */
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 .menu0 {
 	background:url(../img/menu0.png) no-repeat 0 0;
     height:324px;
@@ -87,50 +89,20 @@ body {
     height:324px;
     width:324px;
 }
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-ul {list-style: none; padding: 0; margin: 0;}
-ul li {list-style: none;} 
-
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
+/* CONTACT */
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.bt_tel {
+	background:url(../img/bt_tel.png) no-repeat 0 0;
+    height:324px;
+    width:324px;  
 }
 
-.status {
-    background-color:#333333;
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
+.bt_mail {
+	background:url(../img/bt_mail.png) no-repeat 0 0;
+    height:324px;
+    width:324px;  
 }
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-.status.complete {
-    background-color:#4B946A;
-}
-
-.hide {
-    display:none;
-}
-
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
-}
