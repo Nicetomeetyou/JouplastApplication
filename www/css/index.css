@@ -42,6 +42,10 @@ body {
 .ma { margin:auto; }
 .cb { clear:both; }
 
+.ui-mobile [data-role="page"], .ui-mobile [data-role="dialog"], .ui-page {
+    top: 150px !important;
+}
+
 /* Portrait layout (default) */
 .logo {
     background:url(../img/logo.png) no-repeat top center;

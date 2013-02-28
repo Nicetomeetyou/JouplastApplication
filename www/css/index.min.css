@@ -5,6 +5,7 @@ body{background-color:#FFFFFF;background-attachment:fixed;font-family:'Helvetica
 .spacer10{height:10px;}
 .ma{margin:auto;}
 .cb{clear:both;}
+.ui-mobile[data-role="page"],.ui-mobile[data-role="dialog"],.ui-page{top:150px!important;}
 .logo{background:url(../img/logo.png) no-repeat top center;height:73px;width:281px;text-align:center;margin:auto;}
 .home-square{width:50%;float:left;}
 .menu0{background:url(../img/menu0.png) no-repeat 0 0;height:324px;width:324px;}

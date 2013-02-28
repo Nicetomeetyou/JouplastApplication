@@ -29,59 +29,52 @@
         <title>Hello World</title>
     </head>
     <body>
-       <!-- <div class="app">
+       <div>
 			<div class="spacer10"></div>
 			<div class="logo"></div>
 			<div class="spacer100"></div>
-			<div>
+        </div>
+		<div class="spacer50 cb"></div>
+		<!-- Start of first page -->
+		<div data-role="page" id="menu">
+			<div data-role="content">
+				<div>
 				<div class="home-square">
-					<div class="menu0 ma"></div>
+					<a href="#tuto" data-transition="slide"><div class="menu0 ma"></div></a>
 				</div>
 				<div class="home-square">
-					<div class="menu1 ma"></div>
+					<a href="#bar" data-transition="slide"><div class="menu1 ma"></div></a>
 				</div>
 				
 				<div class="spacer50 cb"></div>
 				
 				<div class="home-square">
-					<div class="menu2 ma"></div>
+					<a href="#bar" data-transition="slide"><div class="menu2 ma"></div></a>
 				</div>
 				<div class="home-square">
-					<div class="menu3 ma"></div>
+					<a href="#bar" data-transition="slide"><div class="menu3 ma"></div></a>
 				</div>
 			</div>
-        </div>-->
-		<!-- Start of first page -->
-		<div data-role="page" id="foo">
-			<div data-role="header">
-				<h1>Foo</h1>
-			</div><!-- /header -->
-			<div data-role="content">
-				<p>I'm first in the source order so I'm shown as the page.</p>
-				<p>View internal page called <a href="#bar">bar</a></p>
 			</div><!-- /content -->
-			<div data-role="footer">
-				<h4>Page Footer</h4>
-			</div><!-- /footer -->
 		</div><!-- /page -->
 
 		<!-- Start of second page -->
-		<div data-role="page" id="bar">
-			<div data-role="header">
-				<h1>Bar</h1>
-			</div><!-- /header -->
+		<div data-role="page" id="tuto">
 			<div data-role="content">
-				<p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>
-				<p><a href="#foo">Back to foo</a></p>
+				<video width="320" height="240" controls>
+					<source src="movie.mp4" type="video/mp4">
+				</video> 
+				<p><a href="#menu" data-transition="slide" data-direction="reverse">Back menu</a></p>
 			</div><!-- /content -->
-			<div data-role="footer">
-				<h4>Page Footer</h4>
-			</div><!-- /footer -->
 		</div><!-- /page -->
         <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
+			$(document).bind("mobileinit", function(){
+			  $.mobile.touchOverflowEnabled = true;
+			  $.mobile.defaultPageTransition = "slide";
+			});
+			
 			$(".menu0").click(function() {
 				
 			});
