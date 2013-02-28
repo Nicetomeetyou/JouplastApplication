@@ -23,10 +23,13 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
+       <!-- <div class="app">
 			<div class="spacer10"></div>
 			<div class="logo"></div>
 			<div class="spacer100"></div>
@@ -38,7 +41,7 @@
 					<div class="menu1 ma"></div>
 				</div>
 				
-				<div class="spacer10 cb"></div>
+				<div class="spacer50 cb"></div>
 				
 				<div class="home-square">
 					<div class="menu2 ma"></div>
@@ -47,25 +50,52 @@
 					<div class="menu3 ma"></div>
 				</div>
 			</div>
-        </div>
+        </div>-->
+		<!-- Start of first page -->
+		<div data-role="page" id="foo">
+			<div data-role="header">
+				<h1>Foo</h1>
+			</div><!-- /header -->
+			<div data-role="content">
+				<p>I'm first in the source order so I'm shown as the page.</p>
+				<p>View internal page called <a href="#bar">bar</a></p>
+			</div><!-- /content -->
+			<div data-role="footer">
+				<h4>Page Footer</h4>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+		<!-- Start of second page -->
+		<div data-role="page" id="bar">
+			<div data-role="header">
+				<h1>Bar</h1>
+			</div><!-- /header -->
+			<div data-role="content">
+				<p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>
+				<p><a href="#foo">Back to foo</a></p>
+			</div><!-- /content -->
+			<div data-role="footer">
+				<h4>Page Footer</h4>
+			</div><!-- /footer -->
+		</div><!-- /page -->
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
 			$(".menu0").click(function() {
-				alert("menu0");
+				
 			});
 			
 			$(".menu1").click(function() {
-				alert("menu1");
+				
 			});
 			
 			$(".menu2").click(function() {
-				alert("menu2");
+				
 			});
 			
 			$(".menu3").click(function() {
-				alert("menu3");
+				
 			});
         </script>
     </body>
