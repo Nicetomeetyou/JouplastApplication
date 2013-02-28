@@ -46,6 +46,10 @@ body {
     top: 150px !important;
 }
 
+.ma video {
+	text-align:center;
+}
+
 /* Portrait layout (default) */
 .logo {
     background:url(../img/logo.png) no-repeat top center;

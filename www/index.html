@@ -61,14 +61,17 @@
 		<!-- Start of second page -->
 		<div data-role="page" id="tuto">
 			<div data-role="content">
-				<video width="320" height="240" controls>
-					<source src="video/video.mp4" type="video/mp4">
-				</video> 
+				<div class="ma">
+					<video width="320" height="240" controls>
+						<source src="video/video.mp4" type="video/mp4">
+					</video> 
+				</div>
 				<p><a href="#menu" data-transition="slide" data-direction="reverse">Back menu</a></p>
 			</div><!-- /content -->
 		</div><!-- /page -->
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript">
+			$.mobile.defaultPageTransition = 'none';
         </script>
     </body>
 </html>
