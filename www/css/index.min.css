@@ -15,6 +15,8 @@ a:hover{color:#FFFFFF;}
 .title-din{font-size:30px;}
 .font-din{font-family:din-medium!important;color:#FFFFFF;}
 .back{background:url(../img/back.jpg) repeat 0 0;height:100%px;width:100%;display:block;}
+#content{position:absolute;width:100%;-webkit-transition:all 1.0s ease-in-out;-moz-transition:all 1.0s ease-in-out;-o-transition:all 1.0s ease-in-out;transition:all 1.0s ease-in-out;}
+#content2{position:absolute;width:100%;-webkit-transition:all 1.0s ease-in-out;-moz-transition:all 1.0s ease-in-out;-o-transition:all 1.0s ease-in-out;transition:all 1.0s ease-in-out;}
 .back-header{background:url(../img/back-header.png) repeat 0 0;height:123px;width:100%;display:block;}
 .logo{background:url(../img/logo.png) no-repeat 0 0;height:51px;width:288px;display:block;text-align:center;margin:auto;}
 .arrow-back{background:url(../img/arrow-back.png) no-repeat 0 0;height:30px;width:135px;display:block;margin:10px;position:absolute;}

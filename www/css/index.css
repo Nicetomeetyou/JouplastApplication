@@ -61,6 +61,15 @@ a:hover{ color:#FFFFFF;
 	background:url(../img/back.jpg) repeat 0 0; height:100%px; width:100%; display:block;
 }
 
+#content { position:absolute; width:100%;  -webkit-transition:all 1.0s ease-in-out;
+  -moz-transition:all 1.0s ease-in-out;
+  -o-transition:all 1.0s ease-in-out;
+  transition:all 1.0s ease-in-out;}
+#content2 { position:absolute; width:100%;  -webkit-transition:all 1.0s ease-in-out;
+  -moz-transition:all 1.0s ease-in-out;
+  -o-transition:all 1.0s ease-in-out;
+  transition:all 1.0s ease-in-out; }
+
 /* HEADER */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 .back-header { background:url(../img/back-header.png) repeat 0 0; height:123px; width:100%; display:block; }
