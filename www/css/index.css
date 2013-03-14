@@ -60,7 +60,10 @@ a:hover{ color:#FFFFFF;
 /* HEADER */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 .back-header { background:url(../img/back-header.png) repeat 0 0; height:123px; width:100%; display:block; }
-.logo { background:url(../img/logo.png) no-repeat 0 0; height:51px; width:288px; display:block; text-align:center;	margin:auto; }
+.logo { background:url(../img/logo.png) no-repeat 0 0; height:51px; width:288px; display:block; text-align:center; margin:auto; }
+
+.arrow-back { background:url(../img/arrow-back.png) no-repeat 0 0; height:30px; width: 135px; display:block; margin: 10px; position: absolute; }
+.text-back { margin: -1px 0 0 35px; font-family: din-medium !important; color:#FFFFFF; font-size:24px; }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 /* MAIN MENU */
@@ -72,6 +75,7 @@ a:hover{ color:#FFFFFF;
 
 #menu {
 	font-family: din-medium !important;
+	color:#FFFFFF;
 	font-size:30px;
 	margin: auto;
 }

@@ -1,0 +1,23 @@
+<div id="menu">	
+	<div>
+		<div class="home-square">
+			<div id="m0" class="menu0 ma"><div class="text-menu">Calculatrice</div></div>
+		</div>
+		<div class="home-square">
+			<div id="m1" class="menu1 ma"><div class="text-menu">Conseils</div></div>
+		</div>
+		
+		<div class="space50 cb"></div>
+		
+		<div class="home-square">
+			<div id="m2" class="menu2 ma"><div class="text-menu">Catalogue</div></div>
+		</div>
+		<div class="home-square">
+			<div id="m3" class="menu3 ma"><div class="text-menu">Contact</div></div>
+		</div>
+	</div>
+</div><!-- /page -->
+<script>
+var m0 = document.getElementById("m0"); 
+m0.addEventListener("click", function(e) { $("#content").load("contact.html"); }, false); 
+</script>

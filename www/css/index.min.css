@@ -13,8 +13,10 @@ a:hover{color:#FFFFFF;}
 .back{background:url(../img/back.jpg) repeat 0 0;height:100%px;width:100%;display:block;}
 .back-header{background:url(../img/back-header.png) repeat 0 0;height:123px;width:100%;display:block;}
 .logo{background:url(../img/logo.png) no-repeat 0 0;height:51px;width:288px;display:block;text-align:center;margin:auto;}
+.arrow-back{background:url(../img/arrow-back.png) no-repeat 0 0;height:30px;width:135px;display:block;margin:10px;position:absolute;}
+.text-back{margin:-1px 0 0 35px;font-family:din-medium!important;color:#FFFFFF;font-size:24px;}
 .home-square{width:50%;float:left;}
-#menu{font-family:din-medium!important;font-size:30px;margin:auto;}
+#menu{font-family:din-medium!important;color:#FFFFFF;font-size:30px;margin:auto;}
 .text-menu{position:relative;text-align:center;top:82%;}
 .back-menu{background:url(../img/backmenu.png) no-repeat 0 0;height:392px;width:467px;position:absolute;}
 .menu0{background:url(../img/menu0.png) no-repeat 0 0;height:324px;width:324px;}

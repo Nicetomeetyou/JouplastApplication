@@ -29,39 +29,27 @@
        <div>
 			<div class="back-header">
 				<div class="space15"></div>
-				<div class="logo"></div>
+				<div>
+					<div id="back" class="arrow-back">
+						<div class="text-back">Retour</div>
+					</div>
+					<div class="logo"></div>
+				</div>
+				
 			</div>
 			<div class="space100"></div>
         </div>
 		<div class="space50 cb"></div>
 		<!-- Start of first page -->
-		<div id="content">
-			<div id="menu">	
-				<div>
-					<div class="home-square">
-						<div id="m0" class="menu0 ma"><div class="text-menu">Calculatrice</div></div>
-					</div>
-					<div class="home-square">
-						<div id="m1" class="menu1 ma"><div class="text-menu">Conseils</div></div>
-					</div>
-					
-					<div class="space50 cb"></div>
-					
-					<div class="home-square">
-						<div id="m2" class="menu2 ma"><div class="text-menu">Catalogue</div></div>
-					</div>
-					<div class="home-square">
-						<div id="m3" class="menu3 ma"><div class="text-menu">Contact</div></div>
-					</div>
-				</div>
-			</div><!-- /page -->
-		</div>
+		<div id="content"></div>
 		
         <script type="text/javascript" src="phonegap.js"></script>
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script type="text/javascript">
-			var m0 = document.getElementById("m0"); 
-			m0.addEventListener("touchstart", function(e) { $("#content").load("contact.html"); }, false); 
+			$("#content").load("menu.html");
+			
+			var btBack = document.getElementById("back"); 
+			btBack.addEventListener("click", function(e) { $("#content").load("menu.html"); }, false); 
         </script>
     </body>
 </html>
