@@ -25,7 +25,7 @@
 		 <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Jouplast</title>
     </head>
-    <body>
+    <body class="back">
        <div>
 			<div class="back-header">
 				<div class="space15"></div>
@@ -35,35 +35,40 @@
         </div>
 		<div class="space50 cb"></div>
 		<!-- Start of first page -->
-		<div id="menu">	
-			<div>
-				<div class="home-square">
-					<a href="#calculatrice">
-						
-						<div class="menu0 ma">
-							<div class="text-menu">Calculatrice</div>
-						</div>
-					</a>
+		<div id="content">
+			<div id="menu">	
+				<div>
+					<div class="home-square">
+						<div id="m0" class="menu0 ma"><div class="text-menu">Calculatrice</div></div>
+					</div>
+					<div class="home-square">
+						<div id="m1" class="menu1 ma"><div class="text-menu">Conseils</div></div>
+					</div>
+					
+					<div class="space50 cb"></div>
+					
+					<div class="home-square">
+						<div id="m2" class="menu2 ma"><div class="text-menu">Catalogue</div></div>
+					</div>
+					<div class="home-square">
+						<div id="m3" class="menu3 ma"><div class="text-menu">Contact</div></div>
+					</div>
 				</div>
-				<div class="home-square">
-					<a href="#tuto"><div class="menu1 ma"><div class="text-menu">Conseils</div></div></a>
-				</div>
-				
-				<div class="space50 cb"></div>
-				
-				<div class="home-square">
-					<a href="#catalogue"><div class="menu2 ma"><div class="text-menu">Catalogue</div></div></a>
-				</div>
-				<div class="home-square">
-					<a href="#contact"><div class="menu3 ma"><div class="text-menu">Contact</div></div></a>
-				</div>
-			</div>
-		</div><!-- /page -->
+			</div><!-- /page -->
+		</div>
 		
         <script type="text/javascript" src="phonegap.js"></script>
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script type="text/javascript">
-			
+			for(i = 0; i<4; i++) {
+				$("#m" + i ).bind("click", {id:i}, function(event) {
+					if(event.data.id == 0) $("#content").load("contact.html");
+					if(event.data.id == 1) $("#content").load("contact.html");
+					if(event.data.id == 2) $("#content").load("contact.html");
+					if(event.data.id == 3) $("#content").load("contact.html");
+						
+				});
+			}
         </script>
     </body>
 </html>

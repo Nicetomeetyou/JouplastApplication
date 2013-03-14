@@ -53,18 +53,14 @@ a:hover{ color:#FFFFFF;
 .ma { margin:auto; }
 .cb { clear:both; }
 
-.logo {
-    background:url(../img/logo.png) no-repeat top center;
-    height:73px;
-    width:281px;
-    text-align:center;
-	margin:auto;
+.back {
+	background:url(../img/back.jpg) repeat 0 0; height:100%px; width:100%; display:block;
 }
 
 /* HEADER */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 .back-header { background:url(../img/back-header.png) repeat 0 0; height:123px; width:100%; display:block; }
-.logo { background:url(../img/logo.png) no-repeat 0 0; height:51px; width:288px; display:block; }
+.logo { background:url(../img/logo.png) no-repeat 0 0; height:51px; width:288px; display:block; text-align:center;	margin:auto; }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 /* MAIN MENU */
