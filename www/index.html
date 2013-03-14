@@ -22,86 +22,48 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
-        <title>Hello World</title>
+		 <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Jouplast</title>
     </head>
     <body>
        <div>
-			<div class="spacer10"></div>
-			<div class="logo"></div>
-			<div class="spacer100"></div>
+			<div class="back-header">
+				<div class="space15"></div>
+				<div class="logo"></div>
+			</div>
+			<div class="space100"></div>
         </div>
-		<div class="spacer50 cb"></div>
+		<div class="space50 cb"></div>
 		<!-- Start of first page -->
-		<div data-role="page" id="menu">
-			<div data-role="content">
-				<div>
+		<div id="menu">	
+			<div>
 				<div class="home-square">
-					<a href="#calculatrice" data-transition="none"><div class="menu0 ma"></div></a>
+					<a href="#calculatrice">
+						
+						<div class="menu0 ma">
+							<div class="text-menu">Calculatrice</div>
+						</div>
+					</a>
 				</div>
 				<div class="home-square">
-					<a href="#tuto" data-transition="none"><div class="menu1 ma"></div></a>
+					<a href="#tuto"><div class="menu1 ma"><div class="text-menu">Conseils</div></div></a>
 				</div>
 				
-				<div class="spacer50 cb"></div>
+				<div class="space50 cb"></div>
 				
 				<div class="home-square">
-					<a href="#catalogue" data-transition="none"><div class="menu2 ma"></div></a>
+					<a href="#catalogue"><div class="menu2 ma"><div class="text-menu">Catalogue</div></div></a>
 				</div>
 				<div class="home-square">
-					<a href="#contact" data-transition="none"><div class="menu3 ma"></div></a>
+					<a href="#contact"><div class="menu3 ma"><div class="text-menu">Contact</div></div></a>
 				</div>
 			</div>
-			</div><!-- /content -->
-		</div><!-- /page -->
-
-		<!-- Start of second page -->
-		<div data-role="page" id="calculatrice">
-			<div data-role="content">
-				<h1>Calculatrice</h1>
-				<p><a href="#menu" data-transition="none">Back menu</a></p>
-			</div><!-- /content -->
-		</div><!-- /page -->
-		
-		<!-- Start of second page -->
-		<div data-role="page" id="tuto">
-			<div data-role="content">
-				<h1>Tutoriel</h1>
-				<p><a href="#menu" data-transition="none">Back menu</a></p>
-			</div><!-- /content -->
-		</div><!-- /page -->
-		
-		<!-- Start of second page -->
-		<div data-role="page" id="catalogue">
-			<div data-role="content">
-				<h1>Catalogue</h1>
-				<p><a href="#menu" data-transition="none">Back menu</a></p>
-			</div><!-- /content -->
-		</div><!-- /page -->
-		
-		<!-- Start of second page -->
-		<div data-role="page" id="contact">
-			<div data-role="content">
-				<h1>Contact</h1>
-				<div class="home-square">
-					<a href="tel:0623653496"><div class="bt_tel ma"></div></a>
-				</div>
-				<div class="home-square">
-					<a href="mailto:bdugast@ntmy.fr"><div class="bt_mail ma"></div></a>
-				</div>
-				
-				<p><a href="#menu" data-transition="none">Back menu</a></p>
-			</div><!-- /content -->
 		</div><!-- /page -->
 		
         <script type="text/javascript" src="phonegap.js"></script>
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
         <script type="text/javascript">
-			$.mobile.defaultPageTransition   = 'none';
-			$.mobile.defaultDialogTransition = 'none';
-			$.mobile.buttonMarkup.hoverDelay = 0;
+			
         </script>
     </body>
 </html>
