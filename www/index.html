@@ -60,15 +60,8 @@
         <script type="text/javascript" src="phonegap.js"></script>
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script type="text/javascript">
-			for(i = 0; i<4; i++) {
-				$("#m" + i ).bind("click", {id:i}, function(event) {
-					if(event.data.id == 0) $("#content").load("contact.html");
-					if(event.data.id == 1) $("#content").load("contact.html");
-					if(event.data.id == 2) $("#content").load("contact.html");
-					if(event.data.id == 3) $("#content").load("contact.html");
-						
-				});
-			}
+			var m0 = document.getElementById("m0"); 
+			m0.addEventListener("touchstart", function(e) { $("#content").load("contact.html"); }, false); 
         </script>
     </body>
 </html>
