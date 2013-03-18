@@ -41,18 +41,32 @@
         </div>
 		<!-- Start of first page -->
 		<div class="global-container">
-			<div id="content"></div>
 			<div id="content2"></div>
+			<div id="content1"></div>
 		</div>
 		
         <script type="text/javascript" src="phonegap.js"></script>
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script type="text/javascript">
-			$("#content").load("menu.html");
-			$("#content2").css("right","-1000px");
+			var numContent = 2;
+			$("#content1").load("menu.html");
+			$("#content2").css("right","-"+window.innerWidth+"px");
+			
 			var btBack = document.getElementById("back"); 
-			//btBack.addEventListener("click", function(e) { $("#content").load("menu.html"); }, false); 
-			btBack.addEventListener("click", function(e) { $("#content2").css("transform","translateX(1000px)"); }, false); 
+			btBack.addEventListener("click", function(e) { $("#content1").load("menu.html"); }, false); 
+			btBack.addEventListener("click", function(e) { $("#content2").css("transform","translateX(1000px)"); }, false);
+			
+			/*btBack.addEventListener("click", function(e) { 
+				changePage("menu.html");
+			}, false);*/
+			
+			function changePage(pPage) {
+				$("#content"+numContent).css("z-index","20");
+				$("#content"+numContent).load(pPage);
+				$("#content"+numContent).css("transform","translateX(-"+window.innerWidth+"px)");
+				
+				return false;
+			}
         </script>
     </body>
 </html>

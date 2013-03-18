@@ -1,28 +1,39 @@
-<div id="menu">	
+<div id="menu" class="back">	
 	<div class="space100"></div>
 	<div>
 		<div class="home-square">
-			<div id="m0" class="menu0 ma"><div class="text-menu">Calculatrice</div></div>
+			<div id="m0" class="menu0 ma">
+				<div class="back-menu-container"><div class="back-menu"></div></div>
+				<div class="back-home-square img-menu"><div class="text-menu">Calculatrice</div></div>
+			</div>
 		</div>
 		<div class="home-square">
-			<div id="m1" class="menu1 ma"><div class="text-menu">Conseils</div></div>
+			<div id="m1" class="menu1 ma">
+				<div class="back-menu-container"><div class="back-menu"></div></div>
+				<div class="back-home-square img-menu"><div class="text-menu">Conseils</div></div>
+			</div>
 		</div>
 		
 		<div class="space50 cb"></div>
 		
 		<div class="home-square">
-			<div id="m2" class="menu2 ma"><div class="text-menu">Catalogue</div></div>
+			<div id="m2" class="menu2 ma">
+				<div class="back-menu-container"><div class="back-menu"></div></div>
+				<div class="back-home-square img-menu"><div class="text-menu">Catalogue</div></div>
+			</div>
 		</div>
 		<div class="home-square">
-			<div id="m3" class="menu3 ma"><div class="text-menu">Contact</div></div>
+			<div id="m3" class="menu3 ma">
+				<div class="back-menu-container"><div class="back-menu"></div></div>
+				<div class="back-home-square img-menu"><div class="text-menu">Contact</div></div>
+			</div>
 		</div>
 	</div>
 </div><!-- /page -->
 <script>
 var m3 = document.getElementById("m3"); 
 //m0.addEventListener("touchstart", function(e) { $("#content").load("contact.html"); }, false); 
-m3.addEventListener("click", function(e) { 
-	$("#content2").load("contact.html");
-	$("#content2").css("transform","translateX(-1000px)");
-}, false); 
+m3.addEventListener("click", function(e) {
+	changePage("contact.html"); 
+}, false);
 </script>
