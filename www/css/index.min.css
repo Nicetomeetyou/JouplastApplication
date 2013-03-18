@@ -1,4 +1,4 @@
-*{-webkit-touch-callout:none;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-user-select:none;}
+*{-webkit-touch-callout:none;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-user-select:text;}
 @font-face{font-family:din-medium;src:url("../fonts/DIN-Medium.otf");}
 @font-face{font-family:din-medium-bold;src:url("../fonts/DIN-Bold.otf");}
 body{font-size:12px;height:100%;margin:0px;padding:0px;text-transform:uppercase;width:100%;background-color:#05436B;}
