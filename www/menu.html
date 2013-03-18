@@ -31,9 +31,12 @@
 	</div>
 </div><!-- /page -->
 <script>
+var m0 = document.getElementById("m0"); 
+m0.addEventListener("click", function(e) {$("#content").load("calculette-choix.html");/*changePage("contact.html");*/}, false);
+var m1 = document.getElementById("m1"); 
+m1.addEventListener("click", function(e) {$("#content").load("contact.html");/*changePage("contact.html");*/}, false);
+var m2 = document.getElementById("m2"); 
+m2.addEventListener("click", function(e) {$("#content").load("contact.html");/*changePage("contact.html");*/}, false);
 var m3 = document.getElementById("m3"); 
-//m0.addEventListener("touchstart", function(e) { $("#content").load("contact.html"); }, false); 
-m3.addEventListener("click", function(e) {
-	changePage("contact.html"); 
-}, false);
+m3.addEventListener("click", function(e) {$("#content").load("contact.html");/*changePage("contact.html");*/}, false);
 </script>
