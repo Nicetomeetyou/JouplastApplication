@@ -18,14 +18,42 @@
 			<div class="cb"></div>
 		</div>
 		<div class="grey-line cb"></div>
-		<div class="back-white">
+		<div class="ma">
 			<div class="space10"></div>
 			<div class="tac black font-din-bold size34 no-uppercase">Type de dalles<span class="grey font-din"> en cm</span></div>
+			<div class="space10"></div>
+			<div class="container-bt-calculette">
+				<div class="fleft">
+					<div id="beton-on" class="bt-beton-on"></div>
+					<div id="beton-off" class="bt-beton-off" style="display:none"></div>
+				</div>
+				<div class="fleft">
+					<div id="ceramique-on" class="bt-ceramique-on"  style="display:none"></div>
+					<div id="ceramique-off" class="bt-ceramique-off"></div>
+				</div>
+			</div>
+			<div class="cb"></div>
+		</div>
+		<div class="space10"></div>
+		<div class="back-calculette">
+			<div class="cont-dalle-taille fleft">
+				<div class="dalle-taille"></div>
+			</div>
+			<div class="cont-dalle-taille fleft">
+				<div class="dalle-taille"></div>
+			</div>
+			<div class="cont-dalle-taille fleft">
+				<div class="dalle-taille"></div>
+			</div>
 		</div>
 	</div>
 	<div class="space50"></div>
 </div>
 <script>
-	
+	var type = "";
+	var btBetonOff = document.getElementById("beton-off"); 
+	btBetonOff.addEventListener("click", function(e) { type="beton"; $("#beton-on").css('display', 'block'); $("#beton-off").css('display', 'none'); $("#ceramique-on").css('display', 'none'); $("#ceramique-off").css('display', 'block'); }, false); 
+	var btCeramiqueOff = document.getElementById("ceramique-off"); 
+	btCeramiqueOff.addEventListener("click", function(e) { type="ceramique"; $("#beton-on").css('display', 'none'); $("#beton-off").css('display', 'block'); $("#ceramique-on").css('display', 'block'); $("#ceramique-off").css('display', 'none'); }, false); 
 </script>
 	

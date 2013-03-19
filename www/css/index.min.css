@@ -58,6 +58,14 @@ a:hover{color:#FFFFFF;}
 .hauteur-dalle{margin-left:50px;margin-right:10px;}
 .text-hauteur{margin-top:-10px;}
 .mesure{margin-top:9px;}
+.bt-beton-on{background:url(../img/bt-beton-on.png) no-repeat 0 0 transparent;width:260px;height:91px;}
+.bt-beton-off{background:url(../img/bt-beton-off.png) no-repeat 0 0;width:260px;height:91px;}
+.bt-ceramique-on{background:url(../img/bt-ceramique-on.png) no-repeat 0 0;width:260px;height:91px;}
+.bt-ceramique-off{background:url(../img/bt-ceramique-off.png) no-repeat 0 0;width:260px;height:91px;}
+.dalle-taille{background:url(../img/dalle-taille.png) no-repeat 0 0;width:228px;height:171px;margin:auto;}
+.cont-dalle-taille{width:33%;}
+.container-bt-calculette{display:table;margin:auto;}
+.back-calculette{background:url(../img/dalle.jpg) repeat 0 0;height:100%px;width:100%;display:block;}
 .size-text-button{font-size:32px;text-transform:none;}
 .picto-phone{background:url(../img/picto-phone.png) no-repeat 0 0;height:117px;width:116px;}
 .picto-mail{background:url(../img/picto-email.png) no-repeat 0 0;height:113px;width:129px;}
