@@ -18,7 +18,7 @@
 			<div class="cb"></div>
 		</div>
 		<div class="grey-line cb"></div>
-		<div class="ma">
+		<div class="back-calculette">
 			<div class="space10"></div>
 			<div class="tac black font-din-bold size34 no-uppercase">Type de dalles<span class="grey font-din"> en cm</span></div>
 			<div class="space10"></div>
@@ -32,19 +32,27 @@
 					<div id="ceramique-off" class="bt-ceramique-off"></div>
 				</div>
 			</div>
-			<div class="cb"></div>
-		</div>
-		<div class="space10"></div>
-		<div class="back-calculette">
-			<div class="cont-dalle-taille fleft">
-				<div class="dalle-taille"></div>
+			<div class="space30 cb"></div>
+			<div>
+				<div id="dalle0" class="cont-dalle-taille fleft">
+					<div class="dalle-taille font-din no-uppercase size34"><span class="taille-dalle-text">30x30</span></div>
+					<div class="radio-on" style="display:none;"></div>
+					<div class="radio-off"></div>
+				</div>
+				<div id="dalle1" class="cont-dalle-taille fleft">
+					<div class="dalle-taille font-din no-uppercase size34"><span class="taille-dalle-text">40x40</span></div>
+					<div class="radio-on" style="display:none;"></div>
+					<div class="radio-off"></div>
+				</div>
+				<div id="dalle2" class="cont-dalle-taille fleft">
+					<div class="dalle-taille font-din no-uppercase size34"><span class="taille-dalle-text">50x50</span></div>
+					<div class="radio-on" style="display:none;"></div>
+					<div class="radio-off"></div>
+				</div>
 			</div>
-			<div class="cont-dalle-taille fleft">
-				<div class="dalle-taille"></div>
-			</div>
-			<div class="cont-dalle-taille fleft">
-				<div class="dalle-taille"></div>
-			</div>
+			<div class="space30 cb"></div>
+			<div class="ma css3buttonblue-lagoon default-button font-din size34 tac">Valider</div>
+			<div class="space50"></div>
 		</div>
 	</div>
 	<div class="space50"></div>
@@ -55,5 +63,27 @@
 	btBetonOff.addEventListener("click", function(e) { type="beton"; $("#beton-on").css('display', 'block'); $("#beton-off").css('display', 'none'); $("#ceramique-on").css('display', 'none'); $("#ceramique-off").css('display', 'block'); }, false); 
 	var btCeramiqueOff = document.getElementById("ceramique-off"); 
 	btCeramiqueOff.addEventListener("click", function(e) { type="ceramique"; $("#beton-on").css('display', 'none'); $("#beton-off").css('display', 'block'); $("#ceramique-on").css('display', 'block'); $("#ceramique-off").css('display', 'none'); }, false); 
+	
+	var btDalle0 = document.getElementById("dalle0"); 
+	btDalle0.addEventListener("click", function(e) { changeDalle(0); }, false); 
+	
+	var btDalle1 = document.getElementById("dalle1"); 
+	btDalle1.addEventListener("click", function(e) { changeDalle(1); }, false); 
+	
+	var btDalle2 = document.getElementById("dalle2"); 
+	btDalle2.addEventListener("click", function(e) { changeDalle(2); }, false); 
+	
+	function changeDalle(pNum) {
+		for(i = 0; i<3; i++) {
+			$("#dalle"+i+" .radio-off").css('display', 'block');
+			$("#dalle"+i+" .radio-on").css('display', 'none');
+			
+			if( i == pNum) {
+				$("#dalle"+i+" .radio-off").css('display', 'none');
+				$("#dalle"+i+" .radio-on").css('display', 'block');
+			}
+		}
+		
+	}
 </script>
 	
