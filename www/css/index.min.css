@@ -22,6 +22,7 @@ a:hover{color:#FFFFFF;}
 .fright{float:right;}
 .black{color:#000000;}
 .grey{color:#7F7F7F;}
+.light-grey{color:#EFEFEF;}
 .size34{font-size:34px;}
 .size26{font-size:26px!important;}
 .back{background:url(../img/back.jpg) repeat 0 0;height:100%px;width:100%;display:block;}
@@ -30,7 +31,7 @@ a:hover{color:#FFFFFF;}
 .global-container{overflow:hidden;width:100%;height:100%;display:block;}
 .back-header{background:url(../img/back-header.png) repeat 0 0;height:123px;width:100%;display:block;}
 .logo{background:url(../img/logo.png) no-repeat 0 0;height:51px;width:288px;display:block;text-align:center;margin:auto;}
-.arrow-back{background:url(../img/arrow-back.png) no-repeat 0 0;height:30px;width:135px;display:block;margin:10px;position:absolute;}
+.arrow-back{background:url(../img/arrow-back.png) no-repeat 0 0;height:30px;width:135px;display:block;margin:10px;}
 .text-back{margin:-1px 0 0 35px;font-family:din-medium!important;color:#FFFFFF;font-size:24px;}
 .home-square{width:50%;float:left;}
 #menu{font-family:din-medium!important;color:#FFFFFF;font-size:30px;margin:auto;}
@@ -42,6 +43,18 @@ a:hover{color:#FFFFFF;}
 .menu1 .back-home-square{background:url(../img/menu1.png) no-repeat 0 0;}
 .menu2 .back-home-square{background:url(../img/menu2.png) no-repeat 0 0;}
 .menu3 .back-home-square{background:url(../img/menu3.png) no-repeat 0 0;}
+.picto-menu-0{background:url(../img/menu-picto-0.jpg) no-repeat 0 0;width:36px;height:35px;margin:34px 34px;}
+.picto-menu-1{background:url(../img/menu-picto-1.jpg) no-repeat 0 0;width:29px;height:43px;margin:34px 38px;}
+.picto-menu-2{background:url(../img/menu-picto-2.jpg) no-repeat 0 0;width:41px;height:40px;margin:34px 32px;}
+.picto-menu-3{background:url(../img/menu-picto-3.jpg) no-repeat 0 0;width:33px;height:38px;margin:34px 38px;}
+.picto-menu-4{background:url(../img/menu-picto-4.jpg) no-repeat 0 0;width:40px;height:39px;margin:34px;}
+.picto-menu-5{background:url(../img/menu-picto-5.jpg) no-repeat 0 0;width:41px;height:41px;margin:34px;}
+.short-menu{background-color:#EFEFEF;width:500px;height:663px;position:absolute;z-index:500;right:0;}
+.container-line-short-menu{height:100px;display:block;width:100%}
+.fleche-droite-short{background:url(../img/fleche-droite.png) no-repeat 0 0;width:22px;height:40px;margin:34px 30px}
+.text-short-menu{margin:34px 10px}
+.short-menu-icon{background:url(../img/short-menu-icon.png) no-repeat 0 0;width:46px;height:38px;margin:6px 20px}
+#black-screen{width:100%;height:150px;background:url("../img/black-pixel.png") repeat left top transparent;position:absolute;z-index:10;top:0;left:0;}
 .back-white{width:100%;height:180px;display:block;background-color:#FFFFFF;}
 .grey-line{border-top:1px solid #CCCCCC;width:100%;z-index:2;position:relative;}
 .calcul-dalle{background:url(../img/calcul-dalle.jpg) no-repeat 0 0;height:191px;width:228px;margin:23px;position:absolute;z-index:1;}
@@ -53,6 +66,7 @@ a:hover{color:#FFFFFF;}
 .line-calculette{height:80px;padding-top:20px;margin-left:30px;}
 .text-mention{margin-top:-7px;}
 .border-input{-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;}
+.titre-calculette{position:relative;top:-10px;}
 .superficie-dalle{margin-left:20px;margin-right:10px;}
 .hauteur-dalle{margin-left:50px;margin-right:10px;}
 .text-hauteur{margin-top:-10px;}
@@ -69,6 +83,11 @@ a:hover{color:#FFFFFF;}
 .radio-off{background:url(../img/radio-off.png) no-repeat 0 0;width:36px;height:37px;margin:auto;position:relative;top:-40px;}
 .taille-dalle-text{margin:28px 0 0 70px;position:absolute;}
 .css3buttonblue-lagoon{color:#ffffff;padding:28px 10px;background:-moz-linear-gradient( top,#18B1CC 0%,#18B1CC 50%,#1497AE 50%,#1497AE);background:-webkit-gradient( linear,left top,left bottom,from(#18B1CC),color-stop(0.48,#18B1CC),color-stop(0.52,#1497AE),to(#1497AE));-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;border:0px solid #000000;-moz-box-shadow:0px 2px 3px rgba(000,000,000,1),inset 0px 0px 1px rgba(255,255,255,0.6);-webkit-box-shadow:0px 2px 3px rgba(000,000,000,1),inset 0px 0px 1px rgba(255,255,255,0.6);box-shadow:0px 2px 3px rgba(000,000,000,1),inset 0px 0px 1px rgba(255,255,255,0.6);text-shadow:0px -1px 0px rgba(000,000,000,1),0px 1px 0px rgba(255,255,255,0.2);}
+.picto-tuto-0{background:url(../img/picto-tuto-0.jpg) no-repeat 0 0;width:221px;height:152px;margin:23px;position:absolute;}
+.picto-tuto-1{background:url(../img/picto-tuto-1.jpg) no-repeat 0 0;width:161px;height:119px;margin:33px;position:absolute;}
+.picto-tuto-2{background:url(../img/picto-tuto-2.jpg) no-repeat 0 0;width:180px;height:163px;margin:14px 0 0 38px;position:absolute;}
+.picto-tuto-3{background:url(../img/picto-tuto-3.jpg) no-repeat 0 0;width:125px;height:96px;margin:40px 0 0 48px;position:absolute;}
+.text-tuto-choix{margin:65px 0 0 280px;position:absolute;}
 .size-text-button{font-size:32px;text-transform:none;}
 .picto-phone{background:url(../img/picto-phone.png) no-repeat 0 0;height:117px;width:116px;}
 .picto-mail{background:url(../img/picto-email.png) no-repeat 0 0;height:113px;width:129px;}

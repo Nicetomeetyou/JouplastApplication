@@ -27,17 +27,63 @@
         <title>Jouplast</title>
     </head>
     <body class="back">
-       <div>
-			<div class="back-header">
-				<div class="space15"></div>
-				<div>
-					<div id="back" class="arrow-back">
-						<div class="text-back">Retour</div>
-					</div>
+		<div id="short-menu-slide" style="display:none;">
+			<div id="black-screen"></div>
+			<div class="short-menu fright light-grey">
+				<div id="btShort0" class="container-line-short-menu">
+					<div class="picto-menu-0 fleft"></div>
+					<div class="fleche-droite-short fright"></div>
+					<div class="fleft font-din black size34 no-uppercase text-short-menu">Accueil</div>
+				</div>
+				<div class="grey-line cb"></div>
+				<div id="btShort1" class="container-line-short-menu">
+					<div class="picto-menu-1 fleft"></div>
+					<div class="fleche-droite-short fright"></div>
+					<div class="fleft font-din black size34 no-uppercase text-short-menu">Calculatrice</div>
+				</div>
+				<div class="grey-line cb"></div>
+				<div id="btShort2" class="container-line-short-menu">
+					<div class="picto-menu-2 fleft"></div>
+					<div class="fleche-droite-short fright"></div>
+					<div class="fleft font-din black size34 no-uppercase text-short-menu">Tutoriels</div>
+				</div>
+				<div class="grey-line cb"></div>
+				<div id="btShort3" class="container-line-short-menu">
+					<div class="picto-menu-3 fleft"></div>
+					<div class="fleche-droite-short fright"></div>
+					<div class="fleft font-din black size34 no-uppercase text-short-menu">Catalogue</div>
+				</div>
+				<div class="grey-line cb"></div>
+				<div id="btShort4" class="container-line-short-menu">
+					<div class="picto-menu-4 fleft"></div>
+					<div class="fleche-droite-short fright"></div>
+					<div class="fleft font-din black size34 no-uppercase text-short-menu">Contact</div>
+				</div>
+				<div class="grey-line cb"></div>
+				<div id="btShort5" class="container-line-short-menu">
+					<div class="picto-menu-5 fleft"></div>
+					<div class="fleche-droite-short fright"></div>
+					<div class="fleft font-din black size34 no-uppercase text-short-menu">Mentions légales</div>
+				</div>
+				<div id="back-short-menu" class="back"></div>
+			</div>
+		</div>
+		
+		<div class="back-header">
+			<div class="space15"></div>
+			<div>
+				<div style="width:25%" class="fleft">
+					<div id="back" class="arrow-back"><div class="text-back">Retour</div></div>
+				</div>
+				<div style="width:50%" class="fleft">
 					<div class="logo"></div>
 				</div>
+				<div style="width:25%" class="fleft">
+					<div id="short-menu" class="short-menu-icon fright"></div>
+				</div>
 			</div>
-        </div>
+		</div>
+		
 		<!-- Start of first page -->
 		<div class="global-container">
 			<div id="content"></div>
@@ -46,13 +92,15 @@
         <script type="text/javascript" src="phonegap.js"></script>
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script type="text/javascript">
-			//var numContent = 2;
+			var oldPage = "";
 			$("#content").load("menu.html");
-			$("#content").load("calculette-dalle.html");
+			
+			//var numContent = 2;
+			
+			//$("#content").load("tutoriel.html");
 			//$("#content2").css("right","-"+window.innerWidth+"px");
 			
-			var btBack = document.getElementById("back"); 
-			btBack.addEventListener("click", function(e) { $("#content").load("menu.html"); }, false); 
+			
 			//btBack.addEventListener("click", function(e) { $("#content2").css("transform","translateX(1000px)"); }, false);
 			
 			/*btBack.addEventListener("click", function(e) { 
@@ -69,6 +117,31 @@
 				
 				return false;
 			}*/
+			
+			$("#back-short-menu").css("height", window.innerHeight - 663);
+			$("#black-screen").css("height", window.innerHeight);
+			
+			var btBack = document.getElementById("back"); 
+			btBack.addEventListener("click", function(e) { $("#content").load(oldPage); }, false); 
+			
+			var btShortMenu = document.getElementById("short-menu"); 
+			btShortMenu.addEventListener("click", function(e) { $("#short-menu-slide").css("display", "block"); }, false);
+			
+			var btBlackScreen = document.getElementById("black-screen"); 
+			btBlackScreen.addEventListener("click", function(e) { $("#short-menu-slide").css("display", "none"); }, false);
+			
+			var btShort0 = document.getElementById("btShort0"); 
+			btShort0.addEventListener("click", function(e) { $("#content").load("menu.html"); $("#short-menu-slide").css("display", "none"); }, false); 
+			var btShort1 = document.getElementById("btShort1"); 
+			btShort1.addEventListener("click", function(e) { $("#content").load("calculette-choix.html"); $("#short-menu-slide").css("display", "none"); }, false); 
+			var btShort2 = document.getElementById("btShort2"); 
+			btShort2.addEventListener("click", function(e) { $("#content").load("tutoriel.html"); $("#short-menu-slide").css("display", "none"); }, false); 
+			var btShort3 = document.getElementById("btShort3"); 
+			btShort3.addEventListener("click", function(e) { $("#content").load("menu.html"); $("#short-menu-slide").css("display", "none"); }, false); 
+			var btShort4 = document.getElementById("btShort4"); 
+			btShort4.addEventListener("click", function(e) { $("#content").load("contact.html"); $("#short-menu-slide").css("display", "none"); }, false); 
+			var btShort5 = document.getElementById("btShort5"); 
+			btShort5.addEventListener("click", function(e) { $("#content").load("menu.html"); $("#short-menu-slide").css("display", "none"); }, false); 
         </script>
     </body>
 </html>
