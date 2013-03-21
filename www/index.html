@@ -23,7 +23,7 @@
 		<meta http-equiv="Access-Control-Allow-Origin" content="*">
         <meta name="format-detection" content="telephone=no" />
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.min.css" />
         <title>Jouplast</title>
     </head>
     <body class="back">
@@ -72,8 +72,10 @@
 		<div class="back-header">
 			<div class="space15"></div>
 			<div>
-				<div style="width:25%" class="fleft">
-					<div id="back" class="arrow-back"><div class="text-back">Retour</div></div>
+				<div style="width:25%; display:block; height:10px;" class="fleft">
+					<div id="back">
+						<div class="arrow-back"><div class="text-back">Retour</div></div>
+					</div>
 				</div>
 				<div style="width:50%" class="fleft">
 					<div class="logo"></div>
@@ -90,10 +92,13 @@
 		</div>
 		
         <script type="text/javascript" src="phonegap.js"></script>
-		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.ddslick.min.js"></script>
         <script type="text/javascript">
 			var oldPage = "";
-			$("#content").load("menu.html");
+			var page = "";
+			var nbPlot = "";
+			$("#content").load("calculette-dalle.html");
 			
 			//var numContent = 2;
 			

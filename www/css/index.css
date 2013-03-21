@@ -44,12 +44,12 @@ h1 {
     text-align:center;
 }
 
-a, a:link, a:active, a:visited { color:#FFFFFF; text-decoration: none; }
-a:hover{ color:#FFFFFF; 
-}
+a, a:link, a:active, a:visited { color:#000000; text-decoration: none; }
+a:hover{ color:#000000; }
 .space50 { height:50px; }
 .space100 { height:100px; }
 .space10 { height:10px; }
+.space25 { height:25px; }
 .space15 { height:15px; }
 .space30 { height:30px; }
 .ma { margin:auto; }
@@ -62,11 +62,15 @@ a:hover{ color:#FFFFFF;
 .no-uppercase { text-transform:none !important; }
 .fleft { float:left; }
 .fright { float:right; }
-.black { color:#000000; }
+.black { color:#000000 !important; }
 .grey { color:#7F7F7F; }
 .light-grey { color:#EFEFEF; }
+.blue { color:#13A7AA !important; }
 .size34 { font-size:34px; }
 .size26 { font-size:26px !important; }
+.size20 { font-size:20px !important; }
+
+#back {	width:25%; }
 
 .back {
 	background:url(../img/back.jpg) repeat 0 0; height:100%px; width:100%; display:block;
@@ -160,9 +164,7 @@ a:hover{ color:#FFFFFF;
 .input-calculette { width:100px; height:50px; border-radius: }
 .line-calculette { height:80px; padding-top:20px; margin-left:30px; }
 .text-mention { margin-top: -7px; }
-.border-input { -webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px; }
+.border-input { -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; }
 
 .titre-calculette { position:relative; top:-10px; }
 
@@ -218,6 +220,14 @@ border-radius: 10px; }
 		0px -1px 0px rgba(000,000,000,1),
 		0px 1px 0px rgba(255,255,255,0.2);
 }
+
+.choix-taille{ margin:0px 52px; }
+.dd-selected { padding:15px !important; }
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* TUTO */
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.nbPlotResultat {  }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 /* TUTO */

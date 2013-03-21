@@ -6,15 +6,14 @@
 	<div class="back-white-calculette">
 		<div class="line-calculette">
 			<div class="font-din-bold black no-uppercase size34 fleft">Superficie de la terrasse</div>
-			<div class="fleft"><input class="input-calculette inset superficie-dalle border-input size34" type="number" name="superficieNumber"/> </div>
+			<div class="fleft"><input id="superficieNumber" class="tac input-calculette inset superficie-dalle border-input size34" type="number" name="superficieNumber" maxlength="4"/> </div>
 			<div class="mesure font-din grey no-uppercase size26 fleft">m²</div>
 			<div class="cb"></div>
 		</div>
 		<div class="grey-line cb"></div>
 		<div class="line-calculette">
 			<div class="text-hauteur font-din-bold black no-uppercase size34 fleft">Hauteur de la terrasse<div class="size26 grey text-mention font-din">Comprise entre 8 et  230 mm</div></div>
-			<div class="fleft"><input class="input-calculette inset hauteur-dalle border-input size34" type="number" name="hauteurNumber"/> </div>
-			<div class="mesure font-din grey no-uppercase size26 fleft">mm</div>
+			<div class="fleft choix-taille black font-din-bold size20 no-uppercase"><div id="myDropdown"></div></div>
 			<div class="cb"></div>
 		</div>
 		<div class="grey-line cb"></div>
@@ -51,7 +50,7 @@
 				</div>
 			</div>
 			<div class="space30 cb"></div>
-			<div class="ma css3buttonblue-lagoon default-button font-din size34 tac">Valider</div>
+			<div id="btValider" class="ma css3buttonblue-lagoon default-button font-din size34 tac">Valider</div>
 			<div class="space50"></div>
 			<div class="space50"></div>
 		</div>
@@ -59,8 +58,61 @@
 	
 </div>
 <script>
+	var ddData = [
+		{
+			text: "8-15mm",
+			value: 1,
+			selected: false,
+			description: "",
+			imageSrc: ""
+		},
+		{
+			text: "20-30mm",
+			value: 2,
+			selected: false,
+			description: "",
+			imageSrc: ""
+		},
+		{
+			text: "35mm",
+			value: 3,
+			selected: false,
+			description: "",
+			imageSrc: ""
+		},
+		{
+			text: "40-80mm",
+			value: 4,
+			selected: false,
+			description: "",
+			imageSrc: ""
+		},
+		{
+			text: "80-230mm",
+			value: 4,
+			selected: false,
+			description: "",
+			imageSrc: ""
+		}
+	];
+	
+	$('#myDropdown').ddslick({
+		data:ddData,
+		width:150,
+		selectText: "Taille",
+		imagePosition:"right",
+		onSelected: function(selectedData){
+			//callback function: do something with selectedData;
+		}   
+	});
+
 	oldPage = "calculette-choix.html";
-	var type = "";
+	page = "calculette-dalle.html";
+	var type = "beton";
+	var size = "";
+	var superficie = "";
+	var hauteur = "";
+	
 	var btBetonOff = document.getElementById("beton-off"); 
 	btBetonOff.addEventListener("click", function(e) { type="beton"; $("#beton-on").css('display', 'block'); $("#beton-off").css('display', 'none'); $("#ceramique-on").css('display', 'none'); $("#ceramique-off").css('display', 'block'); }, false); 
 	var btCeramiqueOff = document.getElementById("ceramique-off"); 
@@ -83,9 +135,35 @@
 			if( i == pNum) {
 				$("#dalle"+i+" .radio-off").css('display', 'none');
 				$("#dalle"+i+" .radio-on").css('display', 'block');
+				
+				size = pNum;
 			}
 		}
+	}
+	
+	var btValider = document.getElementById("btValider"); 
+	btValider.addEventListener("click", function(e) { calcul(); }, false); 
+	
+	function calcul() {
+		error = 0;
 		
+		superficie = document.getElementById("superficieNumber").value;
+		hauteur = document.getElementById("hauteurNumber").value;
+		
+		if(superficie == "") error ++;
+		if(hauteur == "") error ++;
+		if(type == "") error ++;
+		if(size == "") error ++;
+		
+		if(error != 0) alert("Merci de renseigner tous les champs.")
+		else {
+			nbPlot = Math.ceil(superficie / 6) ;
+			changePage();
+		}
+	}
+	
+	function changePage() {
+		$("#content").load("resultat.html")
 	}
 </script>
 	
