@@ -221,8 +221,9 @@ a:hover{ color:#000000; }
 		0px 1px 0px rgba(255,255,255,0.2);
 }
 
-.choix-taille{ margin:0px 52px; }
-.dd-selected { padding:15px !important; }
+.choix-taille{ margin:-5px 30px; }
+.dd-selected { padding:20px !important; }
+.dd-option { padding:20px !important; }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 /* TUTO */

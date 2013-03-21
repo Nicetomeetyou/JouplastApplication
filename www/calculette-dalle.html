@@ -13,7 +13,7 @@
 		<div class="grey-line cb"></div>
 		<div class="line-calculette">
 			<div class="text-hauteur font-din-bold black no-uppercase size34 fleft">Hauteur de la terrasse<div class="size26 grey text-mention font-din">Comprise entre 8 et  230 mm</div></div>
-			<div class="fleft choix-taille black font-din-bold size20 no-uppercase"><div id="myDropdown"></div></div>
+			<div class="fleft choix-taille black font-din-bold size26 no-uppercase"><div id="myDropdown"></div></div>
 			<div class="cb"></div>
 		</div>
 		<div class="grey-line cb"></div>
@@ -60,35 +60,35 @@
 <script>
 	var ddData = [
 		{
-			text: "8-15mm",
+			text: "8-15 mm",
 			value: 1,
 			selected: false,
 			description: "",
 			imageSrc: ""
 		},
 		{
-			text: "20-30mm",
+			text: "20-30 mm",
 			value: 2,
 			selected: false,
 			description: "",
 			imageSrc: ""
 		},
 		{
-			text: "35mm",
+			text: "35 mm",
 			value: 3,
 			selected: false,
 			description: "",
 			imageSrc: ""
 		},
 		{
-			text: "40-80mm",
+			text: "40-80 mm",
 			value: 4,
 			selected: false,
 			description: "",
 			imageSrc: ""
 		},
 		{
-			text: "80-230mm",
+			text: "80-230 mm",
 			value: 4,
 			selected: false,
 			description: "",
@@ -98,7 +98,7 @@
 	
 	$('#myDropdown').ddslick({
 		data:ddData,
-		width:150,
+		width:200,
 		selectText: "Taille",
 		imagePosition:"right",
 		onSelected: function(selectedData){
