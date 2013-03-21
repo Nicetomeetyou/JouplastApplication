@@ -102,7 +102,7 @@
 		selectText: "Taille",
 		imagePosition:"right",
 		onSelected: function(selectedData){
-			//callback function: do something with selectedData;
+			hauteurTerrasse = selectedData.selectedData.value;
 		}   
 	});
 
@@ -111,7 +111,7 @@
 	var type = "beton";
 	var size = "";
 	var superficie = "";
-	var hauteur = "";
+	hauteurTerrasse = "";
 	
 	var btBetonOff = document.getElementById("beton-off"); 
 	btBetonOff.addEventListener("click", function(e) { type="beton"; $("#beton-on").css('display', 'block'); $("#beton-off").css('display', 'none'); $("#ceramique-on").css('display', 'none'); $("#ceramique-off").css('display', 'block'); }, false); 
@@ -148,16 +148,15 @@
 		error = 0;
 		
 		superficie = document.getElementById("superficieNumber").value;
-		hauteur = document.getElementById("hauteurNumber").value;
 		
 		if(superficie == "") error ++;
-		if(hauteur == "") error ++;
+		if(hauteurTerrasse == "") error ++;
 		if(type == "") error ++;
 		if(size == "") error ++;
 		
 		if(error != 0) alert("Merci de renseigner tous les champs.")
 		else {
-			nbPlot = Math.ceil(superficie / 6) ;
+			nbPlot = Math.ceil(superficie * 6) ;
 			changePage();
 		}
 	}

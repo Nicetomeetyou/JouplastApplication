@@ -90,7 +90,23 @@ a:hover{color:#000000;}
 .choix-taille{margin:-5px 30px;}
 .dd-selected{padding:20px!important;}
 .dd-option{padding:20px!important;}
-.nbPlotResultat{}
+.size-plot{width:320px;height:320px;}
+.plot-8-15-1{background:url(../img/plot/vue1-plot-8-15mm.jpg) no-repeat 0 0;}
+.plot-8-15-2{background:url(../img/plot/vue2-plot-8-15mm.jpg) no-repeat 0 0;}
+.plot-10-1{background:url(../img/plot/vue1-plot-10mm.jpg) no-repeat 0 0;}
+.plot-10-2{background:url(../img/plot/vue2-plot-10mm.jpg) no-repeat 0 0;}
+.plot-20-30-1{background:url(../img/plot/vue1-plot-20-30mm.jpg) no-repeat 0 0;}
+.plot-20-30-2{background:url(../img/plot/vue2-plot-20-30mm.jpg) no-repeat 0 0;}
+.plot-35-1{background:url(../img/plot/vue1-plot-35mm.jpg) no-repeat 0 0;}
+.plot-35-2{background:url(../img/plot/vue2-plot-35mm.jpg) no-repeat 0 0;}
+.plot-40-65-1{background:url(../img/plot/vue1-plot-40-65mm.jpg) no-repeat 0 0;}
+.plot-40-65-2{background:url(../img/plot/vue2-plot-40-65mm.jpg) no-repeat 0 0;}
+.plot-50-80-1{background:url(../img/plot/vue1-plot-50-80mm.jpg) no-repeat 0 0;}
+.plot-50-80-2{background:url(../img/plot/vue2-plot-50-80mm.jpg) no-repeat 0 0;}
+.plot-80-140-1{background:url(../img/plot/vue1-plot-80-140mm.jpg) no-repeat 0 0;}
+.plot-80-140-2{background:url(../img/plot/vue2-plot-80-140mm.jpg) no-repeat 0 0;}
+.plot-140-230-1{background:url(../img/plot/vue1-plot-80-140mm.jpg) no-repeat 0 0;}
+.plot-140-230-2{background:url(../img/plot/vue2-plot-80-140mm.jpg) no-repeat 0 0;}
 .picto-tuto-0{background:url(../img/picto-tuto-0.jpg) no-repeat 0 0;width:221px;height:152px;margin:23px;position:absolute;}
 .picto-tuto-1{background:url(../img/picto-tuto-1.jpg) no-repeat 0 0;width:161px;height:119px;margin:33px;position:absolute;}
 .picto-tuto-2{background:url(../img/picto-tuto-2.jpg) no-repeat 0 0;width:180px;height:163px;margin:14px 0 0 38px;position:absolute;}
