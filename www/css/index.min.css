@@ -11,6 +11,7 @@ a:hover{color:#000000;}
 .space25{height:25px;}
 .space15{height:15px;}
 .space30{height:30px;}
+.space20{height:20px;}
 .ma{margin:auto;}
 .cb{clear:both;}
 .tac{text-align:center;}
@@ -81,45 +82,76 @@ a:hover{color:#000000;}
 .bt-beton-off{background:url(../img/bt-beton-off.png) no-repeat 0 0;width:260px;height:91px;}
 .bt-ceramique-on{background:url(../img/bt-ceramique-on.png) no-repeat 0 0;width:260px;height:91px;}
 .bt-ceramique-off{background:url(../img/bt-ceramique-off.png) no-repeat 0 0;width:260px;height:91px;}
-.dalle-taille{background:url(../img/dalle-taille.png) no-repeat 0 0;width:228px;height:171px;margin:auto;}
+.dalle-taille{background:url(../img/dalle-taille.png) no-repeat 0 0;width:228px;height:171px;margin:auto;padding-top:25px;}
 .cont-dalle-taille{width:33%;}
 .container-bt-calculette{display:table;margin:auto;}
 .back-calculette{background:url(../img/dalle.jpg) repeat 0 0;height:100%;width:100%;display:block;}
 .radio-on{background:url(../img/radio-on.png) no-repeat 0 0;width:36px;height:37px;margin:auto;padding-top:-50px;position:relative;top:-40px;}
 .radio-off{background:url(../img/radio-off.png) no-repeat 0 0;width:36px;height:37px;margin:auto;position:relative;top:-40px;}
-.taille-dalle-text{margin:28px 0 0 70px;position:absolute;}
 .css3buttonblue-lagoon{color:#ffffff;padding:28px 10px;background:-moz-linear-gradient( top,#18B1CC 0%,#18B1CC 50%,#1497AE 50%,#1497AE);background:-webkit-gradient( linear,left top,left bottom,from(#18B1CC),color-stop(0.48,#18B1CC),color-stop(0.52,#1497AE),to(#1497AE));-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;border:0px solid #000000;-moz-box-shadow:0px 2px 3px rgba(000,000,000,1),inset 0px 0px 1px rgba(255,255,255,0.6);-webkit-box-shadow:0px 2px 3px rgba(000,000,000,1),inset 0px 0px 1px rgba(255,255,255,0.6);box-shadow:0px 2px 3px rgba(000,000,000,1),inset 0px 0px 1px rgba(255,255,255,0.6);text-shadow:0px -1px 0px rgba(000,000,000,1),0px 1px 0px rgba(255,255,255,0.2);}
+.css3buttongreen{color:#ffffff;padding:28px 10px;background:-moz-linear-gradient( top,#39AB7A 0%,#39AB7A 50%,#2F8F65 50%,#2F8F65);background:-webkit-gradient( linear,left top,left bottom,from(#39AB7A),color-stop(0.48,#39AB7A),color-stop(0.52,#2F8F65),to(#2F8F65));-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;border:0px solid #000000;-moz-box-shadow:0px 2px 3px rgba(000,000,000,1),inset 0px 0px 1px rgba(255,255,255,0.6);-webkit-box-shadow:0px 2px 3px rgba(000,000,000,1),inset 0px 0px 1px rgba(255,255,255,0.6);box-shadow:0px 2px 3px rgba(000,000,000,1),inset 0px 0px 1px rgba(255,255,255,0.6);text-shadow:0px -1px 0px rgba(000,000,000,1),0px 1px 0px rgba(255,255,255,0.2);}
 .choix-taille{margin:-5px 30px;}
 .dd-selected{padding:20px!important;}
 .dd-option{padding:20px!important;}
 div.apprise .apprise-buttons{background:none!important;border-top:none!important;box-shadow:0 1px 0 #FFFFFF inset;margin:auto;padding:10px 20px;text-align:right;}
 div.apprise .apprise-buttons button{color:#ffffff!important;padding:28px 10px!important;background:-moz-linear-gradient( top,#18B1CC 0%,#18B1CC 50%,#1497AE 50%,#1497AE)!important;background:-webkit-gradient( linear,left top,left bottom,from(#18B1CC),color-stop(0.48,#18B1CC),color-stop(0.52,#1497AE),to(#1497AE))!important;-moz-border-radius:10px!important;-webkit-border-radius:10px!important;border-radius:10px!important;border:0px solid #000000!important;-moz-box-shadow:0px 2px 3px rgba(000,000,000,1),inset 0px 0px 1px rgba(255,255,255,0.6)!important;-webkit-box-shadow:0px 2px 3px rgba(000,000,000,1),inset 0px 0px 1px rgba(255,255,255,0.6)!important;box-shadow:0px 2px 3px rgba(000,000,000,1),inset 0px 0px 1px rgba(255,255,255,0.6)!important;text-shadow:0px -1px 0px rgba(000,000,000,1),0px 1px 0px rgba(255,255,255,0.2)!important;font-size:32px!important;width:150px!important;font-family:din-medium!important;}
+.grey-line-right{border-right:2px solid #CCCCCC;}
+.text-ecarteur{margin:53px 0 0 35px;}
+.text-ecarteur-ceramique{margin:0px 0 0 0px;}
+.titre-recommandations-lambourdes{margin-left:30px;padding-top:10px;}
+.exemple-lambourde{background:url(../img/exemple-lambourde.jpg) no-repeat 0 0;width:559px;height:306px;}
+.rehausseur{background:url(../img/rehausseur.jpg) no-repeat 0 0;width:109px;height:111px;}
+.cales{background:url(../img/cales.jpg) no-repeat 0 0;width:111px;height:101px;}
+.text-lambourdes-accessoires{position:relative;top:-10px;}
+.text-lambourdes-accessoires-cales{position:relative;top:5px;}
 .size-plot{width:320px;height:320px;}
-.plot-8-15-1{background:url(../img/plot/vue1-plot-8-15mm.jpg) no-repeat 0 0;}
-.plot-8-15-2{background:url(../img/plot/vue2-plot-8-15mm.jpg) no-repeat 0 0;}
-.plot-10-1{background:url(../img/plot/vue1-plot-10mm.jpg) no-repeat 0 0;}
-.plot-10-2{background:url(../img/plot/vue2-plot-10mm.jpg) no-repeat 0 0;}
-.plot-20-30-1{background:url(../img/plot/vue1-plot-20-30mm.jpg) no-repeat 0 0;}
-.plot-20-30-2{background:url(../img/plot/vue2-plot-20-30mm.jpg) no-repeat 0 0;}
-.plot-35-1{background:url(../img/plot/vue1-plot-35mm.jpg) no-repeat 0 0;}
-.plot-35-2{background:url(../img/plot/vue2-plot-35mm.jpg) no-repeat 0 0;}
-.plot-40-65-1{background:url(../img/plot/vue1-plot-40-65mm.jpg) no-repeat 0 0;}
-.plot-40-65-2{background:url(../img/plot/vue2-plot-40-65mm.jpg) no-repeat 0 0;}
-.plot-50-80-1{background:url(../img/plot/vue1-plot-50-80mm.jpg) no-repeat 0 0;}
-.plot-50-80-2{background:url(../img/plot/vue2-plot-50-80mm.jpg) no-repeat 0 0;}
-.plot-80-140-1{background:url(../img/plot/vue1-plot-80-140mm.jpg) no-repeat 0 0;}
-.plot-80-140-2{background:url(../img/plot/vue2-plot-80-140mm.jpg) no-repeat 0 0;}
-.plot-140-230-1{background:url(../img/plot/vue1-plot-80-140mm.jpg) no-repeat 0 0;}
-.plot-140-230-2{background:url(../img/plot/vue2-plot-80-140mm.jpg) no-repeat 0 0;}
+.plot-8-15-1-HD{background:url(../img/plot/vue1-plot-8-15mm-HD.jpg) no-repeat 0 0;}
+.plot-8-15-2-HD{background:url(../img/plot/vue2-plot-8-15mm-HD.jpg) no-repeat 0 0;}
+.plot-10-1-HD{background:url(../img/plot/vue1-plot-10mm-HD.jpg) no-repeat 0 0;}
+.plot-10-2-HD{background:url(../img/plot/vue2-plot-10mm-HD.jpg) no-repeat 0 0;}
+.plot-20-30-1-HD{background:url(../img/plot/vue1-plot-20-30mm-HD.jpg) no-repeat 0 0;}
+.plot-20-30-2-HD{background:url(../img/plot/vue2-plot-20-30mm-HD.jpg) no-repeat 0 0;}
+.plot-35-1-HD{background:url(../img/plot/vue1-plot-35mm-HD.jpg) no-repeat 0 0;}
+.plot-35-2-HD{background:url(../img/plot/vue2-plot-35mm-HD.jpg) no-repeat 0 0;}
+.plot-40-65-1-HD{background:url(../img/plot/vue1-plot-40-65mm-HD.jpg) no-repeat 0 0;}
+.plot-40-65-2-HD{background:url(../img/plot/vue2-plot-40-65mm-HD.jpg) no-repeat 0 0;}
+.plot-50-80-1-HD{background:url(../img/plot/vue1-plot-50-80mm-HD.jpg) no-repeat 0 0;}
+.plot-50-80-2-HD{background:url(../img/plot/vue2-plot-50-80mm-HD.jpg) no-repeat 0 0;}
+.plot-80-140-1-HD{background:url(../img/plot/vue1-plot-80-140mm-HD.jpg) no-repeat 0 0;}
+.plot-80-140-2-HD{background:url(../img/plot/vue2-plot-80-140mm-HD.jpg) no-repeat 0 0;}
+.plot-140-230-1-HD{background:url(../img/plot/vue1-plot-80-140mm-HD.jpg) no-repeat 0 0;}
+.plot-140-230-2-HD{background:url(../img/plot/vue2-plot-80-140mm-HD.jpg) no-repeat 0 0;}
+.plot-40-65-1-HI{background:url(../img/plot/vue1-plot-40-65mm-HI.jpg) no-repeat 0 0;}
+.plot-40-65-2-HI{background:url(../img/plot/vue2-plot-40-65mm-HI.jpg) no-repeat 0 0;}
+.plot-50-80-1-HI{background:url(../img/plot/vue1-plot-50-80mm-HI.jpg) no-repeat 0 0;}
+.plot-50-80-2-HI{background:url(../img/plot/vue2-plot-50-80mm-HI.jpg) no-repeat 0 0;}
+.plot-80-140-1-HI{background:url(../img/plot/vue1-plot-80-140mm-HI.jpg) no-repeat 0 0;}
+.plot-80-140-2-HI{background:url(../img/plot/vue2-plot-80-140mm-HI.jpg) no-repeat 0 0;}
+.plot-140-230-1-HI{background:url(../img/plot/vue1-plot-80-140mm-HI.jpg) no-repeat 0 0;}
+.plot-140-230-2-HI{background:url(../img/plot/vue2-plot-80-140mm-HI.jpg) no-repeat 0 0;}
+.plot-10-1-HL{background:url(../img/plot/vue1-plot-10mm-HL.jpg) no-repeat 0 0;}
+.plot-10-2-HL{background:url(../img/plot/vue2-plot-10mm-HL.jpg) no-repeat 0 0;}
+.plot-20-30-evo-1-HL{background:url(../img/plot/vue1-plot-20-30mm-evo-HL.jpg) no-repeat 0 0;}
+.plot-20-30-evo-2-HL{background:url(../img/plot/vue2-plot-20-30mm-evo-HL.jpg) no-repeat 0 0;}
+.plot-20-30-1-HL{background:url(../img/plot/vue1-plot-20-30mm-HL.jpg) no-repeat 0 0;}
+.plot-20-30-2-HL{background:url(../img/plot/vue2-plot-20-30mm-HL.jpg) no-repeat 0 0;}
+.plot-40-65-1-HL{background:url(../img/plot/vue1-plot-40-65mm-HL.jpg) no-repeat 0 0;}
+.plot-40-65-2-HL{background:url(../img/plot/vue2-plot-40-65mm-HL.jpg) no-repeat 0 0;}
+.plot-50-80-1-HL{background:url(../img/plot/vue1-plot-50-80mm-HL.jpg) no-repeat 0 0;}
+.plot-50-80-2-HL{background:url(../img/plot/vue2-plot-50-80mm-HL.jpg) no-repeat 0 0;}
+.plot-80-140-1-HL{background:url(../img/plot/vue1-plot-80-140mm-HL.jpg) no-repeat 0 0;}
+.plot-80-140-2-HL{background:url(../img/plot/vue2-plot-80-140mm-HL.jpg) no-repeat 0 0;}
+.plot-140-230-1-HL{background:url(../img/plot/vue1-plot-140-230mm-HL.jpg) no-repeat 0 0;}
+.plot-140-230-2-HL{background:url(../img/plot/vue2-plot-140-230mm-HL.jpg) no-repeat 0 0;}
 .container-accessoire-resultat-text{padding:13px 0 22px 27px;}
 .ecarteur{background:url(../img/ecarteur.jpg) no-repeat 0 0;width:109px;height:103px;margin:33px 0 22px 40px;}
+.ecarteur-ceramique{background:url(../img/ecarteur.jpg) no-repeat 0 0;width:109px;height:103px;padding-bottom:10px;}
+.plaque-a-dalle{background:url(../img/plaque-a-dalle.jpg) no-repeat 0 0;width:151px;height:112px;}
 .picto-tuto-0{background:url(../img/picto-tuto-0.jpg) no-repeat 0 0;width:221px;height:152px;margin:23px;position:absolute;}
 .picto-tuto-1{background:url(../img/picto-tuto-1.jpg) no-repeat 0 0;width:161px;height:119px;margin:33px;position:absolute;}
 .picto-tuto-2{background:url(../img/picto-tuto-2.jpg) no-repeat 0 0;width:180px;height:163px;margin:14px 0 0 38px;position:absolute;}
 .picto-tuto-3{background:url(../img/picto-tuto-3.jpg) no-repeat 0 0;width:125px;height:96px;margin:40px 0 0 48px;position:absolute;}
 .text-tuto-choix{margin:65px 0 0 280px;position:absolute;}
-.grey-line-right{border-right:2px solid #CCCCCC;}
-.text-ecarteur{margin:53px 0 0 35px;}
 .size-text-button{font-size:32px;text-transform:none;}
 .picto-phone{background:url(../img/picto-phone.png) no-repeat 0 0;height:117px;width:116px;}
 .picto-mail{background:url(../img/picto-email.png) no-repeat 0 0;height:113px;width:129px;}
