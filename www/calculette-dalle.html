@@ -154,7 +154,7 @@
 		if(type == "") error ++;
 		if(size == "") error ++;
 		
-		if(error != 0) alert("Merci de renseigner tous les champs.")
+		if(error != 0)   Apprise('Merci de remplir tous les champs.');
 		else {
 			nbPlot = Math.ceil(superficie * 6) ;
 			changePage();
@@ -164,5 +164,19 @@
 	function changePage() {
 		$("#content").load("resultat.html")
 	}
+	
+	var settings = {
+		animation: 0,	// Animation speed
+		buttons: {
+			confirm: {
+				action: function() { $me.dissapear(); }, // Callback function
+				className: null, // Custom class name(s)
+				id: 'confirm', // Element ID
+				text: 'Ok', // Button text
+			}
+		},
+		input: false, // input dialog
+		override: true, // Override browser navigation while Apprise is visible
+	};
 </script>
 	

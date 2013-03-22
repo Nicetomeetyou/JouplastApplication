@@ -60,7 +60,7 @@ a:hover{color:#000000;}
 .short-menu-icon{background:url(../img/short-menu-icon.png) no-repeat 0 0;width:46px;height:38px;margin:6px 20px}
 #black-screen{width:100%;height:150px;background:url("../img/black-pixel.png") repeat left top transparent;position:absolute;z-index:10;top:0;left:0;}
 .back-white{width:100%;height:180px;display:block;background-color:#FFFFFF;}
-.grey-line{border-top:1px solid #CCCCCC;width:100%;z-index:2;position:relative;}
+.grey-line{border-top:1px solid #CCCCCC;width:100%;position:relative;}
 .calcul-dalle{background:url(../img/calcul-dalle.jpg) no-repeat 0 0;height:191px;width:228px;margin:23px;position:absolute;z-index:1;}
 .calcul-lambourde{background:url(../img/calcul-lambourde.jpg) no-repeat 0 0;height:129px;width:168px;margin:45px 40px;position:absolute;}
 .text-calculatrice-choix{margin:44px 0 0 280px;position:absolute;}
@@ -90,6 +90,7 @@ a:hover{color:#000000;}
 .choix-taille{margin:-5px 30px;}
 .dd-selected{padding:20px!important;}
 .dd-option{padding:20px!important;}
+div.apprise .apprise-buttons{background:none!important;border-top:none!important;box-shadow:0 1px 0 #FFFFFF inset;margin:auto;padding:10px 20px;text-align:right;}
 .size-plot{width:320px;height:320px;}
 .plot-8-15-1{background:url(../img/plot/vue1-plot-8-15mm.jpg) no-repeat 0 0;}
 .plot-8-15-2{background:url(../img/plot/vue2-plot-8-15mm.jpg) no-repeat 0 0;}
