@@ -1,0 +1,69 @@
+<div class="back">
+	<div style="position:relative;">
+		<img style="width:100%;" src="img/img-catalogue.jpg" />
+		<!--<div style="position:absolute; margin:auto;">
+			<div class="title-catalogue tac title-din-big font-din calculette titre-calculette">CATALOGUE</div>
+		</div>-->
+	</div>
+	
+	<ul id="navigation-catalogue">
+		<li class="toggleSubMenu" style="position: static;">
+			<a title="" href="" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast</a>
+			<ul class="subMenu" style="display: none;">
+				<li>
+					<div class="ombre-menu-haut"></div>
+					<a href="" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles</a>
+				</li>
+				<li>
+					<a href="" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots lambourdes</a>
+					<div class="ombre-menu-bas"></div>
+				</li>
+			</ul>
+		</li>
+		<div class="grey-line"></div>
+		<li class="toggleSubMenu" style="position: static;">
+			<a title="" href="" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast évolution</a>
+			<ul class="subMenu" style="display: none;">
+				<li>
+					<div class="ombre-menu-haut"></div>
+					<a href="" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles</a>
+				</li>
+				<li>
+					<a href="" class="font-din size28 grey sub-title-cat-catalogue">Plots lambourdes</a>
+				</li>
+				<li>
+					<a href="" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots intégrals</a>
+					<div class="ombre-menu-bas"></div>
+				</li>
+			</ul>
+		</li>
+		<div class="grey-line"></div>
+		<li class="toggleSubMenu" style="position: static;">
+			<a title="" href="" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Accessoires</a>
+		</li>
+	</ul>
+</div>
+<script>
+	oldPage = "menu.html";
+	$("#back").css("display", "block");
+	
+	$(document).ready( function () {
+		$("ul.subMenu:not('.open_at_load')").hide();
+		$("li.toggleSubMenu span").each( function () {
+			var TexteSpan = $(this).text();
+			$(this).replaceWith('<a href="" title="Afficher le sous-menu">' + TexteSpan + '</a>') ;
+		});
+		
+		$("li.toggleSubMenu > a").click( function () {
+			if ($(this).next("ul.subMenu:visible").length != 0) {
+			$(this).next("ul.subMenu").slideUp("normal", function () { $(this).parent().removeClass("open") } );
+			}
+			else {
+				$("ul.subMenu").slideUp("normal", function () { $(this).parent().removeClass("open") } );
+				$(this).next("ul.subMenu").slideDown("normal", function () { $(this).parent().addClass("open") } );
+			}
+			return false;
+		});
+	}); 
+</script>
+	
