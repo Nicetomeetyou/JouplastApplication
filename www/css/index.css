@@ -158,7 +158,7 @@ a:hover{ color:#000000; }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 .back-white { width:100%; height:180px; display:block; background-color:#FFFFFF; }
 .grey-line { border-top: 2px solid #CCCCCC; width:100%; position:relative; }
-.calcul-dalle { background:url(../img/calcul-dalle.jpg) no-repeat 0 0; height:191px; width:228px; margin: 23px; position: absolute;  z-index:1; }
+.calcul-dalle { background:url(../img/calcul-dalle.jpg) no-repeat 0 0; height:191px; width:228px; margin: 23px; position: absolute;  z-index:0; }
 .calcul-lambourde { background:url(../img/calcul-lambourde.jpg) no-repeat 0 0; height:129px; width:168px; margin: 45px 40px; position: absolute; }
 
 .text-calculatrice-choix { margin: 44px 0 0 280px; position: absolute; }
@@ -257,17 +257,23 @@ a:hover{ color:#000000; }
 		0px 1px 0px rgba(255,255,255,0.2);
 }
 
-.choix-taille{ margin:-5px 30px; }
+.choix-taille{ margin:-5px 20px; }
 .dd-selected { padding:20px !important; }
 .dd-option { padding:20px !important; }
+
+div.apprise { text-align:center; font-family: din-medium-bold !important; font-size:30px !important; }
 
 div.apprise .apprise-buttons {
     background: none !important;
     border-top: none !important;
     box-shadow: 0 1px 0 #FFFFFF inset;
     margin: auto;
-    padding: 10px 20px;
-    text-align: right;
+    padding: 10px 20px 20px 20px !important;
+    text-align: center !important;
+}
+
+div.apprise .apprise-inner {
+    padding: 20px 0 10px 0 !important;
 }
 
 div.apprise .apprise-buttons button {
