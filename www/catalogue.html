@@ -6,67 +6,78 @@
 		</div>-->
 	</div>
 	
-	<ul id="navigation-catalogue">
-		<li class="toggleSubMenu" style="position: static;">
-			<a title="" href="" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast</a>
-			<ul class="subMenu" style="display: none;">
-				<li>
-					<div class="ombre-menu-haut"></div>
-					<div class="inside-li">
-						<div class="space30"></div>
-						<div class="picto-cata-dalle fleft"></div>
-						<a href="" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles</a>
-						<div class=""></div>
+	<div class="accordion">
+		<span id="tab1"></span>
+        <span id="tab2"></span>
+        <span id="tab3"></span>
+        
+		<div class="tabs">
+			<dl class="tab1">
+				<dd>
+					<a href="#tab1" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast</a>
+					<div>
+						<p>
+							<section>
+								<section class="ombre-menu-haut"></section>
+								<section class="inside-li">
+									<section class="picto-cata-dalle fleft"></section>
+									<a href="" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles</a>
+								</section>
+							</section>
+							<section>
+								<section class="inside-li">
+									<section class="picto-cata-lambourde fleft"></section>
+									<a href="" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots lambourdes</a>
+								</section>
+								<section class="ombre-menu-bas"></section>
+							</section>
+						</p>
 					</div>
-				</li>
-				<li>
-					<div class="inside-li">
-						<div class="picto-cata-lambourde fleft"></div>
-						<a href="" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots lambourdes</a>
+				</dd>
+			</dl>
+			<dl class="tab2">
+				<dd>
+					<a href="#tab2" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast évolution</a>
+					<div>
+						<p>
+							<section>
+								<section class="ombre-menu-haut"></section>
+								<section class="inside-li">
+									<section class="picto-cata-dalle fleft"></section>
+									<a href="" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles</a>
+									<section class=""></section>
+								</section>
+							</section>
+							<section>
+								<section class="inside-li">
+									<section class="picto-cata-lambourde fleft"></section>
+									<a href="" class="font-din size28 grey sub-title-cat-catalogue">Plots lambourdes</a>
+								</section>
+							</section>
+							<section>
+								<section class="inside-li">
+									<section class="picto-cata-integral fleft"></section>
+									<a href="" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots intégrals</a>
+								</section>
+								<section class="ombre-menu-bas"></section>
+							</section>
+						</p>
 					</div>
-					<div class="ombre-menu-bas"></div>
-				</li>
-			</ul>
-		</li>
-		<div class="grey-line"></div>
-		<li class="toggleSubMenu" style="position: static;">
-			<a title="" href="" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast évolution</a>
-			<ul class="subMenu" style="display: none;">
-				<li>
-					<div class="ombre-menu-haut"></div>
-					<div class="inside-li">
-						<div class="space30"></div>
-						<div class="picto-cata-dalle fleft"></div>
-						<a href="" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles</a>
-						<div class=""></div>
-					</div>
-				</li>
-				<li>
-					<div class="inside-li">
-						<div class="picto-cata-lambourde fleft"></div>
-						<a href="" class="font-din size28 grey sub-title-cat-catalogue">Plots lambourdes</a>
-					</div>
-				</li>
-				<li>
-					<div class="inside-li">
-						<div class="picto-cata-integral fleft"></div>
-						<a href="" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots intégrals</a>
-					</div>
-					<div class="ombre-menu-bas"></div>
-				</li>
-			</ul>
-		</li>
-		<div class="grey-line"></div>
-		<li class="toggleSubMenu" style="position: static;">
-			<a title="" href="" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Accessoires</a>
-		</li>
-	</ul>
+				</dd>
+			</dl>
+			<dl class="tab3">
+				<dd>
+					<a title="" href="" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Accessoires</a>
+				</dd>
+			</dl>
+		</div>
+	</div>
 </div>
 <script>
 	oldPage = "menu.html";
 	$("#back").css("display", "block");
 	
-	$(document).ready( function () {
+	/*$(document).ready( function () {
 		$("ul.subMenu:not('.open_at_load')").hide();
 		$("li.toggleSubMenu span").each( function () {
 			var TexteSpan = $(this).text();
@@ -82,7 +93,7 @@
 				$(this).next("ul.subMenu").slideDown("normal", function () { $(this).parent().addClass("open") } );
 			}
 			return false;
-		});
+		});*/
 	}); 
 </script>
 	

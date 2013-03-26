@@ -114,6 +114,8 @@ a:hover{ color:#000000; }
 .grey { color:#7F7F7F; }
 .light-grey { color:#EFEFEF; }
 .blue { color:#13A7AA !important; }
+.blue-catalogue { color:#0770B2 !important; }
+.size40 { font-size:40px; }
 .size34 { font-size:34px; }
 .size28 { font-size:28px !important; }
 .size26 { font-size:26px !important; }
@@ -421,6 +423,19 @@ div.apprise .apprise-buttons button {
 .plot-140-230-1-HL { background:url(../img/plot/vue1-plot-140-230mm-HL.jpg) no-repeat 0 0; }
 .plot-140-230-2-HL { background:url(../img/plot/vue2-plot-140-230mm-HL.jpg) no-repeat 0 0; }
 
+.size-img { width:210px; height:210px; }
+.img-dalles-0 { background:url(../img/plot/dalle-0.jpg) no-repeat 0 0; }
+.img-dalles-1 { background:url(../img/plot/dalle-1.jpg) no-repeat 0 0; }
+.img-dalles-2 { background:url(../img/plot/dalle-2.jpg) no-repeat 0 0; }
+
+.img-lambourdes-0 { background:url(../img/plot/lambourdes-0.jpg) no-repeat 0 0; }
+.img-lambourdes-1 { background:url(../img/plot/lambourdes-1.jpg) no-repeat 0 0; }
+.img-lambourdes-2 { background:url(../img/plot/lambourdes-2.jpg) no-repeat 0 0; }
+
+.img-integrals-0 { background:url(../img/plot/integrals-0.jpg) no-repeat 0 0; }
+.img-integrals-1 { background:url(../img/plot/integrals-1.jpg) no-repeat 0 0; }
+.img-integrals-2 { background:url(../img/plot/integrals-2.jpg) no-repeat 0 0; }
+
 .container-accessoire-resultat-text { padding: 13px 0 22px 27px; }
 .ecarteur { background:url(../img/ecarteur.jpg) no-repeat 0 0; width:109px; height:103px; margin: 33px 0 22px 40px; }
 .ecarteur-ceramique { background:url(../img/ecarteur.jpg) no-repeat 0 0; width:109px; height:103px; padding-bottom:10px; }
@@ -441,11 +456,11 @@ div.apprise .apprise-buttons button {
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 .title-catalogue { position: relative; margin:auto; }
 .title-cat-catalogue { display: block; padding: 50px 50px; }
-.sub-title-cat-catalogue-haut { display: block; padding: 17px 0 47px 50px; }
-.sub-title-cat-catalogue { display: block; padding: 17px 0 47px 50px; }
-.sub-title-cat-catalogue-bas { display: block; padding: 17px 0 0px 50px; }
-ul li { background: #FFFFFF; } 
-ul li ul li{ background: #FFFFFF; } 
+.sub-title-cat-catalogue-haut { display: block; padding: 17px 0 47px 100px; }
+.sub-title-cat-catalogue { display: block; padding: 17px 0 47px 100px; }
+.sub-title-cat-catalogue-bas { display: block; padding: 17px 0 0px 100px; }
+ul li { background: #FFFFFF; border-bottom: 2px solid #CCCCCC; width:100%; } 
+ul li ul li{ background: #FFFFFF; border:none; } 
 
 .inside-li { padding-left:50px; }
 
@@ -453,10 +468,54 @@ ul li ul li{ background: #FFFFFF; }
 .picto-cata-lambourde { background:url(../img/picto-cata-lambourde.png) repeat-x 0 0; width:65px; height:65px; display:block; }
 .picto-cata-integral { background:url(../img/picto-cata-integral.png) repeat-x 0 0; width:65px; height:65px; display:block; }
 
-.ombre-menu-haut { background:url(../img/ombre-menu-haut.png) repeat-x 0 0; width:100%; height:43px; position:absolute; }
+.ombre-menu-haut { background:url(../img/ombre-menu-haut.png) repeat-x 0 0; width:100%; height:43px; }
 .ombre-menu-bas { background:url(../img/ombre-menu-bas.png) repeat-x 0 0; width:100%; height:43px; }
+.ombre-list-plot-bas { background:url(../img/ombre-list-plot-bas.png) repeat-x 0 0; width:100%; height:43px; }
+
+.back-white-catalogue { width:100%; height:100px; display:block; background-color:#FFFFFF; }
+.text-choix-catalogue { margin: 30px 0 0 80px; position: absolute; }
+.fleche-droite-catalogue { background:url(../img/fleche-droite.png) no-repeat 0 0; width:22px; height:40px; margin:30px 10px 0 0 }
+
+/* CSS ACCORDION */
+.accordion {
+    color: #000000;
+    position: relative;
+    width: 100%;
+}
+.accordion span {
+    display: none
+}
+.tabs {
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+
+.tabs dl dd div {
+    height: 0;
+    overflow: hidden;
+	
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#tab1:target ~ .tabs .tab1 dd div {
+    height: 230px;
+}
+#tab2:target ~ .tabs .tab2 dd div {
+    height: 345px;
+}
+
+/*****************/
+
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
+/* CATALOGUE */
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.fiche-photo { width:33.3%; }
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 /* CONTACT */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
