@@ -193,8 +193,8 @@ ul li ul li{background:#FFFFFF;border:none;}
 .fleche-droite-catalogue{background:url(../img/fleche-droite.png) no-repeat 0 0;width:22px;height:40px;margin:30px 10px 0 0}
 .accordion{color:#000000;position:relative;width:100%;}
 .accordion span{display:none}
-.tabs{background-color:#FFFFFF;overflow:hidden;}
-.tabs dl dd div{height:0;overflow:hidden;-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;-ms-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;}
+.tabs{background-color:#FFFFFF;overflow:hidden;translateZ(0);}
+.tabs dl dd div{height:0;overflow:hidden;-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;-ms-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;translateZ(0);}
 .fiche-photo{width:33.3%;}
 .size-text-button{font-size:32px;text-transform:none;}
 .picto-phone{background:url(../img/picto-phone.png) no-repeat 0 0;height:117px;width:116px;}
