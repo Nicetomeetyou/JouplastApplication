@@ -488,8 +488,6 @@ ul li ul li{ background: #FFFFFF; border:none; }
 .tabs {
     background-color: #FFFFFF;
     overflow: hidden;
-	
-	translateZ(0);
 }
 
 .tabs dl dd div {
@@ -502,7 +500,11 @@ ul li ul li{ background: #FFFFFF; border:none; }
     -ms-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 	
-	translateZ(0);
+	 -webkit-transition: translatez(0);
+    -moz-transition: translatez(0);
+    -o-transition: translatez(0);
+    -ms-transition: translatez(0);
+    transition: translatez(0);
 }
 
 
