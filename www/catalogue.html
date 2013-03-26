@@ -14,7 +14,7 @@
 		<div class="tabs">
 			<dl class="tab1">
 				<dd>
-					<a href="#tab1" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast</a>
+					<a id="bttab1" href="#tab1" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast</a>
 					<div>
 						<p>
 							<section>
@@ -37,7 +37,7 @@
 			</dl>
 			<dl class="tab2">
 				<dd>
-					<a href="#tab2" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast évolution</a>
+					<a id="bttab2" href="#tab2" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast évolution</a>
 					<div>
 						<p>
 							<section>
@@ -77,11 +77,28 @@
 	oldPage = "menu.html";
 	$("#back").css("display", "block");
 	
+	var bt1 = document.getElementById("bttab1"); 
+	bt1.addEventListener("touchstart", function(e) { 
+		if($("#tab1 ~ .tabs .tab1 dd div").height() == 0) { $("#tab1 ~ .tabs .tab1 dd div").css("height", "230px"); }
+		else { $("#tab1 ~ .tabs .tab1 dd div").css("height", "0px"); }
+		$("#tab2 ~ .tabs .tab2 dd div").css("height", "0px"); 
+	}, false);
+	
+	var bt2 = document.getElementById("bttab2"); 
+	bt2.addEventListener("touchstart", function(e) { 
+		if($("#tab2 ~ .tabs .tab2 dd div").height() == 0) { $("#tab2 ~ .tabs .tab2 dd div").css("height", "345px"); }
+		else { $("#tab2 ~ .tabs .tab2 dd div").css("height", "0px"); }
+		$("#tab1 ~ .tabs .tab1 dd div").css("height", "0px"); 
+	}, false);
+	
+	
+	
+	
 	/*$(document).ready( function () {
 		$("ul.subMenu:not('.open_at_load')").hide();
 		$("li.toggleSubMenu span").each( function () {
 			var TexteSpan = $(this).text();
-			$(this).replaceWith('<a href="" title="Afficher le sous-menu">' + TexteSpan + '</a>') ;
+			replaceWith('<a href="" title="Afficher le sous-menu">' + TexteSpan + '</a>') ;
 		});
 		
 		$("li.toggleSubMenu > a").click( function () {
@@ -93,7 +110,7 @@
 				$(this).next("ul.subMenu").slideDown("normal", function () { $(this).parent().addClass("open") } );
 			}
 			return false;
-		});*/
-	}); 
+		});
+	}); */
 </script>
 	

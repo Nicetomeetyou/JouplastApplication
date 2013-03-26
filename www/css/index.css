@@ -501,12 +501,7 @@ ul li ul li{ background: #FFFFFF; border:none; }
     transition: all 0.3s ease-in-out;
 }
 
-#tab1:target ~ .tabs .tab1 dd div {
-    height: 230px;
-}
-#tab2:target ~ .tabs .tab2 dd div {
-    height: 345px;
-}
+
 
 /*****************/
 

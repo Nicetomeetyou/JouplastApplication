@@ -195,8 +195,6 @@ ul li ul li{background:#FFFFFF;border:none;}
 .accordion span{display:none}
 .tabs{background-color:#FFFFFF;overflow:hidden;}
 .tabs dl dd div{height:0;overflow:hidden;-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;-ms-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;}
-#tab1:target~.tabs .tab1 dd div{height:230px;}
-#tab2:target~.tabs .tab2 dd div{height:345px;}
 .fiche-photo{width:33.3%;}
 .size-text-button{font-size:32px;text-transform:none;}
 .picto-phone{background:url(../img/picto-phone.png) no-repeat 0 0;height:117px;width:116px;}
