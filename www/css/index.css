@@ -134,13 +134,15 @@ a:hover{ color:#000000; }
    box-shadow: inset 0 3px 8px rgba(0,0,0,.24);
 }
 
-#content { position:relative; }
+#content1 { position:absolute; }
+#content2 { position:absolute; }
   
   .global-container {
 	overflow:hidden;
 	width:100%;
 	height:100%;
 	display:block;
+	position:absolute;
   }
 
 /* HEADER */

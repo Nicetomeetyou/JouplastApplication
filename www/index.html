@@ -88,7 +88,8 @@
 		
 		<!-- Start of first page -->
 		<div class="global-container">
-			<div id="content"></div>
+			<div id="content1"></div>
+			<div id="content2"></div>
 		</div>
 		
         <script type="text/javascript" src="phonegap.js"></script>
@@ -98,16 +99,25 @@
 		<script type="text/javascript" src="js/jquery.animate-enhanced.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/apprise-v2.min.css" />
         <script type="text/javascript">
+			var numPage = 1;
 			var oldPage = "";
 			var page = "";
 			var nbPlot = "";
 			var hauteurTerrasse = "";
-			$("#content").load("menu.html");
+			
+			$("#content1").load("menu.html");
+			$("#content"+numPage).css("width", window.innerWidth);
 			/***********************************************************************/
 			function changePage(pPage) {
-				$("#content").load(pPage);
-				$("#content").css("left", window.innerWidth);
-				$("#content").animate({left: "0px", useTranslate3d:true }, 500);
+				$("#content"+numPage).css("z-index", "4");
+				if(numPage == 1) numPage = 2;
+				else numPage = 1;
+				$("#content"+numPage).load(pPage);
+				$("#content"+numPage).css("left", window.innerWidth);
+				$("#content"+numPage).css("height", window.innerHeight);
+				$("#content"+numPage).css("width", window.innerWidth);
+				$("#content"+numPage).css("z-index", "5");
+				$("#content"+numPage).animate({left: "0px", useTranslate3d:true }, 500);
 			}
 			/***********************************************************************/
 			
@@ -115,7 +125,7 @@
 			$("#black-screen").css("height", window.innerHeight);
 			
 			var btBack = document.getElementById("back"); 
-			btBack.addEventListener("click", function(e) { $("#content").load(oldPage); }, false); 
+			btBack.addEventListener("click", function(e) { /*$("#content").load(oldPage);*/changePage(oldPage); }, false); 
 			
 			var btShortMenu = document.getElementById("short-menu"); 
 			btShortMenu.addEventListener("click", function(e) { $("#short-menu-slide").css("display", "block"); }, false);
