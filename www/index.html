@@ -109,16 +109,16 @@
 			$("#content"+numPage).css("width", window.innerWidth);
 			/***********************************************************************/
 			function changePage(pPage) {
-				$("#content"+numPage).animate({left: -window.innerWidth, useTranslate3d:true }, 500);
+				$("#content"+numPage).animate({left: -window.innerWidth, useTranslate3d:true }, 250);
 				$("#content"+numPage).css("z-index", "4");
 				if(numPage == 1) numPage = 2;
 				else numPage = 1;
 				$("#content"+numPage).load(pPage);
 				$("#content"+numPage).css("left", window.innerWidth);
-				$("#content"+numPage).css("height", window.innerHeight);
+				//$("#content"+numPage).css("height", window.innerHeight);
 				$("#content"+numPage).css("width", window.innerWidth);
 				$("#content"+numPage).css("z-index", "5");
-				$("#content"+numPage).animate({left: "0px", useTranslate3d:true }, 500);
+				$("#content"+numPage).animate({left: "0px", useTranslate3d:true }, 250);
 			}
 			/***********************************************************************/
 			
