@@ -102,32 +102,14 @@
 			var page = "";
 			var nbPlot = "";
 			var hauteurTerrasse = "";
-			$("#content").load("fiche.html");
-			
-			$("#content").animate({left: "-=200px", useTranslate3d:true }, 500);
-			
-			//var numContent = 2;
-			
-			//$("#content").load("tutoriel.html");
-			//$("#content2").css("right","-"+window.innerWidth+"px");
-			
-			
-			//btBack.addEventListener("click", function(e) { $("#content2").css("transform","translateX(1000px)"); }, false);
-			
-			/*btBack.addEventListener("click", function(e) { 
-				changePage("menu.html");
-			}, false);*/
-			
-			/*function changePage(pPage) {
-				
-				$(".global-container").append('<div id="content1" class="slide"></div>');
-				$("#content1").css("right","-"+window.innerWidth+"px");
-				$("#content1").css("z-index","20");
-				$("#content1").load(pPage);
-				$(".slide").css("transform","translateX(-"+window.innerWidth+"px)");
-				
-				return false;
-			}*/
+			$("#content").load("menu.html");
+			/***********************************************************************/
+			function changePage(pPage) {
+				$("#content").load(pPage);
+				$("#content").css("left", window.innerWidth);
+				$("#content").animate({left: "0px", useTranslate3d:true }, 500);
+			}
+			/***********************************************************************/
 			
 			$("#back-short-menu").css("height", window.innerHeight - 663);
 			$("#black-screen").css("height", window.innerHeight);

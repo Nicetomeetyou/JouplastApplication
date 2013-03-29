@@ -134,16 +134,10 @@ a:hover{ color:#000000; }
    box-shadow: inset 0 3px 8px rgba(0,0,0,.24);
 }
 
-#content { 
-	width:100%; 
-  -webkit-transition:all 0.5s ease-in-out;
-  -moz-transition:all 0.5s ease-in-out;
-  -o-transition:all 0.5s ease-in-out;
-  transition:all 0.5s ease-in-out;
-  z-index:3;}
+#content { position:relative; }
   
   .global-container {
-	overflow:visible;
+	overflow:hidden;
 	width:100%;
 	height:100%;
 	display:block;
