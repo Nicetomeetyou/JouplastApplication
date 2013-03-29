@@ -109,6 +109,7 @@
 			$("#content"+numPage).css("width", window.innerWidth);
 			/***********************************************************************/
 			function changePage(pPage) {
+				$("#content"+numPage).animate({left: -window.innerWidth, useTranslate3d:true }, 500);
 				$("#content"+numPage).css("z-index", "4");
 				if(numPage == 1) numPage = 2;
 				else numPage = 1;

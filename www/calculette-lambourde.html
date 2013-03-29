@@ -92,12 +92,8 @@
 		if(error != 0)   Apprise('Merci de remplir tous les champs.');
 		else {
 			nbPlot = Math.ceil(superficie * 6) ;
-			changePage();
+			changePage("resultat-lambourde.html");
 		}
-	}
-	
-	function changePage() {
-		$("#content").load("resultat-lambourde.html")
 	}
 	
 	var settings = {

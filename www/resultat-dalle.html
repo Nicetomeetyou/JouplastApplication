@@ -115,10 +115,10 @@
 	oldPage = page;
 	
 	var btContact = document.getElementById("btContact"); 
-	btContact.addEventListener("click", function(e) { $("#content").load("contact.html"); }, false);
+	btContact.addEventListener("click", function(e) { /*$("#content").load("contact.html");*/ changePage("contact.html");}, false);
 	
 	var btCatalogue = document.getElementById("btCatalogue"); 
-	btCatalogue.addEventListener("click", function(e) { $("#content").load("catalogue.html"); }, false);
+	btCatalogue.addEventListener("click", function(e) { /*$("#content").load("catalogue.html");*/ changePage("catalogue.html");}, false);
 	
 	//hauteurTerrasse = 1;
 	//nbPlot = 1500;

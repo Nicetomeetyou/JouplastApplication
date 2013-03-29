@@ -176,12 +176,8 @@
 		if(error != 0)   Apprise('Merci de remplir tous les champs.');
 		else {
 			nbPlot = Math.ceil(superficie * 6) ;
-			changePage();
+			changePage("resultat-dalle.html");
 		}
-	}
-	
-	function changePage() {
-		$("#content").load("resultat-dalle.html")
 	}
 	
 	var settings = {
