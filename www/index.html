@@ -133,7 +133,7 @@
 			//-o-transform: scale(0.75);
 			//-webkit-transform: scale(0.75);
 			
-			$('#back').bind('touchstart mousedown', function(e){ changePage(oldPage); });
+			$("#back").hammer({ /* options */ }).on("tap", function(ev) { changePage(oldPage); });
 			
 			var btShortMenu = document.getElementById("short-menu"); 
 			btShortMenu.addEventListener("click", function(e) { $("#short-menu-slide").css("display", "block"); }, false);
