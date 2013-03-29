@@ -25,11 +25,17 @@
 </div>
 <script>
 	oldPage = "menu.html";
-	var bt0 = document.getElementById("calculatrice-dalle"); 
-	bt0.addEventListener("click", function(e) { /*$("#content").load("calculette-dalle.html");*/ changePage("calculette-dalle.html"); }, false);
-	var bt1 = document.getElementById("calculatrice-lambourde"); 
-	bt1.addEventListener("click", function(e) {/* $("#content").load("calculette-lambourde.html");*/ changePage("calculette-lambourde.html"); }, false); 
-	
 	$("#back").css("display", "block");
+	var clic = false;
+	
+	$('#calculatrice-dalle').bind('touchstart mousedown', function(e){ if(!clic) { clic = true; changePage("calculette-dalle.html"); e.preventDefault(); e.stopPropagation(); }});
+	$('#calculatrice-lambourde').bind('touchstart mousedown', function(e){ if(!clic) { clic = true; changePage("calculette-lambourde.html"); e.preventDefault(); e.stopPropagation(); }});
+	
+	//var bt0 = document.getElementById("calculatrice-dalle"); 
+	//bt0.addEventListener("click", function(e) { /*$("#content").load("calculette-dalle.html");*/ changePage("calculette-dalle.html"); }, false);
+	//var bt1 = document.getElementById("calculatrice-lambourde"); 
+	//bt1.addEventListener("click", function(e) {/* $("#content").load("calculette-lambourde.html");*/ changePage("calculette-lambourde.html"); }, false); 
+	
+	
 </script>
 	

@@ -33,16 +33,17 @@
 	</div>
 </div><!-- /page -->
 <script>
-
+var clic = false;
 /*$("#m0").hammer({}).on("tap", function(ev) { changePage("calculette-choix.html"); });
 $("#m1").hammer({}).on("tap", function(ev) { changePage("tutoriel.html"); });
 $("#m2").hammer({}).on("tap", function(ev) { changePage("catalogue.html"); });
 $("#m3").hammer({}).on("tap", function(ev) { changePage("contact.html"); });*/
 
-$('#m0').bind('touchstart mousedown', function(e){ changePage("calculette-choix.html"); e.preventDefault(); e.stopPropagation();});
-$('#m1').bind('touchstart mousedown', function(e){ changePage("tutoriel.html"); e.preventDefault(); e.stopPropagation();});
-$('#m2').bind('touchstart mousedown', function(e){ changePage("catalogue.html"); e.preventDefault(); e.stopPropagation();});
-$('#m3').bind('touchstart mousedown', function(e){ changePage("contact.html"); e.preventDefault(); e.stopPropagation();});
+
+$('#m0').bind('touchstart mousedown', function(e){ if(!clic) { clic = true; changePage("calculette-choix.html"); e.preventDefault(); e.stopPropagation(); }});
+$('#m1').bind('touchstart mousedown', function(e){ if(!clic) { clic = true; changePage("tutoriel.html"); e.preventDefault(); e.stopPropagation();}});
+$('#m2').bind('touchstart mousedown', function(e){ if(!clic) { clic = true; changePage("catalogue.html"); e.preventDefault(); e.stopPropagation();}});
+$('#m3').bind('touchstart mousedown', function(e){ if(!clic) { clic = true; changePage("contact.html"); e.preventDefault(); e.stopPropagation();}});
 
 $("#back").css("display", "none");
 
