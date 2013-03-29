@@ -116,22 +116,25 @@
 			function changePage(pPage) {
 				$("#content"+numPage).animate({left: -window.innerWidth, useTranslate3d:true }, 400);
 				$("#content"+numPage).css("z-index", "4");
+				
 				if(numPage == 1) numPage = 2;
 				else numPage = 1;
+				
 				$("#content"+numPage).load(pPage);
+				$(".global-container").css("height", $("#content"+numPage).height());
+				
 				$("#content"+numPage).css("left", window.innerWidth);
-				//$("#content"+numPage).css("height", window.innerHeight);
 				$("#content"+numPage).css("width", window.innerWidth);
 				$("#content"+numPage).css("z-index", "5");
 				$("#content"+numPage).animate({left: "0px", useTranslate3d:true }, 400);
 			}
 			/***********************************************************************/
-			$("#black-screen").css("height", window.innerHeight);
+			//$("#black-screen").css("height", window.innerHeight);
 			
-			//$("body").css("-moz-transform", "scale(0.75)");
-			//$("body").css("zoom", "0.75");
-			//-o-transform: scale(0.75);
-			//-webkit-transform: scale(0.75);
+			$("body").css("-moz-transform", "scale(0.35)");
+			$("body").css("-o-transform", "scale(0.35)");
+			$("body").css("-webkit-transform", "scale(0.35)");
+			$("body").css("zoom", "0.35");
 			
 			$('#back').bind('touchstart mousedown', function(e){ changePage(oldPage); e.preventDefault(); e.stopPropagation();});
 			
