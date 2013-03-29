@@ -33,6 +33,9 @@
 	</div>
 </div><!-- /page -->
 <script>
+
+$("#m0").hammer({ /* options */ }).on("tap", function(ev) { changePage("calculette-choix.html"); });
+
 $('#m0').bind('touchstart mousedown', function(e){ changePage("calculette-choix.html"); false;});
 $('#m1').bind('touchstart mousedown', function(e){ changePage("tutoriel.html"); false;});
 $('#m2').bind('touchstart mousedown', function(e){ changePage("catalogue.html"); false;});
