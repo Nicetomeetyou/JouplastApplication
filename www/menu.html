@@ -34,15 +34,15 @@
 </div><!-- /page -->
 <script>
 
-$("#m0").hammer({ /* options */ }).on("tap", function(ev) { changePage("calculette-choix.html"); });
-$("#m1").hammer({ /* options */ }).on("tap", function(ev) { changePage("tutoriel.html"); });
-$("#m2").hammer({ /* options */ }).on("tap", function(ev) { changePage("catalogue.html"); });
-$("#m3").hammer({ /* options */ }).on("tap", function(ev) { changePage("contact.html"); });
+/*$("#m0").hammer({}).on("tap", function(ev) { changePage("calculette-choix.html"); });
+$("#m1").hammer({}).on("tap", function(ev) { changePage("tutoriel.html"); });
+$("#m2").hammer({}).on("tap", function(ev) { changePage("catalogue.html"); });
+$("#m3").hammer({}).on("tap", function(ev) { changePage("contact.html"); });*/
 
-//$('#m0').bind('touchstart mousedown', function(e){ changePage("calculette-choix.html"); false;});
-//$('#m1').bind('touchstart mousedown', function(e){ changePage("tutoriel.html"); e.stopPropagation();});
-//$('#m2').bind('touchstart mousedown', function(e){ changePage("catalogue.html"); false;});
-//$('#m3').bind('touchstart mousedown', function(e){ changePage("contact.html"); false;});
+$('#m0').bind('touchstart mousedown', function(e){ changePage("calculette-choix.html"); e.preventDefault(); e.stopPropagation();});
+$('#m1').bind('touchstart mousedown', function(e){ changePage("tutoriel.html"); e.preventDefault(); e.stopPropagation();});
+$('#m2').bind('touchstart mousedown', function(e){ changePage("catalogue.html"); e.preventDefault(); e.stopPropagation();});
+$('#m3').bind('touchstart mousedown', function(e){ changePage("contact.html"); e.preventDefault(); e.stopPropagation();});
 
 $("#back").css("display", "none");
 
