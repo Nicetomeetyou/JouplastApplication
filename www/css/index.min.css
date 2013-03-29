@@ -1,6 +1,6 @@
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
-body{line-height:1;}
+body{line-height:1;-moz-transform-origin:0 0;-o-transform-origin:0 0;-webkit-transform-origin:0 0;}
 ol,ul{list-style:none;}
 blockquote,q{quotes:none;}
 blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
@@ -45,7 +45,7 @@ a:hover{color:#000000;}
 .inset{-moz-box-shadow:inset 0 3px 8px rgba(0,0,0,.4);-webkit-box-shadow:inset 0 3px 8px rgba(0,0,0,.4);box-shadow:inset 0 3px 8px rgba(0,0,0,.24);}
 #content1{position:absolute;}
 #content2{position:absolute;}
-.global-container{overflow:hidden;width:100%;height:100%;display:block;position:absolute;}
+.global-container{overflow-x:hidden;width:100%;height:100%;display:block;position:absolute;}
 .back-header{background:url(../img/back-header.png) repeat 0 0;height:123px;width:100%;display:block;}
 .logo{background:url(../img/logo.png) no-repeat 0 0;height:51px;width:288px;display:block;text-align:center;margin:auto;}
 .arrow-back{background:url(../img/arrow-back.png) no-repeat 0 0;height:30px;width:135px;display:block;margin:10px;}
@@ -104,9 +104,10 @@ a:hover{color:#000000;}
 .choix-taille{margin:-5px 20px;}
 .dd-selected{padding:20px!important;}
 .dd-option{padding:20px!important;}
-div.apprise{text-align:center;font-family:din-medium-bold!important;font-size:30px!important;}
+div.apprise{text-align:center;font-family:din-medium-bold!important;font-size:30px!important;z-index:7!important;}
 div.apprise .apprise-buttons{background:none!important;border-top:none!important;box-shadow:0 1px 0 #FFFFFF inset;margin:auto;padding:10px 20px 20px 20px!important;text-align:center!important;}
 div.apprise .apprise-inner{padding:20px 0 10px 0!important;}
+div.apprise-overlay{z-index:6!important;opacity:0.75!important;background-color:#000000!important;}
 div.apprise .apprise-buttons button{color:#ffffff!important;padding:28px 10px!important;background:-moz-linear-gradient( top,#18B1CC 0%,#18B1CC 50%,#1497AE 50%,#1497AE)!important;background:-webkit-gradient( linear,left top,left bottom,from(#18B1CC),color-stop(0.48,#18B1CC),color-stop(0.52,#1497AE),to(#1497AE))!important;-moz-border-radius:10px!important;-webkit-border-radius:10px!important;border-radius:10px!important;border:0px solid #000000!important;-moz-box-shadow:0px 2px 3px rgba(000,000,000,1),inset 0px 0px 1px rgba(255,255,255,0.6)!important;-webkit-box-shadow:0px 2px 3px rgba(000,000,000,1),inset 0px 0px 1px rgba(255,255,255,0.6)!important;box-shadow:0px 2px 3px rgba(000,000,000,1),inset 0px 0px 1px rgba(255,255,255,0.6)!important;text-shadow:0px -1px 0px rgba(000,000,000,1),0px 1px 0px rgba(255,255,255,0.2)!important;font-size:32px!important;width:150px!important;font-family:din-medium!important;}
 .grey-line-right{border-right:2px solid #CCCCCC;}
 .text-ecarteur{margin:53px 0 0 35px;}

@@ -33,17 +33,10 @@
 	</div>
 </div><!-- /page -->
 <script>
-$('#m0').bind('touchstart mousedown', function(e){
-	changePage("calculette-choix.html");
-});
-//var m0 = document.getElementById("m0"); 
-//m0.addEventListener("click touchstart", function(e) {/*$("#content").load("calculette-choix.html");*/changePage("calculette-choix.html");}, false);
-var m1 = document.getElementById("m1"); 
-m1.addEventListener("click touchstart", function(e) {/*$("#content").load("tutoriel.html");*/changePage("tutoriel.html");}, false);
-var m2 = document.getElementById("m2"); 
-m2.addEventListener("click touchstart", function(e) {/*$("#content").load("catalogue.html");*/changePage("catalogue.html");}, false);
-var m3 = document.getElementById("m3"); 
-m3.addEventListener("click touchstart", function(e) {/*$("#content").load("contact.html");*/changePage("contact.html");}, false);
+$('#m0').bind('touchstart mousedown', function(e){ changePage("calculette-choix.html"); });
+$('#m1').bind('touchstart mousedown', function(e){ changePage("tutoriel.html"); });
+$('#m2').bind('touchstart mousedown', function(e){ changePage("catalogue.html"); });
+$('#m3').bind('touchstart mousedown', function(e){ changePage("contact.html"); });
 
 $("#back").css("display", "none");
 

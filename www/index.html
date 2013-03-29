@@ -122,12 +122,14 @@
 				$("#content"+numPage).animate({left: "0px", useTranslate3d:true }, 400);
 			}
 			/***********************************************************************/
-			
-			$("#back-short-menu").css("height", window.innerHeight - 663);
 			$("#black-screen").css("height", window.innerHeight);
 			
-			var btBack = document.getElementById("back"); 
-			btBack.addEventListener("click touchstart", function(e) { /*$("#content").load(oldPage);*/changePage(oldPage); }, false); 
+			//$("body").css("-moz-transform", "scale(0.75)");
+			//$("body").css("zoom", "0.75");
+			//-o-transform: scale(0.75);
+			//-webkit-transform: scale(0.75);
+			
+			$('#back').bind('touchstart mousedown', function(e){ changePage(oldPage); });
 			
 			var btShortMenu = document.getElementById("short-menu"); 
 			btShortMenu.addEventListener("click", function(e) { $("#short-menu-slide").css("display", "block"); }, false);
