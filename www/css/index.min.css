@@ -22,7 +22,6 @@ a:hover{color:#000000;}
 .ma{margin:auto;}
 .cb{clear:both;}
 .tac{text-align:center;}
-.title-din-big{font-size:40px;}
 .title-din{font-size:30px;}
 .font-din{font-family:din-medium!important;color:#FFFFFF;}
 .font-din-bold{font-family:din-medium-bold!important;color:#FFFFFF;}
@@ -34,22 +33,22 @@ a:hover{color:#000000;}
 .light-grey{color:#EFEFEF;}
 .blue{color:#13A7AA!important;}
 .blue-catalogue{color:#0770B2!important;}
-.size40{font-size:40px;}
-.size34{font-size:34px;}
-.size28{font-size:28px!important;}
-.size26{font-size:26px!important;}
-.size20{font-size:20px!important;}
+.size40{font-size:20px;}
+.size34{font-size:17px;}
+.size28{font-size:14px!important;}
+.size26{font-size:13px!important;}
+.size20{font-size:10px!important;}
 .grey-background{background-color:#EFEFEF;}
 .width100{width:100%}
 #back{width:25%;}
 .back{background:url(../img/back.jpg) repeat 0 0;height:100%px;width:100%;display:block;}
 .inset{-moz-box-shadow:inset 0 3px 8px rgba(0,0,0,.4);-webkit-box-shadow:inset 0 3px 8px rgba(0,0,0,.4);box-shadow:inset 0 3px 8px rgba(0,0,0,.24);}
-.header-container-logo{margin:auto;max-width:144px;padding-top:15px;}
-.header-container-bt-menu{position:absolute;right:0px;top:8px;}
+.header-container-logo{margin:auto;max-width:144px;padding-top:8px;}
+.header-container-bt-menu{position:absolute;right:0px;top:3px;}
 .home-square{width:50%;float:left;}
 .home-square-100{width:100%;}
-#menu{font-family:din-medium!important;color:#FFFFFF;font-size:30px;margin:auto;}
-.text-menu{position:relative;text-align:center;top:85%;}
+#main{font-family:din-medium!important;color:#FFFFFF;font-size:15px;margin:auto;}
+.text-menu{position:relative;text-align:center;top:85%;color:#FFFFFF;}
 .picto-menu-0{background:url(../img/menu-picto-0.jpg) no-repeat 0 0;width:36px;height:35px;margin:34px 34px;}
 .picto-menu-1{background:url(../img/menu-picto-1.jpg) no-repeat 0 0;width:29px;height:43px;margin:34px 38px;}
 .picto-menu-2{background:url(../img/menu-picto-2.jpg) no-repeat 0 0;width:41px;height:40px;margin:34px 32px;}
@@ -62,12 +61,11 @@ a:hover{color:#000000;}
 .text-short-menu{margin:34px 10px}
 .short-menu-icon{background:url(../img/short-menu-icon.png) no-repeat 0 0;width:46px;height:38px;margin:6px 20px}
 #black-screen{width:100%;height:150px;background:url("../img/black-pixel.png") repeat left top transparent;position:absolute;z-index:10;top:0;left:0;}
-.back-white{width:100%;height:180px;display:block;background-color:#FFFFFF;}
+.back-white{width:100%;height:90px;display:block;background-color:#FFFFFF;}
 .grey-line{border-top:2px solid #CCCCCC;width:100%;position:relative;}
-.calcul-dalle{background:url(../img/calcul-dalle.jpg) no-repeat 0 0;height:191px;width:228px;margin:23px;position:absolute;z-index:0;}
-.calcul-lambourde{background:url(../img/calcul-lambourde.jpg) no-repeat 0 0;height:129px;width:168px;margin:45px 40px;position:absolute;}
-.text-calculatrice-choix{margin:44px 0 0 280px;position:absolute;}
-.fleche-droite{background:url(../img/fleche-droite.png) no-repeat 0 0;width:22px;height:40px;margin:64px 10px 0 0}
+.picto-choix{height:191px;max-width:90px;margin:12px;position:absolute;z-index:0;}
+.text-calculatrice-choix{margin:22px 0 0 120px;position:absolute;}
+.fleche-droite{max-width:15px;margin:28px 5px 0 0;}
 .back-white-calculette{width:100%;height:100%;display:block;background-color:#FFFFFF;}
 .input-calculette{width:100px;height:50px;border-radius:}
 .line-calculette{height:80px;padding-top:20px;margin-left:30px;}

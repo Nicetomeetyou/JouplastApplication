@@ -77,40 +77,72 @@
 				<!-- here is where you can add your panels -->
 				<div title='' id="main" class="panel" selected="true" scrolling="no" >
 					<div>
-						<div class="space50 cb"></div>
+						<div id="spacer-0" class="space20"></div>
 						
-						<div class="home-square">
-							<img class="width100" style="position:relative;" src="img/menu0.png" />
-							<!--<img class="width100" style="position:absolute;" src="img/backmenu.png" />-->
-							<div class="back-home-square img-menu"><div class="text-menu">Calculatrice</div></div>
-						</div>
-						<div class="home-square">
-							<img class="width100" src="img/menu1.png" />
-							<!--<img class="width100" style="position:relative;" src="img/backmenu.png" />-->
-							<div class="back-home-square img-menu"><div class="text-menu">Conseils</div></div>
-						</div>
-						
-						<div class="space50 cb"></div>
-						
-						<div class="home-square">
-							<img class="width100" src="img/menu2.png" />
-							<!--<img class="width100" style="position:relative;" src="img/backmenu.png" />-->
-							<div class="back-home-square img-menu"><div class="text-menu">Catalogue</div></div>
-						</div>
-						<div class="home-square">
-							<img class="width100" src="img/menu3.png" />
-							<!--<img class="width100" style="position:relative;" src="img/backmenu.png" />-->
-							<div class="back-home-square img-menu"><div class="text-menu">Contact</div></div>
-						</div>
+						<a href="#calculatrice">
+							<div class="home-square">
+								<img class="width100" style="position:relative;" src="img/menu0.png" />
+								<!--<img class="width100" style="position:absolute;" src="img/backmenu.png" />-->
+								<div class="back-home-square img-menu"><div class="text-menu">Calculatrice</div></div>
+							</div>
+						</a>
+						<a href="">
+							<div class="home-square">
+								<img class="width100" src="img/menu1.png" />
+								<!--<img class="width100" style="position:relative;" src="img/backmenu.png" />-->
+								<div class="back-home-square img-menu"><div class="text-menu">Conseils</div></div>
+							</div>
+						</a>
+						<div id="spacer-1"></div>
+						<a href="">
+							<div class="home-square">
+								<img class="width100" src="img/menu2.png" />
+								<!--<img class="width100" style="position:relative;" src="img/backmenu.png" />-->
+								<div class="back-home-square img-menu"><div class="text-menu">Catalogue</div></div>
+							</div>
+						</a>
+						<a href="">
+							<div class="home-square">
+								<img class="width100" src="img/menu3.png" />
+								<!--<img class="width100" style="position:relative;" src="img/backmenu.png" />-->
+								<div class="back-home-square img-menu"><div class="text-menu">Contact</div></div>
+							</div>
+						</a>
 						<div class="cb"></div>
 						<div class="space50"></div>
 					</div>
 				</div> 
-				
-				<div id="recette" class="panel" title="" data-nav="menu_jqmobi" scrolling="no">
-					
+				<script>
+					if(window.innerHeight > 640) { 
+						//$("#spacer-0").addClass("space50 cb"); $("#spacer-0").addClass("space50 cb");
+						$("#spacer-1").addClass("space50 cb"); $("#spacer-1").addClass("space50 cb");
+					}
+				</script>
+				<div id="calculatrice" class="panel" title="" data-nav="menu_jqmobi" scrolling="no">
+					<div class="tac size40 font-din">
+						CALCULEZ LE NOMBRE<br/>DE PLOTS NÉCESSAIRES<br/>À VOS TRAVAUX
+					</div>
+					<div class="space20"></div>
+					<div class="tac font-din title-din-big no-uppercase">
+						Vous souhaitez poser des :
+					</div>
+					<div class="space30"></div>
+					<div>
+						<div id="calculatrice-dalle" class="back-white">
+							<div class="picto-choix"><img class="width100" src="img/calcul-dalle.jpg" /></div>
+							<div class="font-din black size34 no-uppercase text-calculatrice-choix">Dalles ou<br/>caillebotis en bois</div>
+							<div class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></div>
+						</div>
+						<div class="grey-line cb"></div>
+						<div id="calculatrice-lambourde" class="back-white">
+							<div class="picto-choix"><img class="width100" src="img/calcul-lambourde.jpg" /></div>
+							<div class="font-din black size34 no-uppercase text-calculatrice-choix"><br/>Lambourdes</div>
+							<div class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></div>
+						</div>
+						<div class="grey-line cb"></div>
+					</div>
+					<div class="space50"></div>
 				</div>
-				
 			</div>
 			
 			<!-- bottom navbar.  Add additional tabs here -->
