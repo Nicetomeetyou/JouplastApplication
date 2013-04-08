@@ -19,143 +19,112 @@
 -->
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta http-equiv="Access-Control-Allow-Origin" content="*">
-        <meta name="format-detection" content="telephone=yes" />
-		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-		<link rel="stylesheet" type="text/css" href="css/index.min.css" />
+       <!-- <meta name="format-detection" content="telephone=yes" />-->
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/jq.ui.css" title="default" />
         <title>Jouplast</title>
     </head>
     <body class="back">
-		<div id="short-menu-slide" style="display:none;">
-			<div id="black-screen"></div>
-			<div class="short-menu fright light-grey">
-				<div id="btShort0" class="container-line-short-menu">
-					<div class="picto-menu-0 fleft"></div>
-					<div class="fleche-droite-short fright"></div>
-					<div class="fleft font-din black size34 no-uppercase text-short-menu">Accueil</div>
-				</div>
-				<div class="grey-line cb"></div>
-				<div id="btShort1" class="container-line-short-menu">
-					<div class="picto-menu-1 fleft"></div>
-					<div class="fleche-droite-short fright"></div>
-					<div class="fleft font-din black size34 no-uppercase text-short-menu">Calculatrice</div>
-				</div>
-				<div class="grey-line cb"></div>
-				<div id="btShort2" class="container-line-short-menu">
-					<div class="picto-menu-2 fleft"></div>
-					<div class="fleche-droite-short fright"></div>
-					<div class="fleft font-din black size34 no-uppercase text-short-menu">Tutoriels</div>
-				</div>
-				<div class="grey-line cb"></div>
-				<div id="btShort3" class="container-line-short-menu">
-					<div class="picto-menu-3 fleft"></div>
-					<div class="fleche-droite-short fright"></div>
-					<div class="fleft font-din black size34 no-uppercase text-short-menu">Catalogue</div>
-				</div>
-				<div class="grey-line cb"></div>
-				<div id="btShort4" class="container-line-short-menu">
-					<div class="picto-menu-4 fleft"></div>
-					<div class="fleche-droite-short fright"></div>
-					<div class="fleft font-din black size34 no-uppercase text-short-menu">Contact</div>
-				</div>
-				<div class="grey-line cb"></div>
-				<div id="btShort5" class="container-line-short-menu">
-					<div class="picto-menu-5 fleft"></div>
-					<div class="fleche-droite-short fright"></div>
-					<div class="fleft font-din black size34 no-uppercase text-short-menu">Mentions légales</div>
-				</div>
-				<div id="back-short-menu" class="back"></div>
-			</div>
-		</div>
-		
-		<div class="back-header">
-			<div class="space15"></div>
-			<div>
-				<div style="width:25%; display:block; height:10px;" class="fleft">
-					<div id="back">
-						<div class="arrow-back"><div class="text-back">Retour</div></div>
-					</div>
-				</div>
-				<div style="width:50%" class="fleft">
-					<div class="logo"></div>
-				</div>
-				<div style="width:25%" class="fleft">
-					<div id="short-menu" class="short-menu-icon fright"></div>
-				</div>
-			</div>
-		</div>
-		
-		<!-- Start of first page -->
-		<div class="global-container">
-			<div id="content1"></div>
-			<div id="content2"></div>
-		</div>
-		
-        <script type="text/javascript" src="phonegap.js"></script>
-		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-		<script type="text/javascript" src="js/jquery.ddslick.min.js"></script>
-		<script type="text/javascript" src="js/apprise-v2.min.js"></script>
-		<script type="text/javascript" src="js/jquery.animate-enhanced.min.js"></script>
-		<script type="text/javascript" src="js/jqtouch-jquery.min.js"></script>
-		<script type="text/javascript" src="js/jqtouch.min.js"></script>
-		<script type="text/javascript" src="js/hammer.min.js"></script>
-		<script type="text/javascript" src="js/jquery.hammer.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/apprise-v2.min.css" />
+		<script type="text/javascript" charset="utf-8" src="js/jq.ui.min.js"></script> 
+		<script type="text/javascript" charset="utf-8" src="js/jq.debug.js"></script> 
+		<script type="text/javascript" charset="utf-8" src="js/jq.swipe.js"></script> 
+		<script type="text/javascript" charset="utf-8" src="js/jq.carousel.js"></script> 
+		<script type="text/javascript" charset="utf-8" src="js/jq.drawer.js"></script> 
+		<script type="text/javascript" charset="utf-8" src="js/jq.shake.js"></script> 
+		<script type="text/javascript" charset="utf-8" src="js/jq.alphatable.js"></script> 
+		<script type="text/javascript" charset="utf-8" src="js/jq.template.js"></script>
+		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
         <script type="text/javascript">
-			var numPage = 1;
-			var oldPage = "";
-			var page = "";
-			var nbPlot = "";
-			var hauteurTerrasse = "";
+			var webRoot="./";
+			$.ui.autoLaunch=false;
+			$.ui.resetScrollers=false;
 			
-			$("#content1").load("menu.html");
-			
-			$("#content"+numPage).css("width", window.innerWidth);
-			/***********************************************************************/
-			function changePage(pPage) {
-				$("#content"+numPage).animate({left: -window.innerWidth, useTranslate3d:true }, 400);
-				$("#content"+numPage).css("z-index", "4");
+			var init = function(){
+			   $.ui.backButtonText=" ";  
+			   window.setTimeout(function(){$.ui.launch();},10);
+			   $.ui.removeFooterMenu(); //This would remove the bottom nav menu
+			};
+			document.addEventListener("DOMContentLoaded",init,false);  
+			$.ui.ready(function(){});
+		   
+			/* This code is used to run as soon as appMobi activates */
+			var onDeviceReady=function(){
+				AppMobi.device.setRotateOrientation("portrait");
+				AppMobi.device.setAutoRotate(false);
+				webRoot=AppMobi.webRoot+"/";
+				//hide splash screen
+				AppMobi.device.hideSplashScreen();	
 				
-				if(numPage == 1) numPage = 2;
-				else numPage = 1;
-				
-				$("#content"+numPage).load(pPage);
-				$(".global-container").css("height", $("#content"+numPage).height());
-				
-				$("#content"+numPage).css("left", window.innerWidth);
-				$("#content"+numPage).css("width", window.innerWidth);
-				$("#content"+numPage).css("z-index", "5");
-				$("#content"+numPage).animate({left: "0px", useTranslate3d:true }, 400);
-			}
-			/***********************************************************************/
-			//$("#black-screen").css("height", window.innerHeight);
-			
-			$("body").css("-moz-transform", "scale(0.35)");
-			$("body").css("-o-transform", "scale(0.35)");
-			$("body").css("-webkit-transform", "scale(0.35)");
-			$("body").css("zoom", "0.35");
-			
-			$('#back').bind('touchstart mousedown', function(e){ changePage(oldPage); e.preventDefault(); e.stopPropagation();});
-			
-			var btShortMenu = document.getElementById("short-menu"); 
-			btShortMenu.addEventListener("click", function(e) { $("#short-menu-slide").css("display", "block"); }, false);
-			
-			var btBlackScreen = document.getElementById("black-screen"); 
-			btBlackScreen.addEventListener("click", function(e) { $("#short-menu-slide").css("display", "none"); }, false);
-			
-			var btShort0 = document.getElementById("btShort0"); 
-			btShort0.addEventListener("click", function(e) { $("#content").load("menu.html"); $("#short-menu-slide").css("display", "none"); }, false); 
-			var btShort1 = document.getElementById("btShort1"); 
-			btShort1.addEventListener("click", function(e) { $("#content").load("calculette-choix.html"); $("#short-menu-slide").css("display", "none"); }, false); 
-			var btShort2 = document.getElementById("btShort2"); 
-			btShort2.addEventListener("click", function(e) { $("#content").load("tutoriel.html"); $("#short-menu-slide").css("display", "none"); }, false); 
-			var btShort3 = document.getElementById("btShort3"); 
-			btShort3.addEventListener("click", function(e) { $("#content").load("menu.html"); $("#short-menu-slide").css("display", "none"); }, false); 
-			var btShort4 = document.getElementById("btShort4"); 
-			btShort4.addEventListener("click", function(e) { $("#content").load("contact.html"); $("#short-menu-slide").css("display", "none"); }, false); 
-			var btShort5 = document.getElementById("btShort5"); 
-			btShort5.addEventListener("click", function(e) { $("#content").load("mention.html"); $("#short-menu-slide").css("display", "none"); }, false); 
+			};
+			document.addEventListener("appMobi.device.ready",onDeviceReady,false); 
         </script>
+		<div id="jQUi" style="overflow:hidden;">
+			<!-- this is the header div -->
+			<div id="header">
+				<div class="width100">
+					<div class="width100">
+						<div class="header-container-logo"><img class="width100" src="img/logo.png" /></div>
+						<div class="header-container-bt-menu"><a id='menubadge' onclick='jq.ui.toggleSideMenu()' style='' class='menuButton fleft'></a></div>
+					</div>
+					
+				</div>
+			</div>
+			
+			<div id="content" style="overflow:hidden;">
+				<!-- here is where you can add your panels -->
+				<div title='' id="main" class="panel" selected="true" scrolling="no" >
+					<div>
+						<div class="space50 cb"></div>
+						
+						<div class="home-square">
+							<img class="width100" style="position:relative;" src="img/menu0.png" />
+							<!--<img class="width100" style="position:absolute;" src="img/backmenu.png" />-->
+							<div class="back-home-square img-menu"><div class="text-menu">Calculatrice</div></div>
+						</div>
+						<div class="home-square">
+							<img class="width100" src="img/menu1.png" />
+							<!--<img class="width100" style="position:relative;" src="img/backmenu.png" />-->
+							<div class="back-home-square img-menu"><div class="text-menu">Conseils</div></div>
+						</div>
+						
+						<div class="space50 cb"></div>
+						
+						<div class="home-square">
+							<img class="width100" src="img/menu2.png" />
+							<!--<img class="width100" style="position:relative;" src="img/backmenu.png" />-->
+							<div class="back-home-square img-menu"><div class="text-menu">Catalogue</div></div>
+						</div>
+						<div class="home-square">
+							<img class="width100" src="img/menu3.png" />
+							<!--<img class="width100" style="position:relative;" src="img/backmenu.png" />-->
+							<div class="back-home-square img-menu"><div class="text-menu">Contact</div></div>
+						</div>
+						<div class="cb"></div>
+						<div class="space50"></div>
+					</div>
+				</div> 
+				
+				<div id="recette" class="panel" title="" data-nav="menu_jqmobi" scrolling="no">
+					
+				</div>
+				
+			</div>
+			
+			<!-- bottom navbar.  Add additional tabs here -->
+			<!--<div id="navbar">
+				<a href="#main" id='navbar_home' class='icon home' >home</a>
+			</div>-->
+			
+			<!-- this is the default left side nav menu -->
+			<nav>
+				<div class='title'>Home</div>
+					<ul>
+						<li class="icon home mini"></li>
+					</ul>
+			</nav>
+		</div>
     </body>
 </html>
