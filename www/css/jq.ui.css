@@ -242,7 +242,7 @@ background:#333;
     position:absolute; top:0px; left:0px;
 	/*background:rgba(19,29,38,1);*/
 	background:url(../img/trame-dark.jpg) repeat 0 0; width:100%; height:100%;
-    margin-top:10px;
+   
     margin-bottom:10px;
 	overflow-y:auto;
 	overflow-x:hidden;
@@ -367,11 +367,11 @@ font-size:48px;
 
 #jQUi > #menu {
 	z-index:1;
-	width:200px;
+	width:300px;
 	bottom:0px;
 	height:100%;
 	display:none;
-	position:absolute; top:0px; left:0px;
+	position:absolute; top:0px; left:70px;
 	background:rgba(29,29,28,1);
 }
 #menu_scroller {
@@ -853,17 +853,17 @@ select[disabled]~div {
 }
 /*menu on/off mechanism, note .hasMenu.off and #menu.on default to no transform*/
 .hasMenu.to-on {
-  -webkit-transition: -webkit-transform 150ms;
+  -webkit-transition: -webkit-transform 300ms;
   transition: transform 150ms;
 }
 .hasMenu.on, .hasMenu.to-on {
-  -webkit-transform:translate3d(200px,0px,0px);
-  transform:translate(200px,0px);
+  -webkit-transform:translate3d(-278px,0px,0px);
+  transform:translate(-278px,0px);
 }
 .hasMenu.to-off {
-  -webkit-transition: -webkit-transform 150ms;
+  -webkit-transition: -webkit-transform 300ms;
   -webkit-transform:translate3d(0px,0px,0px);
-  transition: transform 150ms;
+  transition: transform 300ms;
   transform:translate(0px,0px);
 }
 #menu.on {
@@ -873,18 +873,18 @@ select[disabled]~div {
 	transition:none;
 }
 #menu.to-on {
-    -webkit-transition: -webkit-transform 150ms;
-    -webkit-transform:translate3d(0px,0px,0px);
-    transition: transform 150ms;
-    transform:translate(0px,0px);
+    -webkit-transition: -webkit-transform 300ms;
+    -webkit-transform:translate3d(-400px,0px,0px);
+    transition: transform 300ms;
+    transform:translate(-400px,0px);
 }
 #menu.to-off {
-    -webkit-transition: -webkit-transform 150ms;
-    transition: transform 150ms;
+    -webkit-transition: -webkit-transform 300ms;
+    transition: transform 300ms;
 }
 #menu, #menu.off, #menu.to-off {
-    -webkit-transform:translate3d(-200px,0px,0px);
-    transform:translate(-200px,0px);
+    -webkit-transform:translate3d(500px,0px,0px);
+    transform:translate(500px,0px);
 }
 
 .menuButton {

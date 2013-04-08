@@ -37,7 +37,8 @@
 		<script type="text/javascript" charset="utf-8" src="js/jq.alphatable.js"></script> 
 		<script type="text/javascript" charset="utf-8" src="js/jq.template.js"></script>
 		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-        <script type="text/javascript">
+		
+        <script type="text/javascript">			
 			var webRoot="./";
 			$.ui.autoLaunch=false;
 			$.ui.resetScrollers=false;
@@ -48,7 +49,10 @@
 			   $.ui.removeFooterMenu(); //This would remove the bottom nav menu
 			};
 			document.addEventListener("DOMContentLoaded",init,false);  
-			$.ui.ready(function(){});
+			$.ui.ready(function(){
+				var menuCss = document.getElementById("menu"); 
+				//menuCss.style.left = (50) + "px";
+			});
 		   
 			/* This code is used to run as soon as appMobi activates */
 			var onDeviceReady=function(){
@@ -57,6 +61,7 @@
 				webRoot=AppMobi.webRoot+"/";
 				//hide splash screen
 				AppMobi.device.hideSplashScreen();	
+				
 				
 			};
 			document.addEventListener("appMobi.device.ready",onDeviceReady,false); 
@@ -74,9 +79,8 @@
 			</div>
 			
 			<div id="content" style="overflow:hidden;">
-				
 				<!--MENU-->
-				<div title='' id="main" class="panel" selected="true" scrolling="no" >
+				<div title='' id="main" class="panel" selected="true" scrolling="yes" >
 					<div>
 						<div id="spacer-0" class="space20"></div>
 						
@@ -122,7 +126,8 @@
 				<!--END MENU-->
 				
 				<!--CALCULATRICE MENU-->
-				<div id="calculatrice" class="panel" title="" data-nav="menu_jqmobi" scrolling="no">
+				<div id="calculatrice" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="space20"></div>
 					<div class="tac size40 font-din">
 						CALCULEZ LE NOMBRE<br/>DE PLOTS NÉCESSAIRES<br/>À VOS TRAVAUX
 					</div>
@@ -150,8 +155,8 @@
 				<!--END CALCULATRICE MENU-->
 				
 				<!--CONSEILS MENU-->
-				<div id="conseil" class="panel" title="" data-nav="menu_jqmobi" scrolling="no">
-					<div class="space20"></div>
+				<div id="conseil" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="space30"></div>
 					<div class="tac size40 font-din titre-calculette">
 						QUE VOULEZ-VOUS POSER ?
 					</div>
@@ -185,7 +190,7 @@
 				<!--END CONSEILS MENU-->
 				
 				<!--CATALOGUE MENU-->
-				<div id="catalogue" class="panel" title="" data-nav="menu_jqmobi" scrolling="no">
+				<div id="catalogue" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
 					<div style="position:relative;">
 						<img style="width:100%;" src="img/img-catalogue.jpg" />
 						<!--<div style="position:absolute; margin:auto;">
@@ -201,60 +206,56 @@
 						<div class="tabs">
 							<dl class="tab1">
 								<dd>
-									<a id="bttab1" href="" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast</a>
+									<a id="bttab1" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast</a>
 									<div>
-										<p>
-											<section>
-												<section class="ombre-menu-haut"></section>
-												<section class="inside-li">
-													<section class="picto-cata-dalle fleft"></section>
-													<a href="" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles</a>
-												</section>
+										<section>
+											<section class="ombre-menu-haut"></section>
+											<section class="inside-li">
+												<section class="picto-cata-dalle fleft"></section>
+												<a href="" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles</a>
 											</section>
-											<section>
-												<section class="inside-li">
-													<section class="picto-cata-lambourde fleft"></section>
-													<a href="" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots lambourdes</a>
-												</section>
-												<section class="ombre-menu-bas"></section>
+										</section>
+										<section>
+											<section class="inside-li">
+												<section class="picto-cata-lambourde fleft"></section>
+												<a href="" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots lambourdes</a>
 											</section>
-										</p>
+											<section class="ombre-menu-bas"></section>
+										</section>
 									</div>
 								</dd>
 							</dl>
 							<dl class="tab2">
 								<dd>
-									<a id="bttab2" href="" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast évolution</a>
+									<a id="bttab2" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast évolution</a>
 									<div>
-										<p>
-											<section>
-												<section class="ombre-menu-haut"></section>
-												<section class="inside-li">
-													<section class="picto-cata-dalle fleft"></section>
-													<a href="" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles</a>
-													<section class=""></section>
-												</section>
+										<section>
+											<section class="ombre-menu-haut"></section>
+											<section class="inside-li">
+												<section class="picto-cata-dalle fleft"></section>
+												<a href="" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles</a>
+												<section class=""></section>
 											</section>
-											<section>
-												<section class="inside-li">
-													<section class="picto-cata-lambourde fleft"></section>
-													<a href="" class="font-din size28 grey sub-title-cat-catalogue">Plots lambourdes</a>
-												</section>
+										</section>
+										<section>
+											<section class="inside-li">
+												<section class="picto-cata-lambourde fleft"></section>
+												<a href="" class="font-din size28 grey sub-title-cat-catalogue">Plots lambourdes</a>
 											</section>
-											<section>
-												<section class="inside-li">
-													<section class="picto-cata-integral fleft"></section>
-													<a href="" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots intégrals</a>
-												</section>
-												<section class="ombre-menu-bas"></section>
+										</section>
+										<section>
+											<section class="inside-li">
+												<section class="picto-cata-integral fleft"></section>
+												<a href="" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots intégrals</a>
 											</section>
-										</p>
+											<section class="ombre-menu-bas"></section>
+										</section>
 									</div>
 								</dd>
 							</dl>
 							<dl class="tab3">
 								<dd>
-									<a id="bttab3" href="" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Accessoires</a>
+									<a id="bttab3" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Accessoires</a>
 								</dd>
 							</dl>
 						</div>
@@ -262,14 +263,14 @@
 					<script>
 						var bt1 = document.getElementById("bttab1"); 
 						bt1.addEventListener("click", function(e) { 
-							if($("#tab1 ~ .tabs .tab1 dd div").height() == 0) { $("#tab1 ~ .tabs .tab1 dd div").css("height", "230px"); }
+							if($("#tab1 ~ .tabs .tab1 dd div").height() == 0) { $("#tab1 ~ .tabs .tab1 dd div").css("height", "198px"); }
 							else { $("#tab1 ~ .tabs .tab1 dd div").css("height", "0px"); }
 							$("#tab2 ~ .tabs .tab2 dd div").css("height", "0px"); 
 						}, false);
 						
 						var bt2 = document.getElementById("bttab2"); 
 						bt2.addEventListener("click", function(e) { 
-							if($("#tab2 ~ .tabs .tab2 dd div").height() == 0) { $("#tab2 ~ .tabs .tab2 dd div").css("height", "345px"); }
+							if($("#tab2 ~ .tabs .tab2 dd div").height() == 0) { $("#tab2 ~ .tabs .tab2 dd div").css("height", "275px"); }
 							else { $("#tab2 ~ .tabs .tab2 dd div").css("height", "0px"); }
 							$("#tab1 ~ .tabs .tab1 dd div").css("height", "0px"); 
 						}, false);
@@ -278,7 +279,7 @@
 				<!--END CATALOGUE MENU-->
 				
 				<!--CONTACT MENU-->
-				<div id="contact" class="panel" title="" data-nav="menu_jqmobi" scrolling="no">
+				<div id="contact" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
 					<div class="space20"></div>
 					<div class="tac size40 font-din">
 						VOUS AVEZ UNE QUESTION ?<br/>BESOIN D’AIDE ?
@@ -314,6 +315,10 @@
 						<li class="icon home mini"></li>
 					</ul>
 			</nav>
+			
+			<script>
+				
+			</script>
 		</div>
     </body>
 </html>

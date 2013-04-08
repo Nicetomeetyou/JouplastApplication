@@ -10,8 +10,8 @@ table{border-collapse:collapse;border-spacing:0;}
 @font-face{font-family:din-medium-bold;src:url("../font/DIN-Bold.otf");}
 body{font-size:12px;height:100%;margin:0px;padding:0px;text-transform:uppercase;width:100%;background-color:#05436B;font-family:din-medium-bold!important;}
 h1{font-size:24px;font-weight:normal;margin:0px;overflow:visible;padding:0px;text-align:center;}
-a,a:link,a:active,a:visited{color:#000000;text-decoration:none;}
-a:hover{color:#000000;}
+a,a:link,a:active,a:visited{color:#000000!important;text-decoration:none;}
+a:hover{color:#000000!important;}
 .space50{height:50px;}
 .space100{height:100px;}
 .space10{height:10px;}
@@ -166,7 +166,7 @@ div.apprise .apprise-buttons button{color:#ffffff!important;padding:28px 10px!im
 .sub-title-cat-catalogue-bas{display:block;padding:17px 0 0px 100px;}
 ul li{background:#FFFFFF;border-bottom:2px solid #CCCCCC;width:100%;}
 ul li ul li{background:#FFFFFF;border:none;}
-.inside-li{padding-left:50px;}
+.inside-li{padding-left:50px;position:relative;top:-15px;}
 .picto-cata-dalle{background:url(../img/picto-cata-dalle.png) repeat-x 0 0;width:65px;height:65px;display:block;}
 .picto-cata-lambourde{background:url(../img/picto-cata-lambourde.png) repeat-x 0 0;width:65px;height:65px;display:block;}
 .picto-cata-integral{background:url(../img/picto-cata-integral.png) repeat-x 0 0;width:65px;height:65px;display:block;}
