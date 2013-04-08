@@ -21,7 +21,7 @@ img { border:none; } /* Remove default borders for images */
 body {
 	overflow-x:hidden;
 	-webkit-text-size-adjust:none;
-	font-family:Arial, Helvetica, sans-serif;
+	
 	color:#fff;
 	font-size:14px;
 	background:#8C5429; /* primary background color */
@@ -37,7 +37,7 @@ body {
 
 p {
 	color:#fff;
-	font-family:Arial, Helvetica, sans-serif;
+	
 	font-size:14px;
 	line-height:18px;
 	
@@ -127,7 +127,7 @@ z-index:2;
     z-index:1;
     text-align:center;
 	height:48px; 
-	font-family: Helvetica, Arial, sans-serif;
+	
 	font-weight:normal;
 	font-size:24px;
 	line-height:48px;
@@ -276,7 +276,7 @@ background:#333;
 	height:60px;
 	overflow:hidden;
 	display:inline-block;
-	font-family:Helvetica, Arial, sans-serif;
+	
 	font-weight:bold;
 	font-size:12px;
 	text-decoration:none;

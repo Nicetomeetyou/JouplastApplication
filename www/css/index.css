@@ -72,8 +72,8 @@ table {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
     -webkit-user-select: text;                  /* prevent copy paste, to allow, change 'none' to 'text' */
 }
- @font-face { font-family: din-medium; src: url("../fonts/DIN-Medium.otf"); }
- @font-face { font-family: din-medium-bold; src: url("../fonts/DIN-Bold.otf"); }
+ @font-face { font-family: din-medium; src: url("../font/DIN-Medium.otf"); }
+ @font-face { font-family: din-medium-bold; src: url("../font/DIN-Bold.otf"); }
 
 body {
     font-size:12px;
@@ -83,6 +83,7 @@ body {
     text-transform:uppercase;
     width:100%;
 	background-color:#05436B;
+	font-family: din-medium-bold !important;
 }
 
 h1 {
@@ -106,7 +107,6 @@ a:hover{ color:#000000; }
 .ma { margin:auto; }
 .cb { clear:both; }
 .tac { text-align:center; }
-.title-din { font-size:30px; }
 .font-din { font-family: din-medium !important; color:#FFFFFF; }
 .font-din-bold { font-family: din-medium-bold !important; color:#FFFFFF; }
 .no-uppercase { text-transform:none !important; }
@@ -146,7 +146,7 @@ a:hover{ color:#000000; }
 	margin: auto;
 }
 
-.text-menu { position: relative; text-align: center; top: 85%; color:#FFFFFF; }
+.text-menu { position: relative; text-align: center; top: 85%; color:#FFFFFF; font-family: din-medium-bold !important;}
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 /* SHORT MENU */
@@ -408,12 +408,8 @@ div.apprise .apprise-buttons button {
 
 /* TUTO */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-.picto-tuto-0 { background:url(../img/picto-tuto-0.jpg) no-repeat 0 0; width:221px; height:152px; margin: 23px; position: absolute; }
-.picto-tuto-1 { background:url(../img/picto-tuto-1.jpg) no-repeat 0 0; width:161px; height:119px; margin: 33px; position: absolute;}
-.picto-tuto-2 { background:url(../img/picto-tuto-2.jpg) no-repeat 0 0; width:180px; height:163px; margin: 14px 0 0 38px; position: absolute;}
-.picto-tuto-3 { background:url(../img/picto-tuto-3.jpg) no-repeat 0 0; width:125px; height:96px; margin: 40px 0 0 48px; position: absolute; }
-
-.text-tuto-choix { margin: 65px 0 0 280px; position: absolute; }
+.picto-tuto { max-width:100px; height:152px; margin: 14px 0 0 0; position: absolute; }
+.text-tuto-choix { margin: 32px 0 0 110px; position: absolute; }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 /* CATALOGUE */
@@ -481,10 +477,10 @@ ul li ul li{ background: #FFFFFF; border:none; }
 
 /* CONTACT */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-.size-text-button { font-size:32px; text-transform:none; }
+.size-text-button { font-size:16px; text-transform:none; }
 
-.picto-phone { background:url(../img/picto-phone.png) no-repeat 0 0; height:117px; width:116px; }
-.picto-mail { background:url(../img/picto-email.png) no-repeat 0 0; height:113px; width:129px; }
+.picto-phone { max-width:80px; }
+.picto-mail { max-width:80px; }
 .back-bt-contact { background:url(../img/back-bt-contact.png) no-repeat 0 0; width:792px; height:486px;	overflow:hidden; }
 
 .default-button { width:260px; }
@@ -492,7 +488,7 @@ ul li ul li{ background: #FFFFFF; border:none; }
 
 .css3buttonblue {
 	color: #ffffff;
-	padding: 28px 10px;
+	padding: 22px 0px;
 	background: -moz-linear-gradient(
 		top,
 		#1286d3 0%,

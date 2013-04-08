@@ -74,7 +74,8 @@
 			</div>
 			
 			<div id="content" style="overflow:hidden;">
-				<!-- here is where you can add your panels -->
+				
+				<!--MENU-->
 				<div title='' id="main" class="panel" selected="true" scrolling="no" >
 					<div>
 						<div id="spacer-0" class="space20"></div>
@@ -86,7 +87,7 @@
 								<div class="back-home-square img-menu"><div class="text-menu">Calculatrice</div></div>
 							</div>
 						</a>
-						<a href="">
+						<a href="#conseil">
 							<div class="home-square">
 								<img class="width100" src="img/menu1.png" />
 								<!--<img class="width100" style="position:relative;" src="img/backmenu.png" />-->
@@ -94,14 +95,14 @@
 							</div>
 						</a>
 						<div id="spacer-1"></div>
-						<a href="">
+						<a href="#catalogue">
 							<div class="home-square">
 								<img class="width100" src="img/menu2.png" />
 								<!--<img class="width100" style="position:relative;" src="img/backmenu.png" />-->
 								<div class="back-home-square img-menu"><div class="text-menu">Catalogue</div></div>
 							</div>
 						</a>
-						<a href="">
+						<a href="#contact">
 							<div class="home-square">
 								<img class="width100" src="img/menu3.png" />
 								<!--<img class="width100" style="position:relative;" src="img/backmenu.png" />-->
@@ -111,13 +112,16 @@
 						<div class="cb"></div>
 						<div class="space50"></div>
 					</div>
+					<script>
+						if(window.innerHeight > 480) { 
+							//$("#spacer-0").addClass("space50 cb"); $("#spacer-0").addClass("space50 cb");
+							$("#spacer-1").addClass("space50 cb"); $("#spacer-1").addClass("space50 cb");
+						}
+					</script>
 				</div> 
-				<script>
-					if(window.innerHeight > 640) { 
-						//$("#spacer-0").addClass("space50 cb"); $("#spacer-0").addClass("space50 cb");
-						$("#spacer-1").addClass("space50 cb"); $("#spacer-1").addClass("space50 cb");
-					}
-				</script>
+				<!--END MENU-->
+				
+				<!--CALCULATRICE MENU-->
 				<div id="calculatrice" class="panel" title="" data-nav="menu_jqmobi" scrolling="no">
 					<div class="tac size40 font-din">
 						CALCULEZ LE NOMBRE<br/>DE PLOTS NÉCESSAIRES<br/>À VOS TRAVAUX
@@ -143,6 +147,159 @@
 					</div>
 					<div class="space50"></div>
 				</div>
+				<!--END CALCULATRICE MENU-->
+				
+				<!--CONSEILS MENU-->
+				<div id="conseil" class="panel" title="" data-nav="menu_jqmobi" scrolling="no">
+					<div class="space20"></div>
+					<div class="tac size40 font-din titre-calculette">
+						QUE VOULEZ-VOUS POSER ?
+					</div>
+					<div class="space10"></div>
+					<div>
+						<div id="calculatrice-dalle" class="back-white">
+							<div class="picto-tuto"><img class="width100" src="img/picto-tuto-0.jpg" /></div>
+							<div class="font-din black size34 no-uppercase text-tuto-choix">Plots Dalles</div>
+							<div class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></div>
+						</div>
+						<div class="grey-line cb"></div>
+						<div id="calculatrice-lambourde" class="back-white">
+							<div class="picto-tuto"><img class="width100" src="img/picto-tuto-1.jpg" /></div>
+							<div class="font-din black size34 no-uppercase text-tuto-choix">Plots Lambourdes</div>
+							<div class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></div>
+						</div>
+						<div class="grey-line cb"></div>
+						<div id="calculatrice-lambourde" class="back-white">
+							<div class="picto-tuto"><img class="width100" src="img/picto-tuto-2.jpg" /></div>
+							<div class="font-din black size34 no-uppercase text-tuto-choix">Support Caillebotis</div>
+							<div class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></div>
+						</div>
+						<div class="grey-line cb"></div>
+						<div id="calculatrice-lambourde" class="back-white">
+							<div class="picto-tuto"><img class="width100" src="img/picto-tuto-3.jpg" /></div>
+							<div class="font-din black size34 no-uppercase text-tuto-choix">Plaques à dalles</div>
+							<div class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></div>
+						</div>
+					</div>
+				</div>
+				<!--END CONSEILS MENU-->
+				
+				<!--CATALOGUE MENU-->
+				<div id="catalogue" class="panel" title="" data-nav="menu_jqmobi" scrolling="no">
+					<div style="position:relative;">
+						<img style="width:100%;" src="img/img-catalogue.jpg" />
+						<!--<div style="position:absolute; margin:auto;">
+							<div class="title-catalogue tac title-din-big font-din calculette titre-calculette">CATALOGUE</div>
+						</div>-->
+					</div>
+					
+					<div class="accordion">
+						<span id="tab1"></span>
+						<span id="tab2"></span>
+						<span id="tab3"></span>
+						
+						<div class="tabs">
+							<dl class="tab1">
+								<dd>
+									<a id="bttab1" href="" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast</a>
+									<div>
+										<p>
+											<section>
+												<section class="ombre-menu-haut"></section>
+												<section class="inside-li">
+													<section class="picto-cata-dalle fleft"></section>
+													<a href="" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles</a>
+												</section>
+											</section>
+											<section>
+												<section class="inside-li">
+													<section class="picto-cata-lambourde fleft"></section>
+													<a href="" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots lambourdes</a>
+												</section>
+												<section class="ombre-menu-bas"></section>
+											</section>
+										</p>
+									</div>
+								</dd>
+							</dl>
+							<dl class="tab2">
+								<dd>
+									<a id="bttab2" href="" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast évolution</a>
+									<div>
+										<p>
+											<section>
+												<section class="ombre-menu-haut"></section>
+												<section class="inside-li">
+													<section class="picto-cata-dalle fleft"></section>
+													<a href="" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles</a>
+													<section class=""></section>
+												</section>
+											</section>
+											<section>
+												<section class="inside-li">
+													<section class="picto-cata-lambourde fleft"></section>
+													<a href="" class="font-din size28 grey sub-title-cat-catalogue">Plots lambourdes</a>
+												</section>
+											</section>
+											<section>
+												<section class="inside-li">
+													<section class="picto-cata-integral fleft"></section>
+													<a href="" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots intégrals</a>
+												</section>
+												<section class="ombre-menu-bas"></section>
+											</section>
+										</p>
+									</div>
+								</dd>
+							</dl>
+							<dl class="tab3">
+								<dd>
+									<a id="bttab3" href="" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Accessoires</a>
+								</dd>
+							</dl>
+						</div>
+					</div>
+					<script>
+						var bt1 = document.getElementById("bttab1"); 
+						bt1.addEventListener("click", function(e) { 
+							if($("#tab1 ~ .tabs .tab1 dd div").height() == 0) { $("#tab1 ~ .tabs .tab1 dd div").css("height", "230px"); }
+							else { $("#tab1 ~ .tabs .tab1 dd div").css("height", "0px"); }
+							$("#tab2 ~ .tabs .tab2 dd div").css("height", "0px"); 
+						}, false);
+						
+						var bt2 = document.getElementById("bttab2"); 
+						bt2.addEventListener("click", function(e) { 
+							if($("#tab2 ~ .tabs .tab2 dd div").height() == 0) { $("#tab2 ~ .tabs .tab2 dd div").css("height", "345px"); }
+							else { $("#tab2 ~ .tabs .tab2 dd div").css("height", "0px"); }
+							$("#tab1 ~ .tabs .tab1 dd div").css("height", "0px"); 
+						}, false);
+					</script>
+				</div>
+				<!--END CATALOGUE MENU-->
+				
+				<!--CONTACT MENU-->
+				<div id="contact" class="panel" title="" data-nav="menu_jqmobi" scrolling="no">
+					<div class="space20"></div>
+					<div class="tac size40 font-din">
+						VOUS AVEZ UNE QUESTION ?<br/>BESOIN D’AIDE ?
+					</div>
+					<div class="space20"></div>
+					<div class="picto-phone ma"><img class="width100" src="img/picto-phone.png" /></div>
+					<div class="space20"></div>
+					<div class="ma">
+						<!--<div class="back-bt-contact"></div>-->
+						<a href="tel:0623653496"><div class="ma css3buttonblue font-din tac size-text-button default-button">Appelez-nous</div></a>
+					</div>
+					<div class="space50"></div>
+					<div class="space10"></div>
+					<div class="picto-mail ma"><img class="width100" src="img/picto-email.png" /></div>
+					<div class="space20"></div>
+					<div class="ma">
+						<a href="mailto:bdugast@ntmy.fr"><div class="ma css3buttonblue font-din tac size-text-button default-button">Envoyez-nous un e-mail</div></a>
+					</div>
+					<div class="space50"></div>
+					</div>
+				<!--END CONTACT MENU-->
 			</div>
 			
 			<!-- bottom navbar.  Add additional tabs here -->
