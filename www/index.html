@@ -37,8 +37,9 @@
 		<script type="text/javascript" charset="utf-8" src="js/jq.shake.js"></script> 
 		<script type="text/javascript" charset="utf-8" src="js/jq.alphatable.js"></script> 
 		<script type="text/javascript" charset="utf-8" src="js/jq.template.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/ad.js"></script>
 		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-				<script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
+
 		<link href="js/video-js.css" rel="stylesheet">
 		<script src="js/video.js"></script>
 		
@@ -65,10 +66,20 @@
 				webRoot=AppMobi.webRoot+"/";
 				//hide splash screen
 				AppMobi.device.hideSplashScreen();	
-				
-				
 			};
 			document.addEventListener("appMobi.device.ready",onDeviceReady,false); 
+			
+			$(document).ready(function(){
+				$('#jQUi').advertisement({
+					mode: 'fullpage',
+					adtype: 'image',
+					width: 300,
+					height: 250,
+					artwork: "https://raw.github.com/01org/appframeworkPlugins/master/advertisement/sample.jpg",
+					targeturl: "http://yoursite.com/where-to-go-on-click.html",
+					class: "over"
+				});
+			});
         </script>
 		<div id="jQUi" style="overflow:hidden;">
 			<!-- this is the header div -->

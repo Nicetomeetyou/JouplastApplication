@@ -125,6 +125,8 @@ a:hover{ color:#000000 !important; }
 .grey-background { background-color:#EFEFEF; }
 .width100 { width:100% }
 
+#advertisement_outer { position:relative; z-index:90000; background:rgba(29,29,28,0.7) !important;}
+
 #back {	width:25%; }
 .back {	background:url(../img/back.jpg) repeat 0 0; height:100%px; width:100%; display:block; }
 .inset { -moz-box-shadow: inset 0 3px 8px rgba(0,0,0,.4); -webkit-box-shadow: inset 0 3px 8px rgba(0,0,0,.4); box-shadow: inset 0 3px 8px rgba(0,0,0,.24); }
