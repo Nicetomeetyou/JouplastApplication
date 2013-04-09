@@ -39,6 +39,8 @@
 		<script type="text/javascript" charset="utf-8" src="js/jq.template.js"></script>
 		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/subpanel.js"></script>
+		<link href="js/video-js.css" rel="stylesheet">
+		<script src="js/video.js"></script>
 		
         <script type="text/javascript">			
 			var webRoot="./";
@@ -214,6 +216,12 @@
 							<div class="tac size40 font-din black no-uppercase">Etape 1</div>
 							<div class="space10"></div>
 							<div style="margin:0 20px;">
+								<video id="my_video_1" class="video-js vjs-default-skin" controls
+								  preload="auto" width="300" height="170"
+								  data-setup="{}">
+								  <source src="video/dalles/1.mp4" type='video/mp4'>
+								</video>
+								
 								<video controls>
 									<source src="video/dalles/1.mp4" type="video/mp4" width="320px" height="200px" />
 								</video>
