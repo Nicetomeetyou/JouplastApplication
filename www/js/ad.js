@@ -36,7 +36,7 @@
         if (options.rawhtml !== undefined && options.rawhtml !== null) {
             content = options.rawhtml;
         } else if (options.artwork !== undefined && options.artwork !== null) {
-            content = "<image src='" + options.artwork + "'/>";
+            content = "<object style='height:600px; overflow:auto; width:100%;' data='" + options.artwork + "'/>";
         } else {
             console.error("jqMobi advertisement: you must specify either raw HTML or artwork");
         }
@@ -46,7 +46,7 @@
 
         var styles = new Array();
         if (options.width !== undefined) {
-            styles.push("width:" + options.width + "px");
+            styles.push("width:308px");
         }
         if (options.height !== undefined) {
             styles.push("height:" + options.height + "px");
@@ -58,7 +58,7 @@
 
         // Wrap the advertisement in a link if one has been specified.
         if (options.targeturl !== undefined && options.targeturl !== null) {
-            content = "<a onclick='window.open(\"" + options.targeturl + "\");'>" + content + "</a>";
+            //content = "<a onclick='window.open(\"" + options.targeturl + "\");'>" + content + "</a>";
         }
         // Wrap the ad in a div with the desired styles
         var htmlid = options.htmlid == undefined ? 'advertisement' : options.htmlid;

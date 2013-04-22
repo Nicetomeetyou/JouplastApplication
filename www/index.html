@@ -39,9 +39,6 @@
 		<script type="text/javascript" charset="utf-8" src="js/jq.template.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/ad.js"></script>
 		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-
-		<link href="js/video-js.css" rel="stylesheet">
-		<script src="js/video.js"></script>
 		
         <script type="text/javascript">			
 			var webRoot="./";
@@ -73,12 +70,16 @@
 				$('#jQUi').advertisement({
 					mode: 'fullpage',
 					adtype: 'image',
-					width: 300,
-					height: 250,
-					artwork: "https://raw.github.com/01org/appframeworkPlugins/master/advertisement/sample.jpg",
+					width: 308,
+					height: 600,
+					//artwork: "https://raw.github.com/01org/appframeworkPlugins/master/advertisement/sample.jpg",
+					artwork: "http://www.ntmy.fr/test/jouplast/pub.html",
 					targeturl: "http://yoursite.com/where-to-go-on-click.html",
 					class: "over"
 				});
+				
+				//alert($('#advertissement'));
+				//$('#advertissement').load("<object data='http://ocparis.com/enews/2013/03/'></object>");
 			});
         </script>
 		<div id="jQUi" style="overflow:hidden;">
@@ -227,21 +228,8 @@
 							<div class="tac size40 font-din black no-uppercase">Etape 1</div>
 							<div class="space10"></div>
 							<div style="margin:0 20px;">
-								<video id="my_video_1" class="video-js vjs-default-skin" controls
-								  preload="auto" width="300" height="170"
-								  data-setup="{}">
-								  <source src="video/dalles/1.mp4" type='video/mp4'>
-								</video>
-								
-								<video poster="http://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Teddy_bear_27.jpg/250px-Teddy_bear_27.jpg" controls>
-									<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4">
-								</video>
-								
-								<video controls>
-									<source src="video/dalles/1.mp4" type="video/mp4" width="320px" height="200px" />
-								</video>
 								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
-									<source src="video/dalles/1.mp4" type="video/mp4" />
+									<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4" />
 								</video>
 							</div>
 							<div class="cb"></div>
@@ -327,6 +315,7 @@
 					<script>
 						var bt1 = document.getElementById("bttab1"); 
 						bt1.addEventListener("click", function(e) { 
+							alert('clic');
 							if($("#tab1 ~ .tabs .tab1 dd div").height() == 0) { $("#tab1 ~ .tabs .tab1 dd div").css("height", "198px"); }
 							else { $("#tab1 ~ .tabs .tab1 dd div").css("height", "0px"); }
 							$("#tab2 ~ .tabs .tab2 dd div").css("height", "0px"); 
@@ -379,6 +368,8 @@
 						<li class="icon home mini"></li>
 					</ul>
 			</nav>
+			
+			
 			
 			<script>
 				
