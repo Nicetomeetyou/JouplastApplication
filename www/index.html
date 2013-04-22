@@ -72,11 +72,16 @@
 					adtype: 'image',
 					width: 308,
 					height: 600,
-					//artwork: "https://raw.github.com/01org/appframeworkPlugins/master/advertisement/sample.jpg",
-					artwork: "http://www.ntmy.fr/test/jouplast/pub.html",
+					artwork: "https://raw.github.com/01org/appframeworkPlugins/master/advertisement/sample.jpg",
+					//artwork: "http://www.ntmy.fr/test/jouplast/pub.html",
 					targeturl: "http://yoursite.com/where-to-go-on-click.html",
 					class: "over"
 				});
+				
+				/*$('#advertissement').click(function() {
+					console.log('clic');
+					//navigator.app.loadUrl('http://www.google.com', { openExternal:true } ); 
+				});*/
 				
 				//alert($('#advertissement'));
 				//$('#advertissement').load("<object data='http://ocparis.com/enews/2013/03/'></object>");
@@ -369,10 +374,19 @@
 					</ul>
 			</nav>
 			
-			
+			<!--<div id="advertisement_outer" class="ad-fullpage" style="width:380px;height:812px">
+				<div class="ad-closewrapper">
+				<div onclick="clicPub()" id="advertisement" style="width:308px;height:600px;margin-left:auto;margin-right:auto; display:block;">
+					<object data="http://www.ntmy.fr/test/jouplast/pub.html" style="height:600px; overflow:auto; width:100%;"></object>
+				</div>
+			</div>-->
 			
 			<script>
-				
+				function clicPub() {
+					console.log('clic');
+					alert('clic');
+					//navigator.app.loadUrl('http://www.google.com', { openExternal:true } ); 
+				}
 			</script>
 		</div>
     </body>

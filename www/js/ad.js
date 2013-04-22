@@ -58,7 +58,7 @@
 
         // Wrap the advertisement in a link if one has been specified.
         if (options.targeturl !== undefined && options.targeturl !== null) {
-            //content = "<a onclick='window.open(\"" + options.targeturl + "\");'>" + content + "</a>";
+            content = "<a onclick='window.open(\"" + options.targeturl + "\");'>" + content + "</a>";
         }
         // Wrap the ad in a div with the desired styles
         var htmlid = options.htmlid == undefined ? 'advertisement' : options.htmlid;
