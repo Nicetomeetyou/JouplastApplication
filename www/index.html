@@ -40,7 +40,10 @@
 		<script type="text/javascript" charset="utf-8" src="js/ad.js"></script>
 		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 		
-        <script type="text/javascript">			
+        <script type="text/javascript">	
+			var gamme="";
+			var type_plot=""
+			
 			var webRoot="./";
 			$.ui.autoLaunch=false;
 			$.ui.resetScrollers=false;
@@ -67,7 +70,11 @@
 			document.addEventListener("appMobi.device.ready",onDeviceReady,false); 
 			
 			$(document).ready(function(){
-				$('#jQUi').advertisement({
+				language = navigator.language.split("-");
+				language_root = (language[0]);
+				
+				alert(language_root);
+				/*$('#jQUi').advertisement({
 					mode: 'fullpage',
 					adtype: 'image',
 					width: 308,
@@ -76,7 +83,7 @@
 					artwork: "http://www.ntmy.fr/test/jouplast/pub.html",
 					targeturl: "http://yoursite.com/where-to-go-on-click.html",
 					class: "over"
-				});
+				});*/
 				
 				/*$('#advertissement').click(function() {
 					console.log('clic');
@@ -86,6 +93,15 @@
 				//alert($('#advertissement'));
 				//$('#advertissement').load("<object data='http://ocparis.com/enews/2013/03/'></object>");
 			});
+			
+			var tabNomProduit = new Array("HD 35mm", "HD 40/65mm", "HD 50/80mm", "HD 80/140mm", "HD 140/230mm", "HL 40/65mm", "HL 50/80mm", "HL 80/140mm", "HL 140/230mm", "HD 8/15mm", "HD 10mm", "HD 20/30mm", "HL 10mm", "HL 20/30mm", "HI 40/65mm", "HI 50/80mm", "HI 80/140mm", "HI 140/230mm", "Calle amortisseur", "HR 200 x 200", "HR 200 C", "HR 25 mm Dalle", "HR 60 mm Dalles et Lambourdes", "HE 3mm", "HE 5mm", "HC 2mm", "HC 3mm", "HC 5mm");
+			
+			var tabConditionement = (	new Array("60", "9", "1200", "200"), new Array("60", "15", "1200", "320"), new Array("60", "15", "840", "230"), new Array("40", "17", "560", "260"), new Array("40", "17", "400", "190")
+											, new Array("60", "15", "1200", "320"), new Array("60", "15", "840", "230"), new Array("40", "17", "560", "260"), new Array("40", "17", "400", "190")
+											, new Array("30", "6", "1890", "400"), new Array("60", "3.5", "3000", "190"), new Array("60", "9.5", "2100", "350")
+											, new Array("60", "3.5", "3000", "190"), new Array("60", "9.5", "2100", "350")
+											, new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350")
+											, new Array("20", "", "", ""), new Array("10", "2.5", "1120", "300"), new Array("10", "3", "1120", "350"), new Array("120", "9", "4200", "330"), new Array("60", "5", "1500", "140"), new Array("2000", "", "", ""), new Array("2000", "", "", ""), new Array("40", "", "", ""), new Array("40", "", "", ""), new Array("40", "", "", ""));
         </script>
 		<div id="jQUi" style="overflow:hidden;">
 			<!-- this is the header div -->
@@ -263,19 +279,19 @@
 						<div class="tabs">
 							<dl class="tab1">
 								<dd>
-									<a id="bttab1" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast</a>
+									<a id="bttab1_product" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast</a>
 									<div>
 										<section>
 											<section class="ombre-menu-haut"></section>
 											<section class="inside-li">
 												<section class="picto-cata-dalle fleft"></section>
-												<a href="" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles</a>
+												<a href="#catalogue-plot" onclick="triPlot('standard','dalles')" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles</a>
 											</section>
 										</section>
 										<section>
 											<section class="inside-li">
 												<section class="picto-cata-lambourde fleft"></section>
-												<a href="" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots lambourdes</a>
+												<a href="#catalogue-plot" onclick="triPlot('standard','lambourdes')" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots lambourdes</a>
 											</section>
 											<section class="ombre-menu-bas"></section>
 										</section>
@@ -290,20 +306,20 @@
 											<section class="ombre-menu-haut"></section>
 											<section class="inside-li">
 												<section class="picto-cata-dalle fleft"></section>
-												<a href="" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles</a>
+												<a href="#catalogue-plot"  onclick="triPlot('evolution','dalles')" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles</a>
 												<section class=""></section>
 											</section>
 										</section>
 										<section>
 											<section class="inside-li">
 												<section class="picto-cata-lambourde fleft"></section>
-												<a href="" class="font-din size28 grey sub-title-cat-catalogue">Plots lambourdes</a>
+												<a href="#catalogue-plot" onclick="triPlot('evolution','lambourdes')" class="font-din size28 grey sub-title-cat-catalogue">Plots lambourdes</a>
 											</section>
 										</section>
 										<section>
 											<section class="inside-li">
 												<section class="picto-cata-integral fleft"></section>
-												<a href="" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots intégrals</a>
+												<a href="#catalogue-plot" onclick="triPlot('evolution','integral')" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots intégrals</a>
 											</section>
 											<section class="ombre-menu-bas"></section>
 										</section>
@@ -312,15 +328,14 @@
 							</dl>
 							<dl class="tab3">
 								<dd>
-									<a id="bttab3" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Accessoires</a>
+									<a href="#catalogue-plot" onclick="triPlot('acc','acc')" id="bttab3" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Accessoires</a>
 								</dd>
 							</dl>
 						</div>
 					</div>
 					<script>
-						var bt1 = document.getElementById("bttab1"); 
-						bt1.addEventListener("click", function(e) { 
-							alert('clic');
+						var bt1_product = document.getElementById("bttab1_product"); 
+						bt1_product.addEventListener("click", function(e) { 
 							if($("#tab1 ~ .tabs .tab1 dd div").height() == 0) { $("#tab1 ~ .tabs .tab1 dd div").css("height", "198px"); }
 							else { $("#tab1 ~ .tabs .tab1 dd div").css("height", "0px"); }
 							$("#tab2 ~ .tabs .tab2 dd div").css("height", "0px"); 
@@ -335,6 +350,267 @@
 					</script>
 				</div>
 				<!--END CATALOGUE MENU-->
+				
+				<!--CATALOGUE PLOT-->
+				<div id="catalogue-plot" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="back">
+						<div id="plot-dalles" style="display:none;">
+							<div class="space30"></div>
+							<div class="tac size40 font-din titre-calculette">
+								PLOTS DALLES
+							</div>
+							<div class="space10"></div>
+							<div>
+								<a href="#fiche">
+									<div class="back-white-catalogue">
+										<div class="font-din grey size34 no-uppercase text-choix-catalogue">HD 35mm FIXE</div>
+										<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+									</div>
+								</a>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HD 40/65mm RÉGLABLE</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HD 50/80mm RÉGLABLE</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HD 80/140mm RÉGLABLE</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HD 140/230mm RÉGLABLE</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+							</div>
+						</div>
+						
+						<div id="plot-lambourdes" style="display:none;">
+							<div class="space30"></div>
+							<div class="tac size40 font-din titre-calculette">
+								PLOTS LAMBOURDES
+							</div>
+							<div class="space10"></div>
+							<div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HL 40/65mm RÉGLABLE</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HL 50/80mm RÉGLABLE</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HL 80/140mm RÉGLABLE</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HL 140/230mm RÉGLABLE</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+							</div>
+						</div>
+						
+						<div id="plot-dalles-evolution" style="display:none;">
+							<div class="space30"></div>
+							<div class="tac size40 font-din titre-calculette">
+								PLOTS DALLES
+							</div>
+							<div class="space10"></div>
+							<div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HD 8/15mm REGLABLE</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HD 10mm FIXE</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HD 20/30mm REGLABLE</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+							</div>
+						</div>
+						
+						<div id="plot-lambourdes-evolution" style="display:none;">
+							<div class="space30"></div>
+							<div class="tac size40 font-din titre-calculette">
+								PLOTS LAMBOURDES
+							</div>
+							<div class="space10"></div>
+							<div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HL 10mm FIXE</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HL 20/30mm REGLABLE</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+							</div>
+						</div>
+						
+						<div id="plot-integrals-evolution" style="display:none;">
+							<div class="space30"></div>
+							<div class="tac size40 font-din titre-calculette">
+								PLOTS INTEGRALS
+							</div>
+							<div class="space10"></div>
+							<div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HI 40/65mm REGLABLE</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HI 50/80mm REGLABLE</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HI 80/140mm REGLABLE</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HI 140/230mm REGLABLE</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+							</div>
+						</div>
+						
+						<div id="accessoires" style="display:none;">
+							<div class="space30"></div>
+							<div class="tac size40 font-din titre-calculette">
+								ACCESSOIRES
+							</div>
+							<div class="space10"></div>
+							<div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">Calle amortisseur</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HR 200 x 200</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HR 200 C</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HR 25 mm Dalle</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HR 60 mm Dalles et Lambourdes</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HE 3mm</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HE 5mm</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HC 2mm</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HC 3mm</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+								<div class="grey-line cb"></div>
+								<div class="back-white-catalogue">
+									<div class="font-din grey size34 no-uppercase text-choix-catalogue">HC 5mm</div>
+									<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="ombre-list-plot-bas"></div>
+						<div class="space50"></div>
+					</div>
+				</div>
+				<!--END CATALOGUE PLOT-->
+				
+				<!--FICHE PRODUIT-->
+				<div id="fiche" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="space30"></div>
+					<div class="back">
+						<div>
+							
+						</div>
+						<div class="tac size40 font-din titre-calculette">
+							PLOTS DALLES
+						</div>
+						<div class="space10"></div>
+						<div class="back-white-calculette">
+							<div class="space25"></div>
+							<div class="font-din size40 tac grey">HD 35mm fixe</div>
+							<div class="cb"></div>
+							<div class="space25"></div>
+							<div class="container-img-plot">
+								<div class="fleft fiche-photo">
+									<div class="img-dalles-0 size-img"></div>
+								</div>
+								<div class="fleft fiche-photo">
+									<div class="img-dalles-1 size-img ma"></div>
+								</div>
+								<div class="fright fiche-photo">
+									<div class="img-dalles-2 size-img fright"></div>
+								</div>
+							</div>
+							<div class="cb"></div>
+							<div class="space25"></div>
+							<div class="container-schema-plot no-uppercase">
+								<div id="p1" class="home-square">
+									<div class="plot-8-15-1-HD size-plot ma"></div>
+								</div>
+								<div id="p2" class="home-square">
+									<div class="plot-8-15-2-HD size-plot ma"></div>
+								</div>
+							</div>
+							<div class="cb"></div>
+							<div class="space25"></div>
+							<div class="grey-line"></div>
+							<div class="space25"></div>
+							<div class="font-din size34 tac black no-uppercase">Conditionnement</div>
+							<div class="home-square">Sac : 60 pièces</div>
+							<div class="home-square">Palette : 1200 pièces</div>
+							<div class="cb"></div>
+							<div class="space25"></div>
+							<div class="grey-line"></div>
+							<div class="space25"></div>
+							<div class="font-din size34 tac black no-uppercase">Caractéristiques techniques des plots</div>
+							
+						</div>
+						<div class="cb"></div>
+					</div>
+				</div>
+				<!--END FICHE PRODUIT-->
 				
 				<!--CONTACT MENU-->
 				<div id="contact" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
@@ -374,18 +650,66 @@
 					</ul>
 			</nav>
 			
-			<!--<div id="advertisement_outer" class="ad-fullpage" style="width:380px;height:812px">
+			<div id="advertisement_outer" class="ad-fullpage" style="width:380px;height:812px">
 				<div class="ad-closewrapper">
-				<div onclick="clicPub()" id="advertisement" style="width:308px;height:600px;margin-left:auto;margin-right:auto; display:block;">
+					<a id="ad-closelink" class="icon close small ad-closelink" style="display:block" onclick="$('#advertisement_outer').remove();">Close ad</a>
+					<span id="ad-countdown" class="ad-countdown" style="display:none"></span>
+				</div>
+				<div id="advertisement" style="width:308px;height:600px;margin-left:auto;margin-right:auto">
 					<object data="http://www.ntmy.fr/test/jouplast/pub.html" style="height:600px; overflow:auto; width:100%;"></object>
 				</div>
-			</div>-->
+			</div>
 			
 			<script>
-				function clicPub() {
-					console.log('clic');
-					alert('clic');
-					//navigator.app.loadUrl('http://www.google.com', { openExternal:true } ); 
+				function triPlot(pGamme, pType) {
+					if(pGamme == "standard" && pType == "dalles") {
+						$("#plot-dalles").css("display", "block");
+						$("#plot-lambourdes").css("display", "none");
+						$("#plot-dalles-evolution").css("display", "none");
+						$("#plot-lambourdes-evolution").css("display", "none");
+						$("#plot-integrals-evolution").css("display", "none");
+						$("#accessoires").css("display", "none");
+					}
+					if(pGamme == "standard" && pType == "lambourdes") {
+						$("#plot-dalles").css("display", "none");
+						$("#plot-lambourdes").css("display", "block");
+						$("#plot-dalles-evolution").css("display", "none");
+						$("#plot-lambourdes-evolution").css("display", "none");
+						$("#plot-integrals-evolution").css("display", "none");
+						$("#accessoires").css("display", "none");
+					}
+					if(pGamme == "evolution" && pType == "dalles") {
+						$("#plot-dalles").css("display", "none");
+						$("#plot-lambourdes").css("display", "none");
+						$("#plot-dalles-evolution").css("display", "block");
+						$("#plot-lambourdes-evolution").css("display", "none");
+						$("#plot-integrals-evolution").css("display", "none");
+						$("#accessoires").css("display", "none");
+					}
+					if(pGamme == "evolution" && pType == "lambourdes") {
+						$("#plot-dalles").css("display", "none");
+						$("#plot-lambourdes").css("display", "none");
+						$("#plot-dalles-evolution").css("display", "none");
+						$("#plot-lambourdes-evolution").css("display", "block");
+						$("#plot-integrals-evolution").css("display", "none");
+						$("#accessoires").css("display", "none");
+					}
+					if(pGamme == "evolution" && pType == "integral") {
+						$("#plot-dalles").css("display", "none");
+						$("#plot-lambourdes").css("display", "none");
+						$("#plot-dalles-evolution").css("display", "none");
+						$("#plot-lambourdes-evolution").css("display", "none");
+						$("#plot-integrals-evolution").css("display", "block");
+						$("#accessoires").css("display", "none");
+					}
+					if(pGamme == "acc" && pType == "acc") {
+						$("#plot-dalles").css("display", "none");
+						$("#plot-lambourdes").css("display", "none");
+						$("#plot-dalles-evolution").css("display", "none");
+						$("#plot-lambourdes-evolution").css("display", "none");
+						$("#plot-integrals-evolution").css("display", "none");
+						$("#accessoires").css("display", "block");
+					}
 				}
 			</script>
 		</div>
