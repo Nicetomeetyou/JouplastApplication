@@ -183,6 +183,7 @@ ul li ul li{background:#FFFFFF;border:none;}
 .tabs dl dd div{height:0;overflow:hidden;-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;-ms-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;-webkit-transition:translatez(0);-moz-transition:translatez(0);-o-transition:translatez(0);-ms-transition:translatez(0);transition:translatez(0);}
 .fiche-photo{width:31%;margin-right:10px;}
 .fiche-solo-photo{margin:auto;display:block;width:70%;}
+.fiche-picto-caracteristique{height:45px;}
 .size-text-button{font-size:16px;text-transform:none;}
 .picto-phone{max-width:80px;}
 .picto-mail{max-width:80px;}

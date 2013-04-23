@@ -38,6 +38,7 @@
 		<script type="text/javascript" charset="utf-8" src="js/jq.alphatable.js"></script> 
 		<script type="text/javascript" charset="utf-8" src="js/jq.template.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/ad.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/GAPlugin.js"></script>
 		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 		
         <script type="text/javascript">	
@@ -45,6 +46,7 @@
 			var type_plot="";
 			var tabNomProduit;
 			var tabFicheTitle;
+			var gaPlugin;
 			
 			var webRoot="./";
 			$.ui.autoLaunch=false;
@@ -68,8 +70,45 @@
 				webRoot=AppMobi.webRoot+"/";
 				//hide splash screen
 				AppMobi.device.hideSplashScreen();	
+				
+				gaPlugin = window.plugins.gaPlugin;
+				gaPlugin.init(gaSuccess, gaError, "UA-40371154-1", 10);
 			};
 			document.addEventListener("appMobi.device.ready",onDeviceReady,false); 
+			
+				function gaSuccess(){
+				alert('GA Plugin Success');
+				//GA track this page
+				gaPlugin.trackPage(trackPageSuccess, trackPageError, "index.html");
+				}
+
+				function gaError(msg){
+				alert('GA Plugin Error: ' + msg);
+				}
+				
+					function trackEventCapturePhotoSuccess(){
+alert('GA Plugin Track Event Capture Photo Success');
+
+//GA set variable (2nd ~ 5th)
+gaPlugin.setVariable( setVariableSuccess, setVariableError, "Counter", "15", 2);
+gaPlugin.setVariable( setVariableSuccess, setVariableError, "Previous page", "something.html", 3);
+gaPlugin.setVariable( setVariableSuccess, setVariableError, "Previous action", "some action", 4);
+gaPlugin.setVariable( setVariableSuccess, setVariableError, "Last error", "28", 5); //=> For paid GA customer only, up to 50
+}
+
+function trackEventCapturePhotoError(msg){
+alert('GA Plugin Track Event Capture Photo Error: ' + msg);
+}
+
+
+function setVariableSuccess(){
+//alert('GA Plugin Set Variable Success');
+}
+
+
+function setVariableError(msg){
+alert('GA Plugin Set Variable Error: ' + msg);
+}
 			
 			$(document).ready(function(){
 				var language = navigator.language.split("-");
@@ -881,15 +920,64 @@
 							<div class="space25"></div>
 							<div class="grey-line"></div>
 							<div class="space25"></div>
-							<div class="font-din size34 tac black no-uppercase">Conditionnement</div>
-							<div class="home-square">Sac : 60 pièces</div>
-							<div class="home-square">Palette : 1200 pièces</div>
+							<div class="font-din-bold size34 tac black no-uppercase">Conditionnement</div>
+							<div class="space10"></div>
+							<div class="font-din size26 grey no-uppercase">
+								<div class="home-square">
+									<div style="min-width:9%; float:left; margin-left:10px">
+										Sac :
+									</div>
+									<div style="min-width:9%; float:left;">
+										60 pièces<br/>15 kilos
+									</div>
+								</div>
+								
+								<div class="home-square">
+									<div style="min-width:9%; float:left; margin-left:15px">
+										Palette :
+									</div>
+									<div style="min-width:20%; float:left;">
+										1200 pièces<br/>320 kilos
+									</div>
+								</div>
+							</div>
 							<div class="cb"></div>
 							<div class="space25"></div>
 							<div class="grey-line"></div>
 							<div class="space25"></div>
 							<div class="font-din size34 tac black no-uppercase">Caractéristiques techniques des plots</div>
-							
+							<div class="space10"></div>
+							<div style="float:left; width:10%; margin-left:30px;">
+								<div class="fiche-picto-caracteristique" ><img src="img/icon-fiche-0.png" /></div>
+								<div class="fiche-picto-caracteristique" ><img src="img/icon-fiche-1.png" /></div>
+								<div class="fiche-picto-caracteristique" ><img src="img/icon-fiche-2.png" /></div>
+								<div class="fiche-picto-caracteristique" ><img src="img/icon-fiche-3.png" /></div>
+								<div class="fiche-picto-caracteristique" ><img src="img/icon-fiche-4.png" /></div>
+								<div class="fiche-picto-caracteristique" ><img src="img/icon-fiche-5.png" /></div>
+								<div class="fiche-picto-caracteristique" ><img src="img/icon-fiche-6.png" /></div>
+							</div>
+							<div style="float:left; width:70%; margin-left:15px;">
+								<div style="height:45px;" class="font-din size26 grey no-uppercase">Plot réalisé en matériau totalement<br/>recyclable</div>
+								<div style="height:45px;" class="font-din size26 grey no-uppercase">Résistant aux solutions acides<br/>et basiques</div>
+								<div style="height:45px;" class="font-din size26 grey no-uppercase">Résistant aux agents atmosphériques</div>
+								<div style="height:45px;" class="font-din size26 grey no-uppercase">Résistant aux températures entre<br/>-30°C et +60°C</div>
+								<div style="height:45px;" class="font-din size26 grey no-uppercase">Les plots sont conformes à la DTU<br/>43.1 et 51.4</div>
+								<div style="height:45px;" class="font-din size26 grey no-uppercase">Résistant au test d’écrasement<br/>avec charge supérieur à 1 tonne</div>
+								<div style="height:45px;" class="font-din size26 grey no-uppercase">Résine synthétique (Polypropylène<br/>chargé)</div>
+							</div>
+							<div class="cb"></div>
+							<div class="space25"></div>
+							<div class="grey-line"></div>
+							<div class="space25"></div>
+							<div class="font-din size34 tac black no-uppercase">Estimez le nombre de plots<br/>nécessaire à vos travaux</div>
+							<div class="space25"></div>
+							<div class="ma css3buttonblue font-din tac size-text-button default-button">Calculer</div>
+							<div class="space25"></div>
+							<div class="grey-line"></div>
+							<div class="space25"></div>
+							<div class="font-din size34 tac black no-uppercase">Besoin d'aide ?</div>
+							<div class="space25"></div>
+							<div class="ma css3buttonblue font-din tac size-text-button default-button">Contactez-nous</div>
 						</div>
 						<div class="cb"></div>
 					</div>
