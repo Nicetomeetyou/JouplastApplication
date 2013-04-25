@@ -63,19 +63,21 @@ a:hover{color:#000000!important;}
 #black-screen{width:100%;height:150px;background:url("../img/black-pixel.png") repeat left top transparent;position:absolute;z-index:10;top:0;left:0;}
 .back-white{width:100%;height:90px;display:block;background-color:#FFFFFF;}
 .grey-line{border-top:2px solid #CCCCCC;width:100%;position:relative;}
-.picto-choix{height:191px;max-width:90px;margin:12px;position:absolute;z-index:0;}
+.picto-choix{height:53px;max-width:90px;margin:12px;position:absolute;z-index:0;}
 .text-calculatrice-choix{margin:22px 0 0 120px;position:absolute;}
 .fleche-droite{max-width:15px;margin:28px 5px 0 0;}
 .back-white-calculette{width:100%;height:100%;display:block;background-color:#FFFFFF;}
 .input-calculette{width:100px;height:50px;border-radius:}
 .line-calculette{height:80px;padding-top:20px;margin-left:30px;}
-.text-mention{margin-top:-7px;}
+.text-mention{margin-top:-1px;}
 .border-input{-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;}
 .titre-calculette{position:relative;top:-10px;}
 .superficie-dalle{margin-left:20px;margin-right:10px;}
 .hauteur-dalle{margin-left:50px;margin-right:10px;}
-.text-hauteur{margin-top:-10px;}
-.mesure{margin-top:9px;}
+.text-hauteur{margin-top:7px;margin-right:34px;}
+.mesure{margin-top:15px;}
+.chiffre-dalles-calculatrice{max-width:29px;margin:30px 20px 30px 30px;}
+.title-chiffre-calculatrice{margin-top:34px;}
 .bt-beton-on{background:url(../img/bt-beton-on.png) no-repeat 0 0 transparent;width:260px;height:91px;}
 .bt-beton-off{background:url(../img/bt-beton-off.png) no-repeat 0 0;width:260px;height:91px;}
 .bt-ceramique-on{background:url(../img/bt-ceramique-on.png) no-repeat 0 0;width:260px;height:91px;}
@@ -100,7 +102,7 @@ div.apprise .apprise-buttons button{color:#ffffff!important;padding:28px 10px!im
 .text-ecarteur{margin:53px 0 0 35px;}
 .text-ecarteur-ceramique{margin:0px 0 0 0px;}
 .titre-recommandations-lambourdes{margin-left:30px;padding-top:10px;}
-.exemple-lambourde{background:url(../img/exemple-lambourde.jpg) no-repeat 0 0;width:559px;height:306px;}
+.exemple-lambourde{background:url(../img/exemple-lambourde.jpg/img/exemple-lambourde.jpg) no-repeat 0 0;width:559px;height:306px;}
 .rehausseur{background:url(../img/rehausseur.jpg) no-repeat 0 0;width:109px;height:111px;}
 .cales{background:url(../img/cales.jpg) no-repeat 0 0;width:111px;height:101px;}
 .text-lambourdes-accessoires{position:relative;top:-10px;}
@@ -181,6 +183,10 @@ ul li ul li{background:#FFFFFF;border:none;}
 .accordion span{display:none}
 .tabs{background-color:#FFFFFF;overflow:hidden;}
 .tabs dl dd div{height:0;overflow:hidden;-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;-ms-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;-webkit-transition:translatez(0);-moz-transition:translatez(0);-o-transition:translatez(0);-ms-transition:translatez(0);transition:translatez(0);}
+.accordion_calculatrice{color:#000000;position:relative;width:100%;}
+.accordion_calculatrice span{display:none}
+.tabs_calculatrice{background-color:#FFFFFF;overflow:hidden;}
+.tabs_calculatrice dl dd div{height:0;overflow:hidden;-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;-ms-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;-webkit-transition:translatez(0);-moz-transition:translatez(0);-o-transition:translatez(0);-ms-transition:translatez(0);transition:translatez(0);}
 .fiche-photo{width:31%;margin-right:10px;}
 .fiche-solo-photo{margin:auto;display:block;width:70%;}
 .fiche-picto-caracteristique{height:45px;}
@@ -188,6 +194,7 @@ ul li ul li{background:#FFFFFF;border:none;}
 .picto-phone{max-width:80px;}
 .picto-mail{max-width:80px;}
 .back-bt-contact{background:url(../img/back-bt-contact.png) no-repeat 0 0;width:792px;height:486px;overflow:hidden;}
+.little-button{width:160px;}
 .default-button{width:260px;}
 .large-button{width:435px;}
 .css3buttonblue{color:#ffffff;padding:22px 0px;background:-moz-linear-gradient( top,#1286d3 0%,#1286d3 50%,#096fb3 50%,#096fb3);background:-webkit-gradient( linear,left top,left bottom,from(#1286d3),color-stop(0.48,#1286d3),color-stop(0.52,#096fb3),to(#096fb3));-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;border:0px solid #000000;-moz-box-shadow:0px 2px 3px rgba(000,000,000,1),inset 0px 0px 1px rgba(255,255,255,0.6);-webkit-box-shadow:0px 2px 3px rgba(000,000,000,1),inset 0px 0px 1px rgba(255,255,255,0.6);box-shadow:0px 2px 3px rgba(000,000,000,1),inset 0px 0px 1px rgba(255,255,255,0.6);text-shadow:0px -1px 0px rgba(000,000,000,1),0px 1px 0px rgba(255,255,255,0.2);}

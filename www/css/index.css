@@ -173,7 +173,7 @@ a:hover{ color:#000000 !important; }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 .back-white { width:100%; height:90px; display:block; background-color:#FFFFFF; }
 .grey-line { border-top: 2px solid #CCCCCC; width:100%; position:relative; }
-.picto-choix { height:191px; max-width:90px; margin: 12px; position: absolute;  z-index:0; }
+.picto-choix { height:53px; max-width:90px; margin: 12px; position: absolute;  z-index:0; }
 
 .text-calculatrice-choix { margin: 22px 0 0 120px; position: absolute; }
 .fleche-droite { max-width:15px; margin:28px 5px 0 0; }
@@ -181,15 +181,18 @@ a:hover{ color:#000000 !important; }
 .back-white-calculette { width:100%; height:100%; display:block; background-color:#FFFFFF; }
 .input-calculette { width:100px; height:50px; border-radius: }
 .line-calculette { height:80px; padding-top:20px; margin-left:30px; }
-.text-mention { margin-top: -7px; }
+.text-mention { margin-top: -1px; }
 .border-input { -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; }
 
 .titre-calculette { position:relative; top:-10px; }
 
 .superficie-dalle { margin-left:20px; margin-right:10px; }
 .hauteur-dalle { margin-left:50px; margin-right:10px; }
-.text-hauteur { margin-top: -10px; }
-.mesure { margin-top: 9px; }
+.text-hauteur { margin-top: 7px; margin-right:34px; }
+.mesure { margin-top: 15px; }
+
+.chiffre-dalles-calculatrice { max-width:29px; margin:30px 20px 30px 30px; }
+.title-chiffre-calculatrice { margin-top:34px; }
 
 .bt-beton-on { background:url(../img/bt-beton-on.png) no-repeat 0 0 transparent; width:260px; height:91px; }
 .bt-beton-off { background:url(../img/bt-beton-off.png) no-repeat 0 0; width:260px; height:91px; }
@@ -336,7 +339,7 @@ div.apprise .apprise-buttons button {
 /* CALCULETTE LAMBOURDES */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 .titre-recommandations-lambourdes { margin-left: 30px; padding-top: 10px; }
-.exemple-lambourde { background:url(../img/exemple-lambourde.jpg) no-repeat 0 0; width:559px; height:306px; }
+.exemple-lambourde { background:url(../img/exemple-lambourde.jpg/img/exemple-lambourde.jpg) no-repeat 0 0; width:559px; height:306px; }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 /* RESULTAT LAMBOURDES */
@@ -438,7 +441,7 @@ ul li ul li{ background: #FFFFFF; border:none; }
 .text-choix-catalogue { margin: 25px 0 0 20px; position: absolute; }
 .fleche-droite-catalogue { max-width:15px; margin:20px 5px 0 0; }
 
-/* CSS ACCORDION */
+/* CSS ACCORDION CATALOGUE */
 .accordion {
     color: #000000;
     position: relative;
@@ -453,6 +456,38 @@ ul li ul li{ background: #FFFFFF; border:none; }
 }
 
 .tabs dl dd div {
+    height: 0;
+    overflow: hidden;
+	
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+	
+	 -webkit-transition: translatez(0);
+    -moz-transition: translatez(0);
+    -o-transition: translatez(0);
+    -ms-transition: translatez(0);
+    transition: translatez(0);
+}
+/*****************/
+
+/* CSS ACCORDION CALCULATRICE */
+.accordion_calculatrice {
+    color: #000000;
+    position: relative;
+    width: 100%;
+}
+.accordion_calculatrice span {
+    display: none
+}
+.tabs_calculatrice {
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+
+.tabs_calculatrice dl dd div {
     height: 0;
     overflow: hidden;
 	
@@ -488,6 +523,7 @@ ul li ul li{ background: #FFFFFF; border:none; }
 .picto-mail { max-width:80px; }
 .back-bt-contact { background:url(../img/back-bt-contact.png) no-repeat 0 0; width:792px; height:486px;	overflow:hidden; }
 
+.little-button { width:160px; }
 .default-button { width:260px; }
 .large-button { width:435px; }
 

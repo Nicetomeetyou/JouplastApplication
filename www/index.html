@@ -38,7 +38,7 @@
 		<script type="text/javascript" charset="utf-8" src="js/jq.alphatable.js"></script> 
 		<script type="text/javascript" charset="utf-8" src="js/jq.template.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/ad.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/GAPlugin.js"></script>
+		<!--<script type="text/javascript" charset="utf-8" src="js/GAPlugin.js"></script>-->
 		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 		
         <script type="text/javascript">	
@@ -71,44 +71,10 @@
 				//hide splash screen
 				AppMobi.device.hideSplashScreen();	
 				
-				gaPlugin = window.plugins.gaPlugin;
-				gaPlugin.init(gaSuccess, gaError, "UA-40371154-1", 10);
+				//gaPlugin = window.plugins.gaPlugin;
+				//gaPlugin.init(gaSuccess, gaError, "UA-40371154-1", 10);
 			};
 			document.addEventListener("appMobi.device.ready",onDeviceReady,false); 
-			
-				function gaSuccess(){
-				alert('GA Plugin Success');
-				//GA track this page
-				gaPlugin.trackPage(trackPageSuccess, trackPageError, "index.html");
-				}
-
-				function gaError(msg){
-				alert('GA Plugin Error: ' + msg);
-				}
-				
-					function trackEventCapturePhotoSuccess(){
-alert('GA Plugin Track Event Capture Photo Success');
-
-//GA set variable (2nd ~ 5th)
-gaPlugin.setVariable( setVariableSuccess, setVariableError, "Counter", "15", 2);
-gaPlugin.setVariable( setVariableSuccess, setVariableError, "Previous page", "something.html", 3);
-gaPlugin.setVariable( setVariableSuccess, setVariableError, "Previous action", "some action", 4);
-gaPlugin.setVariable( setVariableSuccess, setVariableError, "Last error", "28", 5); //=> For paid GA customer only, up to 50
-}
-
-function trackEventCapturePhotoError(msg){
-alert('GA Plugin Track Event Capture Photo Error: ' + msg);
-}
-
-
-function setVariableSuccess(){
-//alert('GA Plugin Set Variable Success');
-}
-
-
-function setVariableError(msg){
-alert('GA Plugin Set Variable Error: ' + msg);
-}
 			
 			$(document).ready(function(){
 				var language = navigator.language.split("-");
@@ -215,27 +181,214 @@ alert('GA Plugin Set Variable Error: ' + msg);
 						CALCULEZ LE NOMBRE<br/>DE PLOTS NÉCESSAIRES<br/>À VOS TRAVAUX
 					</div>
 					<div class="space20"></div>
-					<div class="tac font-din title-din-big no-uppercase">
+					<div class="tac size40 font-din title-din-big no-uppercase">
 						Vous souhaitez poser des :
 					</div>
 					<div class="space30"></div>
-					<div>
-						<div id="calculatrice-dalle" class="back-white">
-							<div class="picto-choix"><img class="width100" src="img/calcul-dalle.jpg" /></div>
-							<div class="font-din black size34 no-uppercase text-calculatrice-choix">Dalles ou<br/>caillebotis en bois</div>
-							<div class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></div>
+					
+					<div class="accordion_calculatrice">
+						<span id="tab1_calculatrice"></span>
+						<span id="tab2_calculatrice"></span>
+						
+						<div class="tabs_calculatrice">
+							<dl class="tab1_calculatrice">
+								<dd>
+									<a id="bttab1_calculatrice" class="title-din-big font-din size34 color-grey no-uppercase">
+										<section id="calculatrice-dalle" class="back-white">
+											<section class="picto-choix"><img class="width100" src="img/calcul-dalle.jpg" /></section>
+											<section class="font-din black size34 no-uppercase text-calculatrice-choix">Dalles ou<br/>caillebotis en bois</section>
+											<section class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></section>
+										</section>
+									</a>
+									<div>
+										<section>
+											<section class="ombre-menu-haut"></section>
+											<section class="inside-li">
+												<section class="fleft"><img style="max-width:70px;" src="img/rectangulaire-picto.png" /></section>
+												<a href="#calculatrice-dalles" onclick="" class="font-din size28 grey sub-title-cat-catalogue-haut">Rectangulaire</a>
+											</section>
+										</section>
+										<section>
+											<section class="inside-li">
+												<section class="fleft"><img style="max-width:70px;" src="img/enl-picto.png" /></section>
+												<a href="#calculatrice-dalles" onclick="" class="font-din size28 grey sub-title-cat-catalogue-bas">En L</a>
+											</section>
+											<section class="ombre-menu-bas"></section>
+										</section>
+									</div>
+								</dd>
+							</dl>
+							<div class="grey-line"></div>
+							<dl class="tab2_calculatrice">
+								<dd>
+									<a href="#calculatrice-lambourdes" id="bttab2_calculatrice" class="title-din-big font-din size34 color-grey no-uppercase">
+										<section id="calculatrice-lambourde" class="back-white">
+											<section class="picto-choix"><img class="width100" src="img/calcul-lambourde.jpg" /></section>
+											<section class="font-din black size34 no-uppercase text-calculatrice-choix"><br/>Lambourdes</section>
+											<section class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></section>
+										</section>
+									</a>
+								</dd>
+							</dl>
 						</div>
-						<div class="grey-line cb"></div>
-						<div id="calculatrice-lambourde" class="back-white">
-							<div class="picto-choix"><img class="width100" src="img/calcul-lambourde.jpg" /></div>
-							<div class="font-din black size34 no-uppercase text-calculatrice-choix"><br/>Lambourdes</div>
-							<div class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></div>
-						</div>
-						<div class="grey-line cb"></div>
 					</div>
+					<script>
+						var bt1_calculatrice = document.getElementById("bttab1_calculatrice"); 
+						bt1_calculatrice.addEventListener("click", function(e) { 
+							if($("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").height() == 0) { $("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css("height", "193px"); }
+							else { $("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css("height", "0px"); }
+							$("#tab2_calculatrice ~ .tabs_calculatrice .tab2_calculatrice dd div").css("height", "0px"); 
+						}, false);
+						
+						var bt2_calculatrice = document.getElementById("bttab2_calculatrice"); 
+						bt2_calculatrice.addEventListener("click", function(e) { 
+							if($("#tab2_calculatrice ~ .tabs_calculatrice .tab2_calculatrice dd div").height() == 0) { $("#tab2_calculatrice ~ .tabs_calculatrice .tab2_calculatrice dd div").css("height", "275px"); }
+							else { $("#tab2_calculatrice ~ .tabs_calculatrice .tab2_calculatrice dd div").css("height", "0px"); }
+							$("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css("height", "0px"); 
+						}, false);
+					</script>
 					<div class="space50"></div>
 				</div>
 				<!--END CALCULATRICE MENU-->
+				
+				<!--CALCULATRICE DALLES-->
+				<div id="calculatrice-dalles" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="space20"></div>
+					<div class="tac size40 font-din">POSE DE DALLES</div>
+					<div class="space10"></div>
+					<div class="back-white-calculette">
+					
+						<div class="accordion">
+							<span id="tab1"></span>
+							<span id="tab2"></span>
+							
+							<div class="tabs">
+								<dl class="tab1">
+									<dd>
+										<section class="back-white">
+											<img class="chiffre-dalles-calculatrice fleft" src="img/calculette-1.jpg" />
+											<section class="size40 font-din-bold no-uppercase black title-chiffre-calculatrice fleft">Calcul de terrasse</section>
+										</section>
+										<div  class="back-calculette">
+											<section>
+													<section class="ombre-menu-haut"></section>
+													<section class="width100">
+														<section class="field" style="position:absolute; left:5%; top:20%;">
+															<section class="text-hauteur font-din grey no-uppercase size40">1. Largeur</section>
+															<section class="fleft"><input id="superficieNumber" class="tac input-calculette inset superficie-dalle border-input size34" type="number" name="largeurNumber" maxlength="4"/> </section>
+															<section class="mesure font-din grey no-uppercase size34 fleft">m</section>
+															
+														</section>
+														<section class="field" style="position:absolute;  left:60%; top:20%; float:right;">
+															<section class="text-hauteur font-din grey no-uppercase size40">2. Longueur</section>
+															<section class="fleft"><input id="superficieNumber" class="tac input-calculette inset superficie-dalle border-input size34" type="number" name="largeurNumber" maxlength="4"/> </section>
+															<section class="mesure font-din grey no-uppercase size34 fleft">m</section>
+															
+														</section>
+														<section class="width100" >
+															<img class="width100" style="margin-top:50px;" src="img/rectangulaire-num.png" />
+														</section>
+														
+													</section>
+													<section id="btValider" class="ma css3buttonblue-lagoon little-button font-din size34 tac">Valider</section>
+													<section class="space50"></section>
+													<section class="ombre-menu-bas"></section>
+											</section>
+										</div>
+									</dd>
+								</dl>
+								<div class="grey-line"></div>
+								<dl class="tab2">
+									<dd>
+										<section class="back-white">
+											<img class="chiffre-dalles-calculatrice fleft" src="img/calculette-2.jpg" />
+											<section class="size40 font-din-bold no-uppercase black title-chiffre-calculatrice fleft">Types de dalles</section>
+										</section>
+										<div>
+											<section>
+												<section class="ombre-menu-haut"></section>
+												<section class="inside-li">
+													<section class="fleft"><img style="max-width:70px;" src="img/rectangulaire-picto.png" /></section>
+													<a href="#catalogue-plot" onclick="" class="font-din size28 grey sub-title-cat-catalogue-haut">Rectangulaire</a>
+												</section>
+											</section>
+										</div>
+									</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<script>
+						$("#tab1 ~ .tabs .tab1 dd div").css("height", "350px");
+						
+					</script>
+				</div>
+				<!--END CALCULATRICE DALLES-->
+				
+				<!--CALCULATRICE LAMBOURDES-->
+				<div id="calculatrice-lambourdes" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="space20"></div>
+					<div class="tac size40 font-din">POSE DE LAMBOURDES</div>
+					<div class="space10"></div>
+					<div class="back-white-calculette">
+						<div class="line-calculette">
+							<div class="text-hauteur font-din-bold black no-uppercase size40 fleft">Largeur<br/>de la terrasse</div>
+							<div class="fleft"><input id="superficieNumber" class="tac input-calculette inset superficie-dalle border-input size34" type="number" name="largeurNumber" maxlength="4"/> </div>
+							<div class="mesure font-din grey no-uppercase size34 fleft">m²</div>
+							<div class="cb"></div>
+						</div>
+						<div class="grey-line cb"></div>
+						<div class="line-calculette">
+							<div class="text-hauteur font-din-bold black no-uppercase size40 fleft">Longueur<br/>de la terrasse</div>
+							<div class="fleft"><input id="superficieNumber" class="tac input-calculette inset superficie-dalle border-input size34" type="number" name="longueurNumber" maxlength="4"/> </div>
+							<div class="mesure font-din grey no-uppercase size34 fleft">m²</div>
+							<div class="cb"></div>
+						</div>
+						<div class="grey-line cb"></div>
+						<div class="line-calculette">
+							<div class="font-din-bold black no-uppercase size40 fleft">Hauteur<br/>de la terrasse<div class="size26 grey text-mention font-din">Comprise entre 8 et  230 mm</div></div>
+							<div class="fleft"><input id="superficieNumber" class="tac input-calculette inset superficie-dalle border-input size34" type="number" name="hauteurNumber" maxlength="4"/> </div>
+							<div class="mesure font-din grey no-uppercase size34 fleft">mm</div>
+							<div class="cb"></div>
+						</div>
+						<div class="grey-line cb"></div>
+						<div class="space10"></div>
+						<div class="black font-din-bold size40 no-uppercase titre-recommandations-lambourdes">Recommandations</div>
+						<div class="space50"></div>
+						<div class="home-square-100">
+							<div><img class="width100" src="img/exemple-lambourde.jpg" /></div>
+						</div>
+						<div class="space50"></div>
+						<div id="btValider" class="ma css3buttongreen default-button font-din size34 tac">Valider</div>
+						<div class="space50"></div>
+					</div>
+					<script>
+						var size = "";
+						var superficie = "";
+						hauteurTerrasse = "";
+						
+						var btValider = document.getElementById("btValider"); 
+						btValider.addEventListener("click", function(e) { calcul(); }, false); 
+						
+						function calcul() {
+							error = 0;
+							
+							largeurNumber = document.getElementById("largeurNumber").value;
+							longueurNumber = document.getElementById("longueurNumber").value;
+							hauteurNumber = document.getElementById("hauteurNumber").value;
+							
+							if(superficie == "") error ++;
+							if(hauteurTerrasse == "") error ++;
+							
+							if(error != 0)   alert('Merci de remplir tous les champs.');
+							else {
+								nbPlot = Math.ceil(superficie * 6) ;
+								changePage("resultat-lambourde.html");
+							}
+						}
+					</script>
+				</div>
+				<!--END CALCULATRICE LAMBOURDES-->
 				
 				<!--CONSEILS MENU-->
 				<div id="conseil" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
@@ -346,7 +499,7 @@ alert('GA Plugin Set Variable Error: ' + msg);
 							</dl>
 							<dl class="tab2">
 								<dd>
-									<a id="bttab2" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast évolution</a>
+									<a id="bttab2_product" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast évolution</a>
 									<div>
 										<section>
 											<section class="ombre-menu-haut"></section>
@@ -387,8 +540,8 @@ alert('GA Plugin Set Variable Error: ' + msg);
 							$("#tab2 ~ .tabs .tab2 dd div").css("height", "0px"); 
 						}, false);
 						
-						var bt2 = document.getElementById("bttab2"); 
-						bt2.addEventListener("click", function(e) { 
+						var bt2_product = document.getElementById("bttab2_product"); 
+						bt2_product.addEventListener("click", function(e) { 
 							if($("#tab2 ~ .tabs .tab2 dd div").height() == 0) { $("#tab2 ~ .tabs .tab2 dd div").css("height", "275px"); }
 							else { $("#tab2 ~ .tabs .tab2 dd div").css("height", "0px"); }
 							$("#tab1 ~ .tabs .tab1 dd div").css("height", "0px"); 
