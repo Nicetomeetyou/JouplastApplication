@@ -129,15 +129,15 @@ nav~#menu{z-index:200!important;width:256px!important;bottom:0px!important;heigh
 #jq_actionsheet a.red{color:white;background-color:rgba(204,0,0,1);}
 #jq_actionsheet a.red.selected{background-color:rgba(255,0,0,1);}
 BODY>DIV#mask{display:block;width:100%;height:100%;background:#000;z-index:999999;position:absolute;top:0;left:0;}
-.jqPopup{display:block;width:280px;float:left;border:solid 1px #72767b;-webkit-box-shadow:0px 4px 6px #555,0 0 20px rgba(255,255,255,0.5);-webkit-border-radius:10px;border-radius:10px;padding:10px;opacity:1;-webkit-transform:scale(1);-webkit-transition:all 0.20s ease-in-out;transform:scale(1);transition:all 0.20s ease-in-out;position:absolute;z-index:1000000;margin-left:auto!important;margin-right:auto!important;background:rgba(70,70,70,1);background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(70,70,70,0.8)),to(rgba(0,20,20,0.8)));}
-.jqPopup *{color:white;}
+.jqPopup{display:block;width:280px;float:left;border:solid 1px #72767b;-webkit-box-shadow:0px 4px 6px #555,0 0 20px rgba(255,255,255,0.5);-webkit-border-radius:10px;border-radius:10px;padding:10px;opacity:1;-webkit-transform:scale(1);-webkit-transition:all 0.20s ease-in-out;transform:scale(1);transition:all 0.20s ease-in-out;position:absolute;z-index:1000000;margin-left:auto!important;margin-right:auto!important;background:#ffffff;background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(70,70,70,0.8)),to(rgba(0,20,20,0.8)));}
+.jqPopup *{color:black;}
 .jqPopup.hidden{opacity:0;-webkit-transform:scale(0);transform:scale(0);top:50%;left:50%;margin:0px auto;}
 .jqPopup header{font-weight:bold;font-size:20px;margin:0;padding:0;display:block!important;}
 .jqPopup div{font-size:12px;}
 .jqPopup footer{width:100%;text-align:center;display:block!important;}
 .jqPopup footer a#cancel{float:left;}
 .jqPopup footer a#action{float:right;margin-right:4px;}
-.jqPopup footer a.center{float:none!important;width:80%;margin:8px;}
+.jqPopup footer a.center{float:none!important;width:80%;margin:30px 8px 8px;}
 .scrollBar{position:absolute!important;width:5px!important;height:20px!important;border-radius:2px!important;border:1px soldid black!important;background:black!important;opacity:0!important;}
 .jqmobiSelectRowFound{}
 .jqmobiSelectRowButtonFound{}

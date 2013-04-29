@@ -1052,11 +1052,11 @@ BODY>DIV#mask{
     z-index: 1000000;
     margin-left: auto!important;
     margin-right: auto!important;
-    background: rgba(70,70,70,1);
+    background: #ffffff;
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(70,70,70,0.8)),    to(rgba(0,20,20,0.8)));
 }
 .jqPopup * {
-color:white;
+color:black;
 }
 
 .jqPopup.hidden {
@@ -1098,7 +1098,7 @@ color:white;
 .jqPopup footer a.center{
     float:none!important;
     width:80%;
-    margin:8px;
+    margin:30px 8px 8px;
 }
 
 
