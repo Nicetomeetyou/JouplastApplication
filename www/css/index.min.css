@@ -188,7 +188,7 @@ ul li ul li{background:#FFFFFF;border:none;}
 .accordion_calculatrice,.accordion_dalles,.accordion{color:#000000;position:relative;width:100%;}
 .accordion_calculatrice span,.accordion_dalles span,.accordion span{display:none}
 .tabs_calculatrice,.tab_dalles,.tabs{background-color:#FFFFFF;overflow:hidden;}
-.tabs_calculatrice dl dd div,.tabs_dalles dl dd div,.tabs dl dd div{height:0;overflow:hidden;-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;-ms-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;-webkit-transition:translatez(0);-moz-transition:translatez(0);-o-transition:translatez(0);-ms-transition:translatez(0);transition:translatez(0);}
+.tabs_calculatrice dl dd div,.tabs_dalles dl dd div,.tabs dl dd div{height:0;overflow:hidden;}
 .fiche-photo{width:31%;margin-right:10px;}
 .fiche-solo-photo{margin:auto;display:block;width:70%;}
 .fiche-picto-caracteristique{height:45px;}

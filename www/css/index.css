@@ -466,7 +466,7 @@ ul li ul li{ background: #FFFFFF; border:none; }
     height: 0;
     overflow: hidden;
 	
-    -webkit-transition: all 0.3s ease-in-out;
+   /* -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
@@ -476,7 +476,7 @@ ul li ul li{ background: #FFFFFF; border:none; }
     -moz-transition: translatez(0);
     -o-transition: translatez(0);
     -ms-transition: translatez(0);
-    transition: translatez(0);
+    transition: translatez(0);*/
 }
 /*****************/
 
