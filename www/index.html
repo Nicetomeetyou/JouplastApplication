@@ -33,6 +33,7 @@
 		<script type="text/javascript" charset="utf-8" src="js/jq.debug.js"></script> 
 		<script type="text/javascript" charset="utf-8" src="js/jq.swipe.js"></script> 
 		<script type="text/javascript" charset="utf-8" src="js/jq.carousel.js"></script> 
+		<script type="text/javascript" charset="utf-8" src="js/jq.css3animate.js"></script> 
 		<script type="text/javascript" charset="utf-8" src="js/jq.drawer.js"></script> 
 		<script type="text/javascript" charset="utf-8" src="js/jq.shake.js"></script> 
 		<script type="text/javascript" charset="utf-8" src="js/jq.alphatable.js"></script> 
@@ -88,6 +89,19 @@
 				//gaPlugin.init(gaSuccess, gaError, "UA-40371154-1", 10);
 			};
 			document.addEventListener("appMobi.device.ready",onDeviceReady,false); 
+			
+			var go0 = {
+				height:"0px", //style.height to change to
+				time:"300ms", //time for transition
+				timingFunction:"linear", //timing func
+			}
+			
+			var go432 = {
+				height:"432px", //style.height to change to
+				time:"300ms", //time for transition
+				timingFunction:"linear", //timing func
+			}
+			
 			
 			$(document).ready(function(){
 				var language = navigator.language.split("-");
@@ -246,29 +260,43 @@
 						</div>
 					</div>
 					<script>
+						var go193 = {
+							height:"193px", //style.height to change to
+							time:"300ms", //time for transition
+							timingFunction:"linear", //timing func
+						}
+						
+						var go532 = {
+							height:"532px", //style.height to change to
+							time:"300ms", //time for transition
+							timingFunction:"linear", //timing func
+						}
+						
+						var go694 = {
+							height:"694px", //style.height to change to
+							time:"300ms", //time for transition
+							timingFunction:"linear", //timing func
+						}
+						
 						var bt1_calculatrice = document.getElementById("bttab1_calculatrice"); 
 						bt1_calculatrice.addEventListener("click", function(e) { 
-							if($("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").height() == 0) { $("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css("height", "193px"); }
-							else { $("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css("height", "0px"); }
-							$("#tab2_calculatrice ~ .tabs_calculatrice .tab2_calculatrice dd div").css("height", "0px"); 
-						}, false);
-						
-						var bt2_calculatrice = document.getElementById("bttab2_calculatrice"); 
-						bt2_calculatrice.addEventListener("click", function(e) { 
-							if($("#tab2_calculatrice ~ .tabs_calculatrice .tab2_calculatrice dd div").height() == 0) { $("#tab2_calculatrice ~ .tabs_calculatrice .tab2_calculatrice dd div").css("height", "275px"); }
-							else { $("#tab2_calculatrice ~ .tabs_calculatrice .tab2_calculatrice dd div").css("height", "0px"); }
-							$("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css("height", "0px"); 
+							if($("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").height() == 0) $("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css3Animate(go193);
+							else { $("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css3Animate(go0); }
+							$("#tab2_calculatrice ~ .tabs_calculatrice .tab2_calculatrice dd div").css3Animate(go0);
+							//if($("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").height() == 0) { $("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css("height", "193px"); }
+							//else { $("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css("height", "0px"); }
+							//$("#tab2_calculatrice ~ .tabs_calculatrice .tab2_calculatrice dd div").css("height", "0px"); 
 						}, false);
 						
 						function chooseDalles(pNum) {
 							if(pNum == 1) {
 								$("#dalles-rectangulaire").css("display", "block");
 								$("#dalles-enl").css("display", "none");
-								$("#tab1_dalles ~ .tabs_dalles .tab1_dalles dd div").css("height", "532px");
+								$("#tab1_dalles ~ .tabs_dalles .tab1_dalles dd div").css3Animate(go532);
 							} else {
 								$("#dalles-rectangulaire").css("display", "none");
 								$("#dalles-enl").css("display", "block");
-								$("#tab1_dalles ~ .tabs_dalles .tab1_dalles dd div").css("height", "694px");
+								$("#tab1_dalles ~ .tabs_dalles .tab1_dalles dd div").css3Animate(go694);
 							}
 						}
 						
@@ -478,8 +506,11 @@
 							}
 							
 							if(error == 0) {
-								$("#tab1_dalles ~ .tabs_dalles .tab1_dalles dd div").css("height", "0px");
-								$("#tab2_dalles ~ .tabs_dalles .tab2_dalles dd div").css("height", "432px");
+								$("#tab1_dalles ~ .tabs_dalles .tab1_dalles dd div").css3Animate(go0);
+								$("#tab2_dalles ~ .tabs_dalles .tab2_dalles dd div").css3Animate(go432);
+								
+								//$("#tab1_dalles ~ .tabs_dalles .tab1_dalles dd div").css("height", "0px");
+								//$("#tab2_dalles ~ .tabs_dalles .tab2_dalles dd div").css("height", "432px");
 							} else {
 								alert('Merci de remplir tous les champs.');
 							}
@@ -579,7 +610,8 @@
 								}
 								
 								//alert(nbDalles + " - " + nbPlots);
-								document.getElementById('linkResult').click();
+								$.ui.loadContent("resultat-dalles",false,false,"slide");
+								//document.getElementById('linkResult').click();
 							}
 						}
 					</script>
