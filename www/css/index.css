@@ -113,10 +113,12 @@ a:hover{ color:#000000 !important; }
 .fleft { float:left; }
 .fright { float:right; }
 .black { color:#000000 !important; }
+.orange { color:#FF4011 !important; }
 .grey { color:#7F7F7F; }
 .light-grey { color:#EFEFEF; }
 .blue { color:#13A7AA !important; }
 .blue-catalogue { color:#0770B2 !important; }
+.size60 { font-size:30px; }
 .size40 { font-size:20px; }
 .size34 { font-size:17px; }
 .size28 { font-size:14px !important; }
@@ -331,6 +333,7 @@ div.apprise .apprise-buttons button {
 }
 
 .grey-line-right { border-right: 2px solid #CCCCCC; }
+.grey-line-left { border-left: 2px solid #CCCCCC; }
 .text-ecarteur { margin: 53px 0 0 35px; }
 .text-ecarteur-ceramique { margin: 0px 0 0 0px; }
 
@@ -407,10 +410,12 @@ div.apprise .apprise-buttons button {
 .img-integrals-1 { background:url(../img/plot/integrals-1.jpg) no-repeat 0 0; }
 .img-integrals-2 { background:url(../img/plot/integrals-2.jpg) no-repeat 0 0; }
 
-.container-accessoire-resultat-text { padding: 13px 0 22px 27px; }
+.container-accessoire-resultat-text { padding: 13px 0 22px 10px; }
 .ecarteur { background:url(../img/ecarteur.jpg) no-repeat 0 0; width:109px; height:103px; margin: 33px 0 22px 40px; }
 .ecarteur-ceramique { background:url(../img/ecarteur.jpg) no-repeat 0 0; width:109px; height:103px; padding-bottom:10px; }
 .plaque-a-dalle { background:url(../img/plaque-a-dalle.jpg) no-repeat 0 0; width:151px; height:112px; }
+
+.button-percentage { width:80%; }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 /* TUTO */
