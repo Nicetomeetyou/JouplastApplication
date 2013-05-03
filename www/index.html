@@ -62,12 +62,19 @@
 			var longueurDalles;
 			var largeurDalles;
 			
+			var largeurNumberLambourdes;
+			var longueurNumberLambourdes;
+			var hauteurNumberLambourdes;
+			
+			var type = "beton";
+			var size = -1;
+			
 			var webRoot="./";
 			$.ui.autoLaunch=false;
 			$.ui.resetScrollers=false;
 			
 			var init = function(){
-			   $.ui.backButtonText=" ";  
+			   $.ui.backButtonText="Retour";  
 			   window.setTimeout(function(){$.ui.launch();},10);
 			   $.ui.removeFooterMenu(); //This would remove the bottom nav menu
 			};
@@ -486,23 +493,23 @@
 							if(pNum == 1) {
 								largeurNumberRect = document.getElementById("largeurNumberRect").value;
 								longueurNumberRect = document.getElementById("longueurNumberRect").value;
-								hauteurNumberRect = document.getElementById("hauteurNumberRect").value;
+								hauteurNumber = document.getElementById("hauteurNumberRect").value;
 								
 								if(largeurNumberRect == "" || largeurNumberRect == 0) error ++;
 								if(longueurNumberRect == "" || longueurNumberRect == 0) error ++;
-								if(hauteurNumberRect == "" || hauteurNumberRect < 7 || hauteurNumberRect > 230) error ++;
+								if(hauteurNumber == "" || hauteurNumber < 7 || hauteurNumber > 230) error ++;
 							} else {
 								largeurNumberEnl1 = document.getElementById("largeurNumberEnl1").value;
 								largeurNumberEnl2 = document.getElementById("largeurNumberEnl2").value;
 								longueurNumberEnl1 = document.getElementById("longueurNumberEnl1").value;
 								longueurNumberEnl2 = document.getElementById("longueurNumberEnl2").value;
-								hauteurNumberEnl = document.getElementById("hauteurNumberEnl").value;
+								hauteurNumber = document.getElementById("hauteurNumberEnl").value;
 								
 								if(largeurNumberEnl1 == "" || largeurNumberEnl1 == 0) error ++;
 								if(largeurNumberEnl2 == "" || largeurNumberEnl2 == 0) error ++;
 								if(longueurNumberEnl1 == "" || longueurNumberEnl1 == 0) error ++;
 								if(longueurNumberEnl2 == "" || longueurNumberEnl2 == 0) error ++;
-								if(hauteurNumberEnl == "" || hauteurNumberEnl < 7 || hauteurNumberEnl > 230) error ++;
+								if(hauteurNumber == "" || hauteurNumber < 7 || hauteurNumber > 230) error ++;
 							}
 							
 							if(error == 0) {
@@ -521,9 +528,6 @@
 						
 						var btValiderEnl = document.getElementById("btValiderEnl"); 
 						btValiderEnl.addEventListener("click", function(e) { checkField(2); }, false);
-						
-						var type = "beton";
-						var size = "";
 						
 						var btBetonOff = document.getElementById("beton-off"); 
 						btBetonOff.addEventListener("click", function(e) { 
@@ -585,9 +589,9 @@
 							error = 0;
 							
 							if(type == "") error ++;
-							if(size == "") error ++;
+							if(size == -1) error ++;
 							
-							if(type != "" && size != "") {
+							if(type != "" && size != -1) {
 								if(type == "beton") {
 									if(size == 0) { longueurDalles = 30; largeurDalles = 30; }
 									if(size == 1) { longueurDalles = 40; largeurDalles = 40; }
@@ -609,9 +613,95 @@
 									nbPlots = (1 + Math.ceil(largeurNumberEnl1 / (largeurDalles / 100))) * (1 + Math.ceil(longueurNumberEnl2/( longueurDalles / 100))) + (1 + Math.ceil(largeurNumberEnl2 / (largeurDalles / 100))) * (Math.ceil((longueurNumberEnl1-longueurNumberEnl2)/( longueurDalles / 100)));
 								}
 								
-								//alert(nbDalles + " - " + nbPlots);
+								$("#nbDalles").html(nbDalles);
+								$("#nbPlots").html(nbPlots);
+								
+								if(typeTerrasse == "rect") {
+									$("#rect-largeur").html(largeurNumberRect + "m");
+									$("#rect-longueur").html(longueurNumberRect + "m");
+									$("#rect-hauteur").html(hauteurNumber + "mm");
+									
+									$("#plan-rect").css("display", "block");
+									$("#plan-enl").css("display", "none");
+								}
+								
+								if(typeTerrasse == "enl") {
+									$("#enl-largeur1").html(largeurNumberEnl1 + "m");
+									$("#enl-largeur2").html(largeurNumberEnl2 + "m");
+									$("#enl-longueur1").html(longueurNumberEnl1 + "m");
+									$("#enl-longueur2").html(longueurNumberEnl2 + "m");
+									$("#enl-hauteur").html(hauteurNumber + "mm");
+									
+									$("#plan-rect").css("display", "none");
+									$("#plan-enl").css("display", "block");
+								}
+								
+								for(i=0; i<3; i++) {
+									$("#dalle-beton-"+i).css("display", "none");
+									$("#dalle-ceramique-"+i).css("display", "none");
+								}
+								
+								if(type == "beton") $("#dalle-beton-"+String(size)).css("display", "block");
+								if(type == "ceramique") $("#dalle-ceramique-"+String(size)).css("display", "block");
+								
+								if(hauteurNumber <= 15 ) { affichePlot(1); }
+								else if(hauteurNumber >= 20 && hauteurNumber <= 30) { affichePlot(2); }
+								else if(hauteurNumber == 35) { affichePlot(3); }
+								else if(hauteurNumber >= 40 && hauteurNumber <= 140) { affichePlot(4); }
+								else if(hauteurNumber >= 50 && hauteurNumber <= 230){ affichePlot(5); }
+								
 								$.ui.loadContent("resultat-dalles",false,false,"slide");
-								//document.getElementById('linkResult').click();
+							}
+						}
+						
+						function affichePlot(pNum) {
+							for(i=1; i<13; i++) { $("#p"+i).css("display","none"); }
+							
+							if(pNum == 1) { 
+								$("#p1").css("display","block");
+								$("#p2").css("display","block");
+								if(type == "ceramique") { $(".accessoire-ceramique").css("display","block"); $(".accessoire-beton").css("display","none"); }
+								else { $(".accessoire-beton").css("display","block"); $(".accessoire-ceramique").css("display","none");}
+							}
+							if(pNum == 2) {
+								$("#p3").css("display","block");
+								if(type == "ceramique") { $(".accessoire-ceramique").css("display","block"); $(".accessoire-beton").css("display","none"); }
+								else { $(".accessoire-beton").css("display","block"); $(".accessoire-ceramique").css("display","none");}
+							}
+							if(pNum == 3) { 
+								$("#p4").css("display","block");
+								if(type == "ceramique") { $(".accessoire-ceramique").css("display","block"); $(".accessoire-beton").css("display","none"); }
+								else { $(".accessoire-beton").css("display","block"); $(".accessoire-ceramique").css("display","none");}
+							}
+							
+							if(pNum == 4 && type == "beton") { 
+								$(".accessoire-beton").css("display","block"); $(".accessoire-ceramique").css("display","none");
+								$("#p5").css("display","block");	
+								$("#p6").css("display","block"); 
+								$("#p7").css("display","block"); 
+								$("#p7").removeClass("home-square").addClass("home-square-100 cb"); 
+							}
+							if(pNum == 4 && type == "ceramique") { 
+								$(".accessoire-ceramique").css("display","block"); $(".accessoire-beton").css("display","none");
+								$("#p9").css("display","block");
+								$("#p10").css("display","block"); 
+								$("#p11").css("display","block"); 
+								$("#p11").removeClass("home-square").addClass("home-square-100 cb"); 
+								$(".accessoire-beton div:last-child").html("Ecarteurs<br/>3 mm");
+							}
+							
+							if(pNum == 5 && type == "beton") { 
+								$(".accessoire-beton").css("display","block"); $(".accessoire-ceramique").css("display","none");
+								$("#p6").css("display","block");
+								$("#p7").css("display","block");
+								$("#p8").css("display","block"); 
+							}
+							if(pNum == 5 && type == "ceramique") { 
+								$(".accessoire-ceramique").css("display","block"); $(".accessoire-beton").css("display","none");
+								$("#p10").css("display","block");
+								$("#p11").css("display","block");
+								$("#p12").css("display","block");
+								$(".accessoire-beton div:last-child").html("Ecarteurs<br/>3 mm");
 							}
 						}
 					</script>
@@ -626,21 +716,21 @@
 					<div class="back-white-calculette">
 						<div class="line-calculette">
 							<div class="text-hauteur font-din-bold black no-uppercase size40 fleft">Largeur<br/>de la terrasse</div>
-							<div class="fleft"><input id="largeurNumber" class="tac input-calculette inset superficie-dalle border-input size34" type="number" name="" maxlength="4"/> </div>
-							<div class="mesure font-din grey no-uppercase size34 fleft">m²</div>
+							<div class="fleft"><input id="largeurNumberLambourdes" class="tac input-calculette inset superficie-dalle border-input size34" type="number" name="" maxlength="4"/> </div>
+							<div class="mesure font-din grey no-uppercase size34 fleft">m</div>
 							<div class="cb"></div>
 						</div>
 						<div class="grey-line cb"></div>
 						<div class="line-calculette">
 							<div class="text-hauteur font-din-bold black no-uppercase size40 fleft">Longueur<br/>de la terrasse</div>
-							<div class="fleft"><input id="longueurNumber" class="tac input-calculette inset superficie-dalle border-input size34" type="number" name="" maxlength="4"/> </div>
-							<div class="mesure font-din grey no-uppercase size34 fleft">m²</div>
+							<div class="fleft"><input id="longueurNumberLambourdes" class="tac input-calculette inset superficie-dalle border-input size34" type="number" name="" maxlength="4"/> </div>
+							<div class="mesure font-din grey no-uppercase size34 fleft">m</div>
 							<div class="cb"></div>
 						</div>
 						<div class="grey-line cb"></div>
 						<div class="line-calculette">
 							<div class="font-din-bold black no-uppercase size40 fleft">Hauteur<br/>de la terrasse<div class="size26 grey text-mention-lambourdes font-din">Comprise entre 8 et  230 mm</div></div>
-							<div class="fleft"><input id="hauteurNumber" class="tac input-calculette inset superficie-dalle border-input size34" type="number" name="" maxlength="4"/> </div>
+							<div class="fleft"><input id="hauteurNumberLambourdes" class="tac input-calculette inset superficie-dalle border-input size34" type="number" name="" maxlength="4"/> </div>
 							<div class="mesure font-din grey no-uppercase size34 fleft">mm</div>
 							<div class="cb"></div>
 						</div>
@@ -652,32 +742,50 @@
 							<div><img class="width100" src="img/exemple-lambourde.jpg" /></div>
 						</div>
 						<div class="space50"></div>
-						<div id="btValider" class="ma css3buttongreen default-button font-din size34 tac">Valider</div>
+						<div id="btValiderLambourdes" class="ma css3buttongreen default-button font-din size34 tac">Valider</div>
 						<div class="space50"></div>
 					</div>
 					<script>
-						var size = "";
-						var superficie = "";
-						hauteurTerrasse = "";
 						
-						var btValider = document.getElementById("btValider"); 
-						btValider.addEventListener("click", function(e) { calcul(); }, false); 
+						var btValiderLambourdes = document.getElementById("btValiderLambourdes"); 
+						btValiderLambourdes.addEventListener("click", function(e) { calculLambourdes(); }, false); 
 						
-						function calcul() {
+						function calculLambourdes() {
 							error = 0;
 							
-							largeurNumber = document.getElementById("largeurNumber").value;
-							longueurNumber = document.getElementById("longueurNumber").value;
-							hauteurNumber = document.getElementById("hauteurNumber").value;
+							largeurNumberLambourdes = document.getElementById("largeurNumberLambourdes").value;
+							longueurNumberLambourdes = document.getElementById("longueurNumberLambourdes").value;
+							hauteurNumberLambourdes = document.getElementById("hauteurNumberLambourdes").value;
 							
-							if(superficie == "") error ++;
-							if(hauteurTerrasse == "") error ++;
+							if(largeurNumberLambourdes == "" || largeurNumberLambourdes == 0) error ++;
+							if(longueurNumberLambourdes == "" || longueurNumberLambourdes == 0) error ++;
+							if(hauteurNumberLambourdes == "" || hauteurNumberLambourdes < 7 || hauteurNumberLambourdes > 230) error ++;
 							
 							if(error != 0)   alert('Merci de remplir tous les champs.');
 							else {
-								nbPlot = Math.ceil(superficie * 6) ;
-								changePage("resultat-lambourde.html");
+								//nbPlot = Math.ceil(superficie * 6) ;
+								if(hauteurNumberLambourdes <= 10 ) { affichePlotLambourdes(1); }
+								else if(hauteurNumberLambourdes >= 20 && hauteurNumberLambourdes <= 30) { affichePlotLambourdes(2); }
+								else if(hauteurNumberLambourdes >= 40 && hauteurNumberLambourdes <= 80) { affichePlotLambourdes(3); }
+								else if(hauteurNumberLambourdes >= 80 && hauteurNumberLambourdes <= 230){ affichePlotLambourdes(4); }
+								
+								$("#lambourdes-largeur").html(largeurNumberLambourdes + "m");
+								$("#lambourdes-longueur").html(longueurNumberLambourdes + "m");
+								$("#lambourdes-hauteur").html(hauteurNumberLambourdes + "mm");
+								
+								$("#nbPlotsLambourdes").html(200);
+								
+								$.ui.loadContent("resultat-lambourdes",false,false,"slide");
 							}
+						}
+						
+						function affichePlotLambourdes(pNum) {
+							for(i=1; i<13; i++) { $("#p"+i).css("display","none"); }
+							
+							if(pNum == 1) { $("#lambourdes-p1").css("display","block");	}
+							if(pNum == 2) {	$("#lambourdes-p2").css("display","block");	$("#lambourdes-p3").css("display","block");	}
+							if(pNum == 3) { $("#lambourdes-p4").css("display","block");	$("#lambourdes-p5").css("display","block"); $("#lambourdes-p6").css("display","block"); $("#lambourdes-p6").removeClass("home-square").addClass("home-square-100 cb");}
+							if(pNum == 4) { $("#lambourdes-p5").css("display","block");	$("#lambourdes-p6").css("display","block"); $("#lambourdes-p7").css("display","block"); $("#lambourdes-p7").removeClass("home-square").addClass("home-square-100 cb"); }
 						}
 					</script>
 				</div>
@@ -695,39 +803,82 @@
 						<div class="space20"></div>
 						<div class="grey-line"></div>
 						<div class="space20"></div>
-						<div>PLAN</div>
+						<div class="width100">
+							<div id="plan-rect" class="ma" style="width:250px; height:270px; display:none">
+								<div class="">
+									<div style="left:-10px; position:relative; top:10px; width:200px;" class="grey size24 no-uppercase">largeur</div>
+									<div id="rect-largeur" style="left:-10px; position:relative; top:10px; width:200px;" class="font-arial orange size60 no-uppercase">3.20m</div>
+								</div>
+								<div class="">
+									<div style="left:180px; position:relative; top:-10px;" class="grey size24 no-uppercase">longueur</div>
+									<div id="rect-longueur" style="left:180px; position:relative; top:-10px;" class="font-arial orange size60 no-uppercase">4.20m</div>
+								</div>
+								<div class="">
+									<div style="left:20px; position:relative; top:100px;" class="grey size24 no-uppercase">hauteur</div>
+									<div id="rect-hauteur" style="left:20px; position:relative; top:100px;" class="font-arial orange size60 no-uppercase">4.20m</div>
+								</div>
+								<img style="max-width:250px; position:relative; top:-90px;" src="img/rectangulaire-num.png" />
+							</div>
+							<div id="plan-enl" class="ma" style="width:250px; height:270px; display:none">
+								<div class="fleft">
+									<div style="left:-10px; position:relative; top:10px; width:200px;" class="grey size24 no-uppercase">largeur 1</div>
+									<div id="enl-largeur1"style="left:-10px; position:relative; top:10px; width:200px;" class="font-arial orange size60 no-uppercase">3.20m</div>
+								</div>
+								<div class="fleft">
+									<div style="left:180px; position:relative; top:-10px;" class="grey size24 no-uppercase">longueur 1</div>
+									<div id="enl-longueur1" style="left:180px; position:relative; top:-10px;" class="font-arial orange size60 no-uppercase">4.20m</div>
+								</div>
+								<div class="fleft">
+									<div style="left:130px; position:relative; top:110px;" class="grey size24 no-uppercase">largeur 2</div>
+									<div id="enl-largeur2"style="left:130px; position:relative; top:110px;" class="font-arial orange size60 no-uppercase">4.20m</div>
+								</div>
+								<div class="cb"></div>
+								<div class="">
+									<div style="left:-30px; position:relative; top:40px;" class="grey size24 no-uppercase">longueur 2</div>
+									<div id="enl-longueur2" style="left:-30px; position:relative; top:40px;" class="font-arial orange size60 no-uppercase">4.20m</div>
+								</div>
+								<div class="">
+									<div style="left:70px; position:relative; top:30px;" class="grey size24 no-uppercase">hauteur</div>
+									<div id="enl-hauteur" style="left:70px; position:relative; top:30px;" class="font-arial orange size60 no-uppercase">4.20m</div>
+								</div>
+								<img style="max-width:250px; position:relative; top:-140px;" src="img/enl-num.png" />
+							</div>
+						</div>
 						<div class="grey-line"></div>
 						
-						<div>
+						<div style="height:100px;">
 							<div class="fleft" style="width:49%;">
-								<div class="space10"></div>
-								<div style="width:25%;" class="fleft" >
-									<div id="plot-beton-2" style="display:block;"><img class="width100" src="img/picto-cata-dalle.png" /></div>
+								<div class="space20"></div>
+								<div style="width:40%;" class="fleft" >
+									<div id="plot-beton-2" style="display:block;"><img style="width:60px;" src="img/picto-cata-dalle.png" /></div>
 								</div>
-								<div class="font-din fleft orange size60" style="width:25%;">
-									<div class="orange size60">100</div>
-									<div class="grey size20">Plots</div>
-								</div>
-							</div>
-							<div class="grey-line-left fleft" style="width:49%;">
-								<div class="space10"></div>
-								<div style="width:70%;" class="fleft" >
-									<div id="plot-beton-2" style="display:block;"><img class="width100" src="img/dalle-taille-30x30.png" /></div>
-									<div id="plot-beton-2" style="display:none;"><img class="width100" src="img/dalle-taille-40x40.png" /></div>
-									<div id="plot-beton-3" style="display:none;"><img class="width100" src="img/dalle-taille-50x50.png" /></div>
-									<div id="plot-ceramique-1" style="display:none;"><img class="width100" src="img/dalle-taille-30x30.png" /></div>
-									<div id="plot-ceramique-2" style="display:none;"><img class="width100" src="img/dalle-taille-30x120.png" /></div>
-									<div id="plot-ceramique-3" style="display:none;"><img class="width100" src="img/dalle-taille-60x120.png" /></div>
-								</div>
-								<div class="font-din fleft orange size60" style="width:25%;">
-									<div class="orange size60">100</div>
-									<div class="grey size20">Dalles</div>
+								<div class="font-din fleft orange size60" style="width:20%;">
+									<div id="nbPlots" class="font-arial orange size100">100</div>
+									<div class="grey size20" style="margin-left:10px;">Plots</div>
 								</div>
 							</div>
+							<div class="grey-line-left fleft" style="width:49%; position:relative;">
+								<div class="space10"></div>
+								<div style="width:55%; " class="fleft" >
+									<div class="space20"></div>
+									<div id="dalle-beton-0" style="display:block; height:80px;"><img class="width100" src="img/dalle-taille-30x30.png" /></div>
+									<div id="dalle-beton-1" style="display:none;"><img class="width100" src="img/dalle-taille-40x40.png" /></div>
+									<div id="dalle-beton-2" style="display:none;"><img class="width100" src="img/dalle-taille-50x50.png" /></div>
+									<div id="dalle-ceramique-0" style="display:none;"><img class="width100" src="img/dalle-taille-30x30.png" /></div>
+									<div id="dalle-ceramique-1" style="display:none;"><img class="width100" src="img/dalle-taille-30x120.png" /></div>
+									<div id="dalle-ceramique-2" style="display:none;"><img class="width100" src="img/dalle-taille-60x120.png" /></div>
+								</div>
+								<div class="font-din fleft orange size60" style="width:25%; position:relative; left:-10px;">
+									<div class="space10"></div>
+									<div id="nbDalles" class="font-arial orange size100">100</div>
+									<div class="grey size20" style="margin-left:10px;">Dalles</div>
+								</div>
+							</div>
+							<div class="cb"></div>
+							<div class="grey-line"></div>
 						</div>
 						
 						<div class="cb"></div>
-						<div class="grey-line"></div>
 						
 						<div class="container-schema-plot no-uppercase">
 							<div id="p1" class="home-square" style="display:none;">
@@ -792,9 +943,10 @@
 							</div>
 						</div>
 						<div style="width:48%" class="fleft">
-							<div class="accessoire-beton" style="display:none">
+							<div style="width:49%; display:none;" class="accessoire-beton">
+								<div class="space10"></div>
 								<div class="fleft"><img class="width100" src="img/ecarteur.jpg" /></div>
-								<div class="fleft tac font-din-bold grey size24 no-uppercase text-ecarteur">Ecarteurs<br/>5 mm</div>
+								<div class="fleft tac font-din grey size20 no-uppercase text-ecarteur">Ecarteurs<br/>5 mm</div>
 							</div>
 							<div class="cb"></div>
 							<div class="accessoire-ceramique" style="display:none">
@@ -820,64 +972,151 @@
 					<div class="back-white-calculette">
 						<div class="space50"></div>
 						<div class="home-square">
-							<div id="btContact" class="ma button-percentage css3buttonblue-lagoon font-din size34 tac no-uppercase">Contactez-nous</div>
+							<a href="#contact">
+								<div class="ma button-percentage css3buttonblue-lagoon font-din size34 tac no-uppercase">Contactez-nous</div>
+							</a>
 						</div>
 						<div class="home-square">
-							<div id="btCatalogue" class="ma button-percentage css3buttonblue-lagoon font-din size34 tac no-uppercase">Notre catalogue</div>
+							<a href="#catalogue">
+								<div id="btCatalogueDalles" class="ma button-percentage css3buttonblue-lagoon font-din size34 tac no-uppercase">Notre catalogue</div>
+							</a>
 						</div>
 						<div class="cb"></div>
 						<div class="space50"></div>
 					</div>
 					<script>
-						var btContact = document.getElementById("btContact"); 
-						btContact.addEventListener("click", function(e) { /*$("#content").load("contact.html");*/ changePage("contact.html");}, false);
-						
-						var btCatalogue = document.getElementById("btCatalogue"); 
-						btCatalogue.addEventListener("click", function(e) { /*$("#content").load("catalogue.html");*/ changePage("catalogue.html");}, false);
-						
-						hauteurTerrasse = 2;
-						nbPlot = 1500;
-						type = "ceramique";
-						
-						if(hauteurTerrasse == 1) { 
-							$("#p1").css("display","block");
-							$("#p2").css("display","block");
-							if(type == "ceramique") $(".accessoire-ceramique").css("display","block");
-							else $(".accessoire-beton").css("display","block");
-						}
-						if(hauteurTerrasse == 2) {
-							$("#p3").css("display","block");
-							if(type == "ceramique") $(".accessoire-ceramique").css("display","block"); 
-							else $(".accessoire-beton").css("display","block"); 
-						}
-						if(hauteurTerrasse == 3) { 
-							$("#p4").css("display","block");
-							if(type == "ceramique") $(".accessoire-ceramique").css("display","block");
-							else $(".accessoire-beton").css("display","block"); 
-						}
-						
-						if(hauteurTerrasse == 4 && type == "beton") { $(".accessoire-beton").css("display","block"); $("#p5").css("display","block");	$("#p6").css("display","block"); $("#p7").css("display","block"); $("#p7").removeClass("home-square").addClass("home-square-100 cb"); }
-						if(hauteurTerrasse == 4 && type == "ceramique") { 
-							$(".accessoire-beton").css("display","block"); 
-							$("#p9").css("display","block");
-							$("#p10").css("display","block"); 
-							$("#p11").css("display","block"); 
-							$("#p11").removeClass("home-square").addClass("home-square-100 cb"); 
-							$(".accessoire-beton div:last-child").html("Ecarteurs<br/>3 mm");
-						}
-						if(hauteurTerrasse == 5 && type == "beton") { $(".accessoire-beton").css("display","block"); $("#p6").css("display","block");	$("#p7").css("display","block"); $("#p8").css("display","block"); }
-						if(hauteurTerrasse == 5 && type == "ceramique") { 
-							$(".accessoire-beton").css("display","block");
-							$("#p10").css("display","block");
-							$("#p11").css("display","block");
-							$("#p12").css("display","block");
-							$(".accessoire-beton div:last-child").html("Ecarteurs<br/>3 mm");
-						}
-						
-						//$(".containerNbPlot").append('<div class="nbPlotResultat"><span class="black no-uppercase">Nombre de plots :</span><span class="blue"> '+nbPlot+'</span></div>');
+					
 					</script>
 				</div>
+				
+				<!--RESULTAT LAMBOURDES-->
+				<div id="resultat-lambourdes" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="back">
+						<div class="space20"></div>
+							<div class="tac size40 font-din">POSE DE LAMBOURDES</div>
+							<div class="space10"></div>
+							<div class="back-white-calculette">
+								<div class="space20"></div>
+							<div class="tac size40 black font-din-bold">MON PROJET</div>
+							<div class="space20"></div>
+							<div class="grey-line"></div>
+							<div class="space20"></div>
+							<div class="width100">
+								<div id="plan-lambourdes" class="ma" style="width:250px; height:250px; display:block">
+									<div class="">
+										<div style="left:-10px; position:relative; top:10px; width:200px;" class="grey size24 no-uppercase">largeur</div>
+										<div id="lambourdes-largeur" style="left:-10px; position:relative; top:10px; width:200px;" class="font-arial orange size60 no-uppercase">3.20m</div>
+									</div>
+									<div class="">
+										<div style="left:180px; position:relative; top:-10px;" class="grey size24 no-uppercase">longueur</div>
+										<div id="lambourdes-longueur" style="left:180px; position:relative; top:-10px;" class="font-arial orange size60 no-uppercase">4.20m</div>
+									</div>
+									<div class="">
+										<div style="left:20px; position:relative; top:100px;" class="grey size24 no-uppercase">hauteur</div>
+										<div id="lambourdes-hauteur" style="left:20px; position:relative; top:100px;" class="font-arial orange size60 no-uppercase">4.20m</div>
+									</div>
+									<img style="max-width:250px; position:relative; top:-90px;" src="img/plan-lambourdes.png" />
+								</div>
+							</div>
+							<div class="containerNbPlot font-din-bold size34 tac">
+								<div class="space25"></div>
+							</div>
+							<div class="grey-line"></div>
+							<div class="space20"></div>
+							<div class="width100">
+								<div class="ma" style="width:150px; height:80px;">
+									<div id="plot-beton-2" style="display:block;" class="fleft"><img style="width:60px;" src="img/picto-cata-lambourde.png" /></div>
+									<div class="font-din orange size60 fleft" style="width:20%;">
+										<div id="nbPlotsLambourdes" class="font-arial orange size100">100</div>
+										<div class="grey size20" style="margin-left:10px;">Plots</div>
+									</div>
+								</div>
+							</div>
+							<div class="cb"></div>
+							<div class="grey-line"></div>
+							<div class="space25"></div>
+							<div class="font-din-bold size34 tac black no-uppercase"></div>
+							<div class="cb"></div>
+							<div class="container-schema-plot no-uppercase">
+								<div id="lambourdes-p1" class="home-square-100" style="display:none;">
+									<div class="ma"><img class="width100" src="img/plot/vue1-plot-10mm-HL.jpg" /></div>
+									<div class="font-din orange tac size26">HL 10mm fixe</div>
+								</div>
+								<div id="lambourdes-p2" class="home-square" style="display:none;">
+									<div class="ma"><img class="width100" src="img/plot/vue1-plot-20-30mm-evo-HL.jpg" /></div>
+									<div class="font-din orange tac size26">HL 20/30mm réglable</div>
+								</div>
+								<div id="lambourdes-p3" class="home-square" style="display:none;">
+									<div class="ma"><img class="width100" src="img/plot/vue1-plot-20-30mm-HL.jpg" /></div>
+									<div class="font-din orange tac size26">HL 20/30mm réglable</div>
+								</div>
+								<div id="lambourdes-p4" class="home-square" style="display:none;">
+									<div class="ma"><img class="width100" src="img/plot/vue1-plot-40-65mm-HL.jpg" /></div>
+									<div class="font-din orange tac size26">HL 40/65mm réglable</div>
+								</div>
+								<div id="lambourdes-p5" class="home-square" style="display:none;">
+									<div class="ma"><img class="width100" src="img/plot/vue1-plot-50-80mm-HL.jpg" /></div>
+									<div class="font-din orange tac size26">HL 50/80mm réglable</div>
+								</div>
+								<div id="lambourdes-p6" class="home-square" style="display:none;">
+									<div class="ma"><img class="width100" src="img/plot/vue1-plot-80-140mm-HL.jpg" /></div>
+									<div class="font-din orange tac size26">HL 80/140mm réglable</div>
+								</div>
+								<div id="lambourdes-p7" class="home-square" style="display:none;">
+									<div class="ma"><img class="width100" src="img/plot/vue1-plot-140-230mm-HL.jpg" /></div>
+									<div class="font-din orange tac size26">HL 140/230mm réglable</div>
+								</div>
+							</div>
+							<div class="cb"></div>
+							<div class="space25"></div>		
+						</div>
+						<div class="grey-background">
+							<div class="grey-line"></div>
+							<div class="home-square">
+								<div class="container-accessoire-resultat-text">
+									<div class="font-din-bold black size34">Accessoires :</div>
+									<div class="font-din-bold grey size26 no-uppercase">Avez-vous pensé aux<br/>accessoires nécessaires<br/>à vos travaux ?</div>
+								</div>
+							</div>
+							<div style="width:48%" class="fleft">
+								<div style="width:48%" class="fleft grey-line-right grey-line-left">
+									<div class="space10"></div>
+									<div class="ma"><img class="width100" src="img/rehausseur.jpg" /></div>
+									<div class="tac font-din grey size20 no-uppercase text-lambourdes-accessoires">Réhausse<br/>HR 60mm</div>
+								</div>
+								<div style="width:48%" class="fleft">
+									<div class="space10"></div>
+									<div class="ma"><img class="width100" src="img/cales.jpg" /></div>
+									<div class="tac font-din grey size20 no-uppercase text-lambourdes-accessoires-cales">Cales<br/>HC 5mm</div>
+								</div>
+							</div>
+							<div class="cb"></div>
+							<div class="grey-line"></div>
+						</div>
+						<div class="cb"></div>
+						<div class="back-white-calculette">
+							<div class="space50"></div>
+							<div class="home-square">
+								<a href="#contact">
+									<div id="btContact-lambourdes" class="ma button-percentage css3buttongreen font-din size34 tac no-uppercase">Contactez-nous</div>
+								</a>
+							</div>
+							<div class="home-square">
+								<a href="#catalogue">
+									<div id="btCatalogue-lambourdes" class="ma button-percentage css3buttongreen font-din size34 tac no-uppercase">Notre catalogue</div>
+								</a>
+							</div>
+							<div class="cb"></div>
+							<div class="space50"></div>
+						</div>
+					</div>
 					
+					<script>
+						
+					</script>
+				</div>
+				<!--END RESULTAT LAMBOURDES-->
+				
 				<!--CONSEILS MENU-->
 				<div id="conseil" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
 					<div class="space30"></div>
@@ -886,7 +1125,7 @@
 					</div>
 					<div class="space10"></div>
 					<div>
-						<a href="#conseil-dalles">
+						<a href="#conseil-dalles-1">
 							<div id="calculatrice-dalle" class="back-white">
 								<div class="picto-tuto"><img class="width100" src="img/picto-tuto-0.jpg" /></div>
 								<div class="font-din black size34 no-uppercase text-tuto-choix">Plots Dalles</div>
@@ -894,7 +1133,7 @@
 							</div>
 						</a>
 						<div class="grey-line cb"></div>
-						<a>
+						<a href="#conseil-lambourdes-1">
 							<div id="calculatrice-lambourde" class="back-white">
 								<div class="picto-tuto"><img class="width100" src="img/picto-tuto-1.jpg" /></div>
 								<div class="font-din black size34 no-uppercase text-tuto-choix">Plots Lambourdes</div>
@@ -902,7 +1141,7 @@
 							</div>
 						</a>
 						<div class="grey-line cb"></div>
-						<a>
+						<a href="#conseil-caillebotis-1">
 							<div id="calculatrice-lambourde" class="back-white">
 								<div class="picto-tuto"><img class="width100" src="img/picto-tuto-2.jpg" /></div>
 								<div class="font-din black size34 no-uppercase text-tuto-choix">Support Caillebotis</div>
@@ -910,7 +1149,7 @@
 							</div>
 						</a>
 						<div class="grey-line cb"></div>
-						<a>
+						<a href="#conseil-plaques-1">
 							<div id="calculatrice-lambourde" class="back-white">
 								<div class="picto-tuto"><img class="width100" src="img/picto-tuto-3.jpg" /></div>
 								<div class="font-din black size34 no-uppercase text-tuto-choix">Plaques à dalles</div>
@@ -921,8 +1160,320 @@
 				</div>
 				<!--END CONSEILS MENU-->
 				
-				<!--CONSEILS DALLES-->
-				<div id="conseil-dalles" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+				<!--CONSEILS PLAQUES 1-->
+				<div id="conseil-plaques-1" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="space30"></div>
+					<div class="tac size40 font-din titre-calculette">
+						INSTALLATION PLAQUES A DALLES
+					</div>
+					<div class="space10"></div>
+					<div class="back-white-calculette">
+						<div id="etape1">
+							<div class="space10"></div>
+							<div>1 / 2 / 3 </div>
+							<div class="space10"></div>
+							<div class="tac size40 font-din black no-uppercase">Etape 1</div>
+							<div class="space10"></div>
+							<div style="margin:0 20px;">
+								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
+									<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+								</video>
+							</div>
+							<div class="cb"></div>
+							<div class="space10"></div>
+							<div class="tac size30 font-din black no-uppercase">Fixez la plaque à dalle sur un plot dalle.</div>
+						</div>
+						<div class="space20"></div>
+						<a href="#conseil-plaques-2">
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
+						</a>
+						<div class="space50"></div>
+					</div>
+				</div>
+				<!--END CONSEILS PLAQUES 1-->
+				
+				<!--CONSEILS PLAQUES 2-->
+				<div id="conseil-plaques-2" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="space30"></div>
+					<div class="tac size40 font-din titre-calculette">
+						INSTALLATION PLAQUES A DALLES
+					</div>
+					<div class="space10"></div>
+					<div class="back-white-calculette">
+						<div id="etape1">
+							<div class="space10"></div>
+							<div>1 / 2 / 3 </div>
+							<div class="space10"></div>
+							<div class="tac size40 font-din black no-uppercase">Etape 2</div>
+							<div class="space10"></div>
+							<div style="margin:0 20px;">
+								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
+									<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+								</video>
+							</div>
+							<div class="cb"></div>
+							<div class="space10"></div>
+							<div class="tac size30 font-din black no-uppercase">Placez la dalle en bord de rive ou en angle sur des plots chapeautés d’une plaque à dalle.</div>
+						</div>
+						<div class="space20"></div>
+						<a href="#conseil-plaques-3">
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
+						</a>
+						<div class="space50"></div>
+					</div>
+				</div>
+				<!--END CONSEILS PLAQUES 2-->
+				
+				<!--CONSEILS PLAQUES 3-->
+				<div id="conseil-plaques-3" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="space30"></div>
+					<div class="tac size40 font-din titre-calculette">
+						INSTALLATION PLAQUES A DALLES
+					</div>
+					<div class="space10"></div>
+					<div class="back-white-calculette">
+						<div id="etape1">
+							<div class="space10"></div>
+							<div>1 / 2 / 3 </div>
+							<div class="space10"></div>
+							<div class="tac size40 font-din black no-uppercase">Etape 3</div>
+							<div class="space10"></div>
+							<div style="margin:0 20px;">
+								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
+									<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+								</video>
+							</div>
+							<div class="cb"></div>
+							<div class="space10"></div>
+							<div class="tac size30 font-din black no-uppercase">Posez les autres plots normalement.</div>
+						</div>
+						<div class="space20"></div>
+						<a href="#conseil">
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Retour aux conseils</div>
+						</a>
+						<div class="space50"></div>
+					</div>
+				</div>
+				<!--END CONSEILS PLAQUES 3-->
+				
+				<!--CONSEILS CAILLEBOTIS 1-->
+				<div id="conseil-caillebotis-1" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="space30"></div>
+					<div class="tac size40 font-din titre-calculette">
+						INSTALLATION SUPPORT CAILLEBOTIS
+					</div>
+					<div class="space10"></div>
+					<div class="back-white-calculette">
+						<div id="etape1">
+							<div class="space10"></div>
+							<div>1 / 2 / 3 </div>
+							<div class="space10"></div>
+							<div class="tac size40 font-din black no-uppercase">Etape 1</div>
+							<div class="space10"></div>
+							<div style="margin:0 20px;">
+								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
+									<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+								</video>
+							</div>
+							<div class="cb"></div>
+							<div class="space10"></div>
+							<div class="tac size30 font-din black no-uppercase">Fixez le support caillebotis sur un plot dalle.</div>
+						</div>
+						<div class="space20"></div>
+						<a href="#conseil-caillebotis-2">
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
+						</a>
+						<div class="space50"></div>
+					</div>
+				</div>
+				<!--END CONSEILS CAILLEBOTIS 1-->
+				
+				<!--CONSEILS CAILLEBOTIS 2-->
+				<div id="conseil-caillebotis-2" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="space30"></div>
+					<div class="tac size40 font-din titre-calculette">
+						INSTALLATION SUPPORT CAILLEBOTIS
+					</div>
+					<div class="space10"></div>
+					<div class="back-white-calculette">
+						<div id="etape1">
+							<div class="space10"></div>
+							<div>1 / 2 / 3 </div>
+							<div class="space10"></div>
+							<div class="tac size40 font-din black no-uppercase">Etape 2</div>
+							<div class="space10"></div>
+							<div style="margin:0 20px;">
+								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
+									<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+								</video>
+							</div>
+							<div class="cb"></div>
+							<div class="space10"></div>
+							<div class="tac size30 font-din black no-uppercase">Placez le caillebotis sur deux plots, en l’insérant à la moitié du support de manière à pouvoir poser un autre caillebotis.</div>
+						</div>
+						<div class="space20"></div>
+						<a href="#conseil-caillebotis-3">
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
+						</a>
+						<div class="space50"></div>
+					</div>
+				</div>
+				<!--END CONSEILS CAILLEBOTIS 2-->
+				
+				<!--CONSEILS CAILLEBOTIS 3-->
+				<div id="conseil-caillebotis-3" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="space30"></div>
+					<div class="tac size40 font-din titre-calculette">
+						INSTALLATION SUPPORT CAILLEBOTIS
+					</div>
+					<div class="space10"></div>
+					<div class="back-white-calculette">
+						<div id="etape1">
+							<div class="space10"></div>
+							<div>1 / 2 / 3 </div>
+							<div class="space10"></div>
+							<div class="tac size40 font-din black no-uppercase">Etape 3</div>
+							<div class="space10"></div>
+							<div style="margin:0 20px;">
+								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
+									<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+								</video>
+							</div>
+							<div class="cb"></div>
+							<div class="space10"></div>
+							<div class="tac size30 font-din black no-uppercase">Placez les autres caillebotis et posez le reste de votre terrasse normalement.</div>
+						</div>
+						<div class="space20"></div>
+						<a href="#conseil">
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Retour aux conseils</div>
+						</a>
+						<div class="space50"></div>
+					</div>
+				</div>
+				<!--END CONSEILS CAILLEBOTIS 2-->
+				
+				<!--CONSEILS LAMBOURDES 1-->
+				<div id="conseil-lambourdes-1" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="space30"></div>
+					<div class="tac size40 font-din titre-calculette">
+						INSTALLATION PLOTS LAMBOURDES
+					</div>
+					<div class="space10"></div>
+					<div class="back-white-calculette">
+						<div id="etape1">
+							<div class="space10"></div>
+							<div>1 / 2 / 3 </div>
+							<div class="space10"></div>
+							<div class="tac size40 font-din black no-uppercase">Etape 1</div>
+							<div class="space10"></div>
+							<div style="margin:0 20px;">
+								<img class="width100" src="img/exemple-lambourde.jpg" />
+							</div>
+							<div class="cb"></div>
+							<div class="space10"></div>
+							<div class="tac size30 font-din black no-uppercase">Posez une lambourde sur deux plots, de manière à ce qu’elle soit perpendiculaire au mur.</div>
+						</div>
+						<div class="space20"></div>
+						<a href="#conseil-lambourdes-2">
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
+						</a>
+						<div class="space50"></div>
+					</div>
+				</div>
+				<!--END CONSEILS LAMBOURDES 1-->
+				
+				<!--CONSEILS LAMBOURDES 2-->
+				<div id="conseil-lambourdes-2" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="space30"></div>
+					<div class="tac size40 font-din titre-calculette">
+						INSTALLATION PLOTS LAMBOURDES
+					</div>
+					<div class="space10"></div>
+					<div class="back-white-calculette">
+						<div id="etape1">
+							<div class="space10"></div>
+							<div>1 / 2 / 3 </div>
+							<div class="space10"></div>
+							<div class="tac size40 font-din black no-uppercase">Etape 2</div>
+							<div class="space10"></div>
+							<div style="margin:0 20px;">
+								<img class="width100" src="img/exemple-lambourde.jpg" />
+							</div>
+							<div class="cb"></div>
+							<div class="space10"></div>
+							<div class="tac size30 font-din black no-uppercase">Réglez la hauteur des plots à l’aide de l’écrou et vérifiez que la lambourde soit à niveau à l’aide d’un niveau à bulle.</div>
+						</div>
+						<div class="space20"></div>
+						<a href="#conseil-lambourdes-3">
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
+						</a>
+						<div class="space50"></div>
+					</div>
+				</div>
+				<!--END CONSEILS LAMBOURDES 2-->
+				
+				<!--CONSEILS LAMBOURDES 3-->
+				<div id="conseil-lambourdes-3" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="space30"></div>
+					<div class="tac size40 font-din titre-calculette">
+						INSTALLATION PLOTS LAMBOURDES
+					</div>
+					<div class="space10"></div>
+					<div class="back-white-calculette">
+						<div id="etape1">
+							<div class="space10"></div>
+							<div>1 / 2 / 3 </div>
+							<div class="space10"></div>
+							<div class="tac size40 font-din black no-uppercase">Etape 3</div>
+							<div class="space10"></div>
+							<div style="margin:0 20px;">
+								<img class="width100" src="img/exemple-lambourde.jpg" />
+							</div>
+							<div class="cb"></div>
+							<div class="space10"></div>
+							<div class="tac size30 font-din black no-uppercase">Placez les autres lambourdes et assurez-vous que l’ensemble de la structure soit à niveau.</div>
+						</div>
+						<div class="space20"></div>
+						<a href="#conseil-lambourdes-4">
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
+						</a>
+						<div class="space50"></div>
+					</div>
+				</div>
+				<!--END CONSEILS LAMBOURDES 3-->
+				
+				<!--CONSEILS LAMBOURDES 4-->
+				<div id="conseil-lambourdes-4" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="space30"></div>
+					<div class="tac size40 font-din titre-calculette">
+						INSTALLATION PLOTS LAMBOURDES
+					</div>
+					<div class="space10"></div>
+					<div class="back-white-calculette">
+						<div id="etape1">
+							<div class="space10"></div>
+							<div>1 / 2 / 3 </div>
+							<div class="space10"></div>
+							<div class="tac size40 font-din black no-uppercase">Etape 4</div>
+							<div class="space10"></div>
+							<div style="margin:0 20px;">
+								<img class="width100" src="img/exemple-lambourde.jpg" />
+							</div>
+							<div class="cb"></div>
+							<div class="space10"></div>
+							<div class="tac size30 font-din black no-uppercase">Fixez les lames sur les lambourdes.</div>
+						</div>
+						<div class="space20"></div>
+						<a href="#conseil">
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Retour aux conseils</div>
+						</a>
+						<div class="space50"></div>
+					</div>
+				</div>
+				<!--END CONSEILS LAMBOURDES 4-->
+				
+				<!--CONSEILS DALLES 1-->
+				<div id="conseil-dalles-1" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
 					<div class="space30"></div>
 					<div class="tac size40 font-din titre-calculette">
 						INSTALLATION PLOTS DALLES
@@ -942,12 +1493,80 @@
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
-							<div class="tac size30 font-din black no-uppercase">Placez une dalle sur quatre plots</div>
+							<div class="tac size30 font-din black no-uppercase">Placez une dalle sur quatre plots.</div>
 						</div>
-						
+						<div class="space20"></div>
+						<a href="#conseil-dalles-2">
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
+						</a>
+						<div class="space50"></div>
 					</div>
 				</div>
-				<!--END CONSEILS MENU-->
+				<!--END CONSEILS DALLES 1-->
+				
+				<!--CONSEILS DALLES 2-->
+				<div id="conseil-dalles-2" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="space30"></div>
+					<div class="tac size40 font-din titre-calculette">
+						INSTALLATION PLOTS DALLES
+					</div>
+					<div class="space10"></div>
+					<div class="back-white-calculette">
+						<div id="etape1">
+							<div class="space10"></div>
+							<div>1 / 2 / 3 </div>
+							<div class="space10"></div>
+							<div class="tac size40 font-din black no-uppercase">Etape 2</div>
+							<div class="space10"></div>
+							<div style="margin:0 20px;">
+								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
+									<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+								</video>
+							</div>
+							<div class="cb"></div>
+							<div class="space10"></div>
+							<div class="tac size30 font-din black no-uppercase">Réglez la hauteur des plots à l’aide de l’écrou.</div>
+						</div>
+						<div class="space20"></div>
+						<a href="#conseil-dalles-3">
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
+						</a>
+						<div class="space50"></div>
+					</div>
+				</div>
+				<!--END CONSEILS DALLES 2-->
+				
+				<!--CONSEILS DALLES 3-->
+				<div id="conseil-dalles-3" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="space30"></div>
+					<div class="tac size40 font-din titre-calculette">
+						INSTALLATION PLOTS DALLES
+					</div>
+					<div class="space10"></div>
+					<div class="back-white-calculette">
+						<div id="etape1">
+							<div class="space10"></div>
+							<div>1 / 2 / 3 </div>
+							<div class="space10"></div>
+							<div class="tac size40 font-din black no-uppercase">Etape 3</div>
+							<div class="space10"></div>
+							<div style="margin:0 20px;">
+								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
+									<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+								</video>
+							</div>
+							<div class="cb"></div>
+							<div class="space10"></div>
+							<div class="tac size30 font-din black no-uppercase">Vérifiez que la dalle soit à niveau à l’aide d’un niveau à bulle.</div>
+						</div>
+						<div class="space20"></div>
+						<a href="#conseil">
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Retour aux conseils</div>
+						</a>
+						<div class="space50"></div>
+					</div>
+				</div>
+				<!--END CONSEILS DALLES 3-->
 				
 				<!--CATALOGUE MENU-->
 				<div id="catalogue" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
@@ -1566,19 +2185,19 @@
 							<div class="font-din size26 grey no-uppercase">
 								<div class="home-square">
 									<div style="min-width:9%; float:left; margin-left:10px">
-										Sac :
+										Sac : 
 									</div>
 									<div style="min-width:9%; float:left;">
-										60 pièces<br/>15 kilos
+										 60 pièces<br/>15 kilos
 									</div>
 								</div>
 								
 								<div class="home-square">
 									<div style="min-width:9%; float:left; margin-left:15px">
-										Palette :
+										Palette : 
 									</div>
 									<div style="min-width:20%; float:left;">
-										1200 pièces<br/>320 kilos
+										 back1200 pièces<br/>320 kilos
 									</div>
 								</div>
 							</div>
@@ -1612,13 +2231,18 @@
 							<div class="space25"></div>
 							<div class="font-din size34 tac black no-uppercase">Estimez le nombre de plots<br/>nécessaire à vos travaux</div>
 							<div class="space25"></div>
-							<div class="ma css3buttonblue font-din tac size-text-button default-button">Calculer</div>
+							<a href="#calculatrice">
+								<div class="ma css3buttonblue font-din tac size-text-button default-button">Calculer</div>
+							</a>
 							<div class="space25"></div>
 							<div class="grey-line"></div>
 							<div class="space25"></div>
 							<div class="font-din size34 tac black no-uppercase">Besoin d'aide ?</div>
 							<div class="space25"></div>
-							<div class="ma css3buttonblue font-din tac size-text-button default-button">Contactez-nous</div>
+							<a href="#contact">
+								<div class="ma css3buttonblue font-din tac size-text-button default-button">Contactez-nous</div>
+							</a>
+							<div class="space50"></div>
 						</div>
 						<div class="cb"></div>
 					</div>

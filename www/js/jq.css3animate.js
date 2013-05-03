@@ -1,8 +1,10 @@
 (function ($) {
     var cache = [];
     var objId=function(obj){
-        if(!obj.jqmCSS3AnimateId) obj.jqmCSS3AnimateId=$.uuid();
-        return obj.jqmCSS3AnimateId;
+		if(obj) { 
+			if(!obj.jqmCSS3AnimateId) obj.jqmCSS3AnimateId=$.uuid(); 
+			return obj.jqmCSS3AnimateId;
+		}
     }
     var getEl=function(elID){
         if (typeof elID == "string" || elID instanceof String) {

@@ -95,8 +95,8 @@ h1 {
     text-align:center;
 }
 
-a, a:link, a:active, a:visited { color:#000000 !important; text-decoration: none; }
-a:hover{ color:#000000 !important; }
+a, a:link, a:active, a:visited { /*color:#000000 !important;*/ text-decoration: none; }
+a:hover{ /*color:#000000 !important;*/ }
 .space50 { height:50px; }
 .space100 { height:100px; }
 .space10 { height:10px; }
@@ -109,6 +109,7 @@ a:hover{ color:#000000 !important; }
 .tac { text-align:center; }
 .font-din { font-family: din-medium !important; color:#FFFFFF; }
 .font-din-bold { font-family: din-medium-bold !important; color:#FFFFFF; }
+.font-arial { font-family: "arial",Georgia,Serif; !important; color:#FFFFFF; }
 .no-uppercase { text-transform:none !important; }
 .fleft { float:left; }
 .fright { float:right; }
@@ -118,6 +119,7 @@ a:hover{ color:#000000 !important; }
 .light-grey { color:#EFEFEF; }
 .blue { color:#13A7AA !important; }
 .blue-catalogue { color:#0770B2 !important; }
+.size100 { font-size:50px; }
 .size60 { font-size:30px; }
 .size40 { font-size:20px; }
 .size34 { font-size:17px; }
@@ -334,8 +336,9 @@ div.apprise .apprise-buttons button {
 
 .grey-line-right { border-right: 2px solid #CCCCCC; }
 .grey-line-left { border-left: 2px solid #CCCCCC; }
-.text-ecarteur { margin: 53px 0 0 35px; }
+.text-ecarteur { margin: 0px 0 0 15px; }
 .text-ecarteur-ceramique { margin: 0px 0 0 0px; }
+.accessoire-beton { margin-left:10px; }
 
 .picto-rect-l { margin: 5px 20px 0; }
 .text-rect-l { margin:0 10px 10px 40px; }
@@ -351,8 +354,8 @@ div.apprise .apprise-buttons button {
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 .rehausseur { background:url(../img/rehausseur.jpg) no-repeat 0 0; width:109px; height:111px; }
 .cales { background:url(../img/cales.jpg) no-repeat 0 0; width:111px; height:101px; }
-.text-lambourdes-accessoires { position:relative; top:-10px; }
-.text-lambourdes-accessoires-cales { position:relative; top:5px; }
+.text-lambourdes-accessoires { position:relative; top:-5px; }
+.text-lambourdes-accessoires-cales { position:relative; top:-5px; }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 /* PLOT */
@@ -427,7 +430,7 @@ div.apprise .apprise-buttons button {
 /* CATALOGUE */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 .title-catalogue { position: relative; margin:auto; }
-.title-cat-catalogue { display: block; padding: 50px 50px; }
+.title-cat-catalogue { display: block; padding: 50px 50px; color: #000000;}
 .sub-title-cat-catalogue-haut { display: block; padding: 17px 0 47px 100px; }
 .sub-title-cat-catalogue { display: block; padding: 17px 0 47px 100px; }
 .sub-title-cat-catalogue-bas { display: block; padding: 17px 0 0px 100px; }
