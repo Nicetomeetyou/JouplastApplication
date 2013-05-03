@@ -27,7 +27,7 @@ a:hover{}
 .font-arial{font-family:"arial",Georgia,Serif;!important;color:#FFFFFF;}
 .no-uppercase{text-transform:none!important;}
 .fleft{float:left;}
-.fright{float:right;}
+.fright{float:right!important;}
 .black{color:#000000!important;}
 .orange{color:#FF4011!important;}
 .grey{color:#7F7F7F;}
@@ -54,14 +54,15 @@ a:hover{}
 .home-square-100{width:100%;}
 #main{font-family:din-medium!important;color:#FFFFFF;font-size:15px;margin:auto;}
 .text-menu{position:relative;text-align:center;top:85%;color:#FFFFFF;font-family:din-medium-bold!important;}
-.picto-menu-0{background:url(../img/menu-picto-0.jpg) no-repeat 0 0;width:36px;height:35px;margin:34px 34px;}
-.picto-menu-1{background:url(../img/menu-picto-1.jpg) no-repeat 0 0;width:29px;height:43px;margin:34px 38px;}
-.picto-menu-2{background:url(../img/menu-picto-2.jpg) no-repeat 0 0;width:41px;height:40px;margin:34px 32px;}
-.picto-menu-3{background:url(../img/menu-picto-3.jpg) no-repeat 0 0;width:33px;height:38px;margin:34px 38px;}
-.picto-menu-4{background:url(../img/menu-picto-4.jpg) no-repeat 0 0;width:40px;height:39px;margin:34px;}
-.picto-menu-5{background:url(../img/menu-picto-5.jpg) no-repeat 0 0;width:41px;height:41px;margin:34px;}
+.picto-menu-0{margin:17px 17px;}
+.picto-menu-1{margin:17px 19px;}
+.picto-menu-2{margin:17px 16px;}
+.picto-menu-3{margin:17px 19px;}
+.picto-menu-4{margin:17px;}
+.picto-menu-5{margin:17px;}
+.back-white-menu{width:80%;height:100%;display:block;background-color:#EFEFEF;}
 .short-menu{background-color:#EFEFEF;width:500px;height:663px;position:absolute;z-index:500;right:0;}
-.container-line-short-menu{height:100px;display:block;width:100%}
+.menu-line{display:block;width:100%;}
 .fleche-droite-short{background:url(../img/fleche-droite.png) no-repeat 0 0;width:22px;height:40px;margin:34px 30px}
 .text-short-menu{margin:34px 10px}
 .short-menu-icon{background:url(../img/short-menu-icon.png) no-repeat 0 0;width:46px;height:38px;margin:6px 20px}

@@ -35,9 +35,9 @@ p{color:#fff;font-size:14px;line-height:18px;padding:16px;-webkit-box-shadow:rgb
 .jq-badge.bl{-webkit-box-direction:normal!important;bottom:2px;left:2px;top:auto;right:auto;}
 .jq-badge.tl{-webkit-box-direction:normal!important;top:2px;left:2px;right:auto;bottom:auto;}
 #jQUi footer,#jQUi header,#jQUi nav{display:none;}
-#jQUi>#menu{z-index:1;width:300px;bottom:0px;height:100%;display:none;position:absolute;top:0px;left:70px;background:rgba(29,29,28,1);}
+#jQUi>#menu{z-index:249;width:100%;bottom:0px;height:100%;display:none;position:absolute;top:0px;left:0px;background:rgba(29,29,28,0.75);}
 #menu_scroller{padding-bottom:10px;-webkit-backface-visibility:hidden;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
-#menu>*{width:90%;margin-left:auto;margin-right:auto;}
+#menu>*{width:90%;margin-left:auto;}
 .jqMenuHeader{position:relative;text-align:center;margin-top:2px;font-size:24px;margin-left:auto;margin-right:auto;font-weight:bold;margin-bottom:3px;z-index:1;}
 .jqMenuClose{position:relative;z-index:2;float:right;}
 #menu .title{font-size:16px;border-bottom:2px solid #333;margin-bottom:3px;font-weight:bold;}
@@ -103,7 +103,7 @@ input.jq-ui-slider[type=radio]:disabled:checked+label,input.jq-ui-slider[type=ra
 input.jq-ui-slider[type=checkbox]:disabled+label,input.jq-ui-slider[type=checkbox]:focus:disabled+label,input.jq-ui-slider[type=radio]:disabled+label,input.jq-ui-slider[type=radio]:focus:disabled+label{background-position:0 0;opacity:.7!important;}
 select[disabled]~div{opacity:.7;}
 .hasMenu{position:absolute!important;left:0px!important;}
-.hasMenu.to-on{-webkit-transition:-webkit-transform 300ms;transition:transform 150ms;}
+.hasMenu.to-on{-webkit-transition:-webkit-transform 300ms;transition:transform 300ms;}
 .hasMenu.on,.hasMenu.to-on{-webkit-transform:translate3d(-278px,0px,0px);transform:translate(-278px,0px);}
 .hasMenu.to-off{-webkit-transition:-webkit-transform 300ms;-webkit-transform:translate3d(0px,0px,0px);transition:transform 300ms;transform:translate(0px,0px);}
 #menu.on{-webkit-transform:none;-webkit-transition:none;transform:none;transition:none;}

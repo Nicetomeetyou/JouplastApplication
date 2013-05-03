@@ -363,16 +363,14 @@ font-size:48px;
 /* Custom footers - always hidden */
 #jQUi footer, #jQUi header, #jQUi nav {	display:none; }
 
-
-
 #jQUi > #menu {
-	z-index:1;
-	width:300px;
+	z-index:249;
+	width:100%;
 	bottom:0px;
 	height:100%;
 	display:none;
-	position:absolute; top:0px; left:70px;
-	background:rgba(29,29,28,1);
+	position:absolute; top:0px; left:0px;
+	background:rgba(29,29,28,0.75);
 }
 #menu_scroller {
 	padding-bottom:10px;
@@ -382,13 +380,10 @@ font-size:48px;
 	-webkit-overflow-scrolling:touch;
 }
 
-
-
-
 #menu > * {
 	width:90%;
 	margin-left:auto;
-	margin-right:auto;
+	/*margin-right:auto;*/
 }
 .jqMenuHeader
 {
@@ -854,7 +849,7 @@ select[disabled]~div {
 /*menu on/off mechanism, note .hasMenu.off and #menu.on default to no transform*/
 .hasMenu.to-on {
   -webkit-transition: -webkit-transform 300ms;
-  transition: transform 150ms;
+  transition: transform 300ms;
 }
 .hasMenu.on, .hasMenu.to-on {
   -webkit-transform:translate3d(-278px,0px,0px);
