@@ -843,7 +843,7 @@ select[disabled]~div {
 .hasMenu{
 /*removed - should neve be all (performance), 300ms param should go into jq.ui.js; also default should not have accelaration, avoid iPhone blur*/
 /* -webkit-transition: all 300ms; */
- /*position:absolute !important;*/
+ position:absolute !important;
  left:0px !important;
 }
 /*menu on/off mechanism, note .hasMenu.off and #menu.on default to no transform*/
@@ -852,8 +852,8 @@ select[disabled]~div {
   transition: transform 300ms;
 }
 .hasMenu.on, .hasMenu.to-on {
-  -webkit-transform:translate3d(-278px,0px,0px);
-  transform:translate(-278px,0px);
+  -webkit-transform:translate3d(0px,0px,0px);
+  transform:translate(0px,0px);
 }
 .hasMenu.to-off {
   -webkit-transition: -webkit-transform 300ms;
@@ -869,9 +869,9 @@ select[disabled]~div {
 }
 #menu.to-on {
     -webkit-transition: -webkit-transform 300ms;
-    -webkit-transform:translate3d(-400px,0px,0px);
+    -webkit-transform:translate3d(0px,0px,0px);
     transition: transform 300ms;
-    transform:translate(-400px,0px);
+    transform:translate(0px,0px);
 }
 #menu.to-off {
     -webkit-transition: -webkit-transform 300ms;
