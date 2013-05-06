@@ -39,6 +39,8 @@
 		<script type="text/javascript" charset="utf-8" src="js/jq.alphatable.js"></script> 
 		<script type="text/javascript" charset="utf-8" src="js/jq.template.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/ad.js"></script>
+		
+		<script src="GAPlugin.js"></script>
 		<!--<script type="text/javascript" charset="utf-8" src="js/GAPlugin.js"></script>-->
 		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 		
@@ -92,10 +94,17 @@
 				//hide splash screen
 				AppMobi.device.hideSplashScreen();	
 				
-				//gaPlugin = window.plugins.gaPlugin;
-				//gaPlugin.init(gaSuccess, gaError, "UA-40371154-1", 10);
+				gaPlugin = window.plugins.gaPlugin;
+				gaPlugin.init(gaSuccess, gaError, "UA-40371154-1", 10);
 			};
 			document.addEventListener("appMobi.device.ready",onDeviceReady,false); 
+			
+			function gaInit() {
+				//Track an open event
+				gaPlugin.trackEvent(function() {
+					alert("track OK");
+				}, errorHandler, "App", "Open", "App", new Date());
+			}
 			
 			var go0 = {
 				height:"0px", //style.height to change to

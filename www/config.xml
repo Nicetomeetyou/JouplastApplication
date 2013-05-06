@@ -21,7 +21,6 @@
         The 'device' permission is required for the 'deviceready' event.
     -->
     <feature name="http://api.phonegap.com/1.0/device" />
-	<feature name="http://api.phonegap.com/1.0/media"/>
 
     <!--
         If you do not want any permissions to be added to your app, add the
@@ -29,7 +28,7 @@
         permission on your app, which PhoneGap requires.
     -->
     <preference name="permissions"                value="none"/>
-	<gap:plugin name="GAPlugin" />
+	<gap:plugin name="Analytics" />
 
     <!-- Customize your app and platform with the preference element. -->
     <preference name="phonegap-version"           value="2.5.0" />          <!-- all: current version of PhoneGap -->
