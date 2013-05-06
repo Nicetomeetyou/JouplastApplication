@@ -69,7 +69,7 @@ table {
 * {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-tap-highlight-color: rgba(255,255,255,1); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
     -webkit-user-select: text;                  /* prevent copy paste, to allow, change 'none' to 'text' */
 }
  @font-face { font-family: din-medium; src: url("../font/DIN-Medium.otf"); }
@@ -83,7 +83,7 @@ body {
     text-transform:uppercase;
     width:100%;
 	background-color:#05436B;
-	font-family: din-medium-bold !important;
+	font-family: din-medium-bold Times New Roman, Times, serif !important;
 }
 
 h1 {
@@ -129,6 +129,7 @@ a:hover{ /*color:#000000 !important;*/ }
 .grey-background { background-color:#EFEFEF; }
 .width100 { width:100% }
 .width50 { width:50% }
+.over-text { position:relative; z-index:2; }
 
 #advertisement_outer { position:relative; z-index:90000; background:rgba(29,29,28,0.7) !important;}
 
