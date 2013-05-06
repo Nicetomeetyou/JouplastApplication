@@ -1035,7 +1035,7 @@ BODY>DIV#mask{
     float:left;
     border: solid 1px #72767b;
     -webkit-box-shadow: 0px 4px 6px #555, 0 0 20px rgba(255,255,255,0.5);
-    -webkit-border-radius: 10px;
+    /*-webkit-border-radius: 10px;*/
     border-radius:10px;
     padding: 10px;
     opacity: 1;
@@ -1048,7 +1048,6 @@ BODY>DIV#mask{
     margin-left: auto!important;
     margin-right: auto!important;
     background: #ffffff;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(70,70,70,0.8)),    to(rgba(0,20,20,0.8)));
 }
 .jqPopup * {
 color:black;
