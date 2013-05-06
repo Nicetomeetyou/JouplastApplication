@@ -39,7 +39,7 @@
 		<script type="text/javascript" charset="utf-8" src="js/jq.alphatable.js"></script> 
 		<script type="text/javascript" charset="utf-8" src="js/jq.template.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/ad.js"></script>
-		
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 		<script src="GAPlugin.js"></script>
 		<!--<script type="text/javascript" charset="utf-8" src="js/GAPlugin.js"></script>-->
 		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
@@ -99,11 +99,20 @@
 			};
 			document.addEventListener("appMobi.device.ready",onDeviceReady,false); 
 			
-			function gaInit() {
-				//Track an open event
-				gaPlugin.trackEvent(function() {
-					alert("track OK");
-				}, errorHandler, "App", "Open", "App", new Date());
+			function gaSuccess(){
+				alert('GA Plugin Success');
+				//GA track this page
+				gaPlugin.trackPage(trackPageSuccess, trackPageError, "index.html");
+			}
+			
+			function trackPageSuccess(){
+				alert('GA Plugin Track Page Success');
+				//GA set variable (1st)
+				gaPlugin.setVariable(nativePluginResultHandler, nativePluginErrorHandler, "Device info", device.name + '|' + device.platform + '|' + device.version, 1);
+			}
+			
+			function trackPageError(msg){
+				alert('GA Plugin Track Page Error: ' + msg);
 			}
 			
 			var go0 = {
