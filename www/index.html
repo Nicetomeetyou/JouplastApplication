@@ -142,12 +142,12 @@
 			
 			//
 			
-			var tabConditionement = (	new Array("60", "9", "1200", "200"), new Array("60", "15", "1200", "320"), new Array("60", "15", "840", "230"), new Array("40", "17", "560", "260"), new Array("40", "17", "400", "190")
-											, new Array("60", "15", "1200", "320"), new Array("60", "15", "840", "230"), new Array("40", "17", "560", "260"), new Array("40", "17", "400", "190")
-											, new Array("30", "6", "1890", "400"), new Array("60", "3.5", "3000", "190"), new Array("60", "9.5", "2100", "350")
-											, new Array("60", "3.5", "3000", "190"), new Array("60", "9.5", "2100", "350")
-											, new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350")
-											, new Array("20", "", "", ""), new Array("10", "2.5", "1120", "300"), new Array("10", "3", "1120", "350"), new Array("120", "9", "4200", "330"), new Array("60", "5", "1500", "140"), new Array("2000", "", "", ""), new Array("2000", "", "", ""), new Array("40", "", "", ""), new Array("40", "", "", ""), new Array("40", "", "", ""));
+			var tabConditionement = new Array(	new Array("60", "9", "1200", "200"), new Array("60", "15", "1200", "320"), new Array("60", "15", "840", "230"), new Array("40", "17", "560", "260"), new Array("40", "17", "400", "190")
+										, new Array("60", "15", "1200", "320"), new Array("60", "15", "840", "230"), new Array("40", "17", "560", "260"), new Array("40", "17", "400", "190")
+										, new Array("30", "6", "1890", "400"), new Array("60", "3.5", "3000", "190"), new Array("60", "9.5", "2100", "350")
+										, new Array("60", "3.5", "3000", "190"), new Array("60", "9.5", "2100", "350")
+										, new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350")
+										, new Array("20", "", "", ""), new Array("10", "2.5", "1120", "300"), new Array("10", "3", "1120", "350"), new Array("120", "9", "4200", "330"), new Array("60", "5", "1500", "140"), new Array("2000", "", "", ""), new Array("2000", "", "", ""), new Array("40", "", "", ""), new Array("40", "", "", ""), new Array("40", "", "", ""));
         </script>
 		<div id="jQUi" style="overflow:hidden;">
 			<!-- this is the header div -->
@@ -481,7 +481,6 @@
 								</dl>
 							</div>
 						</div>
-						<a id="linkResult" href="#resultat-dalles"></a>
 					</div>
 					<script>
 						function checkField(pNum) {
@@ -650,12 +649,39 @@
 								else if(hauteurNumber >= 40 && hauteurNumber <= 140) { affichePlot(4); }
 								else if(hauteurNumber >= 50 && hauteurNumber <= 230){ affichePlot(5); }
 								
+								if(hauteurNumber >= 16 && hauteurNumber <= 19) { affichePlot(10); alert("Il n’existe pas de plot correspondant à la hauteur indiquée pour votre terrasse.<br><br>Voici deux alternatives se rapprochant le plus de votre choix : <br><br>-"+tabNomProduit_fr[9]+"<br>-"+tabNomProduit_fr[11]); }
+								if(hauteurNumber >= 31 && hauteurNumber <= 34) { affichePlot(11); alert("Il n’existe pas de plot correspondant à la hauteur indiquée pour votre terrasse.<br><br>Voici deux alternatives se rapprochant le plus de votre choix : <br><br>-"+tabNomProduit_fr[11]+"<br>-"+tabNomProduit_fr[0]); }
+								if(hauteurNumber >= 34 && hauteurNumber <= 39) { affichePlot(12); alert("Il n’existe pas de plot correspondant à la hauteur indiquée pour votre terrasse.<br><br>Voici deux alternatives se rapprochant le plus de votre choix : <br><br>-"+tabNomProduit_fr[0]+"<br>-"+tabNomProduit_fr[1]); }
+								
 								$.ui.loadContent("resultat-dalles",false,false,"slide");
 							}
 						}
 						
 						function affichePlot(pNum) {
 							for(i=1; i<13; i++) { $("#p"+i).css("display","none"); }
+							
+							if(pNum == 10) {
+								$("#p1").css("display","block");
+								$("#p3").css("display","block");
+								$("#p3").removeClass("home-square-100").addClass("home-square"); 
+								if(type == "ceramique") { $(".accessoire-ceramique").css("display","block"); $(".accessoire-beton").css("display","none"); }
+								else { $(".accessoire-beton").css("display","block"); $(".accessoire-ceramique").css("display","none");}
+							}
+							
+							if(pNum == 11) {
+								$("#p3").css("display","block");
+								$("#p3").removeClass("home-square-100").addClass("home-square"); 
+								$("#p4").css("display","block");
+								if(type == "ceramique") { $(".accessoire-ceramique").css("display","block"); $(".accessoire-beton").css("display","none"); }
+								else { $(".accessoire-beton").css("display","block"); $(".accessoire-ceramique").css("display","none");}
+							}
+							
+							if(pNum == 12) {
+								$("#p4").css("display","block");
+								$("#p5").css("display","block");
+								if(type == "ceramique") { $(".accessoire-ceramique").css("display","block"); $(".accessoire-beton").css("display","none"); }
+								else { $(".accessoire-beton").css("display","block"); $(".accessoire-ceramique").css("display","none");}
+							}
 							
 							if(pNum == 1) { 
 								$("#p1").css("display","block");
@@ -665,6 +691,7 @@
 							}
 							if(pNum == 2) {
 								$("#p3").css("display","block");
+								$("#p3").removeClass("home-square").addClass("home-square-100"); 
 								if(type == "ceramique") { $(".accessoire-ceramique").css("display","block"); $(".accessoire-beton").css("display","none"); }
 								else { $(".accessoire-beton").css("display","block"); $(".accessoire-ceramique").css("display","none");}
 							}
@@ -775,12 +802,18 @@
 								
 								$("#nbPlotsLambourdes").html(200);
 								
+								if(hauteurNumberLambourdes >= 11 && hauteurNumberLambourdes <= 19) { affichePlotLambourdes(10); alert("Il n’existe pas de plot correspondant à la hauteur indiquée pour votre terrasse.<br><br>Voici deux alternatives se rapprochant le plus de votre choix : <br><br>-"+tabNomProduit_fr[12]+"<br>-"+tabNomProduit_fr[13]); }
+								if(hauteurNumberLambourdes >= 31 && hauteurNumberLambourdes <= 39) { affichePlotLambourdes(11); alert("Il n’existe pas de plot correspondant à la hauteur indiquée pour votre terrasse.<br><br>Voici deux alternatives se rapprochant le plus de votre choix : <br><br>-"+tabNomProduit_fr[13]+"<br>-"+tabNomProduit_fr[5]); }
+								
 								$.ui.loadContent("resultat-lambourdes",false,false,"slide");
 							}
 						}
 						
 						function affichePlotLambourdes(pNum) {
 							for(i=1; i<13; i++) { $("#p"+i).css("display","none"); }
+							
+							if(pNum == 10) { $("#lambourdes-p1").css("display","block"); $("#lambourdes-p2").css("display","block"); }
+							if(pNum == 11) { $("#lambourdes-p3").css("display","block"); $("#lambourdes-p4").css("display","block"); }
 							
 							if(pNum == 1) { $("#lambourdes-p1").css("display","block");	}
 							if(pNum == 2) {	$("#lambourdes-p2").css("display","block");	$("#lambourdes-p3").css("display","block");	}
@@ -1176,7 +1209,7 @@
 							<div class="space10"></div>
 							<div style="margin:0 20px;">
 								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
-									<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+									<source src="video/dalles/conseil-dalles-1.mp4" type="video/mp4" />
 								</video>
 							</div>
 							<div class="cb"></div>
@@ -2187,8 +2220,8 @@
 									<div style="min-width:9%; float:left; margin-left:10px">
 										Sac : 
 									</div>
-									<div style="min-width:9%; float:left;">
-										 60 pièces<br/>15 kilos
+									<div style="min-width:9%; float:left; margin-left:4px">
+										<div id="nbSacPieces">60 pièces</div><br/><div id="nbSacKilo">15 kilos</div>
 									</div>
 								</div>
 								
@@ -2196,8 +2229,8 @@
 									<div style="min-width:9%; float:left; margin-left:15px">
 										Palette : 
 									</div>
-									<div style="min-width:20%; float:left;">
-										 back1200 pièces<br/>320 kilos
+									<div style="min-width:20%; float:left; margin-left:4px">
+										<div id="nbPalettePieces">60 pièces</div><br/><div id="nbPaletteKilo">15 kilos</div>
 									</div>
 								</div>
 							</div>
@@ -2412,6 +2445,11 @@
 						$("#fiche-img-integrals").css("display","none");
 					}				
 					$("#fiche-nom-produit").html(tabNomProduit[pNum]);
+					
+					$("#nbSacPieces").html(tabConditionement[pNum][0] + " pièces");
+					$("#nbSacKilo").html(tabConditionement[pNum][1] + " kilos");
+					$("#nbPalettePieces").html(tabConditionement[pNum][2] + " pièces");
+					$("#nbPaletteKilo").html(tabConditionement[pNum][3] + " kilos");
 					
 					for(i = 0; i<28; i++) {
 						if(pNum == i) $("#fiche-visu-"+i).css("display","block");
