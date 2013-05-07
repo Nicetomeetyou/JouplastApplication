@@ -55,6 +55,7 @@ a:hover{}
 .home-square{width:50%;float:left;}
 .home-square-100{width:100%;}
 #main{font-family:din-medium!important;color:#FFFFFF;font-size:15px;margin:auto;}
+.backmenu{left:-30%;position:absolute;top:-5%;width:150%;z-index:1;}
 .text-menu{position:relative;text-align:center;top:85%;color:#FFFFFF;font-family:din-medium-bold!important;}
 .picto-menu-0{margin:17px 17px;}
 .picto-menu-1{margin:17px 19px;}
@@ -67,6 +68,9 @@ a:hover{}
 .menu-line{display:block;width:100%;}
 .fleche-droite-short{background:url(../img/fleche-droite.png) no-repeat 0 0;width:22px;height:40px;margin:34px 30px}
 .text-short-menu{margin:34px 10px;}
+.fleche-catalogue{max-width:12%;}
+.fleche-calculatrice{max-width:10%;margin:35px 10px 0 0}
+.fleche-catalogue-small{max-width:5%;margin-right:5px;}
 .short-menu-icon{background:url(../img/short-menu-icon.png) no-repeat 0 0;width:46px;height:38px;margin:6px 20px}
 #black-screen{width:100%;height:150px;background:url("../img/black-pixel.png") repeat left top transparent;position:absolute;z-index:10;top:0;left:0;}
 .back-white{width:100%;height:90px;display:block;background-color:#FFFFFF;}
@@ -175,13 +179,13 @@ div.apprise .apprise-buttons button{color:#ffffff!important;padding:28px 10px!im
 .picto-tuto{max-width:100px;height:152px;margin:14px 0 0 0;position:absolute;}
 .text-tuto-choix{margin:32px 0 0 110px;position:absolute;}
 .title-catalogue{position:relative;margin:auto;}
-.title-cat-catalogue{display:block;padding:50px 50px;color:#000000;}
+.title-cat-catalogue{display:block;padding:50px 11px 50px 34px;color:#000000;}
 .sub-title-cat-catalogue-haut{display:block;padding:17px 0 47px 100px;}
 .sub-title-cat-catalogue{display:block;padding:17px 0 47px 100px;}
 .sub-title-cat-catalogue-bas{display:block;padding:17px 0 0px 100px;}
 ul li{background:#FFFFFF;border-bottom:2px solid #CCCCCC;width:100%;}
 ul li ul li{background:#FFFFFF;border:none;}
-.inside-li{padding-left:50px;position:relative;top:-15px;}
+.inside-li{padding-left:30px;position:relative;top:-15px;}
 .picto-cata-dalle{background:url(../img/picto-cata-dalle.png) repeat-x 0 0;width:65px;height:65px;display:block;}
 .picto-cata-lambourde{background:url(../img/picto-cata-lambourde.png) repeat-x 0 0;width:65px;height:65px;display:block;}
 .picto-cata-integral{background:url(../img/picto-cata-integral.png) repeat-x 0 0;width:65px;height:65px;display:block;}

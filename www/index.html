@@ -117,13 +117,13 @@
 			
 			var go0 = {
 				height:"0px", //style.height to change to
-				time:"300ms", //time for transition
+				time:"0ms", //time for transition
 				timingFunction:"linear", //timing func
 			}
 			
 			var go432 = {
 				height:"432px", //style.height to change to
-				time:"300ms", //time for transition
+				time:"0ms", //time for transition
 				timingFunction:"linear", //timing func
 			}
 			
@@ -185,18 +185,18 @@
 						
 						<a href="#calculatrice">
 							<div class="home-square">
-								<div>
-									<img class="width100" style="position:relative; z-index: 2;" src="img/menu0.png" />
-									<img style="width:85%;left: -20%; position: absolute; top: -2%; z-index: 1;" src="img/backmenu.png" />
+								<div style="position:relative">
+									<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu0.png" />
+									<img class="backmenu" src="img/backmenu.png" />
 								</div>
 								<div class="back-home-square img-menu"><div class="font-din tac white">Calculatrice</div></div>
 							</div>
 						</a>
 						<a href="#conseil">
 							<div class="home-square">
-								<div>
-									<img class="width100" style="position:relative; z-index: 2;" src="img/menu1.png" />
-									<img style="width:85%;left: 30%; position: absolute; top: -2%; z-index: 1;" src="img/backmenu.png" />
+								<div style="position:relative">
+									<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu1.png" />
+									<img class="backmenu" src="img/backmenu.png" />
 								</div>
 								<div class="back-home-square img-menu"><div class="font-din tac white">Conseils</div></div>
 							</div>
@@ -204,18 +204,18 @@
 						<div id="spacer-1"></div>
 						<a href="#catalogue">
 							<div class="home-square">
-								<div>
-									<img class="width100" style="position:relative; z-index: 2;" src="img/menu2.png" />
-									<img style="width:85%;left: -20%; position: absolute; top: 230px; z-index: 1;" src="img/backmenu.png" />
+								<div style="position:relative">
+									<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu2.png" />
+									<img class="backmenu" src="img/backmenu.png" />
 								</div>
 								<div class="back-home-square img-menu"><div class="font-din tac white">Catalogue</div></div>
 							</div>
 						</a>
 						<a href="#contact">
 							<div class="home-square">
-								<div>
-									<img class="width100" style="position:relative; z-index: 2;" src="img/menu3.png" />
-									<img style="width:85%;left: 30%; position: absolute; top: 230px; z-index: 1;" src="img/backmenu.png" />
+								<div style="position:relative">
+									<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu3.png" />
+									<img class="backmenu" src="img/backmenu.png" />
 								</div>
 								<div class="back-home-square img-menu"><div class="font-din tac white">Contact</div></div>
 							</div>
@@ -238,7 +238,7 @@
 					<div class="tac size40 font-din over-text">
 						CALCULEZ LE NOMBRE<br/>DE PLOTS NÉCESSAIRES<br/>À VOS TRAVAUX
 					</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<img style="height: 64%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space20"></div>
 					<div class="over-text tac size40 font-din title-din-big no-uppercase">
 						Vous souhaitez poser des :
@@ -256,7 +256,7 @@
 										<section id="calculatrice-dalle" class="back-white">
 											<section class="picto-choix"><img class="width100" src="img/calcul-dalle.jpg" /></section>
 											<section class="font-din black size34 no-uppercase text-calculatrice-choix">Dalles ou<br/>caillebotis en bois</section>
-											<section class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></section>
+											<img id="fleche-up-cal-1" class="fleche-calculatrice fright" src="img/fleche-bas.png" /><img id="fleche-down-cal-1" style="display:none;" class="fleche-calculatrice fright" src="img/fleche-haut.png" />
 										</section>
 									</a>
 									<div>
@@ -264,13 +264,13 @@
 											<section class="ombre-menu-haut"></section>
 											<section class="inside-li">
 												<section class="fleft"><img style="max-width:70px;" src="img/rectangulaire-picto.png" /></section>
-												<a href="#calculatrice-dalles" onclick="chooseDalles(1)" class="font-din size28 grey sub-title-cat-catalogue-haut">Rectangulaire</a>
+												<a href="#calculatrice-dalles" onclick="chooseDalles(1)" class="font-din size28 grey sub-title-cat-catalogue-haut">Rectangulaire<img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
 											</section>
 										</section>
 										<section>
 											<section class="inside-li">
 												<section class="fleft"><img style="max-width:70px;" src="img/enl-picto.png" /></section>
-												<a href="#calculatrice-dalles" onclick="chooseDalles(2)" class="font-din size28 grey sub-title-cat-catalogue-bas">En L</a>
+												<a href="#calculatrice-dalles" onclick="chooseDalles(2)" class="font-din size28 grey sub-title-cat-catalogue-bas">En L<img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
 											</section>
 											<section class="ombre-menu-bas"></section>
 										</section>
@@ -284,7 +284,7 @@
 										<section id="calculatrice-lambourde" class="back-white">
 											<section class="picto-choix"><img class="width100" src="img/calcul-lambourde.jpg" /></section>
 											<section class="font-din black size34 no-uppercase text-calculatrice-choix"><br/>Lambourdes</section>
-											<section class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></section>
+											<img id="fleche-up-cal-2" class="fleche-calculatrice fright" src="img/fleche-bas.png" /><img id="fleche-down-cal-2" style="display:none;" class="fleche-calculatrice fright" src="img/fleche-haut.png" />
 										</section>
 									</a>
 								</dd>
@@ -294,30 +294,37 @@
 					<script>
 						var go193 = {
 							height:"193px", //style.height to change to
-							time:"100ms", //time for transition
+							time:"0ms", //time for transition
 							timingFunction:"linear", //timing func
 						}
 						
 						var go532 = {
 							height:"532px", //style.height to change to
-							time:"100ms", //time for transition
+							time:"0ms", //time for transition
 							timingFunction:"linear", //timing func
 						}
 						
 						var go694 = {
 							height:"694px", //style.height to change to
-							time:"100ms", //time for transition
+							time:"0ms", //time for transition
 							timingFunction:"linear", //timing func
 						}
 						
 						var bt1_calculatrice = document.getElementById("bttab1_calculatrice"); 
 						bt1_calculatrice.addEventListener("click", function(e) { 
-							if($("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").height() == 0) $("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css3Animate(go193);
-							else { $("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css3Animate(go0); }
+							if($("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").height() == 0) {
+								$("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css3Animate(go193);
+								$("#fleche-up-cal-1").css("display", "none"); $("#fleche-down-cal-1").css("display", "block");
+							} else { 
+								$("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css3Animate(go0);
+								$("#fleche-up-cal-1").css("display", "block"); $("#fleche-down-cal-1").css("display", "none");
+							}
+							
 							$("#tab2_calculatrice ~ .tabs_calculatrice .tab2_calculatrice dd div").css3Animate(go0);
+							
 							//if($("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").height() == 0) { $("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css("height", "193px"); }
 							//else { $("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css("height", "0px"); }
-							//$("#tab2_calculatrice ~ .tabs_calculatrice .tab2_calculatrice dd div").css("height", "0px"); 
+							//$("#tab2_calculatrice ~ .tabs_calculatrice .tab2_calculatrice dd div").css("height", "0px");
 						}, false);
 						
 						function chooseDalles(pNum) {
@@ -342,7 +349,7 @@
 				<div id="calculatrice-dalles" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
 					<div class="space20"></div>
 					<div class="tac size40 font-din over-text">POSE DE DALLES</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<img style="height: 64%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
 					
@@ -765,7 +772,7 @@
 				<div id="calculatrice-lambourdes" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
 					<div class="space20"></div>
 					<div class="tac size40 font-din over-text">POSE DE LAMBOURDES</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu1.png" />
+					<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu1.png" />
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
 						<div class="line-calculette">
@@ -857,7 +864,7 @@
 				<div id="resultat-dalles" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
 					<div class="space20"></div>
 					<div class="tac size40 font-din over-text">POSE DE DALLES</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<img style="height: 64%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
@@ -1057,7 +1064,7 @@
 					<div class="back">
 						<div class="space20"></div>
 							<div class="tac size40 font-din over-text">POSE DE LAMBOURDES</div>
-							<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu1.png" />
+							<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu1.png" />
 							<div class="space10"></div>
 							<div class="back-white-calculette over-text">
 								<div class="space20"></div>
@@ -1187,7 +1194,7 @@
 					<div class="tac size40 font-din titre-calculette over-text">
 						QUE VOULEZ-VOUS POSER ?
 					</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
 					<div class="over-text">
 						<a href="#conseil-dalles-1">
@@ -1231,7 +1238,7 @@
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLAQUES A DALLES
 					</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
@@ -1262,7 +1269,7 @@
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLAQUES A DALLES
 					</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
@@ -1293,7 +1300,7 @@
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLAQUES A DALLES
 					</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
@@ -1324,7 +1331,7 @@
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION SUPPORT CAILLEBOTIS
 					</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
@@ -1355,7 +1362,7 @@
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION SUPPORT CAILLEBOTIS
 					</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
@@ -1386,7 +1393,7 @@
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION SUPPORT CAILLEBOTIS
 					</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
@@ -1417,7 +1424,7 @@
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS LAMBOURDES
 					</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
@@ -1446,7 +1453,7 @@
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS LAMBOURDES
 					</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
@@ -1475,7 +1482,7 @@
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS LAMBOURDES
 					</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
@@ -1504,7 +1511,7 @@
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS LAMBOURDES
 					</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
@@ -1533,7 +1540,7 @@
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS DALLES
 					</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
@@ -1567,7 +1574,7 @@
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS DALLES
 					</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
@@ -1598,7 +1605,7 @@
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS DALLES
 					</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
@@ -1640,56 +1647,58 @@
 						<div class="tabs">
 							<dl class="tab1">
 								<dd>
-									<a id="bttab1_product" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast</a>
+									<a id="bttab1_product" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast<img id="fleche-up-1" class="fleche-catalogue fright" src="img/fleche-bas.png" /><img id="fleche-down-1" style="display:none;" class="fleche-catalogue fright" src="img/fleche-haut.png" /></a>
 									<div>
 										<section>
 											<section class="ombre-menu-haut"></section>
 											<section class="inside-li">
 												<section class="picto-cata-dalle fleft"></section>
-												<a href="#catalogue-plot" onclick="triPlot('standard','dalles')" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles</a>
+												<a href="#catalogue-plot" onclick="triPlot('standard','dalles')" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles<img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
 											</section>
 										</section>
 										<section>
 											<section class="inside-li">
 												<section class="picto-cata-lambourde fleft"></section>
-												<a href="#catalogue-plot" onclick="triPlot('standard','lambourdes')" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots lambourdes</a>
+												<a href="#catalogue-plot" onclick="triPlot('standard','lambourdes')" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots lambourdes<img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
 											</section>
 											<section class="ombre-menu-bas"></section>
 										</section>
 									</div>
 								</dd>
 							</dl>
+							<section class="grey-line"></section>
 							<dl class="tab2">
 								<dd>
-									<a id="bttab2_product" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast évolution</a>
+									<a id="bttab2_product" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Gamme Jouplast évolution<img id="fleche-up-2" class="fleche-catalogue fright" src="img/fleche-bas.png" /><img id="fleche-down-2" style="display:none;" class="fleche-catalogue fright" src="img/fleche-haut.png" /></a>
 									<div>
 										<section>
 											<section class="ombre-menu-haut"></section>
 											<section class="inside-li">
 												<section class="picto-cata-dalle fleft"></section>
-												<a href="#catalogue-plot"  onclick="triPlot('evolution','dalles')" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles</a>
+												<a href="#catalogue-plot"  onclick="triPlot('evolution','dalles')" class="font-din size28 grey sub-title-cat-catalogue-haut">Plots dalles<img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
 												<section class=""></section>
 											</section>
 										</section>
 										<section>
 											<section class="inside-li">
 												<section class="picto-cata-lambourde fleft"></section>
-												<a href="#catalogue-plot" onclick="triPlot('evolution','lambourdes')" class="font-din size28 grey sub-title-cat-catalogue">Plots lambourdes</a>
+												<a href="#catalogue-plot" onclick="triPlot('evolution','lambourdes')" class="font-din size28 grey sub-title-cat-catalogue">Plots lambourdes<img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
 											</section>
 										</section>
 										<section>
 											<section class="inside-li">
 												<section class="picto-cata-integral fleft"></section>
-												<a href="#catalogue-plot" onclick="triPlot('evolution','integral')" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots intégrals</a>
+												<a href="#catalogue-plot" onclick="triPlot('evolution','integral')" class="font-din size28 grey sub-title-cat-catalogue-bas">Plots intégrals<img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
 											</section>
 											<section class="ombre-menu-bas"></section>
 										</section>
 									</div>
 								</dd>
 							</dl>
+							<section class="grey-line"></section>
 							<dl class="tab3">
 								<dd>
-									<a href="#catalogue-plot" onclick="triPlot('acc','acc')" id="bttab3" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Accessoires</a>
+									<a href="#catalogue-plot" onclick="triPlot('acc','acc')" id="bttab3" class="title-din-big font-din size34 color-grey no-uppercase title-cat-catalogue">Accessoires<img class="fleche-catalogue fright" src="img/fleche-bas.png" /><img style="display:none;" class="fleche-catalogue fright" src="img/fleche-haut.png" /></a>
 								</dd>
 							</dl>
 						</div>
@@ -1697,15 +1706,17 @@
 					<script>
 						var bt1_product = document.getElementById("bttab1_product"); 
 						bt1_product.addEventListener("click", function(e) { 
-							if($("#tab1 ~ .tabs .tab1 dd div").height() == 0) { $("#tab1 ~ .tabs .tab1 dd div").css("height", "198px"); }
-							else { $("#tab1 ~ .tabs .tab1 dd div").css("height", "0px"); }
+							if($("#tab1 ~ .tabs .tab1 dd div").height() == 0) { $("#tab1 ~ .tabs .tab1 dd div").css("height", "193px"); $("#fleche-up-1").css("display", "none"); $("#fleche-down-1").css("display", "block"); } 
+							else { $("#tab1 ~ .tabs .tab1 dd div").css("height", "0px"); $("#fleche-up-1").css("display", "block"); $("#fleche-down-1").css("display", "none"); }
 							$("#tab2 ~ .tabs .tab2 dd div").css("height", "0px"); 
+							$("#fleche-up-2").css("display", "block"); $("#fleche-down-2").css("display", "none");
 						}, false);
 						
 						var bt2_product = document.getElementById("bttab2_product"); 
 						bt2_product.addEventListener("click", function(e) { 
-							if($("#tab2 ~ .tabs .tab2 dd div").height() == 0) { $("#tab2 ~ .tabs .tab2 dd div").css("height", "275px"); }
-							else { $("#tab2 ~ .tabs .tab2 dd div").css("height", "0px"); }
+							if($("#tab2 ~ .tabs .tab2 dd div").height() == 0) { $("#tab2 ~ .tabs .tab2 dd div").css("height", "272px"); $("#fleche-up-2").css("display", "none"); $("#fleche-down-2").css("display", "block");}
+							else { $("#tab2 ~ .tabs .tab2 dd div").css("height", "0px"); $("#fleche-up-2").css("display", "block"); $("#fleche-down-2").css("display", "none"); }
+							$("#fleche-up-1").css("display", "block"); $("#fleche-down-1").css("display", "none");
 							$("#tab1 ~ .tabs .tab1 dd div").css("height", "0px"); 
 						}, false);
 					</script>
@@ -1720,7 +1731,7 @@
 							<div class="tac size40 font-din titre-calculette over-text">
 								PLOTS DALLES
 							</div>
-							<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+							<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 							<div class="space10"></div>
 							<div class="over-text">
 								<a href="#fiche" onclick="buildFicheProduit(0);">
@@ -1765,7 +1776,7 @@
 							<div class="tac size40 font-din titre-calculette over-text">
 								PLOTS LAMBOURDES
 							</div>
-							<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+							<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 							<div class="space10"></div>
 							<div class="over-text">
 								<a href="#fiche" onclick="buildFicheProduit(5);">
@@ -1803,7 +1814,7 @@
 							<div class="tac size40 font-din titre-calculette over-text">
 								PLOTS DALLES
 							</div>
-							<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+							<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 							<div class="space10"></div>
 							<div class="over-text">
 								<a href="#fiche" onclick="buildFicheProduit(9);">
@@ -1834,7 +1845,7 @@
 							<div class="tac size40 font-din titre-calculette over-text">
 								PLOTS LAMBOURDES
 							</div>
-							<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+							<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 							<div class="space10"></div>
 							<div class="over-text">
 								<a href="#fiche" onclick="buildFicheProduit(12);">
@@ -1858,7 +1869,7 @@
 							<div class="tac size40 font-din titre-calculette over-text">
 								PLOTS INTEGRALS
 							</div>
-							<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+							<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 							<div class="space10"></div>
 							<div class="over-text">
 								<a href="#fiche" onclick="buildFicheProduit(14);">
@@ -1896,7 +1907,7 @@
 							<div class="tac size40 font-din titre-calculette over-text">
 								ACCESSOIRES
 							</div>
-							<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+							<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 							<div class="space10"></div>
 							<div class="over-text">
 								<a href="#fiche" onclick="buildFicheProduit(18);">
@@ -1982,7 +1993,7 @@
 					<div class="space30"></div>
 					<div class="back">
 						<div id="fiche-title" class="tac size40 font-din titre-calculette over-text"></div>
-						<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+						<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 						<div class="space10"></div>
 						<div class="back-white-calculette over-text">
 							<div class="space25"></div>
@@ -2352,7 +2363,7 @@
 					<div class="tac size40 font-din over-text">
 						MENTIONS LÉGALES
 					</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space20"></div>
 					<div class="back-white-calculette over-text">
 						<div class="space10"></div>
