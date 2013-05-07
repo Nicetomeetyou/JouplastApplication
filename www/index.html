@@ -73,7 +73,7 @@
 			
 			var webRoot="./";
 			$.ui.autoLaunch=false;
-			$.ui.resetScrollers=false;
+			$.ui.resetScrollers=true;
 			
 			var init = function(){
 			   $.ui.backButtonText="Retour";  
@@ -94,7 +94,7 @@
 				//hide splash screen
 				AppMobi.device.hideSplashScreen();	
 				
-				$.feat.nativeTouchScroll=false;
+				//$.feat.nativeTouchScroll=false;
 				
 				gaPlugin = window.plugins.gaPlugin;
 				gaPlugin.init(gaSuccess, gaError, "UA-40371154-1", 10);
