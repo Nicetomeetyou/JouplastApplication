@@ -94,6 +94,8 @@
 				//hide splash screen
 				AppMobi.device.hideSplashScreen();	
 				
+				$.feat.nativeTouchScroll=false;
+				
 				gaPlugin = window.plugins.gaPlugin;
 				gaPlugin.init(gaSuccess, gaError, "UA-40371154-1", 10);
 			};
