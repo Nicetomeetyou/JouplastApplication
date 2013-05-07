@@ -14,9 +14,9 @@ p{color:#fff;font-size:14px;line-height:18px;padding:16px;-webkit-box-shadow:rgb
 #jQUi>#header{display:block;z-index:250;-webkit-box-sizing:border-box;box-sizing:border-box;height:40px;left:0px;right:0px;background-color:#0970B3;-webkit-box-shadow:0px 0px 24px rgba(0,0,0,0.8);box-shadow:0px 0px 24px rgba(0,0,0,0.8);}
 #header>*{position:relative;z-index:2;}
 #header>h1{position:absolute;overflow:hidden;width:100%;z-index:1;text-align:center;height:48px;font-weight:normal;font-size:24px;line-height:48px;text-shadow:rgba(0,0,0,0.8) 0px -1px 0px 1px;text-align:center;text-overflow:ellipsis;white-space:nowrap;color:#fff;}
-#backButton{display:block;position:absolute;background:url(../img/arrow-back.png) no-repeat 0 0;width:20px;height:30px;left:10px;top:0px;max-width:10px;text-overflow:ellipsis;z-index:200;}
+#backButton{display:block;position:absolute;background:url(../img/arrow-back.png) no-repeat 0 0;width:20px;height:30px;top:0px;max-width:10px;text-overflow:ellipsis;z-index:200;}
 #backButton>div{max-width:10px;overflow:hidden;text-overflow:ellipsis;}
-.button{z-index:1;color:#333;cursor:pointer;display:inline-block;font-weight:bold;font-size:14px;line-height:36px;position:relative;text-decoration:none;text-align:center;color:#FFFFFF!important;height:36px;min-width:40px;padding:0px 23px;margin-top:6px;margin-left:6px;text-overflow:ellipsis;-webkit-border-radius:6px;border-radius:6px;background-image:-webkit-gradient(linear,left top,left bottom,from(#fff),to(#999),color-stop(.5,#fff),color-stop(.5,#ccc));background-image:linear-gradient(left top,left bottom,from(#fff),to(#999),color-stop(.5,#fff),color-stop(.5,#ccc));background:#ccc;}
+.button{z-index:1;color:#333;cursor:pointer;display:inline-block;font-weight:bold;font-size:14px;line-height:25px;position:relative;text-decoration:none;text-align:center;color:#FFFFFF!important;height:36px;min-width:40px;padding:0px 23px;margin-top:6px;margin-left:6px;text-overflow:ellipsis;-webkit-border-radius:6px;border-radius:6px;background-image:-webkit-gradient(linear,left top,left bottom,from(#fff),to(#999),color-stop(.5,#fff),color-stop(.5,#ccc));background-image:linear-gradient(left top,left bottom,from(#fff),to(#999),color-stop(.5,#fff),color-stop(.5,#ccc));background:#ccc;}
 .button.pressed{color:#fff;text-shadow:#2e4987 0 1px 0;background-color:#5884d6;border-color:#7488b8;background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0.01,#eee),color-stop(0.05,#709de7),color-stop(0.70,#5884d6),color-stop(1,#4470ca));}
 .modalbutton{position:absolute;top:0px;right:5px;height:32px;width:58px;line-height:32px;z-index:9999;}
 .closebutton{position:absolute;top:6px;right:6px;display:block;height:24px!important;width:24px!important;border-radius:12px;border:1px solid #666;background:#fff;color:#333;font:bold 21px/18px 'Arial Black',Arial Black,Gadget,Arial,Helvetica,sans-serif;text-align:center;text-decoration:none;}
@@ -128,10 +128,10 @@ nav~#menu{z-index:200!important;width:256px!important;bottom:0px!important;heigh
 #jq_actionsheet a.cancel.selected{background-color:rgba(73,73,73,1);}
 #jq_actionsheet a.red{color:white;background-color:rgba(204,0,0,1);}
 #jq_actionsheet a.red.selected{background-color:rgba(255,0,0,1);}
-BODY>DIV#mask{display:block;width:100%;height:100%;background:#000;z-index:999999;position:absolute;top:0;left:0;}
-.jqPopup{display:block;width:280px;float:left;border:solid 1px #72767b;-webkit-box-shadow:0px 4px 6px #555,0 0 20px rgba(255,255,255,0.5);border-radius:10px;padding:10px;opacity:1;-webkit-transform:scale(1);-webkit-transition:all 0.20s ease-in-out;transform:scale(1);transition:all 0.20s ease-in-out;position:absolute;z-index:1000000;margin-left:auto!important;margin-right:auto!important;background:#ffffff;}
+BODY>DIV#mask{display:block;width:100%;height:100%;background:#000;z-index:999;position:absolute;top:0;left:0;opacity:0.5;}
+.jqPopup{display:block;width:280px;float:left;border:solid 1px #72767b;-webkit-box-shadow:0px 4px 6px #555,0 0 20px rgba(255,255,255,0.5);border-radius:10px;padding:10px;position:absolute;z-index:1000;margin-left:auto!important;margin-right:auto!important;background:#ffffff;}
 .jqPopup *{color:black;}
-.jqPopup.hidden{opacity:0;-webkit-transform:scale(0);transform:scale(0);top:50%;left:50%;margin:0px auto;}
+.jqPopup.hidden{opacity:0;margin:0px auto;}
 .jqPopup header{font-weight:bold;font-size:20px;margin:0;padding:0;display:block!important;}
 .jqPopup div{font-size:12px;}
 .jqPopup footer{width:100%;text-align:center;display:block!important;}

@@ -158,9 +158,7 @@
 			var tabFicheTitle_fr = new Array("PLOTS DALLES", "PLOTS LAMBOURDES", "PLOTS INTÉGRALS", "ACCESSOIRES");
 			var tabNomProduit_fr = new Array("HD 35mm FIXE", "HD 40/65mm RÉGLABLE", "HD 50/80mm RÉGLABLE", "HD 80/140mm RÉGLABLE", "HD 140/230mm RÉGLABLE", "HL 40/65mm RÉGLABLE", "HL 50/80mm RÉGLABLE", "HL 80/140mm RÉGLABLE", "HL 140/230mm RÉGLABLE", "HD 8/15mm RÉGLABLE", "HD 10mm FIXE", "HD 20/30mm RÉGLABLE", "HL 10mm FIXE", "HL 20/30mm RÉGLABLE", "HI 40/65mm RÉGLABLE", "HI 50/80mm RÉGLABLE", "HI 80/140mm RÉGLABLE", "HI 140/230mm RÉGLABLE", "Calle amortisseur", "HR 200 x 200", "HR 200 C", "HR 25 mm Dalle", "HR 60 mm Dalles et Lambourdes", "HE 3mm", "HE 5mm", "HC 2mm", "HC 3mm", "HC 5mm");
 			
-			//
-			
-			var tabConditionement = new Array(	new Array("60", "9", "1200", "200"), new Array("60", "15", "1200", "320"), new Array("60", "15", "840", "230"), new Array("40", "17", "560", "260"), new Array("40", "17", "400", "190")
+			var tabConditionement = 	new Array(	new Array("60", "9", "1200", "200"), new Array("60", "15", "1200", "320"), new Array("60", "15", "840", "230"), new Array("40", "17", "560", "260"), new Array("40", "17", "400", "190")
 										, new Array("60", "15", "1200", "320"), new Array("60", "15", "840", "230"), new Array("40", "17", "560", "260"), new Array("40", "17", "400", "190")
 										, new Array("30", "6", "1890", "400"), new Array("60", "3.5", "3000", "190"), new Array("60", "9.5", "2100", "350")
 										, new Array("60", "3.5", "3000", "190"), new Array("60", "9.5", "2100", "350")
@@ -296,19 +294,19 @@
 					<script>
 						var go193 = {
 							height:"193px", //style.height to change to
-							time:"300ms", //time for transition
+							time:"100ms", //time for transition
 							timingFunction:"linear", //timing func
 						}
 						
 						var go532 = {
 							height:"532px", //style.height to change to
-							time:"300ms", //time for transition
+							time:"100ms", //time for transition
 							timingFunction:"linear", //timing func
 						}
 						
 						var go694 = {
 							height:"694px", //style.height to change to
-							time:"300ms", //time for transition
+							time:"100ms", //time for transition
 							timingFunction:"linear", //timing func
 						}
 						
@@ -767,7 +765,7 @@
 				<div id="calculatrice-lambourdes" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
 					<div class="space20"></div>
 					<div class="tac size40 font-din over-text">POSE DE LAMBOURDES</div>
-					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu1.png" />
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
 						<div class="line-calculette">
@@ -839,14 +837,16 @@
 						}
 						
 						function affichePlotLambourdes(pNum) {
-							for(i=1; i<13; i++) { $("#p"+i).css("display","none"); }
+							for(i=1; i<13; i++) { $("#lambourdes-p"+i).css("display","none"); }
 							
-							if(pNum == 10) { $("#lambourdes-p1").css("display","block"); $("#lambourdes-p2").css("display","block"); }
+							alert(pNum);
+							
+							if(pNum == 10) { $("#lambourdes-p1").css("display","block"); $("#lambourdes-p2").css("display","block"); $("#lambourdes-p1").removeClass("home-square-100").addClass("home-square"); }
 							if(pNum == 11) { $("#lambourdes-p3").css("display","block"); $("#lambourdes-p4").css("display","block"); }
 							
-							if(pNum == 1) { $("#lambourdes-p1").css("display","block");	}
+							if(pNum == 1) { $("#lambourdes-p1").css("display","block"); $("#lambourdes-p1").removeClass("home-square").addClass("home-square-100");	}
 							if(pNum == 2) {	$("#lambourdes-p2").css("display","block");	$("#lambourdes-p3").css("display","block");	}
-							if(pNum == 3) { $("#lambourdes-p4").css("display","block");	$("#lambourdes-p5").css("display","block"); $("#lambourdes-p6").css("display","block"); $("#lambourdes-p6").removeClass("home-square").addClass("home-square-100 cb");}
+							if(pNum == 3) { $("#lambourdes-p4").css("display","block");	$("#lambourdes-p5").css("display","block"); $("#lambourdes-p6").css("display","block"); $("#lambourdes-p6").removeClass("home-square").addClass("home-square-100 cb"); }
 							if(pNum == 4) { $("#lambourdes-p5").css("display","block");	$("#lambourdes-p6").css("display","block"); $("#lambourdes-p7").css("display","block"); $("#lambourdes-p7").removeClass("home-square").addClass("home-square-100 cb"); }
 						}
 					</script>
@@ -1057,7 +1057,7 @@
 					<div class="back">
 						<div class="space20"></div>
 							<div class="tac size40 font-din over-text">POSE DE LAMBOURDES</div>
-							<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+							<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu1.png" />
 							<div class="space10"></div>
 							<div class="back-white-calculette over-text">
 								<div class="space20"></div>
@@ -1068,15 +1068,15 @@
 							<div class="width100">
 								<div id="plan-lambourdes" class="ma" style="width:250px; height:250px; display:block">
 									<div class="">
-										<div style="left:-10px; position:relative; top:10px; width:200px;" class="grey size24 no-uppercase">largeur</div>
+										<div style="left:-10px; position:relative; top:10px; width:200px;" class="grey size24 no-uppercase font-din">largeur</div>
 										<div id="lambourdes-largeur" style="left:-10px; position:relative; top:10px; width:200px;" class="font-arial orange size60 no-uppercase">3.20m</div>
 									</div>
 									<div class="">
-										<div style="left:180px; position:relative; top:-10px;" class="grey size24 no-uppercase">longueur</div>
+										<div style="left:180px; position:relative; top:-10px;" class="grey size24 no-uppercase font-din">longueur</div>
 										<div id="lambourdes-longueur" style="left:180px; position:relative; top:-10px;" class="font-arial orange size60 no-uppercase">4.20m</div>
 									</div>
 									<div class="">
-										<div style="left:20px; position:relative; top:100px;" class="grey size24 no-uppercase">hauteur</div>
+										<div style="left:20px; position:relative; top:100px;" class="grey size24 no-uppercase font-din">hauteur</div>
 										<div id="lambourdes-hauteur" style="left:20px; position:relative; top:100px;" class="font-arial orange size60 no-uppercase">4.20m</div>
 									</div>
 									<img style="max-width:250px; position:relative; top:-90px;" src="img/plan-lambourdes.png" />
@@ -1542,7 +1542,7 @@
 							<div class="space10"></div>
 							<div style="margin:0 20px;">
 								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
-									<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+									<source src="video/dalles/conseil-dalles-1.mp4" type="video/mp4" />
 								</video>
 							</div>
 							<div class="cb"></div>
@@ -1573,7 +1573,7 @@
 							<div class="space10"></div>
 							<div style="margin:0 20px;">
 								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
-									<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+									<source src="video/dalles/conseil-dalles-2.mp4" type="video/mp4" />
 								</video>
 							</div>
 							<div class="cb"></div>
@@ -1604,7 +1604,7 @@
 							<div class="space10"></div>
 							<div style="margin:0 20px;">
 								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
-									<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+									<source src="video/dalles/conseil-dalles-3.mp4" type="video/mp4" />
 								</video>
 							</div>
 							<div class="cb"></div>
@@ -2331,13 +2331,34 @@
 						<img style="height: 34%; left: -20%; position: absolute; top: 31%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					</div>
 					<div class="space50"></div>
-					</div>
 					
 					<script>
 						var btEmail = document.getElementById("mail-button"); 
 						btEmail.addEventListener("click", function(e) { location.href="mailto:bdugast@gmail.com" }, false); 
 					</script>
+				</div>
 				<!--END CONTACT MENU-->
+				
+				<!--MENTION-->
+				<div id="mention" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+					<div class="space20"></div>
+					<div class="tac size40 font-din over-text">
+						MENTIONS LÉGALES
+					</div>
+					<img style="height: 34%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
+					<div class="space20"></div>
+					<div class="back-white-calculette over-text">
+						<div class="space10"></div>
+						<div class="size26 black font-din back-white-mention no-uppercase">
+							Ut enim ad minim veniam, quis nostrud<br/>exercitation ullamco laboris nisi ut aliquip<br/>Ut enim ad minim veniam, quis nostrud.<br/><br/>
+							Ut enim ad minim veniam, quis nostrud<br/>exercitation ullamco laboris nisi ut aliquip<br/>Ut enim ad minim veniam, quis nostrudUt<br/>enim ad minim veniam, quis nostrud exercitation ullamco<br/>laboris nisi ut aliquip Ut enim ad minim veniam, quis nostrud.
+							Ut enim ad minim veniam, quis nostrud<br/>exercitation ullamco laboris nisi ut aliquip<br/>Ut enim ad minim veniam, quis nostrud.<br/><br/>
+							Ut enim ad minim veniam, quis nostrud<br/>exercitation ullamco laboris nisi ut aliquip<br/>Ut enim ad minim veniam, quis nostrudUt<br/>enim ad minim veniam, quis nostrud exercitation ullamco<br/>laboris nisi ut aliquip Ut enim ad minim veniam, quis nostrud.
+							Ut enim ad minim veniam, quis nostrud<br/>exercitation ullamco laboris nisi ut aliquip<br/>Ut enim ad minim veniam, quis nostrud.<br/><br/>
+						</div>
+					</div>
+				</div>
+				<!--END MENTION-->
 			</div>
 			
 			<!-- bottom navbar.  Add additional tabs here -->
@@ -2352,42 +2373,42 @@
 					<a href="#main">
 						<div class="menu-line">
 							<img class="picto-menu-0 fleft" src="img/menu-picto-0.jpg" />
-							<div class="fleft text-short-menu black">Accueil</div>
+							<div class="fleft text-short-menu black font-din">Accueil</div>
 						</div>
 					</a>
 					<div class="grey-line cb"></div>
 					<a href="#calculatrice">
 						<div class="menu-line">
 							<img class="picto-menu-1 fleft" src="img/menu-picto-1.jpg" />
-							<div class="fleft text-short-menu black">Calculatrice</div>
+							<div class="fleft text-short-menu black font-din">Calculatrice</div>
 						</div>
 					</a>
 					<div class="grey-line cb"></div>
 					<a href="#conseil">
 						<div class="menu-line">
 							<img class="picto-menu-2 fleft" src="img/menu-picto-2.jpg" />
-							<div class="fleft text-short-menu black">Conseils</div>
+							<div class="fleft text-short-menu black font-din">Conseils</div>
 						</div>
 					</a>
 					<div class="grey-line cb"></div>
 					<a href="#catalogue">
 						<div class="menu-line">
 							<img class="picto-menu-3 fleft" src="img/menu-picto-3.jpg" />
-							<div class="fleft text-short-menu black">Catalogue</div>
+							<div class="fleft text-short-menu black font-din">Catalogue</div>
 						</div>
 					</a>
 					<div class="grey-line cb"></div>
 					<a href="#contact">
 						<div class="menu-line">
 							<img class="picto-menu-4 fleft" src="img/menu-picto-4.jpg" />
-							<div class="fleft text-short-menu black">Contact</div>
+							<div class="fleft text-short-menu black font-din">Contact</div>
 						</div>
 					</a>
 					<div class="grey-line cb"></div>
 					<a href="#mention">
 						<div class="menu-line">
 							<img class="picto-menu-5 fleft" src="img/menu-picto-5.jpg" />
-							<div class="fleft text-short-menu black">Mentions légales</div>
+							<div class="fleft text-short-menu black font-din">Mentions légales</div>
 						</div>
 					</a>
 				</div>
