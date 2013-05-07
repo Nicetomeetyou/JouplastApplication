@@ -147,7 +147,7 @@ z-index:2;
 #backButton {
 	display:block;
 	position:absolute;
-	background:url(../img/arrow-back.png) no-repeat 0 0; width:20px; height:30px;
+	background:url(../img/arrow-back.png) no-repeat 0 0; width:50px; height:50px;
 	top:0px;
 	max-width:10px;
 	text-overflow:ellipsis;
@@ -174,7 +174,7 @@ z-index:2;
 	color:#FFFFFF !important;
 	height:36px; min-width:40px;
 	padding:0px 23px;
-	margin-top:6px; margin-left:6px; 
+	margin-top:8px; margin-left:6px; 
 	text-overflow:ellipsis; 
 	-webkit-border-radius:6px; border-radius:6px;
 	background-image:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#999), color-stop(.5,#fff), color-stop(.5,#ccc)); background-image:linear-gradient(left top, left bottom, from(#fff), to(#999), color-stop(.5,#fff), color-stop(.5,#ccc));
@@ -883,8 +883,8 @@ select[disabled]~div {
 
 .menuButton {
 		position:relative;
-		width:35px;	height:20px;
-		padding:9px 4px;
+		width:35px;	height:50px;
+		padding:9px 1px;
 		background-color:transparent;
 		display:inline-block;
 	}
