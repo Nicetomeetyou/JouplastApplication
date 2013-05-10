@@ -27,6 +27,57 @@
 		<link rel="stylesheet" type="text/css" href="css/jq.ui.css" title="default" />
 		<link rel="stylesheet" type="text/css" href="js/subpanel.css" title="default" />
         <title>Jouplast</title>
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+		<script src="GAPlugin.js"></script>
+		<script type="text/javascript" charset="utf-8">
+		
+		var gaPlugin;	// analytics
+		
+		document.addEventListener("deviceready",onDeviceReady,false);
+		
+		function onDeviceReady() {
+			pictureSource=navigator.camera.PictureSourceType;
+			destinationType=navigator.camera.DestinationType;
+			gaPlugin = window.plugins.gaPlugin;
+			gaPlugin.init(gaSuccess, gaError, "UA-40371154-1", 10);
+			
+		}
+
+		function gaSuccess(){
+			alert('GA Plugin Success');
+			//GA track this page
+			trackPage("menu");
+		}
+		
+		function gaError(msg){
+			alert('GA Plugin Error: ' + msg);
+		}
+		
+		function trackPageSuccess(){
+			alert('GA Plugin Track Page Success');
+			//GA set variable (1st)
+			gaPlugin.setVariable(nativePluginResultHandler, nativePluginErrorHandler, "Device info", device.name + '|' + device.platform + '|' + device.version, 1);
+		}
+		
+		function trackPageError(msg){
+			alert('GA Plugin Track Page Error: ' + msg);
+		}
+		
+		function setVariableSuccess(){
+			//alert('GA Plugin Set Variable Success');
+		}
+		
+		
+		function setVariableError(msg){
+			//alert('GA Plugin Set Variable Error: ' + msg);
+		}
+		
+		function trackPage(pName) {
+			alert('GA Plugin Success : ' + pName);
+			gaPlugin.trackPage(trackPageSuccess, trackPageError, pName);
+		}
+		
+		</script>
     </head>
     <body class="back">
 		<script type="text/javascript" charset="utf-8" src="js/jq.ui.min.js"></script> 
@@ -39,10 +90,6 @@
 		<script type="text/javascript" charset="utf-8" src="js/jq.alphatable.js"></script> 
 		<script type="text/javascript" charset="utf-8" src="js/jq.template.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/ad.js"></script>
-		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-		<script src="GAPlugin.js"></script>
-		<!--<script type="text/javascript" charset="utf-8" src="js/GAPlugin.js"></script>-->
-		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 		
         <script type="text/javascript">	
 			var tabNomProduit;
@@ -93,29 +140,8 @@
 				webRoot=AppMobi.webRoot+"/";
 				//hide splash screen
 				AppMobi.device.hideSplashScreen();	
-				
-				//$.feat.nativeTouchScroll=false;
-				
-				gaPlugin = window.plugins.gaPlugin;
-				gaPlugin.init(gaSuccess, gaError, "UA-40371154-1", 10);
 			};
 			document.addEventListener("appMobi.device.ready",onDeviceReady,false); 
-			
-			function gaSuccess(){
-				alert('GA Plugin Success');
-				//GA track this page
-				gaPlugin.trackPage(trackPageSuccess, trackPageError, "index.html");
-			}
-			
-			function trackPageSuccess(){
-				alert('GA Plugin Track Page Success');
-				//GA set variable (1st)
-				gaPlugin.setVariable(nativePluginResultHandler, nativePluginErrorHandler, "Device info", device.name + '|' + device.platform + '|' + device.version, 1);
-			}
-			
-			function trackPageError(msg){
-				alert('GA Plugin Track Page Error: ' + msg);
-			}
 			
 			var go0 = {
 				height:"0px", //style.height to change to
@@ -192,7 +218,7 @@
 					<div>
 						<div id="spacer-0" class="space20"></div>
 						
-						<a href="#calculatrice">
+						<a href="#calculatrice" onclick="trackPage('calculatrice');">
 							<div class="home-square">
 								<div style="position:relative">
 									<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu0.png" />
@@ -201,7 +227,7 @@
 								<div class="back-home-square img-menu"><div class="font-din tac white">Calculatrice</div></div>
 							</div>
 						</a>
-						<a href="#conseil">
+						<a href="#conseil" onclick="trackPage('conseils');">
 							<div class="home-square">
 								<div style="position:relative">
 									<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu1.png" />
@@ -211,7 +237,7 @@
 							</div>
 						</a>
 						<div id="spacer-1"></div>
-						<a href="#catalogue">
+						<a href="#catalogue" onclick="trackPage('catalogue');">
 							<div class="home-square">
 								<div style="position:relative">
 									<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu2.png" />
@@ -220,7 +246,7 @@
 								<div class="back-home-square img-menu"><div class="font-din tac white">Catalogue</div></div>
 							</div>
 						</a>
-						<a href="#contact">
+						<a href="#contact" onclick="trackPage('contact');">
 							<div class="home-square">
 								<div style="position:relative">
 									<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu3.png" />
@@ -1306,19 +1332,13 @@
 									<div class="width100">
 										<div id="carousel-plaques-1" style="display:block;height:220px;width:305px; margin:auto">
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-1.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/plaques/1_fixerplaque/1_fixerplaque_01.jpg" /></a>
 											</div>
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-2.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/plaques/1_fixerplaque/1_fixerplaque_02.jpg" /></a>
 											</div>
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-3.jpg" /></a>
-											</div>
-											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-4.jpg" /></a>
-											</div>
-											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-5.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/plaques/1_fixerplaque/1_fixerplaque_03.jpg" /></a>
 											</div>
 										</div>
 									</div>
@@ -1405,19 +1425,16 @@
 									<div class="width100">
 										<div id="carousel-plaques-2" style="display:block;height:220px;width:305px; margin:auto">
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-1.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/plaques/2_placerplaque/2_placerplaque_01.jpg" /></a>
 											</div>
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-2.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/plaques/2_placerplaque/2_placerplaque_02.jpg" /></a>
 											</div>
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-3.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/plaques/2_placerplaque/2_placerplaque_03.jpg" /></a>
 											</div>
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-4.jpg" /></a>
-											</div>
-											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-5.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/plaques/2_placerplaque/2_placerplaque_04.jpg" /></a>
 											</div>
 										</div>
 									</div>
@@ -1504,19 +1521,13 @@
 									<div class="width100">
 										<div id="carousel-plaques-3" style="display:block;height:220px;width:305px; margin:auto">
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-1.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/plaques/3_poseplots/3_poseplots_01.jpg" /></a>
 											</div>
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-2.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/plaques/3_poseplots/3_poseplots_02.jpg" /></a>
 											</div>
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-3.jpg" /></a>
-											</div>
-											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-4.jpg" /></a>
-											</div>
-											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-5.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/plaques/3_poseplots/3_poseplots_03.jpg" /></a>
 											</div>
 										</div>
 									</div>
@@ -1603,19 +1614,19 @@
 									<div class="width100">
 										<div id="carousel-caillebotis-1" style="display:block;height:220px;width:305px; margin:auto">
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-1.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/caillebottis/1_fixersupport/1_fixersupport_01.jpg" /></a>
 											</div>
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-2.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/caillebottis/1_fixersupport/1_fixersupport_02.jpg" /></a>
 											</div>
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-3.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/caillebottis/1_fixersupport/1_fixersupport_03.jpg" /></a>
 											</div>
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-4.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/caillebottis/1_fixersupport/1_fixersupport_04.jpg" /></a>
 											</div>
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-5.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/caillebottis/1_fixersupport/1_fixersupport_05.jpg" /></a>
 											</div>
 										</div>
 									</div>
@@ -1702,19 +1713,16 @@
 									<div class="width100">
 										<div id="carousel-caillebotis-2" style="display:block;height:220px;width:305px; margin:auto">
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-1.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/caillebottis/2_plots/2_plots_01.jpg" /></a>
 											</div>
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-2.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/caillebottis/2_plots/2_plots_02.jpg" /></a>
 											</div>
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-3.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/caillebottis/2_plots/2_plots_03.jpg" /></a>
 											</div>
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-4.jpg" /></a>
-											</div>
-											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-5.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/caillebottis/2_plots/2_plots_04.jpg" /></a>
 											</div>
 										</div>
 									</div>
@@ -1801,19 +1809,10 @@
 									<div class="width100">
 										<div id="carousel-caillebotis-3" style="display:block;height:220px;width:305px; margin:auto">
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-1.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/caillebottis/3_finition/3_finition_01.jpg" /></a>
 											</div>
 											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-2.jpg" /></a>
-											</div>
-											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-3.jpg" /></a>
-											</div>
-											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-4.jpg" /></a>
-											</div>
-											<div class="tac">
-												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-5.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/caillebottis/3_finition/3_finition_02.jpg" /></a>
 											</div>
 										</div>
 									</div>
