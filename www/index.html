@@ -878,39 +878,39 @@
 						<div class="width100">
 							<div id="plan-rect" class="ma" style="width:250px; height:270px; display:none">
 								<div class="">
-									<div style="left:-10px; position:relative; top:10px; width:200px;" class="grey size24 no-uppercase">largeur</div>
+									<div style="left:-10px; position:relative; top:10px; width:200px;" class="grey size24 no-uppercase font-din">largeur</div>
 									<div id="rect-largeur" style="left:-10px; position:relative; top:10px; width:200px;" class="font-arial orange size60 no-uppercase">3.20m</div>
 								</div>
 								<div class="">
-									<div style="left:180px; position:relative; top:-10px;" class="grey size24 no-uppercase">longueur</div>
+									<div style="left:180px; position:relative; top:-10px;" class="grey size24 no-uppercase font-din">longueur</div>
 									<div id="rect-longueur" style="left:180px; position:relative; top:-10px;" class="font-arial orange size60 no-uppercase">4.20m</div>
 								</div>
 								<div class="">
-									<div style="left:20px; position:relative; top:100px;" class="grey size24 no-uppercase">hauteur</div>
+									<div style="left:20px; position:relative; top:100px;" class="grey size24 no-uppercase font-din">hauteur</div>
 									<div id="rect-hauteur" style="left:20px; position:relative; top:100px;" class="font-arial orange size60 no-uppercase">4.20m</div>
 								</div>
 								<img style="max-width:250px; position:relative; top:-90px;" src="img/rectangulaire-num.png" />
 							</div>
 							<div id="plan-enl" class="ma" style="width:250px; height:270px; display:none">
 								<div class="fleft">
-									<div style="left:-10px; position:relative; top:10px; width:200px;" class="grey size24 no-uppercase">largeur 1</div>
+									<div style="left:-10px; position:relative; top:10px; width:200px;" class="grey size24 no-uppercase font-din">largeur 1</div>
 									<div id="enl-largeur1"style="left:-10px; position:relative; top:10px; width:200px;" class="font-arial orange size60 no-uppercase">3.20m</div>
 								</div>
 								<div class="fleft">
-									<div style="left:180px; position:relative; top:-10px;" class="grey size24 no-uppercase">longueur 1</div>
+									<div style="left:180px; position:relative; top:-10px;" class="grey size24 no-uppercase font-din">longueur 1</div>
 									<div id="enl-longueur1" style="left:180px; position:relative; top:-10px;" class="font-arial orange size60 no-uppercase">4.20m</div>
 								</div>
 								<div class="fleft">
-									<div style="left:130px; position:relative; top:110px;" class="grey size24 no-uppercase">largeur 2</div>
+									<div style="left:130px; position:relative; top:110px;" class="grey size24 no-uppercase font-din">largeur 2</div>
 									<div id="enl-largeur2"style="left:130px; position:relative; top:110px;" class="font-arial orange size60 no-uppercase">4.20m</div>
 								</div>
 								<div class="cb"></div>
 								<div class="">
-									<div style="left:-30px; position:relative; top:40px;" class="grey size24 no-uppercase">longueur 2</div>
+									<div style="left:-30px; position:relative; top:40px;" class="grey size24 no-uppercase font-din">longueur 2</div>
 									<div id="enl-longueur2" style="left:-30px; position:relative; top:40px;" class="font-arial orange size60 no-uppercase">4.20m</div>
 								</div>
 								<div class="">
-									<div style="left:70px; position:relative; top:30px;" class="grey size24 no-uppercase">hauteur</div>
+									<div style="left:70px; position:relative; top:30px;" class="grey size24 no-uppercase font-din">hauteur</div>
 									<div id="enl-hauteur" style="left:70px; position:relative; top:30px;" class="font-arial orange size60 no-uppercase">4.20m</div>
 								</div>
 								<img style="max-width:250px; position:relative; top:-140px;" src="img/enl-num.png" />
@@ -1555,7 +1555,54 @@
 								</video>
 							</div>-->
 							<div>
-								<img class="width100" src="video/dalles/dalles-conseil-1.gif" />
+								<!--<img class="width100" src="video/dalles/dalles-conseil-1.gif" />-->
+								<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
+									<script>
+									var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");
+									var carousel;
+										function init_carousel() {
+											carousel=$("#carousel2").carousel({
+												pagingDiv: "carousel_dots2",
+												pagingCssName: "carousel_paging2",
+												pagingCssNameSelected: "carousel_paging2_selected",
+												preventDefaults:false,
+												pagingFunction:function(ind){
+													$("#nom-recette").html(tabNomRecette[ind]);
+												}
+											});
+										}
+										window.addEventListener("load", init_carousel, false);
+										
+										function removeLogo() {
+											$(".header-container-logo img").css("display", "none");
+										}
+									</script>
+									<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
+									<div class="width100">
+										<div id="carousel2" style="display:block;height:100px;width:230px; margin:auto">
+											<div class="tac">
+												<a href="#recette"><img style="max-width:200px;" src="video/dalles/dalles-conseil-1.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:200px;" src="video/dalles/dalles-conseil-2.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:200px;" src="video/dalles/dalles-conseil-3.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:200px;" src="video/dalles/dalles-conseil-4.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:200px;" src="video/dalles/dalles-conseil-5.jpg" /></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="nom-recette" class="color-grey-title size14 title-recette-mois tac">Les recettes les plus populaires</div>
+								<div class="space20"></div>
+								<script>
+									$("#nom-recette").html(tabNomRecette[0]);
+								</script>
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
