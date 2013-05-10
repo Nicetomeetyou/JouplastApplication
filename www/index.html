@@ -129,6 +129,13 @@
 				timingFunction:"linear", //timing func
 			}
 			
+			function btConseil(num1, num2) {
+				for(i = 1; i<4; i++) {
+					for(j = 1; j<4; j++) {
+						if(num1 == i && num == j) $("#bt_"+i+"_"+j).css('display', 'block');
+					}
+				}
+			}
 			
 			$(document).ready(function(){
 				var language = navigator.language.split("-");
@@ -340,8 +347,6 @@
 								$("#tab1_dalles ~ .tabs_dalles .tab1_dalles dd div").css3Animate(go694);
 							}
 						}
-						
-						
 					</script>
 					<div class="space50"></div>
 				</div>
@@ -1245,12 +1250,80 @@
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
 							<div class="space10"></div>
-							<div class="ma"><img class="width100" src="img/1-3.jpg" /></div>
-							<div class="space10"></div>
-							<div style="margin:0 20px;">
+							<div class="ma">
+								<div id="bt_1_plaques_1" class="fleft" style="width:33%">
+									<img id="bt_1_1_plaques_1" class="width100" src="img/1-3-1.jpg" />
+									<img id="bt_1_2_plaques_1" class="width100" src="img/1-3-2.jpg" style="display:none;" />
+								</div>
+								<div id="bt_2_plaques_1" class="fleft" style="width:33%">
+									<img id="bt_2_1_plaques_1" class="width100" src="img/2-3-1.jpg" />
+									<img id="bt_2_2_plaques_1" class="width100" src="img/2-3-2.jpg" style="display:none;" />
+									<img id="bt_2_0_plaques_1" class="width100" src="img/2-3-0.jpg" style="display:none;" />
+								</div>
+								<div id="bt_3_plaques_1" class="fleft" style="width:33%">
+									<img id="bt_3_1_plaques_1" class="width100" src="img/3-3-1.jpg" />
+									<img id="bt_3_2_plaques_1" class="width100" src="img/3-3-2.jpg" style="display:none;" />
+								</div>
+							</div>
+							<script>
+								var bt_1_plaques_1 = document.getElementById("bt_1_plaques_1");
+								bt_1_plaques_1.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-plaques-1",false,false,"slide");
+								}, false);
+								
+								var bt_2_plaques_1 = document.getElementById("bt_2_plaques_1");
+								bt_2_plaques_1.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-plaques-2",false,false,"slide");
+								}, false);
+								
+								var bt_3_plaques_1 = document.getElementById("bt_3_plaques_1");
+								bt_3_plaques_1.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-plaques-3",false,false,"slide");
+								}, false);
+							</script>
+							<div class="space10 cb"></div>
+							<!--<div style="margin:0 20px;">
 								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
 									<source src="video/dalles/conseil-dalles-1.mp4" type="video/mp4" />
 								</video>
+							</div>-->
+							<div>
+								<!--<img class="width100" src="video/dalles/dalles-conseil-1.gif" />-->
+								<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
+									<script>
+										/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
+										var carousel;
+										
+										function init_carousel() {
+											carousel=$("#carousel-plaques-1").carousel({
+												preventDefaults:true,
+												pagingFunction:function(ind){}
+											});
+										}
+										window.addEventListener("load", init_carousel, false);
+									</script>
+									<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
+									<div class="width100">
+										<div id="carousel-plaques-1" style="display:block;height:220px;width:305px; margin:auto">
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-1.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-2.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-3.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-4.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-5.jpg" /></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="space20"></div>
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
@@ -1276,12 +1349,80 @@
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
 							<div class="space10"></div>
-							<div class="ma"><img class="width100" src="img/2-3.jpg" /></div>
-							<div class="space10"></div>
-							<div style="margin:0 20px;">
+							<div class="ma">
+								<div id="bt_1_plaques_2" class="fleft" style="width:33%">
+									<img id="bt_1_1_plaques_2" class="width100" src="img/1-3-1.jpg" style="display:none;"/>
+									<img id="bt_1_2_plaques_2" class="width100" src="img/1-3-2.jpg" />
+								</div>
+								<div id="bt_2_plaques_2" class="fleft" style="width:33%">
+									<img id="bt_2_1_plaques_2" class="width100" src="img/2-3-1.jpg" style="display:none;" />
+									<img id="bt_2_2_plaques_2" class="width100" src="img/2-3-2.jpg" style="display:none;" />
+									<img id="bt_2_0_plaques_2" class="width100" src="img/2-3-0.jpg" />
+								</div>
+								<div id="bt_3_plaques_2" class="fleft" style="width:33%">
+									<img id="bt_3_1_plaques_2" class="width100" src="img/3-3-1.jpg" />
+									<img id="bt_3_2_plaques_2" class="width100" src="img/3-3-2.jpg" style="display:none;" />
+								</div>
+							</div>
+							<script>
+								var bt_1_dalles_2 = document.getElementById("bt_1_plaques_2");
+								bt_1_dalles_2.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-plaques-1",false,false,"slide");
+								}, false);
+								
+								var bt_2_dalles_2 = document.getElementById("bt_2_plaques_2");
+								bt_2_dalles_2.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-plaques-2",false,false,"slide");
+								}, false);
+								
+								var bt_3_dalles_2 = document.getElementById("bt_3_plaques_2");
+								bt_3_dalles_2.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-plaques-3",false,false,"slide");
+								}, false);
+							</script>
+							<div class="space10 cb"></div>
+							<!--<div style="margin:0 20px;">
 								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
 									<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4" />
 								</video>
+							</div>-->
+							<div>
+								<!--<img class="width100" src="video/dalles/dalles-conseil-1.gif" />-->
+								<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
+									<script>
+										/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
+										var carousel;
+										
+										function init_carousel() {
+											carousel=$("#carousel-plaques-2").carousel({
+												preventDefaults:true,
+												pagingFunction:function(ind){}
+											});
+										}
+										window.addEventListener("load", init_carousel, false);
+									</script>
+									<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
+									<div class="width100">
+										<div id="carousel-plaques-2" style="display:block;height:220px;width:305px; margin:auto">
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-1.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-2.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-3.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-4.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-5.jpg" /></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="space20"></div>
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
@@ -1307,12 +1448,80 @@
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
 							<div class="space10"></div>
-							<div class="ma"><img class="width100" src="img/3-3.jpg" /></div>
-							<div class="space10"></div>
-							<div style="margin:0 20px;">
+							<div class="ma">
+								<div id="bt_1_plaques_3" class="fleft" style="width:33%">
+									<img id="bt_1_1_plaques_3" class="width100" src="img/1-3-1.jpg" style="display:none;"/>
+									<img id="bt_1_2_plaques_3" class="width100" src="img/1-3-2.jpg" />
+								</div>
+								<div id="bt_2_plaques_3" class="fleft" style="width:33%">
+									<img id="bt_2_1_plaques_3" class="width100" src="img/2-3-1.jpg" style="display:none;" />
+									<img id="bt_2_2_plaques_3" class="width100" src="img/2-3-2.jpg" />
+									<img id="bt_2_0_plaques_3" class="width100" src="img/2-3-0.jpg" style="display:none;"/>
+								</div>
+								<div id="bt_3_plaques_3" class="fleft" style="width:33%">
+									<img id="bt_3_1_plaques_3" class="width100" src="img/3-3-1.jpg" style="display:none;"/>
+									<img id="bt_3_2_plaques_3" class="width100" src="img/3-3-2.jpg" />
+								</div>
+							</div>
+							<script>
+								var bt_1_dalles_3 = document.getElementById("bt_1_plaques_3");
+								bt_1_dalles_3.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-plaques-1",false,false,"slide");
+								}, false);
+								
+								var bt_2_dalles_3 = document.getElementById("bt_2_plaques_3");
+								bt_2_dalles_3.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-plaques-2",false,false,"slide");
+								}, false);
+								
+								var bt_3_dalles_3 = document.getElementById("bt_3_plaques_3");
+								bt_3_dalles_3.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-plaques-3",false,false,"slide");
+								}, false);
+							</script>
+							<div class="space10 cb"></div>
+							<!--<div style="margin:0 20px;">
 								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
 									<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4" />
 								</video>
+							</div>-->
+							<div>
+								<!--<img class="width100" src="video/dalles/dalles-conseil-1.gif" />-->
+								<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
+									<script>
+										/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
+										var carousel;
+										
+										function init_carousel() {
+											carousel=$("#carousel-plaques-3").carousel({
+												preventDefaults:true,
+												pagingFunction:function(ind){}
+											});
+										}
+										window.addEventListener("load", init_carousel, false);
+									</script>
+									<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
+									<div class="width100">
+										<div id="carousel-plaques-3" style="display:block;height:220px;width:305px; margin:auto">
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-1.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-2.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-3.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-4.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-5.jpg" /></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="space20"></div>
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
@@ -1338,12 +1547,80 @@
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
 							<div class="space10"></div>
-							<div class="ma"><img class="width100" src="img/1-3.jpg" /></div>
-							<div class="space10"></div>
-							<div style="margin:0 20px;">
+							<div class="ma">
+								<div id="bt_1_caillebotis_1" class="fleft" style="width:33%">
+									<img id="bt_1_1_caillebotis_1" class="width100" src="img/1-3-1.jpg" />
+									<img id="bt_1_2_caillebotis_1" class="width100" src="img/1-3-2.jpg" style="display:none;" />
+								</div>
+								<div id="bt_2_caillebotis_1" class="fleft" style="width:33%">
+									<img id="bt_2_1_caillebotis_1" class="width100" src="img/2-3-1.jpg" />
+									<img id="bt_2_2_caillebotis_1" class="width100" src="img/2-3-2.jpg" style="display:none;" />
+									<img id="bt_2_0_caillebotis_1" class="width100" src="img/2-3-0.jpg" style="display:none;" />
+								</div>
+								<div id="bt_3_caillebotis_1" class="fleft" style="width:33%">
+									<img id="bt_3_1_caillebotis_1" class="width100" src="img/3-3-1.jpg" />
+									<img id="bt_3_2_caillebotis_1" class="width100" src="img/3-3-2.jpg" style="display:none;" />
+								</div>
+							</div>
+							<script>
+								var bt_1_caillebotis_1 = document.getElementById("bt_1_caillebotis_1");
+								bt_1_caillebotis_1.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-caillebotis-1",false,false,"slide");
+								}, false);
+								
+								var bt_2_caillebotis_1 = document.getElementById("bt_2_caillebotis_1");
+								bt_2_caillebotis_1.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-caillebotis-2",false,false,"slide");
+								}, false);
+								
+								var bt_3_caillebotis_1 = document.getElementById("bt_3_caillebotis_1");
+								bt_3_caillebotis_1.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-caillebotis-3",false,false,"slide");
+								}, false);
+							</script>
+							<div class="space10 cb"></div>
+							<!--<div style="margin:0 20px;">
 								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
 									<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4" />
 								</video>
+							</div>-->
+							<div>
+								<!--<img class="width100" src="video/dalles/dalles-conseil-1.gif" />-->
+								<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
+									<script>
+										/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
+										var carousel;
+										
+										function init_carousel() {
+											carousel=$("#carousel-caillebotis-1").carousel({
+												preventDefaults:true,
+												pagingFunction:function(ind){}
+											});
+										}
+										window.addEventListener("load", init_carousel, false);
+									</script>
+									<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
+									<div class="width100">
+										<div id="carousel-caillebotis-1" style="display:block;height:220px;width:305px; margin:auto">
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-1.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-2.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-3.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-4.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-5.jpg" /></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="space20"></div>
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
@@ -1369,12 +1646,80 @@
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
 							<div class="space10"></div>
-							<div class="ma"><img class="width100" src="img/2-3.jpg" /></div>
-							<div class="space10"></div>
-							<div style="margin:0 20px;">
+							<div class="ma">
+								<div id="bt_1_caillebotis_2" class="fleft" style="width:33%">
+									<img id="bt_1_1_caillebotis_2" class="width100" src="img/1-3-1.jpg" style="display:none;"/>
+									<img id="bt_1_2_caillebotis_2" class="width100" src="img/1-3-2.jpg" />
+								</div>
+								<div id="bt_2_caillebotis_2" class="fleft" style="width:33%">
+									<img id="bt_2_1_caillebotis_2" class="width100" src="img/2-3-1.jpg" style="display:none;" />
+									<img id="bt_2_2_caillebotis_2" class="width100" src="img/2-3-2.jpg" style="display:none;" />
+									<img id="bt_2_0_caillebotis_2" class="width100" src="img/2-3-0.jpg" />
+								</div>
+								<div id="bt_3_caillebotis_2" class="fleft" style="width:33%">
+									<img id="bt_3_1_caillebotis_2" class="width100" src="img/3-3-1.jpg" />
+									<img id="bt_3_2_caillebotis_2" class="width100" src="img/3-3-2.jpg" style="display:none;" />
+								</div>
+							</div>
+							<script>
+								var bt_1_caillebotis_2 = document.getElementById("bt_1_caillebotis_2");
+								bt_1_caillebotis_2.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-caillebotis-1",false,false,"slide");
+								}, false);
+								
+								var bt_2_caillebotis_2 = document.getElementById("bt_2_caillebotis_2");
+								bt_2_caillebotis_2.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-caillebotis-2",false,false,"slide");
+								}, false);
+								
+								var bt_3_caillebotis_2 = document.getElementById("bt_3_caillebotis_2");
+								bt_3_caillebotis_2.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-caillebotis-3",false,false,"slide");
+								}, false);
+							</script>
+							<div class="space10 cb"></div>
+							<!--<div style="margin:0 20px;">
 								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
 									<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4" />
 								</video>
+							</div>-->
+							<div>
+								<!--<img class="width100" src="video/dalles/dalles-conseil-1.gif" />-->
+								<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
+									<script>
+										/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
+										var carousel;
+										
+										function init_carousel() {
+											carousel=$("#carousel-caillebotis-2").carousel({
+												preventDefaults:true,
+												pagingFunction:function(ind){}
+											});
+										}
+										window.addEventListener("load", init_carousel, false);
+									</script>
+									<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
+									<div class="width100">
+										<div id="carousel-caillebotis-2" style="display:block;height:220px;width:305px; margin:auto">
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-1.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-2.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-3.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-4.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-5.jpg" /></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="space20"></div>
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
@@ -1400,12 +1745,80 @@
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
 							<div class="space10"></div>
-							<div class="ma"><img class="width100" src="img/3-3.jpg" /></div>
-							<div class="space10"></div>
-							<div style="margin:0 20px;">
+							<div class="ma">
+								<div id="bt_1_caillebotis_3" class="fleft" style="width:33%">
+									<img id="bt_1_1_caillebotis_3" class="width100" src="img/1-3-1.jpg" style="display:none;"/>
+									<img id="bt_1_2_caillebotis_3" class="width100" src="img/1-3-2.jpg" />
+								</div>
+								<div id="bt_2_caillebotis_3" class="fleft" style="width:33%">
+									<img id="bt_2_1_caillebotis_3" class="width100" src="img/2-3-1.jpg" style="display:none;" />
+									<img id="bt_2_2_caillebotis_3" class="width100" src="img/2-3-2.jpg" />
+									<img id="bt_2_0_caillebotis_3" class="width100" src="img/2-3-0.jpg" style="display:none;"/>
+								</div>
+								<div id="bt_3_caillebotis_3" class="fleft" style="width:33%">
+									<img id="bt_3_1_caillebotis_3" class="width100" src="img/3-3-1.jpg" style="display:none;"/>
+									<img id="bt_3_2_caillebotis_3" class="width100" src="img/3-3-2.jpg" />
+								</div>
+							</div>
+							<script>
+								var bt_1_caillebotis_3 = document.getElementById("bt_1_caillebotis_3");
+								bt_1_caillebotis_3.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-caillebotis-1",false,false,"slide");
+								}, false);
+								
+								var bt_2_caillebotis_3 = document.getElementById("bt_2_caillebotis_3");
+								bt_2_caillebotis_3.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-caillebotis-2",false,false,"slide");
+								}, false);
+								
+								var bt_3_caillebotis_3 = document.getElementById("bt_3_caillebotis_3");
+								bt_3_caillebotis_3.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-caillebotis-3",false,false,"slide");
+								}, false);
+							</script>
+							<div class="space10 cb"></div>
+							<!--<div style="margin:0 20px;">
 								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
 									<source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4" />
 								</video>
+							</div>-->
+							<div>
+								<!--<img class="width100" src="video/dalles/dalles-conseil-1.gif" />-->
+								<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
+									<script>
+										/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
+										var carousel;
+										
+										function init_carousel() {
+											carousel=$("#carousel-caillebotis-3").carousel({
+												preventDefaults:true,
+												pagingFunction:function(ind){}
+											});
+										}
+										window.addEventListener("load", init_carousel, false);
+									</script>
+									<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
+									<div class="width100">
+										<div id="carousel-caillebotis-3" style="display:block;height:220px;width:305px; margin:auto">
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-1.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-2.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-3.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-4.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/dalles-conseil-5.jpg" /></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="space20"></div>
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
@@ -1547,8 +1960,38 @@
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
 							<div class="space10"></div>
-							<div class="ma"><img class="width100" src="img/1-3.jpg" /></div>
-							<div class="space10"></div>
+							<div class="ma">
+								<div id="bt_1_dalles_1" class="fleft" style="width:33%">
+									<img id="bt_1_1_dalles_1" class="width100" src="img/1-3-1.jpg" />
+									<img id="bt_1_2_dalles_1" class="width100" src="img/1-3-2.jpg" style="display:none;" />
+								</div>
+								<div id="bt_2_dalles_1" class="fleft" style="width:33%">
+									<img id="bt_2_1_dalles_1" class="width100" src="img/2-3-1.jpg" />
+									<img id="bt_2_2_dalles_1" class="width100" src="img/2-3-2.jpg" style="display:none;" />
+									<img id="bt_2_0_dalles_1" class="width100" src="img/2-3-0.jpg" style="display:none;" />
+								</div>
+								<div id="bt_3_dalles_1" class="fleft" style="width:33%">
+									<img id="bt_3_1_dalles_1" class="width100" src="img/3-3-1.jpg" />
+									<img id="bt_3_2_dalles_1" class="width100" src="img/3-3-2.jpg" style="display:none;" />
+								</div>
+							</div>
+							<script>
+								var bt_1_dalles_1 = document.getElementById("bt_1_dalles_1");
+								bt_1_dalles_1.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-dalles-1",false,false,"slide");
+								}, false);
+								
+								var bt_2_dalles_1 = document.getElementById("bt_2_dalles_1");
+								bt_2_dalles_1.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-dalles-2",false,false,"slide");
+								}, false);
+								
+								var bt_3_dalles_1 = document.getElementById("bt_3_dalles_1");
+								bt_3_dalles_1.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-dalles-3",false,false,"slide");
+								}, false);
+							</script>
+							<div class="space10 cb"></div>
 							<!--<div style="margin:0 20px;">
 								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
 									<source src="video/dalles/conseil-dalles-1.mp4" type="video/mp4" />
@@ -1558,51 +2001,39 @@
 								<!--<img class="width100" src="video/dalles/dalles-conseil-1.gif" />-->
 								<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
 									<script>
-									var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");
-									var carousel;
+										/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
+										var carousel;
+										
 										function init_carousel() {
-											carousel=$("#carousel2").carousel({
-												pagingDiv: "carousel_dots2",
-												pagingCssName: "carousel_paging2",
-												pagingCssNameSelected: "carousel_paging2_selected",
-												preventDefaults:false,
-												pagingFunction:function(ind){
-													$("#nom-recette").html(tabNomRecette[ind]);
-												}
+											carousel=$("#carousel-dalle-1").carousel({
+												preventDefaults:true,
+												pagingFunction:function(ind){}
 											});
 										}
 										window.addEventListener("load", init_carousel, false);
-										
-										function removeLogo() {
-											$(".header-container-logo img").css("display", "none");
-										}
 									</script>
 									<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
 									<div class="width100">
-										<div id="carousel2" style="display:block;height:100px;width:230px; margin:auto">
+										<div id="carousel-dalle-1" style="display:block;height:220px;width:305px; margin:auto">
 											<div class="tac">
-												<a href="#recette"><img style="max-width:200px;" src="video/dalles/dalles-conseil-1.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/1_placerdalle/dalles-conseil-1.jpg" /></a>
 											</div>
 											<div class="tac">
-												<a href="#recette"><img style="max-width:200px;" src="video/dalles/dalles-conseil-2.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/1_placerdalle/dalles-conseil-2.jpg" /></a>
 											</div>
 											<div class="tac">
-												<a href="#recette"><img style="max-width:200px;" src="video/dalles/dalles-conseil-3.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/1_placerdalle/dalles-conseil-3.jpg" /></a>
 											</div>
 											<div class="tac">
-												<a href="#recette"><img style="max-width:200px;" src="video/dalles/dalles-conseil-4.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/1_placerdalle/dalles-conseil-4.jpg" /></a>
 											</div>
 											<div class="tac">
-												<a href="#recette"><img style="max-width:200px;" src="video/dalles/dalles-conseil-5.jpg" /></a>
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/1_placerdalle/dalles-conseil-5.jpg" /></a>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div id="nom-recette" class="color-grey-title size14 title-recette-mois tac">Les recettes les plus populaires</div>
 								<div class="space20"></div>
-								<script>
-									$("#nom-recette").html(tabNomRecette[0]);
-								</script>
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
@@ -1628,12 +2059,68 @@
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
 							<div class="space10"></div>
-							<div class="ma"><img class="width100" src="img/2-3.jpg" /></div>
-							<div class="space10"></div>
-							<div style="margin:0 20px;">
+							<div class="ma">
+								<div id="bt_1_dalles_2" class="fleft" style="width:33%">
+									<img id="bt_1_1_dalles_2" class="width100" src="img/1-3-1.jpg" style="display:none;"/>
+									<img id="bt_1_2_dalles_2" class="width100" src="img/1-3-2.jpg" />
+								</div>
+								<div id="bt_2_dalles_2" class="fleft" style="width:33%">
+									<img id="bt_2_1_dalles_2" class="width100" src="img/2-3-1.jpg" style="display:none;" />
+									<img id="bt_2_2_dalles_2" class="width100" src="img/2-3-2.jpg" style="display:none;" />
+									<img id="bt_2_0_dalles_2" class="width100" src="img/2-3-0.jpg" />
+								</div>
+								<div id="bt_3_dalles_2" class="fleft" style="width:33%">
+									<img id="bt_3_1_dalles_2" class="width100" src="img/3-3-1.jpg" />
+									<img id="bt_3_2_dalles_2" class="width100" src="img/3-3-2.jpg" style="display:none;" />
+								</div>
+							</div>
+							<script>
+								var bt_1_dalles_2 = document.getElementById("bt_1_dalles_2");
+								bt_1_dalles_2.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-dalles-1",false,false,"slide");
+								}, false);
+								
+								var bt_2_dalles_2 = document.getElementById("bt_2_dalles_2");
+								bt_2_dalles_2.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-dalles-2",false,false,"slide");
+								}, false);
+								
+								var bt_3_dalles_2 = document.getElementById("bt_3_dalles_2");
+								bt_3_dalles_2.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-dalles-3",false,false,"slide");
+								}, false);
+							</script>
+							<div class="space10 cb"></div>
+							<!--<div style="margin:0 20px;">
 								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
 									<source src="video/dalles/conseil-dalles-2.mp4" type="video/mp4" />
 								</video>
+							</div>-->
+							<div>
+								<!--<img class="width100" src="video/dalles/dalles-conseil-1.gif" />-->
+								<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
+									<script>
+										/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
+										var carousel;
+										
+										function init_carousel() {
+											carousel=$("#carousel-dalle-2").carousel({
+												preventDefaults:true,
+												pagingFunction:function(ind){}
+											});
+										}
+										window.addEventListener("load", init_carousel, false);
+									</script>
+									<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
+									<div class="width100">
+										<div id="carousel-dalle-2" style="display:block;height:220px;width:305px; margin:auto">
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/2_reglerhauteur/2_reglerhauteur_01.jpg" /></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="space20"></div>
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
@@ -1659,12 +2146,73 @@
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
 							<div class="space10"></div>
-							<div class="ma"><img class="width100" src="img/3-3.jpg" /></div>
-							<div class="space10"></div>
-							<div style="margin:0 20px;">
+							<div class="ma">
+								<div id="bt_1_dalles_3" class="fleft" style="width:33%">
+									<img id="bt_1_1_dalles_3" class="width100" src="img/1-3-1.jpg" style="display:none;"/>
+									<img id="bt_1_2_dalles_3" class="width100" src="img/1-3-2.jpg" />
+								</div>
+								<div id="bt_2_dalles_3" class="fleft" style="width:33%">
+									<img id="bt_2_1_dalles_3" class="width100" src="img/2-3-1.jpg" style="display:none;" />
+									<img id="bt_2_2_dalles_3" class="width100" src="img/2-3-2.jpg" />
+									<img id="bt_2_0_dalles_3" class="width100" src="img/2-3-0.jpg" style="display:none;"/>
+								</div>
+								<div id="bt_3_dalles_3" class="fleft" style="width:33%">
+									<img id="bt_3_1_dalles_3" class="width100" src="img/3-3-1.jpg" style="display:none;"/>
+									<img id="bt_3_2_dalles_3" class="width100" src="img/3-3-2.jpg" />
+								</div>
+							</div>
+							<script>
+								var bt_1_dalles_3 = document.getElementById("bt_1_dalles_3");
+								bt_1_dalles_3.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-dalles-1",false,false,"slide");
+								}, false);
+								
+								var bt_2_dalles_3 = document.getElementById("bt_2_dalles_3");
+								bt_2_dalles_3.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-dalles-2",false,false,"slide");
+								}, false);
+								
+								var bt_3_dalles_3 = document.getElementById("bt_3_dalles_3");
+								bt_3_dalles_3.addEventListener("click", function(e) {
+									$.ui.loadContent("conseil-dalles-3",false,false,"slide");
+								}, false);
+							</script>
+							<div class="space10 cb"></div>
+							<!--<div style="margin:0 20px;">
 								<video controls="controls" style="margin:auto; text-align:center; width:100%;">
 									<source src="video/dalles/conseil-dalles-3.mp4" type="video/mp4" />
 								</video>
+							</div>-->
+							<div>
+								<!--<img class="width100" src="video/dalles/dalles-conseil-1.gif" />-->
+								<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
+									<script>
+										/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
+										var carousel;
+										
+										function init_carousel() {
+											carousel=$("#carousel-dalle-3").carousel({
+												preventDefaults:true,
+												lockmove:true,
+												okToMove:true,
+												pagingFunction:function(ind){}
+											});
+										}
+										window.addEventListener("load", init_carousel, false);
+									</script>
+									<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
+									<div class="width100">
+										<div id="carousel-dalle-3" style="display:block;height:220px;width:305px; margin:auto">
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/3_niveau/3_niveau_01.jpg" /></a>
+											</div>
+											<div class="tac">
+												<a href="#recette"><img style="max-width:300px;" src="video/dalles/3_niveau/3_niveau_02.jpg" /></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="space20"></div>
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
