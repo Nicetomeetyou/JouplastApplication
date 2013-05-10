@@ -366,12 +366,12 @@
                 }
                 //Let's put the buffers at the start/end
                 
-                var prep=$(elems[elems.length-1]).clone().get(0);
+                /*var prep=$(elems[elems.length-1]).clone().get(0);
                 $(el).prepend(prep);
                 var tmp=$(elems[0]).clone().get(0);
                 $(el).append(tmp);
                 elems.push(tmp);
-                elems.unshift(prep);
+                elems.unshift(prep);*/
                 
                 var param = (100 / childrenCounter) + "%";
                 this.childrenCount = childrenCounter;
@@ -456,9 +456,7 @@
                     }
                 }
                 this.onMoveIndex(this.carouselIndex);
-                
             }
-        
         };
         return carousel;
     })();
