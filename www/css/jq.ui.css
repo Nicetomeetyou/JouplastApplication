@@ -400,6 +400,7 @@ font-size:48px;
 	position:relative;
 	z-index:2;
 	float:right;
+	display:none;
 }
 
 #menu  .title {

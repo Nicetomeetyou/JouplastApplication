@@ -171,7 +171,7 @@
 										, new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350")
 										, new Array("20", "", "", ""), new Array("10", "2.5", "1120", "300"), new Array("10", "3", "1120", "350"), new Array("120", "9", "4200", "330"), new Array("60", "5", "1500", "140"), new Array("2000", "", "", ""), new Array("2000", "", "", ""), new Array("40", "", "", ""), new Array("40", "", "", ""), new Array("40", "", "", ""));
         </script>
-		<div id="jQUi" style="overflow:hidden; overflow-x: hidden">
+		<div id="jQUi">
 			<!-- this is the header div -->
 			<div id="header">
 				<div class="width100">
@@ -183,9 +183,9 @@
 				</div>
 			</div>
 			
-			<div id="content" style="overflow:hidden;">
+			<div id="content">
 				<!--MENU-->
-				<div id="main" class="panel" scrolling="yes" style="overflow-x:hidden;">
+				<div id="main" class="panel" scrolling="yes">
 					<div id="spacer-0" class="space20"></div>
 					
 					<a href="#calculatrice" onclick="trackPage('calculatrice');">
@@ -237,7 +237,7 @@
 				<!--END MENU-->
 				
 				<!--CALCULATRICE MENU-->
-				<div id="calculatrice" class="panel" scrolling="yes" style="overflow-x:hidden;">
+				<div id="calculatrice" class="panel" scrolling="yes">
 					<div class="space20"></div>
 					<div class="tac size40 font-din over-text">
 						CALCULEZ LE NOMBRE<br/>DE PLOTS NÉCESSAIRES<br/>À VOS TRAVAUX
@@ -1739,17 +1739,17 @@
 							<div class="space10"></div>
 							<div class="ma">
 								<div id="bt_1_caillebotis_3" class="fleft" style="width:33%">
-									<img id="bt_1_1_caillebotis_3" class="width100" src="img/1-3-1.jpg" style="display:none;"/>
-									<img id="bt_1_2_caillebotis_3" class="width100" src="img/1-3-2.jpg" />
+									<img class="width100" src="img/1-3-1.jpg" style="display:none;"/>
+									<img class="width100" src="img/1-3-2.jpg" />
 								</div>
 								<div id="bt_2_caillebotis_3" class="fleft" style="width:33%">
-									<img id="bt_2_1_caillebotis_3" class="width100" src="img/2-3-1.jpg" style="display:none;" />
-									<img id="bt_2_2_caillebotis_3" class="width100" src="img/2-3-2.jpg" />
-									<img id="bt_2_0_caillebotis_3" class="width100" src="img/2-3-0.jpg" style="display:none;"/>
+									<img class="width100" src="img/2-3-1.jpg" style="display:none;" />
+									<img class="width100" src="img/2-3-2.jpg" />
+									<img class="width100" src="img/2-3-0.jpg" style="display:none;"/>
 								</div>
 								<div id="bt_3_caillebotis_3" class="fleft" style="width:33%">
-									<img id="bt_3_1_caillebotis_3" class="width100" src="img/3-3-1.jpg" style="display:none;"/>
-									<img id="bt_3_2_caillebotis_3" class="width100" src="img/3-3-2.jpg" />
+									<img class="width100" src="img/3-3-1.jpg" style="display:none;"/>
+									<img class="width100" src="img/3-3-2.jpg" />
 								</div>
 							</div>
 							<script>
@@ -1830,7 +1830,26 @@
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
 							<div class="space10"></div>
-							<div class="ma"><img class="width100" src="img/1-4.jpg" /></div>
+							<div class="ma" style="width:90%">
+								<div id="bt_1_lambourdes_1" class="fleft" style="width:25%">
+									<img class="width100" src="img/1-4-1.jpg"/>
+									<img class="width100" src="img/1-4-2.jpg" style="display:none;"/>
+								</div>
+								<div id="bt_2_lambourdes_1" class="fleft" style="width:25%">
+									<img class="width100" src="img/2-4-1.jpg" />
+									<img class="width100" src="img/2-4-2.jpg" style="display:none;" />
+									<img class="width100" src="img/2-4-0.jpg" style="display:none;" />
+								</div>
+								<div id="bt_3_lambourdes_1" class="fleft" style="width:25%">
+									<img class="width100" src="img/3-4-1.jpg" />
+									<img class="width100" src="img/3-4-2.jpg" style="display:none;" />
+									<img class="width100" src="img/3-4-0.jpg" style="display:none;" />
+								</div>
+								<div id="bt_4_lambourdes_1" class="fleft" style="width:25%">
+									<img class="width100" src="img/4-4-1.jpg" />
+									<img class="width100" src="img/4-4-2.jpg" style="display:none;" />
+								</div>
+							</div>
 							<div class="space10"></div>
 							<div style="margin:0 20px;">
 								<img class="width100" src="img/exemple-lambourde.jpg" />
@@ -1844,6 +1863,31 @@
 							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
 						</a>
 						<div class="space50"></div>
+						<script>
+							var bt_1_lambourdes_1 = document.getElementById("bt_1_lambourdes_1");
+							bt_1_lambourdes_1.addEventListener("click", function(e) {
+								trackPage('conseils_lambourdes_1');
+								$.ui.loadContent("conseil-caillebotis-1",false,false,"slide");
+							}, false);
+							
+							var bt_2_lambourdes_1 = document.getElementById("bt_2_lambourdes_1");
+							bt_2_lambourdes_1.addEventListener("click", function(e) {
+								trackPage('conseils_lambourdes_2');
+								$.ui.loadContent("conseil-caillebotis-2",false,false,"slide");
+							}, false);
+							
+							var bt_3_lambourdes_1 = document.getElementById("bt_3_lambourdes_1");
+							bt_3_lambourdes_1.addEventListener("click", function(e) {
+								trackPage('conseils_lambourdes_3');
+								$.ui.loadContent("conseil-caillebotis-3",false,false,"slide");
+							}, false);
+							
+							var bt_4_lambourdes_1 = document.getElementById("bt_4_lambourdes_1");
+							bt_4_lambourdes_1.addEventListener("click", function(e) {
+								trackPage('conseils_lambourdes_4');
+								$.ui.loadContent("conseil-caillebotis-4",false,false,"slide");
+							}, false);
+						</script>
 					</div>
 				</div>
 				<!--END CONSEILS LAMBOURDES 1-->
@@ -1859,7 +1903,26 @@
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
 							<div class="space10"></div>
-							<div class="ma"><img class="width100" src="img/2-4.jpg" /></div>
+							<div class="ma" style="width:90%">
+								<div id="bt_1_lambourdes_2" class="fleft" style="width:25%">
+									<img class="width100" src="img/1-4-1.jpg" style="display:none;"/>
+									<img class="width100" src="img/1-4-2.jpg"/>
+								</div>
+								<div id="bt_2_lambourdes_2" class="fleft" style="width:25%">
+									<img class="width100" src="img/2-4-1.jpg" style="display:none;"/>
+									<img class="width100" src="img/2-4-2.jpg" style="display:none;"/>
+									<img class="width100" src="img/2-4-0.jpg"  />
+								</div>
+								<div id="bt_3_lambourdes_2" class="fleft" style="width:25%">
+									<img class="width100" src="img/3-4-1.jpg" />
+									<img class="width100" src="img/3-4-2.jpg" style="display:none;" />
+									<img class="width100" src="img/3-4-0.jpg" style="display:none;" />
+								</div>
+								<div id="bt_4_lambourdes_2" class="fleft" style="width:25%">
+									<img class="width100" src="img/4-4-1.jpg" />
+									<img class="width100" src="img/4-4-2.jpg" style="display:none;" />
+								</div>
+							</div>
 							<div class="space10"></div>
 							<div style="margin:0 20px;">
 								<img class="width100" src="img/exemple-lambourde.jpg" />
@@ -1869,10 +1932,35 @@
 							<div class="tac size30 font-din black no-uppercase">Réglez la hauteur des plots à l’aide de l’écrou et vérifiez que la lambourde soit à niveau à l’aide d’un niveau à bulle.</div>
 						</div>
 						<div class="space20"></div>
-						<a href="#conseil-lambourdes-3"  onclick="trackPage('conseils_lambourdes_3');">>
+						<a href="#conseil-lambourdes-3"  onclick="trackPage('conseils_lambourdes_3');">
 							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
 						</a>
 						<div class="space50"></div>
+						<script>
+							var bt_1_lambourdes_2 = document.getElementById("bt_1_lambourdes_2");
+							bt_1_lambourdes_2.addEventListener("click", function(e) {
+								trackPage('conseils_lambourdes_1');
+								$.ui.loadContent("conseil-caillebotis-1",false,false,"slide");
+							}, false);
+							
+							var bt_2_lambourdes_2 = document.getElementById("bt_2_lambourdes_2");
+							bt_2_lambourdes_2.addEventListener("click", function(e) {
+								trackPage('conseils_lambourdes_2');
+								$.ui.loadContent("conseil-caillebotis-2",false,false,"slide");
+							}, false);
+							
+							var bt_3_lambourdes_2 = document.getElementById("bt_3_lambourdes_2");
+							bt_3_lambourdes_2.addEventListener("click", function(e) {
+								trackPage('conseils_lambourdes_3');
+								$.ui.loadContent("conseil-caillebotis-3",false,false,"slide");
+							}, false);
+							
+							var bt_4_lambourdes_2 = document.getElementById("bt_4_lambourdes_2");
+							bt_4_lambourdes_2.addEventListener("click", function(e) {
+								trackPage('conseils_lambourdes_4');
+								$.ui.loadContent("conseil-caillebotis-4",false,false,"slide");
+							}, false);
+						</script>
 					</div>
 				</div>
 				<!--END CONSEILS LAMBOURDES 2-->
@@ -1888,7 +1976,26 @@
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
 							<div class="space10"></div>
-							<div class="ma"><img class="width100" src="img/3-4.jpg" /></div>
+							<div class="ma" style="width:90%">
+								<div id="bt_1_lambourdes_3" class="fleft" style="width:25%">
+									<img class="width100" src="img/1-4-1.jpg" style="display:none;"/>
+									<img class="width100" src="img/1-4-2.jpg"/>
+								</div>
+								<div id="bt_2_lambourdes_3" class="fleft" style="width:25%">
+									<img class="width100" src="img/2-4-1.jpg" style="display:none;"/>
+									<img class="width100" src="img/2-4-2.jpg" />
+									<img class="width100" src="img/2-4-0.jpg" style="display:none;"/>
+								</div>
+								<div id="bt_3_lambourdes_3" class="fleft" style="width:25%">
+									<img class="width100" src="img/3-4-1.jpg" style="display:none;"/>
+									<img class="width100" src="img/3-4-2.jpg" style="display:none;" />
+									<img class="width100" src="img/3-4-0.jpg" />
+								</div>
+								<div id="bt_4_lambourdes_3" class="fleft" style="width:25%">
+									<img class="width100" src="img/4-4-1.jpg" />
+									<img class="width100" src="img/4-4-2.jpg" style="display:none;" />
+								</div>
+							</div>
 							<div class="space10"></div>
 							<div style="margin:0 20px;">
 								<img class="width100" src="img/exemple-lambourde.jpg" />
@@ -1898,10 +2005,35 @@
 							<div class="tac size30 font-din black no-uppercase">Placez les autres lambourdes et assurez-vous que l’ensemble de la structure soit à niveau.</div>
 						</div>
 						<div class="space20"></div>
-						<a href="#conseil-lambourdes-4" onclick="trackPage('conseils_lambourdes_4');">>
+						<a href="#conseil-lambourdes-4" onclick="trackPage('conseils_lambourdes_4');">
 							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
 						</a>
 						<div class="space50"></div>
+						<script>
+							var bt_1_lambourdes_3 = document.getElementById("bt_1_lambourdes_3");
+							bt_1_lambourdes_3.addEventListener("click", function(e) {
+								trackPage('conseils_lambourdes_1');
+								$.ui.loadContent("conseil-caillebotis-1",false,false,"slide");
+							}, false);
+							
+							var bt_2_lambourdes_3 = document.getElementById("bt_2_lambourdes_3");
+							bt_2_lambourdes_3.addEventListener("click", function(e) {
+								trackPage('conseils_lambourdes_2');
+								$.ui.loadContent("conseil-caillebotis-2",false,false,"slide");
+							}, false);
+							
+							var bt_3_lambourdes_3 = document.getElementById("bt_3_lambourdes_3");
+							bt_3_lambourdes_3.addEventListener("click", function(e) {
+								trackPage('conseils_lambourdes_3');
+								$.ui.loadContent("conseil-caillebotis-3",false,false,"slide");
+							}, false);
+							
+							var bt_4_lambourdes_3 = document.getElementById("bt_4_lambourdes_3");
+							bt_4_lambourdes_3.addEventListener("click", function(e) {
+								trackPage('conseils_lambourdes_4');
+								$.ui.loadContent("conseil-caillebotis-4",false,false,"slide");
+							}, false);
+						</script>
 					</div>
 				</div>
 				<!--END CONSEILS LAMBOURDES 3-->
@@ -1917,7 +2049,26 @@
 					<div class="back-white-calculette over-text">
 						<div id="etape1">
 							<div class="space10"></div>
-							<div class="ma"><img class="width100" src="img/4-4.jpg" /></div>
+							<div class="ma" style="width:90%">
+								<div id="bt_1_lambourdes_4" class="fleft" style="width:25%">
+									<img class="width100" src="img/1-4-1.jpg" style="display:none;"/>
+									<img class="width100" src="img/1-4-2.jpg"/>
+								</div>
+								<div id="bt_2_lambourdes_4" class="fleft" style="width:25%">
+									<img class="width100" src="img/2-4-1.jpg" style="display:none;"/>
+									<img class="width100" src="img/2-4-2.jpg" />
+									<img class="width100" src="img/2-4-0.jpg" style="display:none;"/>
+								</div>
+								<div id="bt_3_lambourdes_4" class="fleft" style="width:25%">
+									<img class="width100" src="img/3-4-1.jpg" style="display:none;"/>
+									<img class="width100" src="img/3-4-2.jpg" />
+									<img class="width100" src="img/3-4-0.jpg" style="display:none;" />
+								</div>
+								<div id="bt_4_lambourdes_4" class="fleft" style="width:25%">
+									<img class="width100" src="img/4-4-1.jpg" style="display:none;"/>
+									<img class="width100" src="img/4-4-2.jpg" />
+								</div>
+							</div>
 							<div class="space10"></div>
 							<div style="margin:0 20px;">
 								<img class="width100" src="img/exemple-lambourde.jpg" />
@@ -1927,10 +2078,35 @@
 							<div class="tac size30 font-din black no-uppercase">Fixez les lames sur les lambourdes.</div>
 						</div>
 						<div class="space20"></div>
-						<a href="#conseil" onclick="trackPage('conseils');">>
+						<a href="#conseil" onclick="trackPage('conseils');">
 							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Retour aux conseils</div>
 						</a>
 						<div class="space50"></div>
+						<script>
+							var bt_1_lambourdes_4 = document.getElementById("bt_1_lambourdes_4");
+							bt_1_lambourdes_4.addEventListener("click", function(e) {
+								trackPage('conseils_lambourdes_1');
+								$.ui.loadContent("conseil-caillebotis-1",false,false,"slide");
+							}, false);
+							
+							var bt_2_lambourdes_4 = document.getElementById("bt_2_lambourdes_4");
+							bt_2_lambourdes_4.addEventListener("click", function(e) {
+								trackPage('conseils_lambourdes_2');
+								$.ui.loadContent("conseil-caillebotis-2",false,false,"slide");
+							}, false);
+							
+							var bt_3_lambourdes_4 = document.getElementById("bt_3_lambourdes_4");
+							bt_3_lambourdes_4.addEventListener("click", function(e) {
+								trackPage('conseils_lambourdes_3');
+								$.ui.loadContent("conseil-caillebotis-3",false,false,"slide");
+							}, false);
+							
+							var bt_4_lambourdes_4 = document.getElementById("bt_4_lambourdes_4");
+							bt_4_lambourdes_4.addEventListener("click", function(e) {
+								trackPage('conseils_lambourdes_4');
+								$.ui.loadContent("conseil-caillebotis-4",false,false,"slide");
+							}, false);
+						</script>
 					</div>
 				</div>
 				<!--END CONSEILS LAMBOURDES 4-->
@@ -2223,7 +2399,7 @@
 				<!--END CONSEILS DALLES 3-->
 				
 				<!--CATALOGUE MENU-->
-				<div id="catalogue" class="panel" scrolling="yes" style="overflow-x:hidden;">
+				<div id="catalogue" class="panel" scrolling="yes">
 					<div style="position:relative;">
 						<img style="width:100%;" src="img/img-catalogue.jpg" />
 						<!--<div style="position:absolute; margin:auto;">
@@ -2921,13 +3097,13 @@
 						VOUS AVEZ UNE QUESTION ?<br/>BESOIN D’AIDE ?
 					</div>
 					<div class="space20"></div>
-					<a href="tel:0623653496" onclick="trackPage('telephone');">>
+					<a href="tel:0623653496" onclick="trackPage('telephone');">
 						<div class="picto-phone ma over-text"><img class="width100" src="img/picto-phone.png" /></div>
 						<div class="space20"></div>
-						<div class="ma">
+						<div class="ma" style="position:relative">
 						<!--<div class="back-bt-contact"></div>-->
 							<div class="ma css3buttonblue font-din tac size-text-button default-button over-text">Appelez-nous</div>
-							<img style="height: 34%; left: -20%; position: absolute; top: 90px; width: 134%; z-index: 1;" src="img/backmenu.png" />
+							<img style="height: 213px; left: 0; position: absolute; top: -50px; width: 100%; z-index: 1;" src="img/backmenu.png" />
 						</div>
 					</a>
 					<div class="space50"></div>
@@ -2935,9 +3111,9 @@
 					<div id="mail-button">
 						<div class="picto-mail ma over-text"><img class="width100" src="img/picto-email.png" /></div>
 						<div class="space20"></div>
-						<div class="ma">
+						<div class="ma" style="position:relative">
 							<div class="ma css3buttonblue font-din tac size-text-button default-button over-text">Envoyez-nous un e-mail</div>
-							<img style="height: 34%; left: -20%; position: absolute; top: 290px; width: 134%; z-index: 1;" src="img/backmenu.png" />
+							<img style="height: 213px; left: 0; position: absolute; top: -50px; width: 100%; z-index: 1;" src="img/backmenu.png" />
 						</div>
 					</div>
 					<div class="space50"></div>
@@ -3024,15 +3200,15 @@
 				</div>
 			</nav>
 			
-			<!--<div id="advertisement_outer" class="ad-fullpage" style="width:380px;height:812px">
+			<div id="advertisement_outer" class="ad-fullpage" style="position:relative; top:0;">
 				<div class="ad-closewrapper">
 					<a id="ad-closelink" class="icon close small ad-closelink" style="display:block" onclick="$('#advertisement_outer').remove();">Close ad</a>
 					<span id="ad-countdown" class="ad-countdown" style="display:none"></span>
 				</div>
-				<div id="advertisement" style="width:308px;height:600px;margin-left:auto;margin-right:auto">
-					<object data="http://www.ntmy.fr/test/jouplast/pub.html" style="height:600px; overflow:auto; width:100%;"></object>
+				<div id="advertisement" style="width:300px;height:600px;margin-left:auto;margin-right:auto">
+					<object data="http://www.ntmy.fr/test/jouplast/pub.html" scrolling="no" style="height:600px; width:100%; position:relative; top:0px;"></object>
 				</div>
-			</div>-->
+			</div>
 			
 			<script>
 				function triPlot(pGamme, pType) {
