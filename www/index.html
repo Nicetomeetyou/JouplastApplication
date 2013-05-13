@@ -32,50 +32,21 @@
 		<script type="text/javascript" charset="utf-8">
 		
 		var gaPlugin;	// analytics
-		
 		document.addEventListener("deviceready",onDeviceReady,false);
+		function onDeviceReady() { gaPlugin = window.plugins.gaPlugin; gaPlugin.init(gaSuccess, gaError, "UA-40371154-1", 10); }
 		
-		function onDeviceReady() {
-			pictureSource=navigator.camera.PictureSourceType;
-			destinationType=navigator.camera.DestinationType;
-			gaPlugin = window.plugins.gaPlugin;
-			gaPlugin.init(gaSuccess, gaError, "UA-40371154-1", 10);
-			
-		}
-
-		function gaSuccess(){
-			alert('GA Plugin Success');
-			//GA track this page
-			trackPage("menu");
-		}
-		
-		function gaError(msg){
-			alert('GA Plugin Error: ' + msg);
-		}
+		function gaSuccess(){ trackPage("menu"); }
+		function gaError(msg){ alert('GA Plugin Error: ' + msg); }
 		
 		function trackPageSuccess(){
-			alert('GA Plugin Track Page Success');
-			//GA set variable (1st)
 			gaPlugin.setVariable(nativePluginResultHandler, nativePluginErrorHandler, "Device info", device.name + '|' + device.platform + '|' + device.version, 1);
 		}
 		
-		function trackPageError(msg){
-			alert('GA Plugin Track Page Error: ' + msg);
-		}
+		function trackPageError(msg){ /*alert('GA Plugin Track Page Error: ' + msg);*/ }
+		function setVariableSuccess(){ /*alert('GA Plugin Set Variable Success');*/ }
+		function setVariableError(msg){	/*alert('GA Plugin Set Variable Error: ' + msg);*/ }
 		
-		function setVariableSuccess(){
-			//alert('GA Plugin Set Variable Success');
-		}
-		
-		
-		function setVariableError(msg){
-			//alert('GA Plugin Set Variable Error: ' + msg);
-		}
-		
-		function trackPage(pName) {
-			alert('GA Plugin Success : ' + pName);
-			gaPlugin.trackPage(trackPageSuccess, trackPageError, pName);
-		}
+		function trackPage(pName) { gaPlugin.trackPage(trackPageSuccess, trackPageError, pName); }
 		
 		</script>
     </head>
@@ -299,13 +270,13 @@
 											<section class="ombre-menu-haut"></section>
 											<section class="inside-li">
 												<section class="fleft"><img style="max-width:70px;" src="img/rectangulaire-picto.png" /></section>
-												<a href="#calculatrice-dalles" onclick="chooseDalles(1)" class="font-din size28 grey sub-title-cat-catalogue-haut">Rectangulaire<img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
+												<a href="#calculatrice-dalles" onclick="trackPage('calculatrice_dalles_rectangle');" onclick="chooseDalles(1)" class="font-din size28 grey sub-title-cat-catalogue-haut">Rectangulaire<img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
 											</section>
 										</section>
 										<section>
 											<section class="inside-li">
 												<section class="fleft"><img style="max-width:70px;" src="img/enl-picto.png" /></section>
-												<a href="#calculatrice-dalles" onclick="chooseDalles(2)" class="font-din size28 grey sub-title-cat-catalogue-bas">En L<img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
+												<a href="#calculatrice-dalles" onclick="chooseDalles(2)" onclick="trackPage('calculatrice_dalles_en_l');" class="font-din size28 grey sub-title-cat-catalogue-bas">En L<img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
 											</section>
 											<section class="ombre-menu-bas"></section>
 										</section>
@@ -315,7 +286,7 @@
 							<div class="grey-line"></div>
 							<dl class="tab2_calculatrice">
 								<dd>
-									<a href="#calculatrice-lambourdes" id="bttab2_calculatrice" class="title-din-big font-din size34 color-grey no-uppercase">
+									<a href="#calculatrice-lambourdes" onclick="trackPage('calculatrice_lambourdes');" id="bttab2_calculatrice" class="title-din-big font-din size34 color-grey no-uppercase">
 										<section id="calculatrice-lambourde" class="back-white">
 											<section class="picto-choix"><img class="width100" src="img/calcul-lambourde.jpg" /></section>
 											<section class="font-din black size34 no-uppercase text-calculatrice-choix"><br/>Lambourdes</section>
@@ -719,6 +690,7 @@
 								if(hauteurNumber >= 31 && hauteurNumber <= 34) { affichePlot(11); alert("Il n’existe pas de plot correspondant à la hauteur indiquée pour votre terrasse.<br><br>Voici deux alternatives se rapprochant le plus de votre choix : <br><br>-"+tabNomProduit_fr[11]+"<br>-"+tabNomProduit_fr[0]); }
 								if(hauteurNumber >= 34 && hauteurNumber <= 39) { affichePlot(12); alert("Il n’existe pas de plot correspondant à la hauteur indiquée pour votre terrasse.<br><br>Voici deux alternatives se rapprochant le plus de votre choix : <br><br>-"+tabNomProduit_fr[0]+"<br>-"+tabNomProduit_fr[1]); }
 								
+								windows.trackPage('resultats_dalles');
 								$.ui.loadContent("resultat-dalles",false,false,"slide");
 							}
 						}
@@ -872,6 +844,7 @@
 								if(hauteurNumberLambourdes >= 11 && hauteurNumberLambourdes <= 19) { affichePlotLambourdes(10); alert("Il n’existe pas de plot correspondant à la hauteur indiquée pour votre terrasse.<br><br>Voici deux alternatives se rapprochant le plus de votre choix : <br><br>-"+tabNomProduit_fr[12]+"<br>-"+tabNomProduit_fr[13]); }
 								if(hauteurNumberLambourdes >= 31 && hauteurNumberLambourdes <= 39) { affichePlotLambourdes(11); alert("Il n’existe pas de plot correspondant à la hauteur indiquée pour votre terrasse.<br><br>Voici deux alternatives se rapprochant le plus de votre choix : <br><br>-"+tabNomProduit_fr[13]+"<br>-"+tabNomProduit_fr[5]); }
 								
+								trackPage('resultats_lambourdes');
 								$.ui.loadContent("resultat-lambourdes",false,false,"slide");
 							}
 						}
@@ -1075,12 +1048,12 @@
 					<div class="back-white-calculette">
 						<div class="space50"></div>
 						<div class="home-square">
-							<a href="#contact">
+							<a href="#contact" onclick="trackPage('contact_depuis_resultats_dalles');">
 								<div class="ma button-percentage css3buttonblue-lagoon font-din size34 tac no-uppercase">Contactez-nous</div>
 							</a>
 						</div>
 						<div class="home-square">
-							<a href="#catalogue">
+							<a href="#catalogue" onclick="trackPage('catalogue_depuis_resultats_dalles');">
 								<div id="btCatalogueDalles" class="ma button-percentage css3buttonblue-lagoon font-din size34 tac no-uppercase">Notre catalogue</div>
 							</a>
 						</div>
@@ -1201,12 +1174,12 @@
 						<div class="back-white-calculette">
 							<div class="space50"></div>
 							<div class="home-square">
-								<a href="#contact">
+								<a href="#contact" onclick="trackPage('contact_depuis_resultats_lambourdes');">
 									<div id="btContact-lambourdes" class="ma button-percentage css3buttongreen font-din size34 tac no-uppercase">Contactez-nous</div>
 								</a>
 							</div>
 							<div class="home-square">
-								<a href="#catalogue">
+								<a href="#catalogue" onclick="trackPage('catalogue_depuis_resultats_lambourdes');">
 									<div id="btCatalogue-lambourdes" class="ma button-percentage css3buttongreen font-din size34 tac no-uppercase">Notre catalogue</div>
 								</a>
 							</div>
@@ -1230,32 +1203,32 @@
 					<img style="height: 50%; left: -20%; position: absolute; top: -13%; width: 134%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
 					<div class="over-text">
-						<a href="#conseil-dalles-1">
-							<div id="calculatrice-dalle" class="back-white">
+						<a href="#conseil-dalles-1" onclick="trackPage('conseils_dalles_1');">
+							<div class="back-white">
 								<div class="picto-tuto"><img class="width100" src="img/picto-tuto-0.jpg" /></div>
 								<div class="font-din black size34 no-uppercase text-tuto-choix">Plots Dalles</div>
 								<div class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></div>
 							</div>
 						</a>
 						<div class="grey-line cb"></div>
-						<a href="#conseil-lambourdes-1">
-							<div id="calculatrice-lambourde" class="back-white">
+						<a href="#conseil-lambourdes-1" onclick="trackPage('conseils_lambourdes_1');">
+							<div class="back-white">
 								<div class="picto-tuto"><img class="width100" src="img/picto-tuto-1.jpg" /></div>
 								<div class="font-din black size34 no-uppercase text-tuto-choix">Plots Lambourdes</div>
 								<div class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></div>
 							</div>
 						</a>
 						<div class="grey-line cb"></div>
-						<a href="#conseil-caillebotis-1">
-							<div id="calculatrice-lambourde" class="back-white">
+						<a href="#conseil-caillebotis-1" onclick="trackPage('conseils_caillebotis_1');">
+							<div class="back-white">
 								<div class="picto-tuto"><img class="width100" src="img/picto-tuto-2.jpg" /></div>
 								<div class="font-din black size34 no-uppercase text-tuto-choix">Support Caillebotis</div>
 								<div class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></div>
 							</div>
 						</a>
 						<div class="grey-line cb"></div>
-						<a href="#conseil-plaques-1">
-							<div id="calculatrice-lambourde" class="back-white">
+						<a href="#conseil-plaques-1" onclick="trackPage('conseils_plaques_1');">
+							<div class="back-white">
 								<div class="picto-tuto"><img class="width100" src="img/picto-tuto-3.jpg" /></div>
 								<div class="font-din black size34 no-uppercase text-tuto-choix">Plaques à dalles</div>
 								<div class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></div>
@@ -1294,16 +1267,19 @@
 							<script>
 								var bt_1_plaques_1 = document.getElementById("bt_1_plaques_1");
 								bt_1_plaques_1.addEventListener("click", function(e) {
+									trackPage('conseils_dalles_1');
 									$.ui.loadContent("conseil-plaques-1",false,false,"slide");
 								}, false);
 								
 								var bt_2_plaques_1 = document.getElementById("bt_2_plaques_1");
 								bt_2_plaques_1.addEventListener("click", function(e) {
+									trackPage('conseils_dalles_2');
 									$.ui.loadContent("conseil-plaques-2",false,false,"slide");
 								}, false);
 								
 								var bt_3_plaques_1 = document.getElementById("bt_3_plaques_1");
 								bt_3_plaques_1.addEventListener("click", function(e) {
+									trackPage('conseils_dalles_3');
 									$.ui.loadContent("conseil-plaques-3",false,false,"slide");
 								}, false);
 							</script>
@@ -1350,7 +1326,7 @@
 							<div class="tac size30 font-din black no-uppercase">Fixez la plaque à dalle sur un plot dalle.</div>
 						</div>
 						<div class="space20"></div>
-						<a href="#conseil-plaques-2">
+						<a href="#conseil-plaques-2" onclick="trackPage('conseils_dalles_2');">
 							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
 						</a>
 						<div class="space50"></div>
@@ -1387,6 +1363,7 @@
 							<script>
 								var bt_1_dalles_2 = document.getElementById("bt_1_plaques_2");
 								bt_1_dalles_2.addEventListener("click", function(e) {
+									trackPage('conseils_dalles_1');
 									$.ui.loadContent("conseil-plaques-1",false,false,"slide");
 								}, false);
 								
@@ -1446,7 +1423,7 @@
 							<div class="tac size30 font-din black no-uppercase">Placez la dalle en bord de rive ou en angle sur des plots chapeautés d’une plaque à dalle.</div>
 						</div>
 						<div class="space20"></div>
-						<a href="#conseil-plaques-3">
+						<a href="#conseil-plaques-3" onclick="trackPage('conseils_dalles_3');">
 							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
 						</a>
 						<div class="space50"></div>
@@ -1483,16 +1460,19 @@
 							<script>
 								var bt_1_dalles_3 = document.getElementById("bt_1_plaques_3");
 								bt_1_dalles_3.addEventListener("click", function(e) {
+									trackPage('conseils_dalles_1');
 									$.ui.loadContent("conseil-plaques-1",false,false,"slide");
 								}, false);
 								
 								var bt_2_dalles_3 = document.getElementById("bt_2_plaques_3");
 								bt_2_dalles_3.addEventListener("click", function(e) {
+									trackPage('conseils_dalles_2');
 									$.ui.loadContent("conseil-plaques-2",false,false,"slide");
 								}, false);
 								
 								var bt_3_dalles_3 = document.getElementById("bt_3_plaques_3");
 								bt_3_dalles_3.addEventListener("click", function(e) {
+									trackPage('conseils_dalles_3');
 									$.ui.loadContent("conseil-plaques-3",false,false,"slide");
 								}, false);
 							</script>
@@ -1539,7 +1519,7 @@
 							<div class="tac size30 font-din black no-uppercase">Posez les autres plots normalement.</div>
 						</div>
 						<div class="space20"></div>
-						<a href="#conseil">
+						<a href="#conseil" onclick="trackPage('conseils');" >
 							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Retour aux conseils</div>
 						</a>
 						<div class="space50"></div>
@@ -1576,16 +1556,19 @@
 							<script>
 								var bt_1_caillebotis_1 = document.getElementById("bt_1_caillebotis_1");
 								bt_1_caillebotis_1.addEventListener("click", function(e) {
+									trackPage('conseils_caillebotis_1');
 									$.ui.loadContent("conseil-caillebotis-1",false,false,"slide");
 								}, false);
 								
 								var bt_2_caillebotis_1 = document.getElementById("bt_2_caillebotis_1");
 								bt_2_caillebotis_1.addEventListener("click", function(e) {
+									trackPage('conseils_caillebotis_2');
 									$.ui.loadContent("conseil-caillebotis-2",false,false,"slide");
 								}, false);
 								
 								var bt_3_caillebotis_1 = document.getElementById("bt_3_caillebotis_1");
 								bt_3_caillebotis_1.addEventListener("click", function(e) {
+									trackPage('conseils_caillebotis_3');
 									$.ui.loadContent("conseil-caillebotis-3",false,false,"slide");
 								}, false);
 							</script>
@@ -1638,7 +1621,7 @@
 							<div class="tac size30 font-din black no-uppercase">Fixez le support caillebotis sur un plot dalle.</div>
 						</div>
 						<div class="space20"></div>
-						<a href="#conseil-caillebotis-2">
+						<a href="#conseil-caillebotis-2" onclick="trackPage('conseils_caillebotis_2');">
 							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
 						</a>
 						<div class="space50"></div>
@@ -1675,16 +1658,19 @@
 							<script>
 								var bt_1_caillebotis_2 = document.getElementById("bt_1_caillebotis_2");
 								bt_1_caillebotis_2.addEventListener("click", function(e) {
+									trackPage('conseils_caillebotis_1');
 									$.ui.loadContent("conseil-caillebotis-1",false,false,"slide");
 								}, false);
 								
 								var bt_2_caillebotis_2 = document.getElementById("bt_2_caillebotis_2");
 								bt_2_caillebotis_2.addEventListener("click", function(e) {
+									trackPage('conseils_caillebotis_2');
 									$.ui.loadContent("conseil-caillebotis-2",false,false,"slide");
 								}, false);
 								
 								var bt_3_caillebotis_2 = document.getElementById("bt_3_caillebotis_2");
 								bt_3_caillebotis_2.addEventListener("click", function(e) {
+									trackPage('conseils_caillebotis_3');
 									$.ui.loadContent("conseil-caillebotis-3",false,false,"slide");
 								}, false);
 							</script>
@@ -1734,7 +1720,7 @@
 							<div class="tac size30 font-din black no-uppercase">Placez le caillebotis sur deux plots, en l’insérant à la moitié du support de manière à pouvoir poser un autre caillebotis.</div>
 						</div>
 						<div class="space20"></div>
-						<a href="#conseil-caillebotis-3">
+						<a href="#conseil-caillebotis-3" onclick="trackPage('conseils_caillebotis_3');">
 							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
 						</a>
 						<div class="space50"></div>
@@ -1771,16 +1757,19 @@
 							<script>
 								var bt_1_caillebotis_3 = document.getElementById("bt_1_caillebotis_3");
 								bt_1_caillebotis_3.addEventListener("click", function(e) {
+									trackPage('conseils_caillebotis_1');
 									$.ui.loadContent("conseil-caillebotis-1",false,false,"slide");
 								}, false);
 								
 								var bt_2_caillebotis_3 = document.getElementById("bt_2_caillebotis_3");
 								bt_2_caillebotis_3.addEventListener("click", function(e) {
+									trackPage('conseils_caillebotis_2');
 									$.ui.loadContent("conseil-caillebotis-2",false,false,"slide");
 								}, false);
 								
 								var bt_3_caillebotis_3 = document.getElementById("bt_3_caillebotis_3");
 								bt_3_caillebotis_3.addEventListener("click", function(e) {
+									trackPage('conseils_caillebotis_3');
 									$.ui.loadContent("conseil-caillebotis-3",false,false,"slide");
 								}, false);
 							</script>
@@ -1824,7 +1813,7 @@
 							<div class="tac size30 font-din black no-uppercase">Placez les autres caillebotis et posez le reste de votre terrasse normalement.</div>
 						</div>
 						<div class="space20"></div>
-						<a href="#conseil">
+						<a href="#conseil" onclick="trackPage('conseils');">
 							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Retour aux conseils</div>
 						</a>
 						<div class="space50"></div>
@@ -1853,7 +1842,7 @@
 							<div class="tac size30 font-din black no-uppercase">Posez une lambourde sur deux plots, de manière à ce qu’elle soit perpendiculaire au mur.</div>
 						</div>
 						<div class="space20"></div>
-						<a href="#conseil-lambourdes-2">
+						<a href="#conseil-lambourdes-2" onclick="trackPage('conseils_lambourdes_2');">
 							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
 						</a>
 						<div class="space50"></div>
@@ -1882,7 +1871,7 @@
 							<div class="tac size30 font-din black no-uppercase">Réglez la hauteur des plots à l’aide de l’écrou et vérifiez que la lambourde soit à niveau à l’aide d’un niveau à bulle.</div>
 						</div>
 						<div class="space20"></div>
-						<a href="#conseil-lambourdes-3">
+						<a href="#conseil-lambourdes-3"  onclick="trackPage('conseils_lambourdes_3');">>
 							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
 						</a>
 						<div class="space50"></div>
@@ -1911,7 +1900,7 @@
 							<div class="tac size30 font-din black no-uppercase">Placez les autres lambourdes et assurez-vous que l’ensemble de la structure soit à niveau.</div>
 						</div>
 						<div class="space20"></div>
-						<a href="#conseil-lambourdes-4">
+						<a href="#conseil-lambourdes-4" onclick="trackPage('conseils_lambourdes_4');">>
 							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
 						</a>
 						<div class="space50"></div>
@@ -1940,7 +1929,7 @@
 							<div class="tac size30 font-din black no-uppercase">Fixez les lames sur les lambourdes.</div>
 						</div>
 						<div class="space20"></div>
-						<a href="#conseil">
+						<a href="#conseil" onclick="trackPage('conseils');">>
 							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Retour aux conseils</div>
 						</a>
 						<div class="space50"></div>
@@ -1977,16 +1966,19 @@
 							<script>
 								var bt_1_dalles_1 = document.getElementById("bt_1_dalles_1");
 								bt_1_dalles_1.addEventListener("click", function(e) {
+									window.trackPage('conseils_dalles_1');
 									$.ui.loadContent("conseil-dalles-1",false,false,"slide");
 								}, false);
 								
 								var bt_2_dalles_1 = document.getElementById("bt_2_dalles_1");
 								bt_2_dalles_1.addEventListener("click", function(e) {
+									window.trackPage('conseils_dalles_2');
 									$.ui.loadContent("conseil-dalles-2",false,false,"slide");
 								}, false);
 								
 								var bt_3_dalles_1 = document.getElementById("bt_3_dalles_1");
 								bt_3_dalles_1.addEventListener("click", function(e) {
+									windows.trackPage('conseils_dalles_3');
 									$.ui.loadContent("conseil-dalles-3",false,false,"slide");
 								}, false);
 							</script>
@@ -2039,7 +2031,7 @@
 							<div class="tac size30 font-din black no-uppercase">Placez une dalle sur quatre plots.</div>
 						</div>
 						<div class="space20"></div>
-						<a href="#conseil-dalles-2">
+						<a href="#conseil-dalles-2" onclick="trackPage('conseils_dalles_2');">
 							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
 						</a>
 						<div class="space50"></div>
@@ -2076,16 +2068,19 @@
 							<script>
 								var bt_1_dalles_2 = document.getElementById("bt_1_dalles_2");
 								bt_1_dalles_2.addEventListener("click", function(e) {
+									trackPage('conseils_dalles_1');
 									$.ui.loadContent("conseil-dalles-1",false,false,"slide");
 								}, false);
 								
 								var bt_2_dalles_2 = document.getElementById("bt_2_dalles_2");
 								bt_2_dalles_2.addEventListener("click", function(e) {
+									trackPage('conseils_dalles_2');
 									$.ui.loadContent("conseil-dalles-2",false,false,"slide");
 								}, false);
 								
 								var bt_3_dalles_2 = document.getElementById("bt_3_dalles_2");
 								bt_3_dalles_2.addEventListener("click", function(e) {
+									trackPage('conseils_dalles_3');
 									$.ui.loadContent("conseil-dalles-3",false,false,"slide");
 								}, false);
 							</script>
@@ -2126,7 +2121,7 @@
 							<div class="tac size30 font-din black no-uppercase">Réglez la hauteur des plots à l’aide de l’écrou.</div>
 						</div>
 						<div class="space20"></div>
-						<a href="#conseil-dalles-3">
+						<a href="#conseil-dalles-3" onclick="trackPage('conseils_dalles_3');">
 							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
 						</a>
 						<div class="space50"></div>
@@ -2163,16 +2158,19 @@
 							<script>
 								var bt_1_dalles_3 = document.getElementById("bt_1_dalles_3");
 								bt_1_dalles_3.addEventListener("click", function(e) {
+									trackPage('conseils_dalles_1');
 									$.ui.loadContent("conseil-dalles-1",false,false,"slide");
 								}, false);
 								
 								var bt_2_dalles_3 = document.getElementById("bt_2_dalles_3");
 								bt_2_dalles_3.addEventListener("click", function(e) {
+									trackPage('conseils_dalles_2');
 									$.ui.loadContent("conseil-dalles-2",false,false,"slide");
 								}, false);
 								
 								var bt_3_dalles_3 = document.getElementById("bt_3_dalles_3");
 								bt_3_dalles_3.addEventListener("click", function(e) {
+									trackPage('conseils_dalles_3');
 									$.ui.loadContent("conseil-dalles-3",false,false,"slide");
 								}, false);
 							</script>
@@ -2218,7 +2216,7 @@
 							<div class="tac size30 font-din black no-uppercase">Vérifiez que la dalle soit à niveau à l’aide d’un niveau à bulle.</div>
 						</div>
 						<div class="space20"></div>
-						<a href="#conseil">
+						<a href="#conseil" onclick="trackPage('conseils');">
 							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Retour aux conseils</div>
 						</a>
 						<div class="space50"></div>
@@ -2900,7 +2898,7 @@
 							<div class="space25"></div>
 							<div class="font-din size34 tac black no-uppercase">Estimez le nombre de plots<br/>nécessaire à vos travaux</div>
 							<div class="space25"></div>
-							<a href="#calculatrice">
+							<a href="#calculatrice" onclick="trackPage('calculatrice');">
 								<div class="ma css3buttonblue font-din tac size-text-button default-button">Calculer</div>
 							</a>
 							<div class="space25"></div>
@@ -2908,7 +2906,7 @@
 							<div class="space25"></div>
 							<div class="font-din size34 tac black no-uppercase">Besoin d'aide ?</div>
 							<div class="space25"></div>
-							<a href="#contact">
+							<a href="#contact" onclick="trackPage('contact');">
 								<div class="ma css3buttonblue font-din tac size-text-button default-button">Contactez-nous</div>
 							</a>
 							<div class="space50"></div>
@@ -2925,7 +2923,7 @@
 						VOUS AVEZ UNE QUESTION ?<br/>BESOIN D’AIDE ?
 					</div>
 					<div class="space20"></div>
-					<a href="tel:0623653496">
+					<a href="tel:0623653496" onclick="trackPage('telephone');">>
 						<div class="picto-phone ma over-text"><img class="width100" src="img/picto-phone.png" /></div>
 						<div class="space20"></div>
 						<div class="ma">
@@ -2948,7 +2946,7 @@
 					
 					<script>
 						var btEmail = document.getElementById("mail-button"); 
-						btEmail.addEventListener("click", function(e) { location.href="mailto:bdugast@gmail.com" }, false); 
+						btEmail.addEventListener("click", function(e) { location.href="mailto:bdugast@gmail.com"; trackPage('email'); }, false); 
 					</script>
 				</div>
 				<!--END CONTACT MENU-->
@@ -2984,42 +2982,42 @@
 			<nav>
 				<div class="back-white-menu fright">
 				<div class="space10"></div>
-					<a href="#main">
+					<a href="#main" onclick="trackPage('menu');">
 						<div class="menu-line">
 							<img class="picto-menu-0 fleft" src="img/menu-picto-0.jpg" />
 							<div class="fleft text-short-menu black font-din">Accueil</div>
 						</div>
 					</a>
 					<div class="grey-line cb"></div>
-					<a href="#calculatrice">
+					<a href="#calculatrice"onclick="trackPage('calculatrice');">
 						<div class="menu-line">
 							<img class="picto-menu-1 fleft" src="img/menu-picto-1.jpg" />
 							<div class="fleft text-short-menu black font-din">Calculatrice</div>
 						</div>
 					</a>
 					<div class="grey-line cb"></div>
-					<a href="#conseil">
+					<a href="#conseil"onclick="trackPage('conseils');">
 						<div class="menu-line">
 							<img class="picto-menu-2 fleft" src="img/menu-picto-2.jpg" />
 							<div class="fleft text-short-menu black font-din">Conseils</div>
 						</div>
 					</a>
 					<div class="grey-line cb"></div>
-					<a href="#catalogue">
+					<a href="#catalogue" onclick="trackPage('catalogue');">
 						<div class="menu-line">
 							<img class="picto-menu-3 fleft" src="img/menu-picto-3.jpg" />
 							<div class="fleft text-short-menu black font-din">Catalogue</div>
 						</div>
 					</a>
 					<div class="grey-line cb"></div>
-					<a href="#contact">
+					<a href="#contact" onclick="trackPage('contact');">
 						<div class="menu-line">
 							<img class="picto-menu-4 fleft" src="img/menu-picto-4.jpg" />
 							<div class="fleft text-short-menu black font-din">Contact</div>
 						</div>
 					</a>
 					<div class="grey-line cb"></div>
-					<a href="#mention">
+					<a href="#mention" onclick="trackPage('mention');">
 						<div class="menu-line">
 							<img class="picto-menu-5 fleft" src="img/menu-picto-5.jpg" />
 							<div class="fleft text-short-menu black font-din">Mentions légales</div>
@@ -3088,6 +3086,8 @@
 						$("#plot-integrals-evolution").css("display", "none");
 						$("#accessoires").css("display", "block");
 					}
+					
+					trackPage('catalogue_'+pGamme+'_'+pType);
 				}
 				
 				function buildFicheProduit(pNum) {
@@ -3113,6 +3113,8 @@
 						$("#fiche-img-integrals").css("display","none");
 					}				
 					$("#fiche-nom-produit").html(tabNomProduit[pNum]);
+					
+					trackPage('fiche_'+tabNomProduit[pNum]);
 					
 					$("#nbSacPieces").html(tabConditionement[pNum][0] + " pièces");
 					$("#nbSacKilo").html(tabConditionement[pNum][1] + " kilos");

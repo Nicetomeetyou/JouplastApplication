@@ -63,7 +63,7 @@ a:hover{}
 .picto-menu-3{margin:17px 19px;}
 .picto-menu-4{margin:17px;}
 .picto-menu-5{margin:17px;}
-.back-white-menu{width:80%;height:100%;display:block;background-color:#EFEFEF;}
+.back-white-menu{width:80%;display:block;background-color:#EFEFEF;}
 .short-menu{background-color:#EFEFEF;width:500px;height:663px;position:absolute;z-index:500;right:0;}
 .menu-line{display:block;width:100%;}
 .fleche-droite-short{background:url(../img/fleche-droite.png) no-repeat 0 0;width:22px;height:40px;margin:34px 30px}

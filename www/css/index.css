@@ -173,7 +173,7 @@ a:hover{ /*color:#000000 !important;*/ }
 .picto-menu-4{ margin:17px; }
 .picto-menu-5{ margin:17px; }
 
-.back-white-menu { width:80%; height:100%; display:block; background-color:#EFEFEF; }
+.back-white-menu { width:80%; display:block; background-color:#EFEFEF; }
 
 .short-menu { background-color:#EFEFEF; width:500px; height:663px; position:absolute; z-index:500; right: 0; }
 .menu-line { /*height:100px;*/ display:block; width:100%; /*margin:34px 34px;*/ }
