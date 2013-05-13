@@ -77,7 +77,6 @@ table {
 
 body {
     font-size:12px;
-    height:100%;
     margin:0px;
     padding:0px;
     text-transform:uppercase;
@@ -139,7 +138,7 @@ a:hover{ /*color:#000000 !important;*/ }
 #advertisement_outer { position:relative; z-index:90000; background:rgba(29,29,28,0.7) !important;}
 
 #back {	width:25%; }
-.back {	background:url(../img/back.jpg) repeat 0 0; height:100%px; width:100%; display:block; }
+.back {	background:url(../img/back.jpg) repeat 0 0; width:100%; display:block; }
 .inset { -moz-box-shadow: inset 0 3px 8px rgba(0,0,0,.4); -webkit-box-shadow: inset 0 3px 8px rgba(0,0,0,.4); box-shadow: inset 0 3px 8px rgba(0,0,0,.24); }
 
 /* HEADER */
@@ -197,7 +196,7 @@ a:hover{ /*color:#000000 !important;*/ }
 .text-calculatrice-choix { margin: 22px 0 0 120px; position: absolute; }
 .fleche-droite { max-width:15px; margin:28px 5px 0 0; }
 
-.back-white-calculette { width:100%; height:100%; display:block; background-color:#FFFFFF; }
+.back-white-calculette { width:100%; display:block; background-color:#FFFFFF; }
 .input-calculette { width:80px; height:50px; }
 .input-calculette-dalles { height:40px; width:50%; margin:0 10px 0 40px; }
 .line-calculette { height:80px; padding-top:20px; margin-left:15px; }
@@ -219,7 +218,7 @@ a:hover{ /*color:#000000 !important;*/ }
 .cont-dalle-taille { width:33%; }
 
 .container-bt-calculette { display: table; margin:auto; }
-.back-calculette { background:url(../img/dalle.jpg) repeat 0 0; height:100%; width:100%; display:block; }
+.back-calculette { background:url(../img/dalle.jpg) repeat 0 0; width:100%; display:block; }
 
 .radio-on { width:26px; height:27px; margin:auto; position: relative; top: -10px; }
 .radio-off { width:26px; height:27px; margin:auto; position: relative; top:-10px; }
@@ -556,5 +555,5 @@ ul li ul li{ background: #FFFFFF; border:none; }
 
 /* MENTION LEGALES */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-.back-white-mention { width:90%; height:100%; display:block; padding:20px 50px 20px 20px; }
+.back-white-mention { width:90%; display:block; padding:20px 50px 20px 20px; }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
