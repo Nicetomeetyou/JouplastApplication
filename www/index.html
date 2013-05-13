@@ -177,7 +177,7 @@
 				<div class="width100">
 					<div class="width100">
 						<div class="header-container-logo"><img class="width100" src="img/logo.png" /></div>
-						<!--<div class="header-container-bt-menu"><a id='menubadge' onclick='jq.ui.toggleSideMenu()' style='' class='menuButton fleft'></a></div>-->
+						<div class="header-container-bt-menu"><a id='menubadge' onclick='jq.ui.toggleSideMenu()' style='' class='menuButton fleft'></a></div>
 					</div>
 					
 				</div>
@@ -185,50 +185,49 @@
 			
 			<div id="content" style="overflow:hidden;">
 				<!--MENU-->
-				<div id="main" class="panel" selected="true" scrolling="yes" >
-					<div>
-						<div id="spacer-0" class="space20"></div>
-						
-						<a href="#calculatrice" onclick="trackPage('calculatrice');">
-							<div class="home-square">
-								<div style="position:relative">
-									<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu0.png" />
-									<img class="backmenu" src="img/backmenu.png" />
-								</div>
-								<div class="back-home-square img-menu"><div class="font-din tac white">Calculatrice</div></div>
+				<div id="main" class="panel" style="overflow:hidden;">
+					<div id="spacer-0" class="space20"></div>
+					
+					<a href="#calculatrice" onclick="trackPage('calculatrice');">
+						<div class="home-square">
+							<div style="position:relative">
+								<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu0.png" />
+								<img class="backmenu" src="img/backmenu.png" />
 							</div>
-						</a>
-						<a href="#conseil" onclick="trackPage('conseils');">
-							<div class="home-square">
-								<div style="position:relative">
-									<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu1.png" />
-									<img class="backmenu" src="img/backmenu.png" />
-								</div>
-								<div class="back-home-square img-menu"><div class="font-din tac white">Conseils</div></div>
+							<div class="back-home-square img-menu"><div class="font-din tac white">Calculatrice</div></div>
+						</div>
+					</a>
+					<a href="#conseil" onclick="trackPage('conseils');">
+						<div class="home-square">
+							<div style="position:relative">
+								<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu1.png" />
+								<img class="backmenu" src="img/backmenu.png" />
 							</div>
-						</a>
-						<div id="spacer-1"></div>
-						<a href="#catalogue" onclick="trackPage('catalogue');">
-							<div class="home-square">
-								<div style="position:relative">
-									<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu2.png" />
-									<img class="backmenu" src="img/backmenu.png" />
-								</div>
-								<div class="back-home-square img-menu"><div class="font-din tac white">Catalogue</div></div>
+							<div class="back-home-square img-menu"><div class="font-din tac white">Conseils</div></div>
+						</div>
+					</a>
+					<div id="spacer-1"></div>
+					<a href="#catalogue" onclick="trackPage('catalogue');">
+						<div class="home-square">
+							<div style="position:relative">
+								<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu2.png" />
+								<img class="backmenu" src="img/backmenu.png" />
 							</div>
-						</a>
-						<a href="#contact" onclick="trackPage('contact');">
-							<div class="home-square">
-								<div style="position:relative">
-									<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu3.png" />
-									<img class="backmenu" src="img/backmenu.png" />
-								</div>
-								<div class="back-home-square img-menu"><div class="font-din tac white">Contact</div></div>
+							<div class="back-home-square img-menu"><div class="font-din tac white">Catalogue</div></div>
+						</div>
+					</a>
+					<a href="#contact" onclick="trackPage('contact');">
+						<div class="home-square">
+							<div style="position:relative">
+								<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu3.png" />
+								<img class="backmenu" src="img/backmenu.png" />
 							</div>
-						</a>
-						<div class="cb"></div>
-						<div class="space50"></div>
-					</div>
+							<div class="back-home-square img-menu"><div class="font-din tac white">Contact</div></div>
+						</div>
+					</a>
+					<div class="cb"></div>
+					<div class="space50"></div>
+					
 					<script>
 						if(window.innerHeight > 480) { 
 							//$("#spacer-0").addClass("space50 cb"); $("#spacer-0").addClass("space50 cb");
@@ -239,7 +238,7 @@
 				<!--END MENU-->
 				
 				<!--CALCULATRICE MENU-->
-				<div id="calculatrice" class="panel" title="" data-nav="menu_jqmobi" scrolling="yes">
+				<div id="calculatrice" class="panel">
 					<div class="space20"></div>
 					<div class="tac size40 font-din over-text">
 						CALCULEZ LE NOMBRE<br/>DE PLOTS NÉCESSAIRES<br/>À VOS TRAVAUX
