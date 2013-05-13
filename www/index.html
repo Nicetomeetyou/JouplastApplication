@@ -3206,11 +3206,20 @@
 					<span id="ad-countdown" class="ad-countdown" style="display:none"></span>
 				</div>
 				<div id="advertisement" style="width:300px;height:600px;margin-left:auto;margin-right:auto">
-					<object data="http://www.ntmy.fr/test/jouplast/pub.html" scrolling="no" style="height:600px; width:100%; position:relative; top:0px;"></object>
+					<!--<object data="http://www.ntmy.fr/test/jouplast/pub.html" scrolling="no" style="height:600px; width:100%; position:relative; top:0px;"></object>-->
 				</div>
 			</div>
 			
 			<script>
+				var opts={
+					type:"GET",
+					success:function(data){
+						alert(data);
+					},
+					url:"http://www.ntmy.fr/test/jouplast/pub.php"
+				}
+				$.ajax(opts);
+				
 				function triPlot(pGamme, pType) {
 					if(pGamme == "standard" && pType == "dalles") {
 						$("#plot-dalles").css("display", "block");
