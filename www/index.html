@@ -192,7 +192,7 @@
 						<div class="home-square">
 							<div style="position:relative">
 								<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu0.png" />
-								<img class="backmenu" src="img/backmenu.png" />
+								<!--<img class="backmenu" src="img/backmenu.png" />-->
 							</div>
 							<div class="back-home-square img-menu"><div class="font-din tac white">Calculatrice</div></div>
 						</div>
@@ -201,7 +201,7 @@
 						<div class="home-square">
 							<div style="position:relative">
 								<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu1.png" />
-								<img class="backmenu" src="img/backmenu.png" />
+								<!--<img class="backmenu" src="img/backmenu.png" />-->
 							</div>
 							<div class="back-home-square img-menu"><div class="font-din tac white">Conseils</div></div>
 						</div>
@@ -211,7 +211,7 @@
 						<div class="home-square">
 							<div style="position:relative">
 								<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu2.png" />
-								<img class="backmenu" src="img/backmenu.png" />
+								<!--<img class="backmenu" src="img/backmenu.png" />-->
 							</div>
 							<div class="back-home-square img-menu"><div class="font-din tac white">Catalogue</div></div>
 						</div>
@@ -220,7 +220,7 @@
 						<div class="home-square">
 							<div style="position:relative">
 								<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu3.png" />
-								<img class="backmenu" src="img/backmenu.png" />
+								<!--<img class="backmenu" src="img/backmenu.png" />-->
 							</div>
 							<div class="back-home-square img-menu"><div class="font-din tac white">Contact</div></div>
 						</div>
@@ -268,7 +268,7 @@
 											<section class="ombre-menu-haut"></section>
 											<section class="inside-li">
 												<section class="fleft"><img style="max-width:70px;" src="img/rectangulaire-picto.png" /></section>
-												<a href="#calculatrice-dalles" onclick="trackPage('calculatrice_dalles_rectangle');" onclick="chooseDalles(1)" class="font-din size28 grey sub-title-cat-catalogue-haut">Rectangulaire<img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
+												<a href="#calculatrice-dalles" onclick="chooseDalles(1)" onclick="trackPage('calculatrice_dalles_rectangle');" class="font-din size28 grey sub-title-cat-catalogue-haut">Rectangulaire<img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
 											</section>
 										</section>
 										<section>
@@ -688,8 +688,8 @@
 								if(hauteurNumber >= 31 && hauteurNumber <= 34) { affichePlot(11); alert("Il n’existe pas de plot correspondant à la hauteur indiquée pour votre terrasse.<br><br>Voici deux alternatives se rapprochant le plus de votre choix : <br><br>-"+tabNomProduit_fr[11]+"<br>-"+tabNomProduit_fr[0]); }
 								if(hauteurNumber >= 34 && hauteurNumber <= 39) { affichePlot(12); alert("Il n’existe pas de plot correspondant à la hauteur indiquée pour votre terrasse.<br><br>Voici deux alternatives se rapprochant le plus de votre choix : <br><br>-"+tabNomProduit_fr[0]+"<br>-"+tabNomProduit_fr[1]); }
 								
-								windows.trackPage('resultats_dalles');
 								$.ui.loadContent("resultat-dalles",false,false,"slide");
+								window.trackPage('resultats_dalles');
 							}
 						}
 						
@@ -837,20 +837,22 @@
 								$("#lambourdes-longueur").html(longueurNumberLambourdes + "m");
 								$("#lambourdes-hauteur").html(hauteurNumberLambourdes + "mm");
 								
-								$("#nbPlotsLambourdes").html(200);
+								nbPlotsLambourdes = (1 + Math.ceil(longueurNumberLambourdes / (100 / 100))) * (1 + Math.ceil(largeurNumberLambourdes/( 50 / 100)));
+								
+								$("#nbPlotsLambourdes").html(nbPlotsLambourdes);
 								
 								if(hauteurNumberLambourdes >= 11 && hauteurNumberLambourdes <= 19) { affichePlotLambourdes(10); alert("Il n’existe pas de plot correspondant à la hauteur indiquée pour votre terrasse.<br><br>Voici deux alternatives se rapprochant le plus de votre choix : <br><br>-"+tabNomProduit_fr[12]+"<br>-"+tabNomProduit_fr[13]); }
 								if(hauteurNumberLambourdes >= 31 && hauteurNumberLambourdes <= 39) { affichePlotLambourdes(11); alert("Il n’existe pas de plot correspondant à la hauteur indiquée pour votre terrasse.<br><br>Voici deux alternatives se rapprochant le plus de votre choix : <br><br>-"+tabNomProduit_fr[13]+"<br>-"+tabNomProduit_fr[5]); }
 								
-								trackPage('resultats_lambourdes');
+								
+								
 								$.ui.loadContent("resultat-lambourdes",false,false,"slide");
+								trackPage('resultats_lambourdes');
 							}
 						}
 						
 						function affichePlotLambourdes(pNum) {
 							for(i=1; i<13; i++) { $("#lambourdes-p"+i).css("display","none"); }
-							
-							alert(pNum);
 							
 							if(pNum == 10) { $("#lambourdes-p1").css("display","block"); $("#lambourdes-p2").css("display","block"); $("#lambourdes-p1").removeClass("home-square-100").addClass("home-square"); }
 							if(pNum == 11) { $("#lambourdes-p3").css("display","block"); $("#lambourdes-p4").css("display","block"); }
@@ -3200,25 +3202,25 @@
 				</div>
 			</nav>
 			
-			<div id="advertisement_outer" class="ad-fullpage" style="position:relative; top:0;">
+			<!--<div id="advertisement_outer" class="ad-fullpage" style="position:relative; top:0;">
 				<div class="ad-closewrapper">
 					<a id="ad-closelink" class="icon close small ad-closelink" style="display:block" onclick="$('#advertisement_outer').remove();">Close ad</a>
 					<span id="ad-countdown" class="ad-countdown" style="display:none"></span>
 				</div>
 				<div id="advertisement" style="width:300px;height:600px;margin-left:auto;margin-right:auto">
-					<!--<object data="http://www.ntmy.fr/test/jouplast/pub.html" scrolling="no" style="height:600px; width:100%; position:relative; top:0px;"></object>-->
+					<object data="http://www.ntmy.fr/test/jouplast/pub.html" scrolling="no" style="height:600px; width:100%; position:relative; top:0px;"></object>
 				</div>
-			</div>
+			</div>-->
 			
 			<script>
-				var opts={
+				/*var opts={
 					type:"GET",
 					success:function(data){
 						alert(data);
 					},
 					url:"http://www.ntmy.fr/test/jouplast/pub.php"
 				}
-				$.ajax(opts);
+				$.ajax(opts);*/
 				
 				function triPlot(pGamme, pType) {
 					if(pGamme == "standard" && pType == "dalles") {
