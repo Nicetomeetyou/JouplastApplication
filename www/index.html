@@ -161,13 +161,13 @@
 				tabFicheTitle = window["tabFicheTitle_" + language_root];
 			});
 			
-			function call() {
-				location.href="tel:0474258443";
+			function callTel() {
+				window.location.href="tel:0474258443";
 				trackPage('telephone');
 			}
 			
 			function sendEmail() {
-				location.href="mailto:contact@tmpinnovations.com";
+				window.location.href="mailto:contact@tmpinnovations.com";
 				trackPage('email-send');
 			}
 			
@@ -3117,7 +3117,7 @@
 						VOUS AVEZ UNE QUESTION ?<br/>BESOIN D’AIDE ?
 					</div>
 					<div class="space20"></div>
-					<div id="tel-button" onclick="call();">
+					<div id="tel-button" onclick="callTel();">
 						<div class="picto-phone ma over-text"><img class="width100" src="img/picto-phone.png" /></div>
 						<div class="space20"></div>
 						<div class="ma" style="position:relative">
