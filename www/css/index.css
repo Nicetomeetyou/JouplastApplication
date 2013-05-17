@@ -190,7 +190,7 @@ a:hover{ /*color:#000000 !important;*/ }
 /* CALCULATRICE DALLE */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 .back-white { width:100%; height:90px; display:block; background-color:#FFFFFF; }
-.grey-line { border-top: 2px solid #CCCCCC; width:100%; position:relative; }
+.grey-line { border-top: 1px solid #CCCCCC; width:100%; position:relative; }
 .picto-choix { height:53px; max-width:90px; margin: 12px; position: absolute;  z-index:0; }
 
 .text-calculatrice-choix { margin: 22px 0 0 120px; position: absolute; }
@@ -461,7 +461,7 @@ ul li ul li{ background: #FFFFFF; border:none; }
 .ombre-list-plot-bas { background:url(../img/ombre-list-plot-bas.png) repeat-x 0 0; width:100%; height:43px; }
 
 .back-white-catalogue { width:100%; height:70px; display:block; background-color:#FFFFFF; }
-.text-choix-catalogue { margin: 25px 0 0 20px; position: absolute; }
+.text-choix-catalogue { margin: 25px 30px 0 20px; position: absolute; }
 .fleche-droite-catalogue { max-width:15px; margin:20px 5px 0 0; }
 
 /* CSS ACCORDION */
@@ -555,5 +555,5 @@ ul li ul li{ background: #FFFFFF; border:none; }
 
 /* MENTION LEGALES */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-.back-white-mention { width:90%; display:block; padding:20px 50px 20px 20px; }
+.back-white-mention { display:block; padding:20px 20px 20px 20px; }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
