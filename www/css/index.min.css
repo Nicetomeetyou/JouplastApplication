@@ -52,7 +52,7 @@ a:hover{}
 #back{width:25%;}
 .back{background:url(../img/back.jpg) repeat 0 0;width:100%;display:block;}
 .inset{-moz-box-shadow:inset 0 3px 8px rgba(0,0,0,.4);-webkit-box-shadow:inset 0 3px 8px rgba(0,0,0,.4);box-shadow:inset 0 3px 8px rgba(0,0,0,.24);}
-.header-container-logo{margin:auto;max-width:144px;padding-top:8px;}
+.header-container-logo{margin:auto;max-width:144px;padding-top:12px;}
 .header-container-bt-menu{position:absolute;right:0px;top:3px;}
 .home-square{width:50%;float:left;}
 .home-square-100{width:100%;}

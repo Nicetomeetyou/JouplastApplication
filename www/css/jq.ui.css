@@ -108,7 +108,7 @@ width:100%;
 	display:block;
 	z-index:250;
 	-webkit-box-sizing:border-box; box-sizing:border-box;
-	height:40px;
+	height:50px;
     left:0px;right:0px;
 	/*background-image:-webkit-gradient(linear, left top, left bottom, from(rgba(16,25,33,1)), to(rgba(14,23,32,1)), color-stop(.5, rgba(27,36,46,1)), color-stop(.5, rgba(14,23,32,1)));*/
 	background-color:#0970B3;
@@ -148,7 +148,7 @@ z-index:2;
 	display:block;
 	position:absolute;
 	background:url(../img/arrow-back.png) no-repeat 0 0; width:50px; height:50px;
-	top:0px;
+	top:5px;
 	max-width:10px;
 	text-overflow:ellipsis;
 	z-index:200;
@@ -225,7 +225,7 @@ background:#333;
 	z-index:180;
 	display:block;
 	position:absolute;
-	top:40px;
+	top:50px;
 	bottom:62px;
 	left:0px;right:0px;
 	overflow:hidden;
@@ -882,30 +882,33 @@ select[disabled]~div {
 }
 
 .menuButton {
-		position:relative;
-		width:35px;	height:50px;
-		padding:9px 1px;
-		background-color:transparent;
-		display:inline-block;
-	}
+	background-color: transparent;
+    display: inline-block;
+    height: 50px;
+    padding: 9px 3px;
+    position: relative;
+    width: 38px;
+}
 
-	.menuButton:before {
-		content:'';
-		position:absolute;
-		width:70%; height:4px;
-		border-radius:20px;
-		background:#FFFFFF;
-		box-shadow:0 6px 0 #FFFFFF;
-		-webkit-box-shadow:0 6px 0 #FFFFFF;
-	}
-	.menuButton:after {
-		content:'';
-		position:absolute;
-		top:21px;
-		width:70%; height:4px;
-		border-radius:20px;
-		background:#FFFFFF;
-	}
+.menuButton:before {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border-radius: 20px 20px 20px 20px;
+	box-shadow: 0 9px 0 #FFFFFF;
+	content: "";
+	height: 6px;
+	position: absolute;
+	width: 70%;
+}
+
+.menuButton:after {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border-radius: 20px 20px 20px 20px;
+	content: "";
+	height: 6px;
+	position: absolute;
+	top: 27px;
+	width: 70%;
+}
 
 @media handheld, only screen and (min-width: 768px){
 	.hasMenu, .hasMenu.on  {
