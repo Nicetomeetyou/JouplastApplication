@@ -135,7 +135,9 @@ a:hover{ /*color:#000000 !important;*/ }
 .width50 { width:50% }
 .over-text { position:relative; z-index:2; }
 
-#advertisement_outer { position:relative; z-index:90000; background:rgba(29,29,28,0.7) !important;}
+#advertisement_outer { position:absolute; z-index:90000; background:rgba(29,29,28,0.7) !important; height: 100%; }
+#advertisement { margin:0px 10px; position:relative; top:20px; }
+#ad-closelink { position:absolute; top:0; z-index:5; }
 
 #back {	width:25%; }
 .back {	background:url(../img/back.jpg) repeat 0 0; width:100%; display:block; }

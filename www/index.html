@@ -52,15 +52,10 @@
     </head>
     <body class="back">
 		<script type="text/javascript" charset="utf-8" src="js/jq.ui.min.js"></script> 
-		<script type="text/javascript" charset="utf-8" src="js/jq.debug.js"></script> 
+		<script type="text/javascript" charset="utf-8" src="js/jq.mobi.min.js"></script> 
 		<script type="text/javascript" charset="utf-8" src="js/jq.swipe.js"></script> 
 		<script type="text/javascript" charset="utf-8" src="js/jq.carousel.js"></script> 
 		<script type="text/javascript" charset="utf-8" src="js/jq.css3animate.js"></script> 
-		<script type="text/javascript" charset="utf-8" src="js/jq.drawer.js"></script> 
-		<script type="text/javascript" charset="utf-8" src="js/jq.shake.js"></script> 
-		<script type="text/javascript" charset="utf-8" src="js/jq.alphatable.js"></script> 
-		<script type="text/javascript" charset="utf-8" src="js/jq.template.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/ad.js"></script>
 		
         <script type="text/javascript">	
 			var tabNomProduit;
@@ -180,7 +175,7 @@
 			}
 			
 			var tabFicheTitle_fr = new Array("PLOTS DALLES", "PLOTS LAMBOURDES", "PLOTS INTÉGRALS", "ACCESSOIRES");
-			var tabNomProduit_fr = new Array("HD 35mm FIXE", "HD 40/65mm RÉGLABLE", "HD 50/80mm RÉGLABLE", "HD 80/140mm RÉGLABLE", "HD 140/230mm RÉGLABLE", "HL 40/65mm RÉGLABLE", "HL 50/80mm RÉGLABLE", "HL 80/140mm RÉGLABLE", "HL 140/230mm RÉGLABLE", "HD 8/15mm RÉGLABLE", "HD 10mm FIXE", "HD 20/30mm RÉGLABLE", "HL 10mm FIXE", "HL 20/30mm RÉGLABLE", "HI 40/65mm RÉGLABLE", "HI 50/80mm RÉGLABLE", "HI 80/140mm RÉGLABLE", "HI 140/230mm RÉGLABLE", "Calle amortisseur", "HR 200 x 200 / Plaque à Dalle 200x200mm", "HR 200 C", "HR 25 mm Dalle", "HR 60 mm Dalles et Lambourdes", "HE 3mm", "HE 5mm", "HC 2mm", "HC 3mm", "HC 5mm");
+			var tabNomProduit_fr = new Array("HD 35mm FIXE", "HD 40/65mm RÉGLABLE", "HD 50/80mm RÉGLABLE", "HD 80/140mm RÉGLABLE", "HD 140/230mm RÉGLABLE", "HL 40/65mm RÉGLABLE", "HL 50/80mm RÉGLABLE", "HL 80/140mm RÉGLABLE", "HL 140/230mm RÉGLABLE", "HD 8/15mm RÉGLABLE", "HD 10mm FIXE", "HD 20/30mm RÉGLABLE", "HL 10mm FIXE", "HL 20/30mm RÉGLABLE", "HI 40/65mm RÉGLABLE", "HI 50/80mm RÉGLABLE", "HI 80/140mm RÉGLABLE", "HI 140/230mm RÉGLABLE", "Cales amortisseur", "HR 200 x 200 / Plaque à Dalle 200x200mm", "HR 200 C", "HR 25 mm Dalle", "HR 60 mm Dalles et Lambourdes", "HE 3mm", "HE 5mm", "HC 2mm", "HC 3mm", "HC 5mm");
 			
 			var tabConditionement = 	new Array(	new Array("60", "9", "1200", "200"), new Array("60", "15", "1200", "320"), new Array("60", "15", "840", "230"), new Array("40", "17", "560", "260"), new Array("40", "17", "400", "190")
 										, new Array("60", "15", "1200", "320"), new Array("60", "15", "840", "230"), new Array("40", "17", "560", "260"), new Array("40", "17", "400", "190")
@@ -504,7 +499,8 @@
 											<section class="width100 ma">
 												<section id="dalle0" class="cont-dalle-taille fleft">
 													<section class="font-din no-uppercase size34 tac">
-														<img class="width100" src="img/dalle-taille-30x30.png" />
+														<img id="img30x30" class="width100" src="img/dalle-taille-30x30.png" />
+														<img id="img60x60" style="display:none;" class="width100" src="img/dalle-taille-60x60.png" />
 													</section>
 													<section class="radio-on" style="display:none;"><img class="width100" src="img/radio-on.png" /></section>
 													<section class="radio-off"><img class="width100" src="img/radio-off.png" /></section>
@@ -588,8 +584,9 @@
 							$("#beton-off").css('display', 'none'); 
 							$("#ceramique-on").css('display', 'none'); 
 							$("#ceramique-off").css('display', 'block'); 
-							$("#dalle0 section span").html('30x30');
 							
+							$("#img30x30").css('display', 'block'); 
+							$("#img60x60").css('display', 'none'); 
 							$("#img40x40").css('display', 'block'); 
 							$("#img30x120").css('display', 'none'); 
 							$("#img50x50").css('display', 'block'); 
@@ -605,6 +602,8 @@
 							$("#ceramique-on").css('display', 'block'); 
 							$("#ceramique-off").css('display', 'none');
 							
+							$("#img30x30").css('display', 'none'); 
+							$("#img60x60").css('display', 'block'); 
 							$("#img40x40").css('display', 'none'); 
 							$("#img30x120").css('display', 'block'); 
 							$("#img50x50").css('display', 'none'); 
@@ -649,7 +648,7 @@
 									if(size == 1) { longueurDalles = 40; largeurDalles = 40; }
 									if(size == 2) { longueurDalles = 50; largeurDalles = 50; }
 								} else {
-									if(size == 0) { longueurDalles = 30; largeurDalles = 30; }
+									if(size == 0) { longueurDalles = 60; largeurDalles = 60; }
 									if(size == 1) { longueurDalles = 120; largeurDalles = 30; }
 									if(size == 2) { longueurDalles = 120; largeurDalles = 60; }
 								}
@@ -856,13 +855,13 @@
 								$("#lambourdes-hauteur").html(hauteurNumberLambourdes + "mm");
 								
 								nbPlotsLambourdes = (1 + Math.ceil(longueurNumberLambourdes / (100 / 100))) * (1 + Math.ceil(largeurNumberLambourdes/( 50 / 100)));
+								nbDallesLambourdes = Math.ceil(nbPlotsLambourdes / 3);
 								
 								$("#nbPlotsLambourdes").html(nbPlotsLambourdes);
+								$("#nbDallesLambourdes").html(nbDallesLambourdes);
 								
 								if(hauteurNumberLambourdes >= 11 && hauteurNumberLambourdes <= 19) { affichePlotLambourdes(10); alert("Il n’existe pas de plot correspondant à la hauteur indiquée pour votre terrasse.<br><br>Voici deux alternatives se rapprochant le plus de votre choix : <br><br>-"+tabNomProduit_fr[12]+"<br>-"+tabNomProduit_fr[13]); }
 								if(hauteurNumberLambourdes >= 31 && hauteurNumberLambourdes <= 39) { affichePlotLambourdes(11); alert("Il n’existe pas de plot correspondant à la hauteur indiquée pour votre terrasse.<br><br>Voici deux alternatives se rapprochant le plus de votre choix : <br><br>-"+tabNomProduit_fr[13]+"<br>-"+tabNomProduit_fr[5]); }
-								
-								
 								
 								$.ui.loadContent("resultat-lambourdes",false,false,"slide");
 								trackPage('resultats_lambourdes');
@@ -958,7 +957,7 @@
 									<div id="dalle-beton-0" style="display:block; height:80px;"><img class="width100" src="img/dalle-taille-30x30.png" /></div>
 									<div id="dalle-beton-1" style="display:none;"><img class="width100" src="img/dalle-taille-40x40.png" /></div>
 									<div id="dalle-beton-2" style="display:none;"><img class="width100" src="img/dalle-taille-50x50.png" /></div>
-									<div id="dalle-ceramique-0" style="display:none;"><img class="width100" src="img/dalle-taille-30x30.png" /></div>
+									<div id="dalle-ceramique-0" style="display:none;"><img class="width100" src="img/dalle-taille-60x60.png" /></div>
 									<div id="dalle-ceramique-1" style="display:none;"><img class="width100" src="img/dalle-taille-30x120.png" /></div>
 									<div id="dalle-ceramique-2" style="display:none;"><img class="width100" src="img/dalle-taille-60x120.png" /></div>
 								</div>
@@ -1117,18 +1116,34 @@
 								<div class="space25"></div>
 							</div>
 							<div class="grey-line"></div>
-							<div class="space20"></div>
-							<div class="width100">
-								<div class="ma" style="width:150px; height:80px;">
-									<div id="plot-beton-2" style="display:block;" class="fleft"><img style="width:60px;" src="img/picto-cata-lambourde.png" /></div>
-									<div class="font-din orange size60 fleft" style="width:20%;">
+							
+							<div style="height:100px;">
+								<div class="fleft" style="width:49%;">
+									<div class="space20"></div>
+									<div style="width:40%;" class="fleft" >
+										<div id="plot-beton-2" style="display:block;"><img style="width:60px;" src="img/picto-cata-dalle.png" /></div>
+									</div>
+									<div class="font-din fleft orange size60" style="width:20%;">
 										<div id="nbPlotsLambourdes" class="font-arial orange size100">100</div>
 										<div class="grey size20" style="margin-left:10px;">Plots</div>
 									</div>
 								</div>
+								<div class="grey-line-left fleft" style="width:49%; position:relative;">
+									<div class="space10"></div>
+									<div style="width:55%; " class="fleft" >
+										<div class="space20"></div>
+										<div style="display:block; height:80px;"><img style="position:relative; top:-10px;" class="width100" src="img/picto-tuto-1.jpg" /></div>
+									</div>
+									<div class="font-din fleft orange size60" style="width:25%; position:relative; left:-10px;">
+										<div class="space10"></div>
+										<div id="nbDallesLambourdes" class="font-arial orange size100">100</div>
+										<div class="grey size20" style="margin-left:10px;">Lambourdes</div>
+									</div>
+								</div>
+								<div class="cb"></div>
+								<div class="grey-line"></div>
 							</div>
-							<div class="cb"></div>
-							<div class="grey-line"></div>
+							
 							<div class="space25"></div>
 							<div class="font-din-bold size34 tac black no-uppercase"></div>
 							<div class="cb"></div>
@@ -2700,7 +2715,7 @@
 							<div class="over-text">
 								<a href="#fiche" onclick="buildFicheProduit(18);">
 									<div class="back-white-catalogue">
-										<div class="font-din grey size34 no-uppercase text-choix-catalogue">Calle amortisseur</div>
+										<div class="font-din grey size34 no-uppercase text-choix-catalogue">Cales amortisseur</div>
 										<div class="fleche-droite-catalogue fright"><img class="width100" src="img/fleche-droite.png" /></div>
 									</div>
 								</a>
@@ -3245,55 +3260,18 @@
 				</div>
 			</nav>
 			
-			<!--<div id="advertisement_outer" class="ad-fullpage" style="position:relative; top:0;">
+			<div id="advertisement_outer" class="ad-fullpage" style="position:relative;">
 				<div class="ad-closewrapper">
-					<a id="ad-closelink" class="icon close small ad-closelink" style="display:block" onclick="$('#advertisement_outer').remove();">Close ad</a>
-					<span id="ad-countdown" class="ad-countdown" style="display:none"></span>
+					<div id="ad-closelink" style="display:block" onclick="$('#advertisement_outer').remove();">
+						<img style="position: fixed; right: 0; top: 0; width: 14%;" src="img/croix.png"/>
+					</div>
 				</div>
-				<div id="advertisement">
-					<img class="width100" src="http://www.ntmy.fr/test/jouplast/img_pub.jpg"/>
+				<div id="advertisement" onclick="window.open('http://www.ntmy.fr/test/jouplast/pub.php');">
+					<img class="width100" src="http://www.ntmy.fr/test/jouplast/img_pub.jpeg" onerror="$('#advertisement_outer').remove();" />/>
 				</div>
-			</div>-->
+			</div>
 			
 			<script>
-				/*$.ajax({
-					dataType: 'jsonp',
-					data: '',
-					jsonp: 'jsonpCallback',
-					jsonpCallback: function() { alert('boo'); },
-					url:"http://www.ntmy.fr/test/jouplast/pub.php",
-					success:function(data){
-						console.log('succes');
-						//console.log(data[0]);
-					},
-					error:function(data){
-						console.log('error');
-						//console.log(data);
-					}
-				});*/
-				
-				/*function jsonpCallback(data){
-					alert("jsonpCallback");
-				}*/
-				
-				/*var opts={
-					type:"GET",
-					contentType: "application/json; charset=utf-8",
-					crossDomain:true,
-					success:function(data){
-						console.log(data);
-						console.log('youpi');
-					},
-					error:function(data){
-						console.log(data);
-						console.log('youpi');
-					},
-					url:"http://www.ntmy.fr/test/jouplast/pub.php"
-				}
-				$.ajax(opts);*/
-				
-				//$("#advertisement_outer").css("height" , window.innerHeight + "px");
-				
 				function triPlot(pGamme, pType) {
 					if(pGamme == "standard" && pType == "dalles") {
 						$("#plot-dalles").css("display", "block");
