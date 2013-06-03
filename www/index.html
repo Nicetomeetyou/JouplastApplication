@@ -106,6 +106,8 @@
 				webRoot=AppMobi.webRoot+"/";
 				//hide splash screen
 				AppMobi.device.hideSplashScreen();	
+				
+				$("#menu #menu_scroller .jqMenuHeader").html = "";
 			};
 			document.addEventListener("appMobi.device.ready",onDeviceReady,false); 
 			
