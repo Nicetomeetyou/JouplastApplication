@@ -865,7 +865,8 @@
 								if(hauteurNumberLambourdes <= 10 ) { affichePlotLambourdes(1); }
 								else if(hauteurNumberLambourdes >= 20 && hauteurNumberLambourdes <= 30) { affichePlotLambourdes(2); }
 								else if(hauteurNumberLambourdes >= 40 && hauteurNumberLambourdes <= 80) { affichePlotLambourdes(3); }
-								else if(hauteurNumberLambourdes >= 80 && hauteurNumberLambourdes <= 230){ affichePlotLambourdes(4); }
+								else if(hauteurNumberLambourdes >= 80 && hauteurNumberLambourdes <= 140){ affichePlotLambourdes(4); }
+								else if(hauteurNumberLambourdes >= 140 && hauteurNumberLambourdes <= 230){ affichePlotLambourdes(5); }
 								
 								$("#lambourdes-largeur").html(largeurNumberLambourdes + "m");
 								$("#lambourdes-longueur").html(longueurNumberLambourdes + "m");
@@ -893,8 +894,9 @@
 							
 							if(pNum == 1) { $("#lambourdes-p1").css("display","block"); $("#lambourdes-p1").removeClass("home-square").addClass("home-square-100");	}
 							if(pNum == 2) {	$("#lambourdes-p2").css("display","block");	$("#lambourdes-p3").css("display","block");	}
-							if(pNum == 3) { $("#lambourdes-p4").css("display","block");	$("#lambourdes-p5").css("display","block"); $("#lambourdes-p6").css("display","block"); $("#lambourdes-p6").removeClass("home-square").addClass("home-square-100 cb"); }
-							if(pNum == 4) { $("#lambourdes-p5").css("display","block");	$("#lambourdes-p6").css("display","block"); $("#lambourdes-p7").css("display","block"); $("#lambourdes-p7").removeClass("home-square").addClass("home-square-100 cb"); }
+							if(pNum == 3) { $("#lambourdes-p4").css("display","block");	$("#lambourdes-p5").css("display","block"); $("#lambourdes-p6").removeClass("home-square-100").addClass("home-square"); }
+							if(pNum == 4) { $("#lambourdes-p6").css("display","block");$("#lambourdes-p6").removeClass("home-square").addClass("home-square-100 cb"); }
+							if(pNum == 5) { $("#lambourdes-p7").css("display","block");$("#lambourdes-p7").removeClass("home-square").addClass("home-square-100 cb"); }
 						}
 					</script>
 				</div>
@@ -920,8 +922,8 @@
 									<div id="rect-largeur" style="left:-10px; position:relative; top:10px; width:200px;" class="font-arial orange size60 no-uppercase">3.20m</div>
 								</div>
 								<div class="">
-									<div style="left:180px; position:relative; top:-10px;" class="grey size24 no-uppercase font-din">longueur</div>
-									<div id="rect-longueur" style="left:180px; position:relative; top:-10px;" class="font-arial orange size60 no-uppercase">4.20m</div>
+									<div style="left:180px; position:relative; top:-10px; width:20px;" class="grey size24 no-uppercase font-din">longueur</div>
+									<div id="rect-longueur" style="left:180px; position:relative; top:-10px; width:20px;" class="font-arial orange size60 no-uppercase">4.20m</div>
 								</div>
 								<div class="">
 									<div style="left:20px; position:relative; top:100px;" class="grey size24 no-uppercase font-din">hauteur</div>
@@ -999,11 +1001,11 @@
 								<div class="ma"><img class="width100" src="img/plot/vue1-plot-10mm-HD.jpg" /></div>
 								<div class="font-din orange tac size26">HD 10mm fixe</div>
 							</div>
-							<div id="p3" class="home-square-100" style="display:none;">
+							<div id="p3" class="home-square" style="display:none;">
 								<div class="ma"><img class="width100" src="img/plot/vue1-plot-20-30mm-HD.jpg" /></div>
 								<div class="font-din orange tac size26">HD 20/30mm réglable</div>
 							</div>
-							<div id="p4" class="home-square-100" style="display:none;">
+							<div id="p4" class="home-square" style="display:none;">
 								<div class="ma"><img class="width100" src="img/plot/vue1-plot-35mm-HD.jpg" /></div>
 								<div class="font-din orange tac size26">HD 35mm fixe</div>
 							</div>
@@ -1020,7 +1022,7 @@
 								<div class="font-din orange tac size26">HD 80/140mm réglable</div>
 							</div>
 							<div class="cb"></div>
-							<div id="p8" class="home-square-100" style="display:none;">
+							<div id="p8" class="home-square" style="display:none;">
 								<div class="ma"><img class="width100" src="img/plot/vue1-plot-140-230mm-HD.jpg" /></div>
 								<div class="font-din orange tac size26">HD 140/230mm réglable</div>
 							</div>
@@ -1119,8 +1121,8 @@
 										<div id="lambourdes-largeur" style="left:-10px; position:relative; top:10px; width:200px;" class="font-arial orange size60 no-uppercase">3.20m</div>
 									</div>
 									<div class="">
-										<div style="left:180px; position:relative; top:-10px;" class="grey size24 no-uppercase font-din">longueur</div>
-										<div id="lambourdes-longueur" style="left:180px; position:relative; top:-10px;" class="font-arial orange size60 no-uppercase">4.20m</div>
+										<div style="left:180px; position:relative; top:-10px; width:20px;" class="grey size24 no-uppercase font-din">longueur</div>
+										<div id="lambourdes-longueur" style="left:180px; position:relative; top:-10px; width:20px;" class="font-arial orange size60 no-uppercase">4.20m</div>
 									</div>
 									<div class="">
 										<div style="left:20px; position:relative; top:100px;" class="grey size24 no-uppercase font-din">hauteur</div>
