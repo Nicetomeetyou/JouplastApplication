@@ -201,7 +201,7 @@ a:hover{ /*color:#000000 !important;*/ }
 .back-white-calculette { width:100%; display:block; background-color:#FFFFFF; }
 .input-calculette { width:80px; height:50px; }
 .input-calculette-dalles { height:40px; width:50%; margin:0 10px 0 40px; }
-.line-calculette { height:80px; padding-top:20px; margin-left:15px; }
+.line-calculette { height:80px; padding-top:20px; margin-left:10px; }
 .text-mention { margin-left:40px; }
 .text-mention-lambourdes { margin-left:0px; }
 .border-input { -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; }
@@ -209,7 +209,7 @@ a:hover{ /*color:#000000 !important;*/ }
 
 .titre-calculette { position:relative; top:-10px; }
 
-.superficie-dalle { margin-left:20px; margin-right:10px; }
+.superficie-dalle { margin-left:20px; margin-right:5px; }
 .hauteur-dalle { margin-left:50px; margin-right:10px; }
 .text-hauteur { margin-top: 7px; margin-right:34px; }
 .mesure { margin-top: 15px; }
