@@ -56,8 +56,6 @@
 		</script>
     </head>
     <body class="back">
-		
-		
         <script type="text/javascript">	
 			var tabNomProduit;
 			var tabFicheTitle;
@@ -281,13 +279,22 @@
 							<div class="grey-line"></div>
 							<dl class="tab2_calculatrice">
 								<dd>
-									<a href="#calculatrice-lambourdes" onclick="trackPage('calculatrice_lambourdes');" id="bttab2_calculatrice" class="title-din-big font-din size34 color-grey no-uppercase">
+									<a id="bttab2_calculatrice" class="title-din-big font-din size34 color-grey no-uppercase">
 										<section id="calculatrice-lambourde" class="back-white">
 											<section class="picto-choix"><img class="width100" src="img/calcul-lambourde.jpg" /></section>
 											<section class="font-din black size34 no-uppercase text-calculatrice-choix"><br/>Lambourdes</section>
 											<img id="fleche-up-cal-2" class="fleche-calculatrice fright" src="img/fleche-bas.png" /><img id="fleche-down-cal-2" style="display:none;" class="fleche-calculatrice fright" src="img/fleche-haut.png" />
 										</section>
 									</a>
+									<div>
+										<section>
+											<section class="ombre-menu-haut"></section>
+											<section class="inside-li">
+												<section class="fleft"><img style="max-width:70px;" src="img/rectangulaire-picto.png" /></section>
+												<a href="#calculatrice-lambourdes" onclick="trackPage('calculatrice_lambourdes');"  class="font-din size28 grey sub-title-cat-catalogue-haut">Rectangulaire<img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
+											</section>
+										</section>
+									</div>
 								</dd>
 							</dl>
 						</div>
@@ -295,6 +302,12 @@
 					<script>
 						var go193 = {
 							height:"193px", //style.height to change to
+							time:"0ms", //time for transition
+							timingFunction:"linear", //timing func
+						}
+						
+						var go90 = {
+							height:"100px", //style.height to change to
 							time:"0ms", //time for transition
 							timingFunction:"linear", //timing func
 						}
@@ -322,6 +335,19 @@
 							}
 							
 							$("#tab2_calculatrice ~ .tabs_calculatrice .tab2_calculatrice dd div").css3Animate(go0);
+						}, false);
+						
+						var bt2_calculatrice = document.getElementById("bttab2_calculatrice"); 
+						bt2_calculatrice.addEventListener("click", function(e) { 
+							if($("#tab2_calculatrice ~ .tabs_calculatrice .tab2_calculatrice dd div").height() == 0) {
+								$("#tab2_calculatrice ~ .tabs_calculatrice .tab2_calculatrice dd div").css3Animate(go90);
+								$("#fleche-up-cal-2").css("display", "none"); $("#fleche-down-cal-2").css("display", "block");
+							} else { 
+								$("#tab2_calculatrice ~ .tabs_calculatrice .tab2_calculatrice dd div").css3Animate(go0);
+								$("#fleche-up-cal-2").css("display", "block"); $("#fleche-down-cal-2").css("display", "none");
+							}
+							
+							$("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css3Animate(go0);
 							
 							//if($("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").height() == 0) { $("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css("height", "193px"); }
 							//else { $("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css("height", "0px"); }
@@ -547,9 +573,6 @@
 							if(error == 0) {
 								$("#tab1_dalles ~ .tabs_dalles .tab1_dalles dd div").css3Animate(go0);
 								$("#tab2_dalles ~ .tabs_dalles .tab2_dalles dd div").css3Animate(go432);
-								
-								//$("#tab1_dalles ~ .tabs_dalles .tab1_dalles dd div").css("height", "0px");
-								//$("#tab2_dalles ~ .tabs_dalles .tab2_dalles dd div").css("height", "432px");
 							} else {
 								alert('Merci de remplir tous les champs.');
 							}
@@ -682,8 +705,9 @@
 								if(hauteurNumber <= 15 ) { affichePlot(1); }
 								else if(hauteurNumber >= 20 && hauteurNumber <= 30) { affichePlot(2); }
 								else if(hauteurNumber == 35) { affichePlot(3); }
-								else if(hauteurNumber >= 40 && hauteurNumber <= 140) { affichePlot(4); }
-								else if(hauteurNumber >= 50 && hauteurNumber <= 230){ affichePlot(5); }
+								else if(hauteurNumber >= 40 && hauteurNumber <= 80) { affichePlot(4); }
+								else if(hauteurNumber >= 80 && hauteurNumber <= 140) { affichePlot(5); }
+								else if(hauteurNumber >= 140 && hauteurNumber <= 230){ affichePlot(6); }
 								
 								if(hauteurNumber >= 16 && hauteurNumber <= 19) { affichePlot(10); alert("Il n’existe pas de plot correspondant à la hauteur indiquée pour votre terrasse.<br><br>Voici deux alternatives se rapprochant le plus de votre choix : <br><br>-"+tabNomProduit_fr[9]+"<br>-"+tabNomProduit_fr[11]); }
 								if(hauteurNumber >= 31 && hauteurNumber <= 34) { affichePlot(11); alert("Il n’existe pas de plot correspondant à la hauteur indiquée pour votre terrasse.<br><br>Voici deux alternatives se rapprochant le plus de votre choix : <br><br>-"+tabNomProduit_fr[11]+"<br>-"+tabNomProduit_fr[0]); }
@@ -697,9 +721,12 @@
 						function affichePlot(pNum) {
 							for(i=1; i<13; i++) { $("#p"+i).css("display","none"); }
 							
+							alert(type);
+							
 							if(pNum == 10) {
 								$("#p1").css("display","block");
 								$("#p3").css("display","block");
+								$("#p1").removeClass("home-square-100").addClass("home-square"); 
 								$("#p3").removeClass("home-square-100").addClass("home-square"); 
 								if(type == "ceramique") { $(".accessoire-ceramique").css("display","block"); $(".accessoire-beton").css("display","none"); }
 								else { $(".accessoire-beton").css("display","block"); $(".accessoire-ceramique").css("display","none");}
@@ -707,8 +734,9 @@
 							
 							if(pNum == 11) {
 								$("#p3").css("display","block");
-								$("#p3").removeClass("home-square-100").addClass("home-square"); 
 								$("#p4").css("display","block");
+								$("#p3").removeClass("home-square-100").addClass("home-square");
+								$("#p4").removeClass("home-square-100").addClass("home-square");
 								if(type == "ceramique") { $(".accessoire-ceramique").css("display","block"); $(".accessoire-beton").css("display","none"); }
 								else { $(".accessoire-beton").css("display","block"); $(".accessoire-ceramique").css("display","none");}
 							}
@@ -716,6 +744,8 @@
 							if(pNum == 12) {
 								$("#p4").css("display","block");
 								$("#p5").css("display","block");
+								$("#p4").removeClass("home-square-100").addClass("home-square"); 
+								$("#p5").removeClass("home-square-100").addClass("home-square"); 
 								if(type == "ceramique") { $(".accessoire-ceramique").css("display","block"); $(".accessoire-beton").css("display","none"); }
 								else { $(".accessoire-beton").css("display","block"); $(".accessoire-ceramique").css("display","none");}
 							}
@@ -726,6 +756,7 @@
 								if(type == "ceramique") { $(".accessoire-ceramique").css("display","block"); $(".accessoire-beton").css("display","none"); }
 								else { $(".accessoire-beton").css("display","block"); $(".accessoire-ceramique").css("display","none");}
 							}
+							
 							if(pNum == 2) {
 								$("#p3").css("display","block");
 								$("#p3").removeClass("home-square").addClass("home-square-100"); 
@@ -739,33 +770,37 @@
 							}
 							
 							if(pNum == 4 && type == "beton") { 
-								$(".accessoire-beton").css("display","block"); $(".accessoire-ceramique").css("display","none");
-								$("#p5").css("display","block");	
+								$("#p5").css("display","block");
 								$("#p6").css("display","block"); 
-								$("#p7").css("display","block"); 
-								$("#p7").removeClass("home-square").addClass("home-square-100 cb"); 
+								$(".accessoire-beton").css("display","block"); $(".accessoire-ceramique").css("display","none");
 							}
 							if(pNum == 4 && type == "ceramique") { 
-								$(".accessoire-ceramique").css("display","block"); $(".accessoire-beton").css("display","none");
 								$("#p9").css("display","block");
-								$("#p10").css("display","block"); 
-								$("#p11").css("display","block"); 
-								$("#p11").removeClass("home-square").addClass("home-square-100 cb"); 
+								$("#p10").css("display","block");
+								$(".accessoire-ceramique").css("display","block"); $(".accessoire-beton").css("display","none");
 								$(".accessoire-beton div:last-child").html("Ecarteurs<br/>3 mm");
 							}
 							
 							if(pNum == 5 && type == "beton") { 
-								$(".accessoire-beton").css("display","block"); $(".accessoire-ceramique").css("display","none");
 								$("#p6").css("display","block");
 								$("#p7").css("display","block");
-								$("#p8").css("display","block"); 
+								$(".accessoire-beton").css("display","block"); $(".accessoire-ceramique").css("display","none");
 							}
 							if(pNum == 5 && type == "ceramique") { 
-								$(".accessoire-ceramique").css("display","block"); $(".accessoire-beton").css("display","none");
 								$("#p10").css("display","block");
 								$("#p11").css("display","block");
+								$(".accessoire-beton div:last-child").html("Ecarteurs<br/>3 mm");
+								$(".accessoire-ceramique").css("display","block"); $(".accessoire-beton").css("display","none");
+							}
+							
+							if(pNum == 6 && type == "beton") { 
+								$("#p8").css("display","block");
+								$(".accessoire-beton").css("display","block"); $(".accessoire-ceramique").css("display","none");
+							}
+							if(pNum == 6 && type == "ceramique") { 
 								$("#p12").css("display","block");
 								$(".accessoire-beton div:last-child").html("Ecarteurs<br/>3 mm");
+								$(".accessoire-ceramique").css("display","block"); $(".accessoire-beton").css("display","none");
 							}
 						}
 					</script>
@@ -3346,8 +3381,6 @@
 					}				
 					$("#fiche-nom-produit").html(tabNomProduit[pNum]);
 					
-					trackPage('fiche_'+tabNomProduit[pNum]);
-					
 					$("#nbSacPieces").html(tabConditionement[pNum][0] + " pièces");
 					$("#nbSacKilo").html(tabConditionement[pNum][1] + " kilos");
 					$("#nbPalettePieces").html(tabConditionement[pNum][2] + " pièces");
@@ -3357,6 +3390,8 @@
 						if(pNum == i) $("#fiche-visu-"+i).css("display","block");
 						else $("#fiche-visu-"+i).css("display","none");
 					}
+					
+					trackPage('fiche_'+tabNomProduit[pNum]);
 				}
 			</script>
 		</div>
