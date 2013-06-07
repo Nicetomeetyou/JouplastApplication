@@ -41,7 +41,7 @@
 		function onDeviceReady() { gaPlugin = window.plugins.gaPlugin; gaPlugin.init(gaSuccess, gaError, "UA-40371154-1", 10); }
 		
 		function gaSuccess(){ trackPage("menu"); }
-		function gaError(msg){ alert('GA Plugin Error: ' + msg); }
+		function gaError(msg){ /*alert('GA Plugin Error: ' + msg);*/ }
 		
 		function trackPageSuccess(){
 			gaPlugin.setVariable(nativePluginResultHandler, nativePluginErrorHandler, "Device info", device.name + '|' + device.platform + '|' + device.version, 1);
@@ -720,8 +720,6 @@
 						
 						function affichePlot(pNum) {
 							for(i=1; i<13; i++) { $("#p"+i).css("display","none"); }
-							
-							alert(type);
 							
 							if(pNum == 10) {
 								$("#p1").css("display","block");
