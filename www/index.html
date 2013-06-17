@@ -702,10 +702,14 @@
 								
 								if(type == "beton") {
 									$("#dalle-beton-"+String(size)).css("display", "block");
+									$("#accessoires-beton").css("display", "block");
+									$("#accessoires-ceramique").css("display", "none");
 								}
 								
 								if(type == "ceramique") { 
 									$("#dalle-ceramique-"+String(size)).css("display", "block");
+									$("#accessoires-ceramique").css("display", "block");
+									$("#accessoires-beton").css("display", "none");
 								}
 								
 								if(hauteurNumber <= 15 ) { affichePlot(1); }
