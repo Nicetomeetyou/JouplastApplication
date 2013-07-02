@@ -63,6 +63,7 @@ to{-webkit-transform:rotate(360deg);}}
 #afui .chevron{font-family:'chevron';speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;}
 #afui .chevron:before{content:"\f054";}
 #afui .chevron.left{-webkit-transform:rotate(180deg);transform:rotate(180deg);}
+#afui>#navbar,#afui>#header,#afui>#content{position:absolute;left:0px;-webkit-transition:transform 0ms;-webkit-transform:translate3d(0,0,0)!important;transition:transform 0ms;transform:translate(0,0,0)!important;}
 @media handheld,only screen and (min-width:768px){#afui>#navbar.hasMenu,#afui>#header.hasMenu,#afui>#content.hasMenu{position:absolute;left:0px;-webkit-transition:transform 0ms;-webkit-transform:translate3d(0,0,0)!important;transition:transform 0ms;transform:translate(0,0,0)!important;}
 #afui #badgephone{display:none!important;}
 #afui #badgetablet{display:inline-block!important;}

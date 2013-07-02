@@ -48,7 +48,7 @@
         }).bind('touchmove', function(e) {
             if(e.originalEvent)
                 e=e.originalEvent;
-            touch.x2 = e.touches[0].pageX;
+            //touch.x2 = e.touches[0].pageX;
             touch.y2 = e.touches[0].pageY;
             clearTimeout(longTapTimer);
         }).bind('touchend', function(e) {

@@ -45,11 +45,11 @@
                 console.log("unloaded " + what.id);
             }
 
-            /*if (!((window.DocumentTouch && document instanceof DocumentTouch) || 'ontouchstart' in window)) {
+            if (!((window.DocumentTouch && document instanceof DocumentTouch) || 'ontouchstart' in window)) {
                 var script = document.createElement("script");
                 script.src = "plugins/af.desktopBrowsers.js";
                 var tag = $("head").append(script);
-            }*/
+            }
 	
         </script>
 		<script type="text/javascript" charset="utf-8" src="plugins/af.actionsheet.js"></script>
@@ -345,7 +345,7 @@
 </head>
 
     <body class="back" style="overflow:hidden">
-        <div id="afui" class="">
+        <div id="afui" class="" style="overflow:hidden">
             <!-- this is the splashscreen you see. -->
             <div id="splashscreen" class='ui-loader heavy'>
                 App Framework
@@ -3486,9 +3486,8 @@
 				</div>
 				<!--END MENTION-->
 			</div>
-            <!-- ------------------------------------------ -->
             
-           <nav>
+			<nav>
 				<div class="back-white-menu fright">
 				<div class="space10"></div>
 					<!--<a href="#main" onclick="$.ui.toggleNavMenu(false); trackPage('menu');">-->

@@ -28,7 +28,7 @@
         if (type != 'touchend') {
             touchevt.touches = [];
             touchevt.touches[0] = {};
-            touchevt.touches[0].pageX = originalEvent.pageX;
+            //touchevt.touches[0].pageX = originalEvent.pageX;
             touchevt.touches[0].pageY = originalEvent.pageY;
             //target
             touchevt.touches[0].target = theTarget;
