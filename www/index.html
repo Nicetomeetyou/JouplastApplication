@@ -199,7 +199,8 @@
                 $.ui.launch();
 				$.ui.disableNativeScrolling();
 				$.ui.disableSideMenu();
-				$.ui.backButtonText="Retour"
+				$.ui.backButtonText="Retour";
+				$.feat.nativeTouchScroll=false;
 				
 				$("#menu").css("right", "-500px");
 				$("#menu").css("position", "relative");
@@ -343,7 +344,7 @@
         </script>
 </head>
 
-    <body class="back">
+    <body class="back" style="overflow:hidden">
         <div id="afui" class="">
             <!-- this is the splashscreen you see. -->
             <div id="splashscreen" class='ui-loader heavy'>
@@ -364,7 +365,7 @@
 			</div>
             <div id="content">
 				<!--MENU-->
-				<div id="main" class="panel" >
+				<div id="main" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div id="spacer-0" class="space20"></div>
 					
 					<a href="#calculatrice" onclick="trackPage('calculatrice');">
