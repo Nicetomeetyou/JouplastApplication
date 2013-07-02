@@ -1586,7 +1586,7 @@
 							</div>-->
 							<div>
 								<!--<img class="width100" src="video/dalles/dalles-conseil-1.gif" />-->
-								<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
+								<div title="" class="" style="overflow:hidden; position: relative; top:10px;">
 									<script>
 										/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
 										var carousel;
@@ -1594,7 +1594,8 @@
 										function init_carousel() {
 											carousel=$("#carousel-plaques-1").carousel({
 												preventDefaults:true,
-												horizontalScroll: false,
+												verticalScroll: false,
+												horizontalScroll: true,
 												pagingFunction:function(ind){}
 											});
 										}
