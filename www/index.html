@@ -45,11 +45,11 @@
                 console.log("unloaded " + what.id);
             }
 
-            if (!((window.DocumentTouch && document instanceof DocumentTouch) || 'ontouchstart' in window)) {
+            /*if (!((window.DocumentTouch && document instanceof DocumentTouch) || 'ontouchstart' in window)) {
                 var script = document.createElement("script");
                 script.src = "plugins/af.desktopBrowsers.js";
                 var tag = $("head").append(script);
-            }
+            }*/
 	
         </script>
 		<script type="text/javascript" charset="utf-8" src="plugins/af.actionsheet.js"></script>
@@ -66,8 +66,28 @@
         <script type="text/javascript" charset="utf-8" src="ui/src/appframework.ui.js"></script>
         <script type="text/javascript" charset="utf-8" src="ui/transitions/all.js"></script>
         <script type="text/javascript" charset="utf-8" src="plugins/af.slidemenu.js"></script>
-
+		
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+		<script src="GAPlugin.js"></script>
+		
         <script type="text/javascript">
+			var gaPlugin;	// analytics
+			document.addEventListener("deviceready",onDeviceReady,false);
+			function onDeviceReady() { gaPlugin = window.plugins.gaPlugin; gaPlugin.init(gaSuccess, gaError, "UA-40371154-1", 10); }
+			
+			function gaSuccess(){ trackPage("menu"); }
+			function gaError(msg){ /*alert('GA Plugin Error: ' + msg);*/ }
+			
+			function trackPageSuccess(){
+				gaPlugin.setVariable(nativePluginResultHandler, nativePluginErrorHandler, "Device info", device.name + '|' + device.platform + '|' + device.version, 1);
+			}
+			
+			function trackPageError(msg){ /*alert('GA Plugin Track Page Error: ' + msg);*/ }
+			function setVariableSuccess(){ /*alert('GA Plugin Set Variable Success');*/ }
+			function setVariableError(msg){	/*alert('GA Plugin Set Variable Error: ' + msg);*/ }
+			
+			function trackPage(pName) { gaPlugin.trackPage(trackPageSuccess, trackPageError, pName); }
+			
             var tabNomProduit;
 			var tabFicheTitle;
 			var gaPlugin;
@@ -141,7 +161,7 @@
 										, new Array("30", "6", "1890", "400"), new Array("60", "3.5", "3000", "190"), new Array("60", "9.5", "2100", "350")
 										, new Array("60", "3.5", "3000", "190"), new Array("60", "9.5", "2100", "350")
 										, new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350")
-										, new Array("20", "", "", ""), new Array("10", "2.5", "1120", "300"), new Array("10", "3", "1120", "350"), new Array("120", "9", "4200", "330"), new Array("60", "5", "1500", "140"), new Array("2000", "", "", ""), new Array("2000", "", "", ""), new Array("40", "", "", ""), new Array("40", "", "", ""), new Array("40", "", "", ""));
+										, new Array("20", "", "", ""), new Array("10", "2.5", "1120", "300"), new Array("10", "3", "1120", "350"), new Array("120", "9", "4200", "330"), new Array("60", "5", "1500", "140"), new Array("2000", "-", "-", "-"), new Array("2000", "-", "-", "-"), new Array("40", "-", "-", "-"), new Array("40", "-", "-", "-"), new Array("40", "-", "-", "-"));
 			
 			/* This function runs once the page is loaded, but appMobi is not yet active */
             //$.ui.animateHeaders=false;
