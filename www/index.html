@@ -1,63 +1,74 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
+<!--HTML5 doctype-->
 <html>
+
     <head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta http-equiv="Access-Control-Allow-Origin" content="*">
-       <!-- <meta name="format-detection" content="telephone=yes" />-->
-		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
-		<script type="text/javascript" charset="utf-8" src="js/jq.ui.min.js"></script> 
-		<script type="text/javascript" charset="utf-8" src="js/jq.mobi.min.js"></script> 
-		<script type="text/javascript" charset="utf-8" src="js/jq.swipe.js"></script> 
-		<script type="text/javascript" charset="utf-8" src="js/jq.carousel.js"></script> 
-		<script type="text/javascript" charset="utf-8" src="js/jq.css3animate.js"></script> 
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-		<link rel="stylesheet" type="text/css" href="css/jq.ui.css" title="default" />
-		<link rel="stylesheet" type="text/css" href="js/subpanel.css" title="default" />
-        <title>Jouplast</title>
-		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-		<script src="GAPlugin.js"></script>
-		<script type="text/javascript" charset="utf-8">
+		<title>Jouplast</title>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+		<link rel="stylesheet" type="text/css" href="css/icons.css" />
+
+		<!--   
+		<link rel="stylesheet" type="text/css" href="css/af.ui.css" title="default" />
+		-->
+		<link rel="stylesheet" type="text/css" href="css/src/main.css"  />
+		<link rel="stylesheet" type="text/css" href="css/src/appframework.css"  />
+
+		<link rel="stylesheet" type="text/css" href="css/src/badges.css"  />
+		<link rel="stylesheet" type="text/css" href="css/src/buttons.css"  />
+		<link rel="stylesheet" type="text/css" href="css/src/lists.css"  />
+		<link rel="stylesheet" type="text/css" href="css/src/forms.css"  />
+		<link rel="stylesheet" type="text/css" href="css/src/grid.css"  />
 		
-		var gaPlugin;	// analytics
-		document.addEventListener("deviceready",onDeviceReady,false);
-		function onDeviceReady() { gaPlugin = window.plugins.gaPlugin; gaPlugin.init(gaSuccess, gaError, "UA-40371154-1", 10); }
+		<link rel="stylesheet" type="text/css" href="css/index.css"  />
+
+		<link rel="stylesheet" type="text/css" href="plugins/css/af.actionsheet.css"  />
+		<link rel="stylesheet" type="text/css" href="plugins/css/af.popup.css"  />
+		<link rel="stylesheet" type="text/css" href="plugins/css/af.selectBox.css"  />
+	  
+     <!-- uncomment for AppMobi apps <script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/appmobi.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/xhr.js"></script>
+-->
+        <script type="text/javascript" charset="utf-8" src="./appframework.js"></script>
+        <!-- include af.desktopBrowsers.js on desktop browsers only -->
+        <script>
+			
+            function loadedPanel(what) {
+                //We are going to set the badge as the number of li elements inside the target
+                $.ui.updateBadge("#aflink", $("#af").find("li").length);
+            }
+
+
+            function unloadedPanel(what) {
+                console.log("unloaded " + what.id);
+            }
+
+            if (!((window.DocumentTouch && document instanceof DocumentTouch) || 'ontouchstart' in window)) {
+                var script = document.createElement("script");
+                script.src = "plugins/af.desktopBrowsers.js";
+                var tag = $("head").append(script);
+            }
+	
+        </script>
+		<script type="text/javascript" charset="utf-8" src="plugins/af.actionsheet.js"></script>
+		<script type="text/javascript" charset="utf-8" src="plugins/af.css3animate.js"></script>
+		<script type="text/javascript" charset="utf-8" src="plugins/af.passwordBox.js"></script>
+		<script type="text/javascript" charset="utf-8" src="plugins/af.scroller.js"></script>
+		<script type="text/javascript" charset="utf-8" src="plugins/af.selectBox.js"></script>
+		<script type="text/javascript" charset="utf-8" src="plugins/af.touchEvents.js"></script>
+		<script type="text/javascript" charset="utf-8" src="plugins/af.touchLayer.js"></script>
+		<script type="text/javascript" charset="utf-8" src="plugins/af.popup.js"></script>
 		
-		function gaSuccess(){ trackPage("menu"); }
-		function gaError(msg){ /*alert('GA Plugin Error: ' + msg);*/ }
+		<script type="text/javascript" charset="utf-8" src="js/jq.carousel.js"></script>
 		
-		function trackPageSuccess(){
-			gaPlugin.setVariable(nativePluginResultHandler, nativePluginErrorHandler, "Device info", device.name + '|' + device.platform + '|' + device.version, 1);
-		}
-		
-		function trackPageError(msg){ /*alert('GA Plugin Track Page Error: ' + msg);*/ }
-		function setVariableSuccess(){ /*alert('GA Plugin Set Variable Success');*/ }
-		function setVariableError(msg){	/*alert('GA Plugin Set Variable Error: ' + msg);*/ }
-		
-		function trackPage(pName) { gaPlugin.trackPage(trackPageSuccess, trackPageError, pName); }
-		
-		</script>
-    </head>
-    <body class="back">
-        <script type="text/javascript">	
-			var tabNomProduit;
+        <script type="text/javascript" charset="utf-8" src="ui/src/appframework.ui.js"></script>
+        <script type="text/javascript" charset="utf-8" src="ui/transitions/all.js"></script>
+        <script type="text/javascript" charset="utf-8" src="plugins/af.slidemenu.js"></script>
+
+        <script type="text/javascript">
+            var tabNomProduit;
 			var tabFicheTitle;
 			var gaPlugin;
 			
@@ -83,33 +94,6 @@
 			var type = "beton";
 			var size = -1;
 			
-			var webRoot="./";
-			$.ui.autoLaunch=false;
-			$.ui.resetScrollers=true;
-			
-			var init = function(){
-			   $.ui.backButtonText="Retour";  
-			   window.setTimeout(function(){$.ui.launch();},10);
-			   $.ui.removeFooterMenu(); //This would remove the bottom nav menu
-			};
-			document.addEventListener("DOMContentLoaded",init,false);  
-			$.ui.ready(function(){
-				var menuCss = document.getElementById("menu"); 
-				//menuCss.style.left = (50) + "px";
-			});
-		   
-			/* This code is used to run as soon as appMobi activates */
-			var onDeviceReady=function(){
-				AppMobi.device.setRotateOrientation("portrait");
-				AppMobi.device.setAutoRotate(false);
-				webRoot=AppMobi.webRoot+"/";
-				//hide splash screen
-				AppMobi.device.hideSplashScreen();	
-				
-				$("#menu #menu_scroller .jqMenuHeader").html = "";
-			};
-			document.addEventListener("appMobi.device.ready",onDeviceReady,false); 
-			
 			var go0 = {
 				height:"0px", //style.height to change to
 				time:"0ms", //time for transition
@@ -129,14 +113,6 @@
 					}
 				}
 			}
-			
-			$(document).ready(function(){
-				var language = navigator.language.split("-");
-				var language_root = (language[0]);
-				
-				tabNomProduit = window["tabNomProduit_" + language_root];
-				tabFicheTitle = window["tabFicheTitle_" + language_root];
-			});
 			
 			function callTel() {
 				if($.os.ios) window.location='telprompt://0474258443';
@@ -166,22 +142,208 @@
 										, new Array("60", "3.5", "3000", "190"), new Array("60", "9.5", "2100", "350")
 										, new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350")
 										, new Array("20", "", "", ""), new Array("10", "2.5", "1120", "300"), new Array("10", "3", "1120", "350"), new Array("120", "9", "4200", "330"), new Array("60", "5", "1500", "140"), new Array("2000", "", "", ""), new Array("2000", "", "", ""), new Array("40", "", "", ""), new Array("40", "", "", ""), new Array("40", "", "", ""));
+			
+			/* This function runs once the page is loaded, but appMobi is not yet active */
+            //$.ui.animateHeaders=false;
+            var search=document.location.search.toLowerCase().replace("?","");
+             //if(!search)
+                //$.os.useOSThemes=false;
+                
+            if(search) //Android fix has too many buggy issues on iOS - can't preview with $.os.android
+            {
+               $.os.useOSThemes=true;
+                if(search=="win8")
+                    $.os.ie=true;
+                $.ui.ready(function(){
+                    $("#afui").get(0).className=search;
+                });
+            }
+            
+            var webRoot = "./";
+            // $.os.android=true;
+            $.ui.autoLaunch = false;
+            $.ui.openLinksNewTab = false;
+			$.ui.removeFooterMenu();
+            //$.ui.resetScrollers=false;
+            
+            $(document).ready(function(){
+				var language = navigator.language.split("-");
+				var language_root = (language[0]);
+				
+				tabNomProduit = window["tabNomProduit_" + language_root];
+				tabFicheTitle = window["tabFicheTitle_" + language_root];
+				
+				tabFicheTitle = tabFicheTitle_fr;
+				tabNomProduit = tabNomProduit_fr;
+				
+                $.ui.launch();
+				$.ui.disableSideMenu();
+				$.ui.backButtonText="Retour"
+				
+				$("#menu").css("right", "-500px");
+				$("#menu").css("position", "relative");
+            });
+            
+            /* This code is used to run as soon as appMobi activates */
+            var onDeviceReady = function () {
+                AppMobi.device.setRotateOrientation("portrait");
+                AppMobi.device.setAutoRotate(false);
+                webRoot = AppMobi.webRoot + "";
+                //hide splash screen
+                AppMobi.device.hideSplashScreen();
+                $.ui.blockPageScroll(); //block the page from scrolling at the header/footer
+            };
+            document.addEventListener("appMobi.device.ready", onDeviceReady, false);
+			
+            function showHide(obj, objToHide) {
+                var el = $("#" + objToHide)[0];
+				
+                if (obj.className == "expanded") {
+                    obj.className = "collapsed";
+                } else {
+                    obj.className = "expanded";
+                }
+                $(el).toggle();
+            }
+			
+            if($.os.android||$.os.ie||search=="android"){
+                $.ui.ready(function(){
+                    $("#main .list").append("<li><a id='toggleAndroidTheme'>Toggle Theme Color</a></li>");
+                    var $el=$("#afui");
+                    $("#toggleAndroidTheme").bind("click",function(e){
+                        if($el.hasClass("light"))
+                            $el.removeClass("light");
+                        else
+                            $el.addClass("light");
+                    });
+                });
+            }
+			
+			var openMenu = false;
+			function menu() {
+				if(!openMenu) { $("#menu").css3Animate({x: "-500px", time: "300ms", callback: function () { } }); openMenu = true; $.ui.setBackButtonVisibility(false); }
+				else { $("#menu").css3Animate({x: "500px", time: "300ms", callback: function () { } }); openMenu = false; if($("#main").css("display") == "none") { $.ui.setBackButtonVisibility(true); } }
+			}
+			
+			function menu_accueil() {
+				$("#menu").css3Animate({x: "500px", time: "300ms", callback: function () {} });
+				setTimeout(function(){$.ui.setBackButtonVisibility(false);},1);
+			}
+			
+			function triPlot(pGamme, pType) {
+				if(pGamme == "standard" && pType == "dalles") {
+					$("#plot-dalles").css("display", "block");
+					$("#plot-lambourdes").css("display", "none");
+					$("#plot-dalles-evolution").css("display", "none");
+					$("#plot-lambourdes-evolution").css("display", "none");
+					$("#plot-integrals-evolution").css("display", "none");
+					$("#accessoires").css("display", "none");
+				}
+				if(pGamme == "standard" && pType == "lambourdes") {
+					$("#plot-dalles").css("display", "none");
+					$("#plot-lambourdes").css("display", "block");
+					$("#plot-dalles-evolution").css("display", "none");
+					$("#plot-lambourdes-evolution").css("display", "none");
+					$("#plot-integrals-evolution").css("display", "none");
+					$("#accessoires").css("display", "none");
+				}
+				if(pGamme == "evolution" && pType == "dalles") {
+					$("#plot-dalles").css("display", "none");
+					$("#plot-lambourdes").css("display", "none");
+					$("#plot-dalles-evolution").css("display", "block");
+					$("#plot-lambourdes-evolution").css("display", "none");
+					$("#plot-integrals-evolution").css("display", "none");
+					$("#accessoires").css("display", "none");
+				}
+				if(pGamme == "evolution" && pType == "lambourdes") {
+					$("#plot-dalles").css("display", "none");
+					$("#plot-lambourdes").css("display", "none");
+					$("#plot-dalles-evolution").css("display", "none");
+					$("#plot-lambourdes-evolution").css("display", "block");
+					$("#plot-integrals-evolution").css("display", "none");
+					$("#accessoires").css("display", "none");
+				}
+				if(pGamme == "evolution" && pType == "integral") {
+					$("#plot-dalles").css("display", "none");
+					$("#plot-lambourdes").css("display", "none");
+					$("#plot-dalles-evolution").css("display", "none");
+					$("#plot-lambourdes-evolution").css("display", "none");
+					$("#plot-integrals-evolution").css("display", "block");
+					$("#accessoires").css("display", "none");
+				}
+				if(pGamme == "acc" && pType == "acc") {
+					$("#plot-dalles").css("display", "none");
+					$("#plot-lambourdes").css("display", "none");
+					$("#plot-dalles-evolution").css("display", "none");
+					$("#plot-lambourdes-evolution").css("display", "none");
+					$("#plot-integrals-evolution").css("display", "none");
+					$("#accessoires").css("display", "block");
+				}
+				
+				trackPage('catalogue_'+pGamme+'_'+pType);
+			}
+			
+			function buildFicheProduit(pNum) {
+				if(pNum == 0 || pNum == 1 ||pNum == 2 || pNum == 3 || pNum == 4 || pNum == 9 || pNum == 10 || pNum == 11) {
+					$("#fiche-title").html(tabFicheTitle[0]);
+					$("#fiche-img-dalles").css("display","block");
+					$("#fiche-img-lambourdes").css("display","none");
+					$("#fiche-img-integrals").css("display","none");
+				} else if(pNum == 5 || pNum == 6 ||pNum == 7 || pNum == 8 || pNum == 12 || pNum == 13) {
+					$("#fiche-title").html(tabFicheTitle[1]);
+					$("#fiche-img-dalles").css("display","none");
+					$("#fiche-img-lambourdes").css("display","block");
+					$("#fiche-img-integrals").css("display","none");
+				} else if(pNum == 14 || pNum == 15 ||pNum == 16 || pNum == 17) {
+					$("#fiche-title").html(tabFicheTitle[2]);
+					$("#fiche-img-dalles").css("display","none");
+					$("#fiche-img-lambourdes").css("display","none");
+					$("#fiche-img-integrals").css("display","block");
+				} else { 
+					$("#fiche-title").html(tabFicheTitle[3]);
+					$("#fiche-img-dalles").css("display","none");
+					$("#fiche-img-lambourdes").css("display","none");
+					$("#fiche-img-integrals").css("display","none");
+				}				
+				$("#fiche-nom-produit").html(tabNomProduit[pNum]);
+				
+				$("#nbSacPieces").html(tabConditionement[pNum][0] + " pièces");
+				$("#nbSacKilo").html(tabConditionement[pNum][1] + " kilos");
+				$("#nbPalettePieces").html(tabConditionement[pNum][2] + " pièces");
+				$("#nbPaletteKilo").html(tabConditionement[pNum][3] + " kilos");
+				
+				for(i = 0; i<28; i++) {
+					if(pNum == i) $("#fiche-visu-"+i).css("display","block");
+					else $("#fiche-visu-"+i).css("display","none");
+				}
+				
+				trackPage('fiche_'+tabNomProduit[pNum]);
+			}
         </script>
-		<div id="jQUi">
-			<!-- this is the header div -->
-			<div id="header">
+</head>
+
+    <body class="back">
+        <div id="afui" class="">
+            <!-- this is the splashscreen you see. -->
+            <div id="splashscreen" class='ui-loader heavy'>
+                App Framework
+                <br>
+                <br>	<span class='ui-icon ui-icon-loading spin'></span>
+                <h1>Starting app</h1>
+
+            </div>
+            <div id="header">
 				<div class="width100">
 					<div class="width100">
 						<div class="header-container-logo"><img class="width100" src="img/logo.png" /></div>
-						<div class="header-container-bt-menu"><a id='menubadge' onclick='jq.ui.toggleSideMenu()' style='' class='menuButton fleft'></a></div>
+						<div class="header-container-bt-menu"><a id='menubadge' onclick='menu()' style='' class='menuButton fleft'></a></div>
 					</div>
 					
 				</div>
 			</div>
-			
-			<div id="content">
+            <div id="content">
 				<!--MENU-->
-				<div id="main" class="panel" scrolling="yes">
+				<div id="main" class="panel" >
 					<div id="spacer-0" class="space20"></div>
 					
 					<a href="#calculatrice" onclick="trackPage('calculatrice');">
@@ -233,7 +395,7 @@
 				<!--END MENU-->
 				
 				<!--CALCULATRICE MENU-->
-				<div id="calculatrice" class="panel" scrolling="yes">
+				<div id="calculatrice" class="panel" >
 					<div class="space20"></div>
 					<div class="tac size40 font-din over-text">
 						CALCULEZ LE NOMBRE<br/>DE PLOTS NÉCESSAIRES<br/>À VOS TRAVAUX
@@ -270,7 +432,7 @@
 										<section>
 											<section class="inside-li">
 												<section class="fleft"><img style="max-width:70px;" src="img/enl-picto.png" /></section>
-												<a href="#calculatrice-dalles" onclick="chooseDalles(2)" onclick="trackPage('calculatrice_dalles_en_l');" class="font-din size28 grey sub-title-cat-catalogue-bas">En L<img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
+												<a href="#calculatrice-dalles" onclick="chooseDalles(2); trackPage('calculatrice_dalles_en_l');" class="font-din size28 grey sub-title-cat-catalogue-bas">En L<img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
 											</section>
 											<section class="ombre-menu-bas"></section>
 										</section>
@@ -372,7 +534,7 @@
 				<!--END CALCULATRICE MENU-->
 				
 				<!--CALCULATRICE DALLES-->
-				<div id="calculatrice-dalles" class="panel" scrolling="yes">
+				<div id="calculatrice-dalles" class="panel" >
 					<div class="space20"></div>
 					<div class="tac size40 font-din over-text">POSE DE DALLES</div>
 					<img style="height: 64%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
@@ -534,7 +696,7 @@
 												</section>
 											</section>
 											<section class="space30 cb"></section>
-											<section id="btValiderDalles" class="ma css3buttonblue-lagoon default-button font-din size34 tac">Valider</section>
+											<section id="btValiderDalles" class="ma css3buttonblue-lagoon little-button font-din size34 tac">Valider</section>
 											<section class="space50"></section>
 										</div>
 									</dd>
@@ -816,7 +978,7 @@
 				<!--END CALCULATRICE DALLES-->
 				
 				<!--CALCULATRICE LAMBOURDES-->
-				<div id="calculatrice-lambourdes" class="panel" scrolling="yes">
+				<div id="calculatrice-lambourdes" class="panel" >
 					<div class="space20"></div>
 					<div class="tac size40 font-din over-text">POSE DE LAMBOURDES</div>
 					<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu1.png" />
@@ -850,7 +1012,7 @@
 							<div><img class="width100" src="img/exemple-lambourde.jpg" /></div>
 						</div>
 						<div class="space50"></div>
-						<div id="btValiderLambourdes" class="ma css3buttongreen default-button font-din size34 tac">Valider</div>
+						<div id="btValiderLambourdes" class="ma css3buttongreen little-button font-din size34 tac">Valider</div>
 						<div class="space50"></div>
 					</div>
 					<script>
@@ -913,7 +1075,7 @@
 				<!--END CALCULATRICE LAMBOURDES-->
 				
 				<!--RESULTAT DALLES-->
-				<div id="resultat-dalles" class="panel" scrolling="yes">
+				<div id="resultat-dalles" class="panel" >
 					<div class="space20"></div>
 					<div class="tac size40 font-din over-text">POSE DE DALLES</div>
 					<img style="height: 64%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
@@ -1146,7 +1308,7 @@
 				</div>
 				
 				<!--RESULTAT LAMBOURDES-->
-				<div id="resultat-lambourdes" class="panel" scrolling="yes">
+				<div id="resultat-lambourdes" class="panel" >
 					<div class="back">
 						<div class="space20"></div>
 							<div class="tac size40 font-din over-text">POSE DE LAMBOURDES</div>
@@ -1306,7 +1468,7 @@
 				<!--END RESULTAT LAMBOURDES-->
 				
 				<!--CONSEILS MENU-->
-				<div id="conseil" class="panel" scrolling="yes">
+				<div id="conseil" class="panel" >
 					<div class="space30"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						QUE VOULEZ-VOUS POSER ?
@@ -1350,7 +1512,7 @@
 				<!--END CONSEILS MENU-->
 				
 				<!--CONSEILS PLAQUES 1-->
-				<div id="conseil-plaques-1" class="panel" scrolling="yes">
+				<div id="conseil-plaques-1" class="panel" >
 					<div class="space30"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLAQUES A DALLES
@@ -1447,7 +1609,7 @@
 				<!--END CONSEILS PLAQUES 1-->
 				
 				<!--CONSEILS PLAQUES 2-->
-				<div id="conseil-plaques-2" class="panel" scrolling="yes">
+				<div id="conseil-plaques-2" class="panel" >
 					<div class="space30"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLAQUES A DALLES
@@ -1544,7 +1706,7 @@
 				<!--END CONSEILS PLAQUES 2-->
 				
 				<!--CONSEILS PLAQUES 3-->
-				<div id="conseil-plaques-3" class="panel" scrolling="yes">
+				<div id="conseil-plaques-3" class="panel" >
 					<div class="space30"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLAQUES A DALLES
@@ -1640,7 +1802,7 @@
 				<!--END CONSEILS PLAQUES 3-->
 				
 				<!--CONSEILS CAILLEBOTIS 1-->
-				<div id="conseil-caillebotis-1" class="panel" scrolling="yes">
+				<div id="conseil-caillebotis-1" class="panel" >
 					<div class="space30"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION SUPPORT CAILLEBOTIS
@@ -1742,7 +1904,7 @@
 				<!--END CONSEILS CAILLEBOTIS 1-->
 				
 				<!--CONSEILS CAILLEBOTIS 2-->
-				<div id="conseil-caillebotis-2" class="panel" scrolling="yes">
+				<div id="conseil-caillebotis-2" class="panel" >
 					<div class="space30"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION SUPPORT CAILLEBOTIS
@@ -1841,7 +2003,7 @@
 				<!--END CONSEILS CAILLEBOTIS 2-->
 				
 				<!--CONSEILS CAILLEBOTIS 3-->
-				<div id="conseil-caillebotis-3" class="panel" scrolling="yes">
+				<div id="conseil-caillebotis-3" class="panel" >
 					<div class="space30"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION SUPPORT CAILLEBOTIS
@@ -1934,7 +2096,7 @@
 				<!--END CONSEILS CAILLEBOTIS 2-->
 				
 				<!--CONSEILS LAMBOURDES 1-->
-				<div id="conseil-lambourdes-1" class="panel" scrolling="yes">
+				<div id="conseil-lambourdes-1" class="panel" >
 					<div class="space30"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS LAMBOURDES
@@ -2007,7 +2169,7 @@
 				<!--END CONSEILS LAMBOURDES 1-->
 				
 				<!--CONSEILS LAMBOURDES 2-->
-				<div id="conseil-lambourdes-2" class="panel" scrolling="yes">
+				<div id="conseil-lambourdes-2" class="panel" >
 					<div class="space30"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS LAMBOURDES
@@ -2080,7 +2242,7 @@
 				<!--END CONSEILS LAMBOURDES 2-->
 				
 				<!--CONSEILS LAMBOURDES 3-->
-				<div id="conseil-lambourdes-3" class="panel" scrolling="yes">
+				<div id="conseil-lambourdes-3" class="panel" >
 					<div class="space30"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS LAMBOURDES
@@ -2176,7 +2338,7 @@
 				<!--END CONSEILS LAMBOURDES 3-->
 				
 				<!--CONSEILS LAMBOURDES 4-->
-				<div id="conseil-lambourdes-4" class="panel" scrolling="yes">
+				<div id="conseil-lambourdes-4" class="panel" >
 					<div class="space30"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS LAMBOURDES
@@ -2272,7 +2434,7 @@
 				<!--END CONSEILS LAMBOURDES 4-->
 				
 				<!--CONSEILS DALLES 1-->
-				<div id="conseil-dalles-1" class="panel" scrolling="yes">
+				<div id="conseil-dalles-1" class="panel" >
 					<div class="space30"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS DALLES
@@ -2374,7 +2536,7 @@
 				<!--END CONSEILS DALLES 1-->
 				
 				<!--CONSEILS DALLES 2-->
-				<div id="conseil-dalles-2" class="panel" scrolling="yes">
+				<div id="conseil-dalles-2" class="panel" >
 					<div class="space30"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS DALLES
@@ -2436,7 +2598,7 @@
 				<!--END CONSEILS DALLES 2-->
 				
 				<!--CONSEILS DALLES 3-->
-				<div id="conseil-dalles-3" class="panel" scrolling="yes">
+				<div id="conseil-dalles-3" class="panel" >
 					<div class="space30"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS DALLES
@@ -2531,7 +2693,7 @@
 				<!--END CONSEILS DALLES 3-->
 				
 				<!--CATALOGUE MENU-->
-				<div id="catalogue" class="panel" scrolling="yes">
+				<div id="catalogue" class="panel" >
 					<div style="position:relative;">
 						<img style="width:100%;" src="img/img-catalogue.jpg" />
 						<!--<div style="position:absolute; margin:auto;">
@@ -2624,7 +2786,7 @@
 				<!--END CATALOGUE MENU-->
 				
 				<!--CATALOGUE PLOT-->
-				<div id="catalogue-plot" class="panel" scrolling="yes">
+				<div id="catalogue-plot" class="panel" >
 					<div class="back">
 						<div id="plot-dalles" style="display:none;">
 							<div class="space30"></div>
@@ -2889,7 +3051,7 @@
 				<!--END CATALOGUE PLOT-->
 				
 				<!--FICHE PRODUIT-->
-				<div id="fiche" class="panel" scrolling="yes">
+				<div id="fiche" class="panel" >
 					<div class="space30"></div>
 					<div class="back">
 						<div id="fiche-title" class="tac size40 font-din titre-calculette over-text"></div>
@@ -3223,7 +3385,7 @@
 				<!--END FICHE PRODUIT-->
 				
 				<!--CONTACT MENU-->
-				<div id="contact" class="panel" scrolling="yes">
+				<div id="contact" class="panel" >
 					<div class="space20"></div>
 					<div class="tac size40 font-din">
 						VOUS AVEZ UNE QUESTION ?<br/>BESOIN D’AIDE ?
@@ -3259,7 +3421,7 @@
 				<!--END CONTACT MENU-->
 				
 				<!--MENTION-->
-				<div id="mention" class="panel" scrolling="yes">
+				<div id="mention" class="panel" >
 					<div class="space20"></div>
 					<div class="tac size40 font-din over-text">
 						MENTIONS LÉGALES
@@ -3270,7 +3432,7 @@
 						<div class="space10"></div>
 						<div class="size26 black font-din back-white-mention no-uppercase">
 							<h2>1. Présentation de notre application mobile</h2>
-							<br/>Conformément à la loi n° 2004-2005 du 21 juin 2004 pour la confiance dans l'économie numérique, notre application mobile créé par <span class="orange" onclick="openSiteN()">Nicetomeetyou</span>, propriétaire du site <span class="orange" onclick="openSiteN()">http://www.ntmy.fr</span>, met à disposition du public les informations concernant notre entreprise.<br />
+							<br/>Conformément à la loi n° 2004-2005 du 21 juin 2004 pour la confiance dans l'économie numérique, notre application mobile créé par <span class="orange" onclick="openSiteN()">NiceToMeetYou</span>, propriétaire du site <span class="orange" onclick="openSiteN()">http://www.ntmy.fr</span>, met à disposition du public les informations concernant notre entreprise.<br />
 							Eventuellement modifiables, nous vous invitons donc à consulter nos mentions légales le plus souvent possible, de manière à en prendre connaissance fréquemment.
 							L'application mobile du site <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> appartient à Jouplast - Société par actions simplifiée , dont le siège social est situé à l'adresse suivante : 01250 Simandre sur Suran .<br />
 							Personne physique ou morale, Richard BERTONI est responsable de la publication, dont l'adresse e-mail est la suivante : <span class="orange" onclick="sendEmail();">rbertoni@tmpinnovations.com</span><br />
@@ -3302,46 +3464,53 @@
 				</div>
 				<!--END MENTION-->
 			</div>
-			
-			<nav>
+            <!-- ------------------------------------------ -->
+            
+           <nav>
 				<div class="back-white-menu fright">
 				<div class="space10"></div>
-					<a href="#main" onclick="trackPage('menu');">
+					<!--<a href="#main" onclick="$.ui.toggleNavMenu(false); trackPage('menu');">-->
+					<a href="#main" onclick="menu_accueil()">
 						<div class="menu-line">
 							<img class="picto-menu-0 fleft" src="img/menu-picto-0.jpg" />
 							<div class="fleft text-short-menu black font-din">Accueil</div>
 						</div>
 					</a>
 					<div class="grey-line cb"></div>
-					<a href="#calculatrice"onclick="trackPage('calculatrice');">
+					<!--<a href="#calculatrice"onclick="$.ui.toggleNavMenu(false); trackPage('calculatrice');">-->
+					<a href="#calculatrice"onclick="menu()">
 						<div class="menu-line">
 							<img class="picto-menu-1 fleft" src="img/menu-picto-1.jpg" />
 							<div class="fleft text-short-menu black font-din">Calculatrice</div>
 						</div>
 					</a>
 					<div class="grey-line cb"></div>
-					<a href="#conseil"onclick="trackPage('conseils');">
+					<!--<a href="#conseil"onclick="$.ui.toggleNavMenu(false); trackPage('conseils');">-->
+					<a href="#conseil"onclick="menu()">
 						<div class="menu-line">
 							<img class="picto-menu-2 fleft" src="img/menu-picto-2.jpg" />
 							<div class="fleft text-short-menu black font-din">Conseils</div>
 						</div>
 					</a>
 					<div class="grey-line cb"></div>
-					<a href="#catalogue" onclick="trackPage('catalogue');">
+					<!--<a href="#catalogue" onclick="$.ui.toggleNavMenu(false); trackPage('catalogue');">-->
+					<a href="#catalogue" onclick="menu()">
 						<div class="menu-line">
 							<img class="picto-menu-3 fleft" src="img/menu-picto-3.jpg" />
 							<div class="fleft text-short-menu black font-din">Catalogue</div>
 						</div>
 					</a>
 					<div class="grey-line cb"></div>
-					<a href="#contact" onclick="trackPage('contact');">
+					<!--<a href="#contact" onclick="$.ui.toggleNavMenu(false); trackPage('contact');">-->
+					<a href="#contact" onclick="menu()">
 						<div class="menu-line">
 							<img class="picto-menu-4 fleft" src="img/menu-picto-4.jpg" />
 							<div class="fleft text-short-menu black font-din">Contact</div>
 						</div>
 					</a>
 					<div class="grey-line cb"></div>
-					<a href="#mention" onclick="trackPage('mention');">
+					<!--<a href="#mention" onclick="$.ui.toggleNavMenu(false); trackPage('mention');">-->
+					<a href="#mention" onclick="menu()">
 						<div class="menu-line">
 							<img class="picto-menu-5 fleft" src="img/menu-picto-5.jpg" />
 							<div class="fleft text-short-menu black font-din">Mentions légales</div>
@@ -3349,7 +3518,7 @@
 					</a>
 				</div>
 			</nav>
-			
+            
 			<div id="advertisement_outer" class="ad-fullpage" style="position:relative;">
 				<div class="ad-closewrapper">
 					<div id="ad-closelink" style="display:block" onclick="$('#advertisement_outer').remove();">
@@ -3361,97 +3530,7 @@
 				</div>
 			</div>
 			
-			<script>
-				function triPlot(pGamme, pType) {
-					if(pGamme == "standard" && pType == "dalles") {
-						$("#plot-dalles").css("display", "block");
-						$("#plot-lambourdes").css("display", "none");
-						$("#plot-dalles-evolution").css("display", "none");
-						$("#plot-lambourdes-evolution").css("display", "none");
-						$("#plot-integrals-evolution").css("display", "none");
-						$("#accessoires").css("display", "none");
-					}
-					if(pGamme == "standard" && pType == "lambourdes") {
-						$("#plot-dalles").css("display", "none");
-						$("#plot-lambourdes").css("display", "block");
-						$("#plot-dalles-evolution").css("display", "none");
-						$("#plot-lambourdes-evolution").css("display", "none");
-						$("#plot-integrals-evolution").css("display", "none");
-						$("#accessoires").css("display", "none");
-					}
-					if(pGamme == "evolution" && pType == "dalles") {
-						$("#plot-dalles").css("display", "none");
-						$("#plot-lambourdes").css("display", "none");
-						$("#plot-dalles-evolution").css("display", "block");
-						$("#plot-lambourdes-evolution").css("display", "none");
-						$("#plot-integrals-evolution").css("display", "none");
-						$("#accessoires").css("display", "none");
-					}
-					if(pGamme == "evolution" && pType == "lambourdes") {
-						$("#plot-dalles").css("display", "none");
-						$("#plot-lambourdes").css("display", "none");
-						$("#plot-dalles-evolution").css("display", "none");
-						$("#plot-lambourdes-evolution").css("display", "block");
-						$("#plot-integrals-evolution").css("display", "none");
-						$("#accessoires").css("display", "none");
-					}
-					if(pGamme == "evolution" && pType == "integral") {
-						$("#plot-dalles").css("display", "none");
-						$("#plot-lambourdes").css("display", "none");
-						$("#plot-dalles-evolution").css("display", "none");
-						$("#plot-lambourdes-evolution").css("display", "none");
-						$("#plot-integrals-evolution").css("display", "block");
-						$("#accessoires").css("display", "none");
-					}
-					if(pGamme == "acc" && pType == "acc") {
-						$("#plot-dalles").css("display", "none");
-						$("#plot-lambourdes").css("display", "none");
-						$("#plot-dalles-evolution").css("display", "none");
-						$("#plot-lambourdes-evolution").css("display", "none");
-						$("#plot-integrals-evolution").css("display", "none");
-						$("#accessoires").css("display", "block");
-					}
-					
-					trackPage('catalogue_'+pGamme+'_'+pType);
-				}
-				
-				function buildFicheProduit(pNum) {
-					if(pNum == 0 || pNum == 1 ||pNum == 2 || pNum == 3 || pNum == 4 || pNum == 9 || pNum == 10 || pNum == 11) {
-						$("#fiche-title").html(tabFicheTitle[0]);
-						$("#fiche-img-dalles").css("display","block");
-						$("#fiche-img-lambourdes").css("display","none");
-						$("#fiche-img-integrals").css("display","none");
-					} else if(pNum == 5 || pNum == 6 ||pNum == 7 || pNum == 8 || pNum == 12 || pNum == 13) {
-						$("#fiche-title").html(tabFicheTitle[1]);
-						$("#fiche-img-dalles").css("display","none");
-						$("#fiche-img-lambourdes").css("display","block");
-						$("#fiche-img-integrals").css("display","none");
-					} else if(pNum == 14 || pNum == 15 ||pNum == 16 || pNum == 17) {
-						$("#fiche-title").html(tabFicheTitle[2]);
-						$("#fiche-img-dalles").css("display","none");
-						$("#fiche-img-lambourdes").css("display","none");
-						$("#fiche-img-integrals").css("display","block");
-					} else { 
-						$("#fiche-title").html(tabFicheTitle[3]);
-						$("#fiche-img-dalles").css("display","none");
-						$("#fiche-img-lambourdes").css("display","none");
-						$("#fiche-img-integrals").css("display","none");
-					}				
-					$("#fiche-nom-produit").html(tabNomProduit[pNum]);
-					
-					$("#nbSacPieces").html(tabConditionement[pNum][0] + " pièces");
-					$("#nbSacKilo").html(tabConditionement[pNum][1] + " kilos");
-					$("#nbPalettePieces").html(tabConditionement[pNum][2] + " pièces");
-					$("#nbPaletteKilo").html(tabConditionement[pNum][3] + " kilos");
-					
-					for(i = 0; i<28; i++) {
-						if(pNum == i) $("#fiche-visu-"+i).css("display","block");
-						else $("#fiche-visu-"+i).css("display","none");
-					}
-					
-					trackPage('fiche_'+tabNomProduit[pNum]);
-				}
-			</script>
-		</div>
+        </div>
+		
     </body>
 </html>

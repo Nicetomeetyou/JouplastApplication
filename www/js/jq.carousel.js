@@ -63,7 +63,7 @@
 
 
                 // initial setup
-                this.container.style.overflow = "visible";
+                this.container.style.overflow = "hidden";
                 if (this.vertical) {
                     this.horizontal = false;
                 }
@@ -323,7 +323,7 @@
                     }
                
                 if (runFinal && this.pagingFunction && typeof this.pagingFunction == "function")
-                    this.pagingFunction(ind);
+                    this.pagingFunction(currInd);
             },
             
             moveCSS3: function(el, distanceToMove, time, timingFunction) {
@@ -456,7 +456,9 @@
                     }
                 }
                 this.onMoveIndex(this.carouselIndex);
+                
             }
+        
         };
         return carousel;
     })();
