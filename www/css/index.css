@@ -241,6 +241,8 @@ a:hover{ /*color:#000000 !important;*/ }
 		color-stop(0.48, #18B1CC),
 		color-stop(0.52, #1497AE),
 		to(#1497AE));
+	background: -ms-linear-gradient(top,  #18B1CC 0%,#18B1CC 50%,#1497AE 50%,#1497AE 100%);
+	background: -ms-linear-gradient(top,  #18B1CC 0%,#18B1CC 50%,#1497AE 50%,#1497AE 100%);
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;

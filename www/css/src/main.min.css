@@ -15,7 +15,7 @@ body{overflow-x:hidden;-webkit-text-size-adjust:none;font-family:'Helvetica Neue
 #afui #content{z-index:180;display:block;position:absolute;top:44px;bottom:0px;left:0;right:0;overflow:hidden;}
 #afui .panel{z-index:180;width:100%;height:100%;display:none;position:absolute;top:0;left:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;-webkit-backface-visibility:hidden;-webkit-perspective:1000;padding-top:0px;}
 #afui .panel>*{-webkit-backface-visibility:hidden;-webkit-perspective:1000;}
-#afui #navbar{position:absolute;bottom:0;z-index:1000;height:49px;display:block;left:0;right:0;padding:0 3px;}
+#afui #navbar{position:absolute;bottom:0;height:0px;display:none;left:0;right:0;padding:0 3px;display:none!important;}
 #afui #navbar a{-webkit-box-sizing:border-box;box-sizing:border-box;top:3px;height:43px;overflow:hidden;font-size:12px;font-weight:normal;text-decoration:none;color:#fff;text-align:center;display:inline-block;width:25%;-webkit-backface-visibility:hidden;-webkit-perspective:1000;line-height:67px;position:relative;margin:0;}
 #afui #navbar .af-badge{right:auto;margin-left:-16px;}
 #afui #navbar .icon:before{position:absolute;top:2px;left:0;font-size:25px;margin:auto;width:100%;}
