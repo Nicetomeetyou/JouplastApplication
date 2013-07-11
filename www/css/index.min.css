@@ -59,12 +59,12 @@ a:hover{}
 #main{font-family:din-medium!important;color:#FFFFFF;font-size:15px;margin:auto;}
 .backmenu{left:-1%;position:absolute;top:11%;width:100%;z-index:1;height:140%;}
 .text-menu{position:relative;text-align:center;top:85%;color:#FFFFFF;font-family:din-medium-bold!important;}
-.picto-menu-0{margin:17px 17px;}
-.picto-menu-1{margin:17px 19px;}
-.picto-menu-2{margin:17px 16px;}
-.picto-menu-3{margin:17px 19px;}
-.picto-menu-4{margin:17px;}
-.picto-menu-5{margin:17px;}
+.picto-menu-0{margin:12px 17px;}
+.picto-menu-1{margin:12px 19px;}
+.picto-menu-2{margin:12px 16px;}
+.picto-menu-3{margin:12px 19px;}
+.picto-menu-4{margin:12px;}
+.picto-menu-5{margin:12px;}
 .back-white-menu{width:80%;display:block;background-color:#EFEFEF;}
 .short-menu{background-color:#EFEFEF;width:500px;height:663px;position:absolute;z-index:500;right:0;}
 .menu-line{display:block;width:100%;}
