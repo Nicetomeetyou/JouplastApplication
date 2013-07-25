@@ -27,7 +27,7 @@
         following tag to your config.xml; you will still have the INTERNET
         permission on your app, which PhoneGap requires.
     -->
-	<gap:plugin name="GAPlugin" />
+	<gap:plugin name="com.adobe.plugins.gaplugin" />
 	
 	<gap:platforms>
         <gap:platform name="android" minVersion="2.1"/>
