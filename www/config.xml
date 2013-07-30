@@ -34,14 +34,7 @@
         <gap:platform name="ios"/>
         <gap:platform name="winphone"/>
     </gap:platforms>
-	
-	<supports-screens android:smallScreens="true"
-                  android:normalScreens="true"
-                  android:largeScreens="true"
-                  android:xlargeScreens="false"
-                  android:anyDensity="true"
-                  android:requiresSmallestWidthDp="600"/>
-	
+		
     <!-- Customize your app and platform with the preference element. -->
     <preference name="phonegap-version"           value="2.9.0" />          <!-- all: current version of PhoneGap -->
     <preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
