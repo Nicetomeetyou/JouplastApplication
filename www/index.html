@@ -86,7 +86,37 @@
 			function setVariableSuccess(){ /*alert('GA Plugin Set Variable Success');*/ }
 			function setVariableError(msg){	/*alert('GA Plugin Set Variable Error: ' + msg);*/ }
 			
-			function trackPage(pName) { gaPlugin.trackPage(trackPageSuccess, trackPageError, pName); }
+			function trackPage(pName) { gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, pName); }
+			
+			/* ---------------------------------------------------------------------------------------- */
+			var gaPlugin;
+
+
+			function permissionCallback (button) {
+			if (button === 1)
+				gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-40371154-1", 10);
+			}
+
+			function nativePluginResultHandler (result) {
+			//alert('nativePluginResultHandler - '+result);
+				console.log('nativePluginResultHandler: '+result);
+
+			}
+					
+			function nativePluginErrorHandler (error) {
+			//alert('nativePluginErrorHandler - '+error);
+				console.log('nativePluginErrorHandler: '+error);
+			}
+
+					
+			function PageButtonClicked() {
+				gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "some.url.com");
+			}
+
+			function goingAway() {
+				gaPlugin.exit(nativePluginResultHandler, nativePluginErrorHandler);
+			}
+			/* ---------------------------------------------------------------------------------------- */
 			
             var tabNomProduit;
 			var tabFicheTitle;
@@ -195,6 +225,9 @@
 			$.ui.backButtonText="Retour";
 			$.feat.nativeTouchScroll=false;
 			
+			gaPlugin = window.plugins.gaPlugin;
+			navigator.notification.confirm('GA_PLUGIN would like your permission to collect usage data. No personal or user identifiable data will be collected.', permissionCallback, 'Attention', 'Allow,Deny');//block the page from scrolling at the header/footer
+			
             $(window).load(function(){
 				/*var language = navigator.language.split("-");
 				var language_root = (language[0]);
@@ -210,7 +243,9 @@
                 webRoot = AppMobi.webRoot + "";
                 //hide splash screen
                 AppMobi.device.hideSplashScreen();
-                $.ui.blockPageScroll(); //block the page from scrolling at the header/footer
+                $.ui.blockPageScroll(); 
+				
+				
             };
             document.addEventListener("appMobi.device.ready", onDeviceReady, false);
 			
