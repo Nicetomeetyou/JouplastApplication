@@ -71,13 +71,15 @@
 		<script src="GAPlugin.js"></script>
 		
         <script type="text/javascript">
+
+			function trackPage(pName) { gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, pName); }
+			
 			/* ---------------------------------------------------------------------------------------- */
 			var gaPlugin;
 
 
 			function permissionCallback (button) {
 			if (button === 1)
-				alert("init");
 				gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-42897144-1", 10);
 			}
 
@@ -86,15 +88,10 @@
 				console.log('nativePluginResultHandler: '+result);
 
 			}
-					
+
 			function nativePluginErrorHandler (error) {
 			//alert('nativePluginErrorHandler - '+error);
 				console.log('nativePluginErrorHandler: '+error);
-			}
-
-					
-			function PageButtonClicked() {
-				gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "some.url.com");
 			}
 
 			function goingAway() {
@@ -104,6 +101,7 @@
 			
             var tabNomProduit;
 			var tabFicheTitle;
+			var gaPlugin;
 			
 			var largeurNumberRect;
 			var longueurNumberRect;
