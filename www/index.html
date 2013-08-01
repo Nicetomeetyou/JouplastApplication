@@ -71,30 +71,14 @@
 		<script src="GAPlugin.js"></script>
 		
         <script type="text/javascript">
-			var gaPlugin;	// analytics
-			document.addEventListener("deviceready",onDeviceReady,false);
-			function onDeviceReady() { gaPlugin = window.plugins.gaPlugin; gaPlugin.init(gaSuccess, gaError, "UA-40371154-1", 10); }
-			
-			function gaSuccess(){ trackPage("menu"); }
-			function gaError(msg){ /*alert('GA Plugin Error: ' + msg);*/ }
-			
-			function trackPageSuccess(){
-				gaPlugin.setVariable(nativePluginResultHandler, nativePluginErrorHandler, "Device info", device.name + '|' + device.platform + '|' + device.version, 1);
-			}
-			
-			function trackPageError(msg){ /*alert('GA Plugin Track Page Error: ' + msg);*/ }
-			function setVariableSuccess(){ /*alert('GA Plugin Set Variable Success');*/ }
-			function setVariableError(msg){	/*alert('GA Plugin Set Variable Error: ' + msg);*/ }
-			
-			function trackPage(pName) { gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, pName); }
-			
 			/* ---------------------------------------------------------------------------------------- */
 			var gaPlugin;
 
 
 			function permissionCallback (button) {
 			if (button === 1)
-				gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-40371154-1", 10);
+				alert("init");
+				gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-42897144-1", 10);
 			}
 
 			function nativePluginResultHandler (result) {
@@ -120,7 +104,6 @@
 			
             var tabNomProduit;
 			var tabFicheTitle;
-			var gaPlugin;
 			
 			var largeurNumberRect;
 			var longueurNumberRect;
