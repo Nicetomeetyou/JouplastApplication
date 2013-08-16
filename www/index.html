@@ -206,8 +206,12 @@
 			$.ui.backButtonText="Retour";
 			$.feat.nativeTouchScroll=false;
 			
-			gaPlugin = window.plugins.gaPlugin;
-			navigator.notification.confirm('GA_PLUGIN would like your permission to collect usage data. No personal or user identifiable data will be collected.', permissionCallback, 'Attention', 'Allow,Deny');//block the page from scrolling at the header/footer
+				function initialize() {
+					console.log("Init");
+					 
+				}
+			
+			
 			
             $(window).load(function(){
 				/*var language = navigator.language.split("-");
@@ -218,7 +222,7 @@
             });
             
             /* This code is used to run as soon as appMobi activates */
-            var onDeviceReady = function () {
+            function onDeviceReady() {
                 AppMobi.device.setRotateOrientation("portrait");
                 AppMobi.device.setAutoRotate(false);
                 webRoot = AppMobi.webRoot + "";
@@ -226,9 +230,14 @@
                 AppMobi.device.hideSplashScreen();
                 $.ui.blockPageScroll(); 
 				
+				console.log("Ready -> Device");
+				
+				gaPlugin = window.plugins.gaPlugin;
+				navigator.notification.confirm('GA_PLUGIN would like your permission to collect usage data. No personal or user identifiable data will be collected.', permissionCallback, 'Attention', 'Allow,Deny');//block the page from scrolling at the header/footer
 				
             };
-            document.addEventListener("appMobi.device.ready", onDeviceReady, false);
+            //document.addEventListener("appMobi.device.ready", onDeviceReady, false);
+			document.addEventListener("deviceready", onDeviceReady, true);
 			
             function showHide(obj, objToHide) {
                 var el = $("#" + objToHide)[0];
@@ -357,7 +366,7 @@
         </script>
 	</head>
 	
-    <body class="back" style="overflow:hidden">
+    <body class="back" style="overflow:hidden" onload="initialize();">
         <div id="afui" class="" style="overflow:hidden">
             <!-- this is the splashscreen you see. -->
             <div id="header">
